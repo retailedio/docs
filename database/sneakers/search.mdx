@@ -1,0 +1,142 @@
+---
+title: "Search"
+api: "GET https://app.retailed.io/api/v1/sneakers"
+description: "Search for sneakers"
+---
+
+<Note>
+    We provide our database in .csv export or available on a hyper-relevant search engine with Meilisearch.
+    Contact us if you wish to synchronise with us.
+</Note>
+
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Query Parameters
+
+<ParamField query="id" type="string" optional={true} placeholder="b5242fa5-48a4-444f-bd08-6a5db282b97b">
+    Retailed internal ID
+</ParamField>
+
+<ParamField query="name" type="string" optional={true} placeholder="Jordan">
+    Sneaker name
+</ParamField>
+
+<ParamField query="sku" type="string" optional={true} placeholder="DV6773-220">
+    Sneaker code SKU
+</ParamField>
+
+<ParamField query="colorway" type="string" optional={true} placeholder="Violet">
+    Sneaker colorway
+</ParamField>
+
+<ParamField query="initial_price" type="integer" optional={true} placeholder="225">
+    Sneaker initial price
+</ParamField>
+
+<ParamField query="sizing" type="string" optional={true} placeholder="woman">
+    Sneaker sizing: `newbalance(w)`, `newbalance`, `woman`, `gradeschool`, `primaryschool`, `man`, `yeezy`, `yeezykids`, `crocs`, `converse`, `adidas`, `puma`.
+</ParamField>
+
+<ParamField query="brand_id" type="string" optional={true} placeholder="2bd9a45a-683b-11ed-9022-0242ac120002">
+    Retailed internal brand ID
+</ParamField>
+
+<ParamField query="released_at" type="string" optional={true} placeholder="2021-07-27">
+    Sneaker released at.
+</ParamField>
+
+<ParamField query="extended" type="boolean" optional={true} placeholder="true">
+    Show more informations about the sneakers.
+</ParamField>
+
+<ParamField query="csv" type="boolean" optional={true} placeholder="false">
+    Export results to csv.
+</ParamField>
+
+### Response
+
+<ResponseField name="count" type="number">
+  Indicates the number of sneakers returned
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  Array of sneakers
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://app.retailed.io/api/v1/sneakers?name=Jordan 4 Retro Where the Wild Things Are&extended=true' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+    "count": 3,
+    "data": [
+        {
+            "id": "33cab71a-3dc0-478b-a269-de7c9d4273c0",
+            "name": "Jordan 4 Retro Where the Wild Things Are (GS)",
+            "image": "https://retailed.fra1.digitaloceanspaces.com/product/jordan-4-retro-where-the-wild-things-are-gs.webp",
+            "releasedAt": "2021-11-05",
+            "sizing": "gradeschool",
+            "initialPrice": 140,
+            "colorway": "Pearl White/Dark Driftwood-Gym Red",
+            "sku": "DH0572-264",
+            "createdAt": "2022-12-09T19:31:39.911013+00:00",
+            "updatedAt": null,
+            "brand": {
+                "id": "8560ea3d-0d41-4e9e-ba8f-6b19022841da",
+                "name": "Jordan"
+            }
+        },
+        {
+            "id": "3ab41d09-b200-4472-bce5-51fbb50c173c",
+            "name": "Jordan 4 Retro Where the Wild Things Are (PS)",
+            "image": "https://retailed.fra1.digitaloceanspaces.com/product/jordan-4-retro-where-the-wild-things-are-ps.webp",
+            "releasedAt": "2021-11-05",
+            "sizing": "primaryschool",
+            "initialPrice": 85,
+            "colorway": "Pearl White/Dark Driftwood-Gym Red",
+            "sku": "DH0573-264",
+            "createdAt": "2022-12-24T10:00:15.862658+00:00",
+            "updatedAt": null,
+            "brand": {
+                "id": "8560ea3d-0d41-4e9e-ba8f-6b19022841da",
+                "name": "Jordan"
+            }
+        },
+        {
+            "id": "e07bb4ec-0410-438b-b250-b13397ea8000",
+            "name": "Jordan 4 Retro Where the Wild Things Are (TD)",
+            "image": "https://retailed.fra1.digitaloceanspaces.com/product/jordan-4-retro-where-the-wild-things-are-td.webp",
+            "releasedAt": "2021-11-05",
+            "sizing": "toddler",
+            "initialPrice": 65,
+            "colorway": "Pearl White/Dark Driftwood-Gym Red",
+            "sku": "DH0571-264",
+            "createdAt": "2023-02-24T21:07:22.387386+00:00",
+            "updatedAt": null,
+            "brand": {
+                "id": "8560ea3d-0d41-4e9e-ba8f-6b19022841da",
+                "name": "Jordan"
+            }
+        }
+    ],
+    "error": null,
+    "usage": {
+        "plan": "API",
+        "remaining": "unlimited"
+    }
+}
+```
+</ResponseExample>

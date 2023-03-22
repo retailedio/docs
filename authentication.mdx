@@ -1,0 +1,58 @@
+---
+title: "Authentication"
+description: "After completing this quick start guide you'll have generated and tested an authentication token that can be used in all subsequent requests to the Retailed API."
+---
+
+## Create an Account
+
+Head over to the [Retailed Dashboard b2b](https://app.retailed.io) and follow the steps to either log in or create an account.
+
+## Get a Token
+
+1. Once inside the dashboard, click **API**.
+
+2. Click **New**.
+
+3. Provide a name for future reference, and any notes perhaps describing a use
+case, then click **Save**.
+
+4. You'll be presented with a new token in text and a button to **copy to clipboard**. Tap the copy button, and paste the token somewhere safe.
+
+<Tip>
+    On this dashboard, you will be able to see the logs and know how many requests you have made.
+</Tip>
+
+## Test
+
+To test our new token, open the Terminal and prepare our environment using the
+following command, replacing `<TOKEN>` with the actual token generated from the
+Retailed console in the last step:
+
+```bash
+export RETAILED_TOKEN="<TOKEN>"
+```
+
+This saves us from copying and pasting the token every time we need to use it, and we can now make a call to the Retailed Usage service:
+
+```bash
+curl -H "x-api-key: $RETAILED_TOKEN" https://app.retailed.io/api/v1/usage | jq .
+```
+
+Response:
+
+```json
+{
+    "plan": "API",
+    "remaining": "14823"
+}
+```
+
+This query allows you to obtain the number of remaining requests.
+
+<Note>
+    Most examples throughout this documentation will assume you have set the `$RETAILED_TOKEN` variable.
+</Note>
+
+## Conclusion
+
+You've now managed to authenticate with the Retailed API using a generated token.
