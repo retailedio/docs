@@ -60,7 +60,8 @@
     {
       "group": "Sneakers",
       "pages": [
-        "database/sneakers/search"
+        "database/sneakers/search",
+        "database/sneakers/product"
       ]
     }
   ],

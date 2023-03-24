@@ -61,11 +61,19 @@ description: "Search for sneakers"
 ### Response
 
 <ResponseField name="count" type="number">
-  Indicates the number of sneakers returned
+    Indicates the number of sneakers returned
 </ResponseField>
 
 <ResponseField name="data" type="object">
-  Array of sneakers
+    Array of sneakers
+</ResponseField>
+
+<ResponseField name="error" type="object">
+    Not empty if an error occured
+</ResponseField>
+
+<ResponseField name="usage" type="object">
+    API usage
 </ResponseField>
 
 <RequestExample>

@@ -1,0 +1,259 @@
+---
+title: "Product"
+api: "GET https://app.retailed.io/api/v1/sneakers/product"
+description: "Sneaker product information"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Query Parameters
+
+<ParamField query="id" type="string" optional={true} placeholder="b5242fa5-48a4-444f-bd08-6a5db282b97b">
+    Retailed internal ID
+</ParamField>
+
+<ParamField query="name" type="string" optional={true} placeholder="Jordan">
+    Sneaker name
+</ParamField>
+
+<ParamField query="sku" type="string" optional={true} placeholder="DV6773-220">
+    Sneaker code SKU
+</ParamField>
+
+<ParamField query="colorway" type="string" optional={true} placeholder="Violet">
+    Sneaker colorway
+</ParamField>
+
+<ParamField query="initial_price" type="integer" optional={true} placeholder="225">
+    Sneaker initial price
+</ParamField>
+
+<ParamField query="sizing" type="string" optional={true} placeholder="woman">
+    Sneaker sizing: `newbalance(w)`, `newbalance`, `woman`, `gradeschool`, `primaryschool`, `man`, `yeezy`, `yeezykids`, `crocs`, `converse`, `adidas`, `puma`.
+</ParamField>
+
+<ParamField query="brand_id" type="string" optional={true} placeholder="2bd9a45a-683b-11ed-9022-0242ac120002">
+    Retailed internal brand ID
+</ParamField>
+
+<ParamField query="released_at" type="string" optional={true} placeholder="2021-07-27">
+    Sneaker released at.
+</ParamField>
+
+<ParamField query="stockx_id" type="string" optional={true}>
+    StockX ID
+</ParamField>
+
+<ParamField query="stockx_slug" type="string" optional={true}>
+    StockX Slug
+</ParamField>
+
+<ParamField query="alias_id" type="string" optional={true}>
+    Alias ID
+</ParamField>
+
+<ParamField query="alias_slug" type="string" optional={true}>
+    Alias Slug
+</ParamField>
+
+<ParamField query="restocks_id" type="string" optional={true}>
+    Restocks ID
+</ParamField>
+
+<ParamField query="restocks_slug" type="string" optional={true}>
+    Restocks Slug
+</ParamField>
+
+<ParamField query="hypeboost_id" type="string" optional={true}>
+    Hypeboost ID
+</ParamField>
+
+<ParamField query="hypeboost_slug" type="string" optional={true}>
+    Hypeboost Slug
+</ParamField>
+
+<ParamField query="klekt_id" type="string" optional={true}>
+    Klekt ID
+</ParamField>
+
+<ParamField query="klekt_slug" type="string" optional={true}>
+    Klekt Slug
+</ParamField>
+
+<ParamField query="kikikickz_id" type="string" optional={true}>
+    Kikikickz ID
+</ParamField>
+
+<ParamField query="kikikickz_slug" type="string" optional={true}>
+    Kikikickz Slug
+</ParamField>
+
+<ParamField query="laced_id" type="string" optional={true}>
+    Laced ID
+</ParamField>
+
+<ParamField query="laced_slug" type="string" optional={true}>
+    Laced Slug
+</ParamField>
+
+<ParamField query="extended" type="boolean" optional={true} placeholder="true">
+    Show more informations about the sneakers.
+</ParamField>
+
+<ParamField query="csv" type="boolean" optional={true} placeholder="false">
+    Export results to csv.
+</ParamField>
+
+### Response
+
+<ResponseField name="data" type="object">
+    Sneaker data
+</ResponseField>
+
+<ResponseField name="error" type="object">
+    Not empty if an error occured
+</ResponseField>
+
+<ResponseField name="usage" type="object">
+    API usage
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://app.retailed.io/api/v1/sneakers/product?sku=DH6927-140' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+    "data": {
+        "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+        "name": "Jordan 4 Retro Midnight Navy",
+        "createdAt": "2022-12-08T21:19:03.199275+00:00",
+        "updatedAt": null,
+        "image": "https://retailed.fra1.digitaloceanspaces.com/product/jordan-4-retro-midnight-navy.webp",
+        "releasedAt": "2022-10-29",
+        "sizing": "man",
+        "initialPrice": 210,
+        "colorway": "White/Midnight Navy/Light Smoke Grey-Fire Red",
+        "sku": "DH6927-140",
+        "brand": {
+            "id": "8560ea3d-0d41-4e9e-ba8f-6b19022841da",
+            "name": "Jordan"
+        },
+        "sizes": {
+            "eu": [
+                "35.5",
+                "36",
+                "36.5",
+                "37.5",
+                "38",
+                "38.5",
+                "39",
+                "40",
+                "40.5",
+                "41",
+                "42",
+                "42.5",
+                "43",
+                "44",
+                "44.5",
+                "45",
+                "45.5",
+                "46",
+                "47",
+                "47.5",
+                "48.5",
+                "49.5"
+            ],
+            "us": [
+                "3.5",
+                "4",
+                "4.5",
+                "5",
+                "5.5",
+                "6",
+                "6.5",
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5",
+                "10",
+                "10.5",
+                "11",
+                "11.5",
+                "12",
+                "12.5",
+                "13",
+                "14",
+                "15"
+            ],
+            "uk": [
+                "3",
+                "3.5",
+                "4",
+                "4.5",
+                "5",
+                "5.5",
+                "6",
+                "6",
+                "6.5",
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5",
+                "10",
+                "10.5",
+                "11",
+                "11.5",
+                "12",
+                "13",
+                "14"
+            ],
+            "jp": [
+                "22.5",
+                "23",
+                "23.5",
+                "23.5",
+                "24",
+                "24",
+                "24.5",
+                "25",
+                "25.5",
+                "26",
+                "26.5",
+                "27",
+                "27.5",
+                "28",
+                "28.5",
+                "29",
+                "29.5",
+                "30",
+                "30.5",
+                "31",
+                "32",
+                "33"
+            ],
+        }
+    },
+    "error": null,
+    "usage": {
+        "plan": "API",
+        "remaining": "unlimited"
+    }
+}
+```
+</ResponseExample>
