@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Retailed B2B Docs",
+  "name": "Retailed Docs",
   "logo": {
     "dark": "/logo/dark.png",
     "light": "/logo/light.png"
@@ -23,6 +23,11 @@
   },
   "anchors": [
     {
+      "name": "Database",
+      "icon": "database",
+      "url": "database"
+    },
+    {
       "name": "Community",
       "icon": "discord",
       "url": "https://discord.com/invite/EUCkqCWrb8"
@@ -40,21 +45,21 @@
   ],
   "navigation": [
     {
-      "group": "Introduction",
-      "pages": ["overview", "pricing", "integrations", "authentication"]
+      "group": "Getting Started",
+      "pages": ["introduction"]
     },
     {
-      "group": "Integrations",
+      "group": "Database",
       "pages": [
-        "integrations/price-updates",
-        "integrations/notifications",
-        "integrations/references"
+        "database/overview",
+        "database/pricing",
+        "database/integrations",
+        "database/authentication"
       ]
     },
     {
-      "group": "Sneakers Database",
+      "group": "Sneakers",
       "pages": [
-        "database/sneakers/statistics",
         "database/sneakers/search"
       ]
     }
