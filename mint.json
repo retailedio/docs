@@ -58,6 +58,14 @@
       ]
     },
     {
+      "group": "General",
+      "pages": [
+        "database/usage",
+        "database/brands",
+        "database/platforms"
+      ]
+    },
+    {
       "group": "Sneakers",
       "pages": [
         "database/sneakers/search",
