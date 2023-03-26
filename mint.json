@@ -54,7 +54,8 @@
         "database/overview",
         "database/pricing",
         "database/integrations",
-        "database/authentication"
+        "database/authentication",
+        "database/faq"
       ]
     },
     {

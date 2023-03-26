@@ -1,0 +1,39 @@
+---
+title: "FAQ"
+description: "Frequently asked questions"
+---
+
+# Woocommerce
+
+### Webp upload error
+
+"I have a problem with uploading webp images to woocommerce. I get the error: Sorry, this file type is not permitted for security reasons."
+
+Change the following values to your own.
+
+File `/plugins/woocommerce/includes/wc-rest-functions.php`
+
+Add the following code `'webp' => 'image/webp',` to the function `wc_get_endpoint_url`:
+
+```php
+/**
+ * Returns image mime types users are allowed to upload via the API.
+ *
+ * @since  2.6.4
+ * @return array
+ */
+function wc_rest_allowed_image_mime_types() {
+	return apply_filters(
+		'woocommerce_rest_allowed_image_mime_types',
+		array(
+			'jpg|jpeg|jpe' => 'image/jpeg',
+			'gif'          => 'image/gif',
+			'png'          => 'image/png',
+			'bmp'          => 'image/bmp',
+			'tiff|tif'     => 'image/tiff',
+			'ico'          => 'image/x-icon',
+            'webp'         => 'image/webp',
+		)
+	);
+}
+```
