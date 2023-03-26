@@ -1,0 +1,239 @@
+---
+title: "Statistics"
+api: "GET https://app.retailed.io/api/v1/sneakers/prices_stats"
+description: "Get statistics for sneaker prices"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Query Parameters
+
+<ParamField query="sku" type="string" optional={true} placeholder="DV6773-220">
+    Sneaker code SKU
+</ParamField>
+
+<ParamField query="size_eu" type="string" optional={true} placeholder="39.5">
+    Sneaker size in EU
+</ParamField>
+
+<ParamField query="size_us" type="string" optional={true} placeholder="6">
+    Sneaker size in US
+</ParamField>
+
+<ParamField query="size_jp" type="string" optional={true} placeholder="24.5">
+    Sneaker size in JP
+</ParamField>
+
+<ParamField query="size_uk" type="string" optional={true} placeholder="6">
+    Sneaker size in UK
+</ParamField>
+
+### Response
+
+<ResponseField name="data" type="object">
+    Statistics for sneaker prices
+</ResponseField>
+
+<ResponseField name="error" type="object">
+    Not empty if an error occured
+</ResponseField>
+
+<ResponseField name="usage" type="object">
+    API usage
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://app.retailed.io/api/v1/sneakers/prices_stats?sku=DH6927-140&size_us=6' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+    "data": [
+        {
+            "platformName": "alias",
+            "maxPriceEur": 359,
+            "minPriceEur": 319,
+            "avgPriceEur": 341,
+            "maxPriceGbp": 317,
+            "minPriceGbp": 282,
+            "avgPriceGbp": 301,
+            "maxPriceUsd": 378,
+            "minPriceUsd": 337,
+            "avgPriceUsd": 366,
+            "maxPricePln": 1681,
+            "minPricePln": 1511,
+            "avgPricePln": 1604,
+            "maxPriceChf": 353,
+            "minPriceChf": 317,
+            "avgPriceChf": 338,
+            "maxPriceDkk": 2669,
+            "minPriceDkk": 2383,
+            "avgPriceDkk": 2541,
+            "maxPriceSek": 4033,
+            "minPriceSek": 3546,
+            "avgPriceSek": 3826
+        },
+        {
+            "platformName": "hypeboost",
+            "maxPriceEur": 379,
+            "minPriceEur": 327,
+            "avgPriceEur": 346,
+            "maxPriceGbp": 336,
+            "minPriceGbp": 288,
+            "avgPriceGbp": 306,
+            "maxPriceUsd": 416,
+            "minPriceUsd": 347,
+            "avgPriceUsd": 371,
+            "maxPricePln": 1784,
+            "minPricePln": 1507,
+            "avgPricePln": 1627,
+            "maxPriceChf": 380,
+            "minPriceChf": 325,
+            "avgPriceChf": 343,
+            "maxPriceDkk": 2819,
+            "minPriceDkk": 2433,
+            "avgPriceDkk": 2577,
+            "maxPriceSek": 4291,
+            "minPriceSek": 3639,
+            "avgPriceSek": 3881
+        },
+        {
+            "platformName": "kikikickz",
+            "maxPriceEur": 410,
+            "minPriceEur": 365,
+            "avgPriceEur": 389,
+            "maxPriceGbp": 361,
+            "minPriceGbp": 322,
+            "avgPriceGbp": 343,
+            "maxPriceUsd": 437,
+            "minPriceUsd": 384,
+            "avgPriceUsd": 414,
+            "maxPricePln": 1900,
+            "minPricePln": 1709,
+            "avgPricePln": 1791,
+            "maxPriceChf": 405,
+            "minPriceChf": 359,
+            "avgPriceChf": 384,
+            "maxPriceDkk": 3055,
+            "minPriceDkk": 2714,
+            "avgPriceDkk": 2896,
+            "maxPriceSek": 4600,
+            "minPriceSek": 4101,
+            "avgPriceSek": 4355
+        },
+        {
+            "platformName": "klekt",
+            "maxPriceEur": 392,
+            "minPriceEur": 342,
+            "avgPriceEur": 360,
+            "maxPriceGbp": 343,
+            "minPriceGbp": 300,
+            "avgPriceGbp": 318,
+            "maxPriceUsd": 425,
+            "minPriceUsd": 370,
+            "avgPriceUsd": 387,
+            "maxPricePln": 1846,
+            "minPricePln": 1597,
+            "avgPricePln": 1695,
+            "maxPriceChf": 392,
+            "minPriceChf": 341,
+            "avgPriceChf": 358,
+            "maxPriceDkk": 2915,
+            "minPriceDkk": 2544,
+            "avgPriceDkk": 2678,
+            "maxPriceSek": 4392,
+            "minPriceSek": 3811,
+            "avgPriceSek": 4026
+        },
+        {
+            "platformName": "laced",
+            "maxPriceEur": 352,
+            "minPriceEur": 323,
+            "avgPriceEur": 340,
+            "maxPriceGbp": 310,
+            "minPriceGbp": 285,
+            "avgPriceGbp": 301,
+            "maxPriceUsd": 384,
+            "minPriceUsd": 343,
+            "avgPriceUsd": 365,
+            "maxPricePln": 1661,
+            "minPricePln": 1512,
+            "avgPricePln": 1600,
+            "maxPriceChf": 352,
+            "minPriceChf": 319,
+            "avgPriceChf": 338,
+            "maxPriceDkk": 2620,
+            "minPriceDkk": 2409,
+            "avgPriceDkk": 2533,
+            "maxPriceSek": 3944,
+            "minPriceSek": 3576,
+            "avgPriceSek": 3818
+        },
+        {
+            "platformName": "restocks",
+            "maxPriceEur": 409,
+            "minPriceEur": 364,
+            "avgPriceEur": 387,
+            "maxPriceGbp": 361,
+            "minPriceGbp": 323,
+            "avgPriceGbp": 341,
+            "maxPriceUsd": 435,
+            "minPriceUsd": 389,
+            "avgPriceUsd": 416,
+            "maxPricePln": 1915,
+            "minPricePln": 1724,
+            "avgPricePln": 1814,
+            "maxPriceChf": 403,
+            "minPriceChf": 359,
+            "avgPriceChf": 384,
+            "maxPriceDkk": 3041,
+            "minPriceDkk": 2707,
+            "avgPriceDkk": 2881,
+            "maxPriceSek": 4595,
+            "minPriceSek": 4124,
+            "avgPriceSek": 4339
+        },
+        {
+            "platformName": "stockx",
+            "maxPriceEur": 372,
+            "minPriceEur": 331,
+            "avgPriceEur": 357,
+            "maxPriceGbp": 331,
+            "minPriceGbp": 291,
+            "avgPriceGbp": 315,
+            "maxPriceUsd": 395,
+            "minPriceUsd": 354,
+            "avgPriceUsd": 382,
+            "maxPricePln": 1745,
+            "minPricePln": 1549,
+            "avgPricePln": 1676,
+            "maxPriceChf": 369,
+            "minPriceChf": 323,
+            "avgPriceChf": 353,
+            "maxPriceDkk": 2768,
+            "minPriceDkk": 2464,
+            "avgPriceDkk": 2655,
+            "maxPriceSek": 4209,
+            "minPriceSek": 3764,
+            "avgPriceSek": 3998
+        }
+    ],
+    "error": null,
+        "usage": {
+        "plan": "API",
+        "remaining": "unlimited"
+    }
+}
+```
+</ResponseExample>

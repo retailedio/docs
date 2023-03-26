@@ -61,7 +61,22 @@
       "group": "Sneakers",
       "pages": [
         "database/sneakers/search",
-        "database/sneakers/product"
+        {
+          "group": "Product",
+          "pages": [
+            "database/sneakers/product",
+            "database/sneakers/360",
+            "database/sneakers/variants"
+          ]
+        },
+        {
+          "group": "Prices",
+          "pages": [
+            "database/sneakers/prices",
+            "database/sneakers/stats",
+            "database/sneakers/latest"
+          ]
+        }
       ]
     }
   ],

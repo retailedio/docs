@@ -1,0 +1,141 @@
+---
+title: "Latest"
+api: "GET https://app.retailed.io/api/v1/sneakers/prices_latest"
+description: "Get latest sneaker prices"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Query Parameters
+
+<ParamField query="sku" type="string" optional={true} placeholder="DV6773-220">
+    Sneaker code SKU
+</ParamField>
+
+<ParamField query="size_eu" type="string" optional={true} placeholder="39.5">
+    Sneaker size in EU
+</ParamField>
+
+<ParamField query="size_us" type="string" optional={true} placeholder="6">
+    Sneaker size in US
+</ParamField>
+
+<ParamField query="size_jp" type="string" optional={true} placeholder="24.5">
+    Sneaker size in JP
+</ParamField>
+
+<ParamField query="size_uk" type="string" optional={true} placeholder="6">
+    Sneaker size in UK
+</ParamField>
+
+### Response
+
+<ResponseField name="data" type="object">
+    Latest sneaker prices
+</ResponseField>
+
+<ResponseField name="error" type="object">
+    Not empty if an error occured
+</ResponseField>
+
+<ResponseField name="usage" type="object">
+    API usage
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://app.retailed.io/api/v1/sneakers/prices_latest?sku=DH6927-140&size_us=6' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+    "data": [
+        {
+            "platformName": "alias",
+            "lastPriceEur": 340,
+            "lastPriceGbp": 299,
+            "lastPriceUsd": 368,
+            "lastPricePln": 1592,
+            "lastPriceChf": 337,
+            "lastPriceDkk": 2533,
+            "lastPriceSek": 3808
+        },
+        {
+            "platformName": "hypeboost",
+            "lastPriceEur": 336,
+            "lastPriceGbp": 294,
+            "lastPriceUsd": 359,
+            "lastPricePln": 1580,
+            "lastPriceChf": 332,
+            "lastPriceDkk": 2501,
+            "lastPriceSek": 3763
+        },
+        {
+            "platformName": "kikikickz",
+            "lastPriceEur": 405,
+            "lastPriceGbp": 357,
+            "lastPriceUsd": 434,
+            "lastPricePln": 1900,
+            "lastPriceChf": 400,
+            "lastPriceDkk": 3012,
+            "lastPriceSek": 4524
+        },
+        {
+            "platformName": "klekt",
+            "lastPriceEur": 368,
+            "lastPriceGbp": 325,
+            "lastPriceUsd": 390,
+            "lastPricePln": 1732,
+            "lastPriceChf": 366,
+            "lastPriceDkk": 2738,
+            "lastPriceSek": 4102
+        },
+        {
+            "platformName": "laced",
+            "lastPriceEur": 328,
+            "lastPriceGbp": 290,
+            "lastPriceUsd": 355,
+            "lastPricePln": 1539,
+            "lastPriceChf": 326,
+            "lastPriceDkk": 2449,
+            "lastPriceSek": 3683
+        },
+        {
+            "platformName": "restocks",
+            "lastPriceEur": 379,
+            "lastPriceGbp": 334,
+            "lastPriceUsd": 410,
+            "lastPricePln": 1775,
+            "lastPriceChf": 376,
+            "lastPriceDkk": 2823,
+            "lastPriceSek": 4245
+        },
+        {
+            "platformName": "stockx",
+            "lastPriceEur": 356,
+            "lastPriceGbp": 314,
+            "lastPriceUsd": 385,
+            "lastPricePln": 1667,
+            "lastPriceChf": 353,
+            "lastPriceDkk": 2652,
+            "lastPriceSek": 3988
+        }
+    ],
+    "error": null,
+    "usage": {
+        "plan": "API",
+        "remaining": "unlimited"
+    }
+}
+```
+</ResponseExample>
