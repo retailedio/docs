@@ -1,0 +1,1017 @@
+---
+title: "Prices"
+api: "GET https://app.retailed.io/api/v1/sneakers/prices"
+description: "Sneaker prices"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Query Parameters
+
+<ParamField query="id" type="string" optional={true} placeholder="b5242fa5-48a4-444f-bd08-6a5db282b97b">
+    Retailed internal ID
+</ParamField>
+
+<ParamField query="sku" type="string" optional={true} placeholder="DV6773-220">
+    Sneaker code SKU
+</ParamField>
+
+<ParamField query="product_id" type="string" optional={true} placeholder="2f0ad3d7-ea60-423c-923a-d82372f97da8">
+    Retailed internal product ID
+</ParamField>
+
+<ParamField query="platform_id" type="string" optional={true} placeholder="0e2752e4-4c67-4344-971e-732a3a7d2987">
+    Retailed internal platform ID
+</ParamField>
+
+<ParamField query="size_eu" type="string" optional={true} placeholder="39.5">
+    Sneaker size in EU
+</ParamField>
+
+<ParamField query="size_us" type="string" optional={true} placeholder="6">
+    Sneaker size in US
+</ParamField>
+
+<ParamField query="size_jp" type="string" optional={true} placeholder="24.5">
+    Sneaker size in JP
+</ParamField>
+
+<ParamField query="size_uk" type="string" optional={true} placeholder="6">
+    Sneaker size in UK
+</ParamField>
+
+<ParamField query="csv" type="boolean" optional={true} placeholder="false">
+    Export results to csv
+</ParamField>
+
+### Response
+
+<ResponseField name="data" type="object">
+    Sneaker prices data
+</ResponseField>
+
+<ResponseField name="error" type="object">
+    Not empty if an error occured
+</ResponseField>
+
+<ResponseField name="usage" type="object">
+    API usage
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://app.retailed.io/api/v1/sneakers/prices?sku=DV6773-220&size_us=6' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+    "data": [
+        {
+            "id": "46b780a6-f032-4c5c-af7e-654014e1705e",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 357,
+            "priceGbp": 314,
+            "priceUsd": 386,
+            "pricePln": 1672,
+            "priceChf": 354,
+            "priceDkk": 2659,
+            "priceSek": 3999,
+            "payoutEur": 305,
+            "payoutGbp": 269,
+            "payoutUsd": 330,
+            "payoutPln": 1431,
+            "payoutChf": 303,
+            "payoutDkk": 2276,
+            "payoutSek": 3423,
+            "createdAt": "2023-03-25T11:31:47.856867+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "0e2752e4-4c67-4344-971e-732a3a7d2987",
+                "name": "stockx"
+            }
+        },
+        {
+            "id": "070b9748-8f90-464b-953d-adc2e224d5e9",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 408,
+            "priceGbp": 360,
+            "priceUsd": 441,
+            "pricePln": 1911,
+            "priceChf": 405,
+            "priceDkk": 3040,
+            "priceSek": 4572,
+            "payoutEur": 325,
+            "payoutGbp": 287,
+            "payoutUsd": 352,
+            "payoutPln": 1523,
+            "payoutChf": 322,
+            "payoutDkk": 2424,
+            "payoutSek": 3645,
+            "createdAt": "2023-03-25T11:31:42.996843+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "d92a446b-8141-43d5-82b1-4b98b2bbc8c4",
+                "name": "laced"
+            }
+        },
+        {
+            "id": "5363813b-b801-4a04-b5d3-b46a3b497d86",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 500,
+            "priceGbp": 441,
+            "priceUsd": 541,
+            "pricePln": 2341,
+            "priceChf": 496,
+            "priceDkk": 3725,
+            "priceSek": 5601,
+            "payoutEur": 455,
+            "payoutGbp": 401,
+            "payoutUsd": 492,
+            "payoutPln": 2131,
+            "payoutChf": 451,
+            "payoutDkk": 3389,
+            "payoutSek": 5097,
+            "createdAt": "2023-03-25T11:31:33.905321+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "978aae97-a40a-4f4e-a666-e06251c79b2f",
+                "name": "hypeboost"
+            }
+        },
+        {
+            "id": "8096de70-9305-4dc5-9b1f-117cec804773",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 416,
+            "priceGbp": 366,
+            "priceUsd": 450,
+            "pricePln": 1948,
+            "priceChf": 412,
+            "priceDkk": 3099,
+            "priceSek": 4660,
+            "payoutEur": 354,
+            "payoutGbp": 312,
+            "payoutUsd": 383,
+            "payoutPln": 1659,
+            "payoutChf": 351,
+            "payoutDkk": 2640,
+            "payoutSek": 3970,
+            "createdAt": "2023-03-25T11:31:24.47926+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "ac4b6f6f-1e9e-4fed-8089-3532d3679aae",
+                "name": "restocks"
+            }
+        },
+        {
+            "id": "9807c767-ddbd-4224-85be-5b2dec683631",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 392,
+            "priceGbp": 345,
+            "priceUsd": 424,
+            "pricePln": 1835,
+            "priceChf": 389,
+            "priceDkk": 2920,
+            "priceSek": 4391,
+            "payoutEur": 331,
+            "payoutGbp": 291,
+            "payoutUsd": 358,
+            "payoutPln": 1550,
+            "payoutChf": 328,
+            "payoutDkk": 2465,
+            "payoutSek": 3708,
+            "createdAt": "2023-03-25T11:31:15.239514+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "650a31ba-0052-4934-b32e-9540f2d9eab5",
+                "name": "klekt"
+            }
+        },
+        {
+            "id": "20f84d87-9f8c-4bf1-bb59-d7abbe801e82",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 310,
+            "priceGbp": 273,
+            "priceUsd": 335,
+            "pricePln": 1451,
+            "priceChf": 307,
+            "priceDkk": 2309,
+            "priceSek": 3472,
+            "payoutEur": 270,
+            "payoutGbp": 238,
+            "payoutUsd": 292,
+            "payoutPln": 1264,
+            "payoutChf": 267,
+            "payoutDkk": 2011,
+            "payoutSek": 3024,
+            "createdAt": "2023-03-25T11:31:08.108963+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "266064e5-5839-4958-b76d-3e560c59da03",
+                "name": "alias"
+            }
+        },
+        {
+            "id": "f133aa30-3423-4eda-9d9d-00b7694ef8e2",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 359,
+            "priceGbp": 314,
+            "priceUsd": 383,
+            "pricePln": 1689,
+            "priceChf": 355,
+            "priceDkk": 2672,
+            "priceSek": 4020,
+            "payoutEur": 307,
+            "payoutGbp": 269,
+            "payoutUsd": 328,
+            "payoutPln": 1445,
+            "payoutChf": 304,
+            "payoutDkk": 2287,
+            "payoutSek": 3442,
+            "createdAt": "2023-03-21T10:20:37.786118+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "0e2752e4-4c67-4344-971e-732a3a7d2987",
+                "name": "stockx"
+            }
+        },
+        {
+            "id": "7f2e7380-e8f0-45a1-938d-fdf9b7ca2462",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 445,
+            "priceGbp": 390,
+            "priceUsd": 475,
+            "pricePln": 2093,
+            "priceChf": 440,
+            "priceDkk": 3312,
+            "priceSek": 4984,
+            "payoutEur": 403,
+            "payoutGbp": 354,
+            "payoutUsd": 431,
+            "payoutPln": 1900,
+            "payoutChf": 399,
+            "payoutDkk": 3006,
+            "payoutSek": 4523,
+            "createdAt": "2023-03-21T10:20:16.978996+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "978aae97-a40a-4f4e-a666-e06251c79b2f",
+                "name": "hypeboost"
+            }
+        },
+        {
+            "id": "78db1912-d203-445a-a279-53927f7e3964",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 418,
+            "priceGbp": 366,
+            "priceUsd": 446,
+            "pricePln": 1966,
+            "priceChf": 413,
+            "priceDkk": 3111,
+            "priceSek": 4681,
+            "payoutEur": 356,
+            "payoutGbp": 312,
+            "payoutUsd": 380,
+            "payoutPln": 1675,
+            "payoutChf": 352,
+            "payoutDkk": 2651,
+            "payoutSek": 3989,
+            "createdAt": "2023-03-21T10:20:05.658923+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "ac4b6f6f-1e9e-4fed-8089-3532d3679aae",
+                "name": "restocks"
+            }
+        },
+        {
+            "id": "9fd4a35f-bba7-4140-8756-d5e0324bbde9",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 419,
+            "priceGbp": 367,
+            "priceUsd": 447,
+            "pricePln": 1971,
+            "priceChf": 414,
+            "priceDkk": 3118,
+            "priceSek": 4693,
+            "payoutEur": 354,
+            "payoutGbp": 310,
+            "payoutUsd": 378,
+            "payoutPln": 1665,
+            "payoutChf": 350,
+            "payoutDkk": 2635,
+            "payoutSek": 3964,
+            "createdAt": "2023-03-21T10:19:58.858359+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "650a31ba-0052-4934-b32e-9540f2d9eab5",
+                "name": "klekt"
+            }
+        },
+        {
+            "id": "94a18ca1-687c-4736-bdb9-751f85a081c8",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 314,
+            "priceGbp": 275,
+            "priceUsd": 335,
+            "pricePln": 1477,
+            "priceChf": 310,
+            "priceDkk": 2337,
+            "priceSek": 3516,
+            "payoutEur": 270,
+            "payoutGbp": 236,
+            "payoutUsd": 288,
+            "payoutPln": 1270,
+            "payoutChf": 267,
+            "payoutDkk": 2009,
+            "payoutSek": 3024,
+            "createdAt": "2023-03-21T10:19:56.624115+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "266064e5-5839-4958-b76d-3e560c59da03",
+                "name": "alias"
+            }
+        },
+        {
+            "id": "5b8e939d-8e01-4504-8334-43f48d10cc7b",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 410,
+            "priceGbp": 360,
+            "priceUsd": 436,
+            "pricePln": 1929,
+            "priceChf": 405,
+            "priceDkk": 3057,
+            "priceSek": 4578,
+            "payoutEur": 327,
+            "payoutGbp": 287,
+            "payoutUsd": 347,
+            "payoutPln": 1538,
+            "payoutChf": 322,
+            "payoutDkk": 2437,
+            "payoutSek": 3650,
+            "createdAt": "2023-03-18T08:58:55.397708+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "d92a446b-8141-43d5-82b1-4b98b2bbc8c4",
+                "name": "laced"
+            }
+        },
+        {
+            "id": "c9779c56-431c-4ac8-9498-185bc2fe7599",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 420,
+            "priceGbp": 368,
+            "priceUsd": 446,
+            "pricePln": 1972,
+            "priceChf": 414,
+            "priceDkk": 3126,
+            "priceSek": 4682,
+            "payoutEur": 358,
+            "payoutGbp": 313,
+            "payoutUsd": 380,
+            "payoutPln": 1681,
+            "payoutChf": 353,
+            "payoutDkk": 2664,
+            "payoutSek": 3991,
+            "createdAt": "2023-03-18T08:58:31.715472+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "ac4b6f6f-1e9e-4fed-8089-3532d3679aae",
+                "name": "restocks"
+            }
+        },
+        {
+            "id": "168de4fd-3ac3-4ada-91d6-2901144037ff",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 316,
+            "priceGbp": 276,
+            "priceUsd": 335,
+            "pricePln": 1484,
+            "priceChf": 311,
+            "priceDkk": 2352,
+            "priceSek": 3522,
+            "payoutEur": 270,
+            "payoutGbp": 236,
+            "payoutUsd": 286,
+            "payoutPln": 1268,
+            "payoutChf": 266,
+            "payoutDkk": 2009,
+            "payoutSek": 3010,
+            "createdAt": "2023-03-18T08:58:14.767741+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "266064e5-5839-4958-b76d-3e560c59da03",
+                "name": "alias"
+            }
+        },
+        {
+            "id": "cc95c43d-017c-4f52-99ab-2c1441feff6a",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 373,
+            "priceGbp": 328,
+            "priceUsd": 399,
+            "pricePln": 1745,
+            "priceChf": 364,
+            "priceDkk": 2776,
+            "priceSek": 4242,
+            "payoutEur": 319,
+            "payoutGbp": 281,
+            "payoutUsd": 342,
+            "payoutPln": 1495,
+            "payoutChf": 312,
+            "payoutDkk": 2378,
+            "payoutSek": 3634,
+            "createdAt": "2023-03-15T04:27:59.984452+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "0e2752e4-4c67-4344-971e-732a3a7d2987",
+                "name": "stockx"
+            }
+        },
+        {
+            "id": "bcecba45-3d97-4189-83ca-3b249b64ad34",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 408,
+            "priceGbp": 360,
+            "priceUsd": 437,
+            "pricePln": 1911,
+            "priceChf": 399,
+            "priceDkk": 3040,
+            "priceSek": 4645,
+            "payoutEur": 325,
+            "payoutGbp": 287,
+            "payoutUsd": 348,
+            "payoutPln": 1524,
+            "payoutChf": 318,
+            "payoutDkk": 2424,
+            "payoutSek": 3703,
+            "createdAt": "2023-03-15T04:27:55.808686+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "d92a446b-8141-43d5-82b1-4b98b2bbc8c4",
+                "name": "laced"
+            }
+        },
+        {
+            "id": "b9f7db6a-af81-4b26-9800-45302a928796",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 420,
+            "priceGbp": 370,
+            "priceUsd": 450,
+            "pricePln": 1965,
+            "priceChf": 410,
+            "priceDkk": 3126,
+            "priceSek": 4777,
+            "payoutEur": 354,
+            "payoutGbp": 311,
+            "payoutUsd": 379,
+            "payoutPln": 1656,
+            "payoutChf": 346,
+            "payoutDkk": 2635,
+            "payoutSek": 4026,
+            "createdAt": "2023-03-15T04:27:21.999174+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "650a31ba-0052-4934-b32e-9540f2d9eab5",
+                "name": "klekt"
+            }
+        },
+        {
+            "id": "ea064699-a1b3-4bdb-af8f-e6ab33c01e1c",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 313,
+            "priceGbp": 275,
+            "priceUsd": 335,
+            "pricePln": 1464,
+            "priceChf": 305,
+            "priceDkk": 2330,
+            "priceSek": 3560,
+            "payoutEur": 270,
+            "payoutGbp": 237,
+            "payoutUsd": 289,
+            "payoutPln": 1263,
+            "payoutChf": 263,
+            "payoutDkk": 2010,
+            "payoutSek": 3070,
+            "createdAt": "2023-03-15T04:27:12.007026+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "266064e5-5839-4958-b76d-3e560c59da03",
+                "name": "alias"
+            }
+        },
+        {
+            "id": "22ed6780-4c96-4530-b371-6196406fe081",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 379,
+            "priceGbp": 335,
+            "priceUsd": 403,
+            "pricePln": 1776,
+            "priceChf": 373,
+            "priceDkk": 2825,
+            "priceSek": 4323,
+            "payoutEur": 324,
+            "payoutGbp": 287,
+            "payoutUsd": 346,
+            "payoutPln": 1521,
+            "payoutChf": 319,
+            "payoutDkk": 2420,
+            "payoutSek": 3704,
+            "createdAt": "2023-03-12T08:33:36.869484+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "0e2752e4-4c67-4344-971e-732a3a7d2987",
+                "name": "stockx"
+            }
+        },
+        {
+            "id": "38899f3a-17fb-474c-87b0-98d19f8a59a8",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 406,
+            "priceGbp": 360,
+            "priceUsd": 433,
+            "pricePln": 1905,
+            "priceChf": 400,
+            "priceDkk": 3030,
+            "priceSek": 4637,
+            "payoutEur": 324,
+            "payoutGbp": 287,
+            "payoutUsd": 345,
+            "payoutPln": 1518,
+            "payoutChf": 319,
+            "payoutDkk": 2415,
+            "payoutSek": 3696,
+            "createdAt": "2023-03-12T08:33:33.021376+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "d92a446b-8141-43d5-82b1-4b98b2bbc8c4",
+                "name": "laced"
+            }
+        },
+        {
+            "id": "98e42d9f-6e2b-44c4-b2ea-698e560e9253",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 495,
+            "priceGbp": 438,
+            "priceUsd": 527,
+            "pricePln": 2319,
+            "priceChf": 487,
+            "priceDkk": 3690,
+            "priceSek": 5646,
+            "payoutEur": null,
+            "payoutGbp": null,
+            "payoutUsd": null,
+            "payoutPln": null,
+            "payoutChf": null,
+            "payoutDkk": null,
+            "payoutSek": null,
+            "createdAt": "2023-03-12T08:33:31.168856+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "0824318a-d622-433c-a55a-c89cff24fa96",
+                "name": "kikikickz"
+            }
+        },
+        {
+            "id": "beef2d20-8a9b-4417-96ee-e57aa202d4e9",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 412,
+            "priceGbp": 364,
+            "priceUsd": 439,
+            "pricePln": 1930,
+            "priceChf": 405,
+            "priceDkk": 3071,
+            "priceSek": 4700,
+            "payoutEur": 373,
+            "payoutGbp": 330,
+            "payoutUsd": 397,
+            "payoutPln": 1749,
+            "payoutChf": 367,
+            "payoutDkk": 2782,
+            "payoutSek": 4257,
+            "createdAt": "2023-03-12T08:33:27.510082+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "978aae97-a40a-4f4e-a666-e06251c79b2f",
+                "name": "hypeboost"
+            }
+        },
+        {
+            "id": "4dcc7d2f-fa8e-4541-abef-3b611d37ef6c",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 315,
+            "priceGbp": 278,
+            "priceUsd": 335,
+            "pricePln": 1476,
+            "priceChf": 310,
+            "priceDkk": 2348,
+            "priceSek": 3593,
+            "payoutEur": 273,
+            "payoutGbp": 241,
+            "payoutUsd": 290,
+            "payoutPln": 1279,
+            "payoutChf": 268,
+            "payoutDkk": 2035,
+            "payoutSek": 3114,
+            "createdAt": "2023-03-12T08:32:55.485055+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "266064e5-5839-4958-b76d-3e560c59da03",
+                "name": "alias"
+            }
+        },
+        {
+            "id": "60b7851c-ac3f-4f99-b8af-8cd4635f7082",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 403,
+            "priceGbp": 360,
+            "priceUsd": 425,
+            "pricePln": 1894,
+            "priceChf": 401,
+            "priceDkk": 3005,
+            "priceSek": 4569,
+            "payoutEur": 321,
+            "payoutGbp": 287,
+            "payoutUsd": 339,
+            "payoutPln": 1510,
+            "payoutChf": 319,
+            "payoutDkk": 2396,
+            "payoutSek": 3642,
+            "createdAt": "2023-03-09T18:42:13.216905+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "d92a446b-8141-43d5-82b1-4b98b2bbc8c4",
+                "name": "laced"
+            }
+        },
+        {
+            "id": "a21f09ff-1f4a-4d96-9340-6efc91d2b101",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 414,
+            "priceGbp": 369,
+            "priceUsd": 436,
+            "pricePln": 1942,
+            "priceChf": 411,
+            "priceDkk": 3081,
+            "priceSek": 4684,
+            "payoutEur": 375,
+            "payoutGbp": 334,
+            "payoutUsd": 395,
+            "payoutPln": 1759,
+            "payoutChf": 372,
+            "payoutDkk": 2791,
+            "payoutSek": 4243,
+            "createdAt": "2023-03-09T18:42:09.538584+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "978aae97-a40a-4f4e-a666-e06251c79b2f",
+                "name": "hypeboost"
+            }
+        },
+        {
+            "id": "54107eb6-892b-488d-8c8e-b4b1817df9ae",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 421,
+            "priceGbp": 375,
+            "priceUsd": 443,
+            "pricePln": 1974,
+            "priceChf": 418,
+            "priceDkk": 3133,
+            "priceSek": 4763,
+            "payoutEur": 355,
+            "payoutGbp": 316,
+            "payoutUsd": 374,
+            "payoutPln": 1665,
+            "payoutChf": 352,
+            "payoutDkk": 2642,
+            "payoutSek": 4017,
+            "createdAt": "2023-03-09T18:41:47.816803+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "650a31ba-0052-4934-b32e-9540f2d9eab5",
+                "name": "klekt"
+            }
+        },
+        {
+            "id": "e03abd79-d219-4dc4-9ac8-3e85c3c9325e",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 318,
+            "priceGbp": 283,
+            "priceUsd": 335,
+            "pricePln": 1491,
+            "priceChf": 315,
+            "priceDkk": 2366,
+            "priceSek": 3598,
+            "payoutEur": 275,
+            "payoutGbp": 245,
+            "payoutUsd": 290,
+            "payoutPln": 1290,
+            "payoutChf": 273,
+            "payoutDkk": 2046,
+            "payoutSek": 3111,
+            "createdAt": "2023-03-09T18:41:42.451434+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "266064e5-5839-4958-b76d-3e560c59da03",
+                "name": "alias"
+            }
+        },
+        {
+            "id": "8d6871d1-d587-4d31-b439-faf4c5787fea",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 413,
+            "priceGbp": 365,
+            "priceUsd": 438,
+            "pricePln": 1945,
+            "priceChf": 411,
+            "priceDkk": 3074,
+            "priceSek": 4605,
+            "payoutEur": 329,
+            "payoutGbp": 291,
+            "payoutUsd": 349,
+            "payoutPln": 1550,
+            "payoutChf": 328,
+            "payoutDkk": 2450,
+            "payoutSek": 3672,
+            "createdAt": "2023-03-06T21:22:20.335134+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "d92a446b-8141-43d5-82b1-4b98b2bbc8c4",
+                "name": "laced"
+            }
+        },
+        {
+            "id": "ee7548ba-7e5b-4bc7-9fe0-1b469ef07e22",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 411,
+            "priceGbp": 365,
+            "priceUsd": 436,
+            "pricePln": 1934,
+            "priceChf": 411,
+            "priceDkk": 3064,
+            "priceSek": 4581,
+            "payoutEur": 328,
+            "payoutGbp": 291,
+            "payoutUsd": 348,
+            "payoutPln": 1542,
+            "payoutChf": 327,
+            "payoutDkk": 2443,
+            "payoutSek": 3652,
+            "createdAt": "2023-03-04T09:31:05.343909+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "d92a446b-8141-43d5-82b1-4b98b2bbc8c4",
+                "name": "laced"
+            }
+        },
+        {
+            "id": "475fd0bf-5680-4f9b-8fab-64637bf1779b",
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "priceEur": 420,
+            "priceGbp": 372,
+            "priceUsd": 445,
+            "pricePln": 1973,
+            "priceChf": 419,
+            "priceDkk": 3125,
+            "priceSek": 4673,
+            "payoutEur": 380,
+            "payoutGbp": 337,
+            "payoutUsd": 403,
+            "payoutPln": 1788,
+            "payoutChf": 379,
+            "payoutDkk": 2832,
+            "payoutSek": 4234,
+            "createdAt": "2023-03-04T09:31:02.041163+00:00",
+            "product": {
+                "id": "d14e0f74-ea5d-48a8-bd4a-e27a9d7e8653",
+                "name": "Jordan 4 Retro A Ma Maniére Violet Ore",
+                "sku": "DV6773-220"
+            },
+            "platform": {
+                "id": "978aae97-a40a-4f4e-a666-e06251c79b2f",
+                "name": "hypeboost"
+            }
+        }
+    ],
+    "error": null,
+    "usage": {
+        "plan": "API",
+        "remaining": "unlimited"
+    }
+}
+```
+</ResponseExample>

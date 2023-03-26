@@ -1,0 +1,413 @@
+---
+title: "Variants"
+api: "GET https://app.retailed.io/api/v1/sneakers/variants"
+description: "Sneaker variants"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Query Parameters
+
+<ParamField query="id" type="string" optional={true} placeholder="b5242fa5-48a4-444f-bd08-6a5db282b97b">
+    Retailed internal ID
+</ParamField>
+
+<ParamField query="sku" type="string" optional={true} placeholder="DV6773-220">
+    Sneaker code SKU
+</ParamField>
+
+<ParamField query="product_id" type="string" optional={true} placeholder="2f0ad3d7-ea60-423c-923a-d82372f97da8">
+    Retailed internal product ID
+</ParamField>
+
+<ParamField query="size_eu" type="string" optional={true} placeholder="39.5">
+    Sneaker size in EU
+</ParamField>
+
+<ParamField query="size_us" type="string" optional={true} placeholder="6">
+    Sneaker size in US
+</ParamField>
+
+<ParamField query="size_jp" type="string" optional={true} placeholder="24.5">
+    Sneaker size in JP
+</ParamField>
+
+<ParamField query="size_uk" type="string" optional={true} placeholder="6">
+    Sneaker size in UK
+</ParamField>
+
+<ParamField query="csv" type="boolean" optional={true} placeholder="false">
+    Export results to csv
+</ParamField>
+
+### Response
+
+<ResponseField name="data" type="object">
+    Sneaker variants data
+</ResponseField>
+
+<ResponseField name="error" type="object">
+    Not empty if an error occured
+</ResponseField>
+
+<ResponseField name="usage" type="object">
+    API usage
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://app.retailed.io/api/v1/sneakers/variants?sku=DH6927-140' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+    "data": [
+        {
+            "id": "15d94591-dc69-40d1-bd90-2cb995231d6d",
+            "upc": "196151814914",
+            "ean": null,
+            "sizeEu": "49.5",
+            "sizeUs": "15",
+            "sizeJp": "33",
+            "sizeUk": "14",
+            "createdAt": "2022-12-19T13:08:03.677007+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "5a812b34-07dc-463c-be26-e9155224a7fe",
+            "upc": "196151814907",
+            "ean": null,
+            "sizeEu": "48.5",
+            "sizeUs": "14",
+            "sizeJp": "32",
+            "sizeUk": "13",
+            "createdAt": "2022-12-19T13:08:03.168257+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "13bed5d1-4c32-4807-849b-9d97f67181b6",
+            "upc": "196151814891",
+            "ean": null,
+            "sizeEu": "47.5",
+            "sizeUs": "13",
+            "sizeJp": "31",
+            "sizeUk": "12",
+            "createdAt": "2022-12-19T13:08:02.84611+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "360bd4fe-77a2-4434-9847-75e7b944ff50",
+            "upc": "196151814884",
+            "ean": null,
+            "sizeEu": "47",
+            "sizeUs": "12.5",
+            "sizeJp": "30.5",
+            "sizeUk": "11.5",
+            "createdAt": "2022-12-19T13:08:01.590345+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "c08b039f-582a-4dd2-93a8-3bbd76aead5c",
+            "upc": "196151814877",
+            "ean": "151814877",
+            "sizeEu": "46",
+            "sizeUs": "12",
+            "sizeJp": "30",
+            "sizeUk": "11",
+            "createdAt": "2022-12-19T13:08:01.338888+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "d0b6f6b4-0667-4a83-a71d-7247766a0989",
+            "upc": "196151814860",
+            "ean": "0196151814860",
+            "sizeEu": "45.5",
+            "sizeUs": "11.5",
+            "sizeJp": "29.5",
+            "sizeUk": "10.5",
+            "createdAt": "2022-12-19T13:08:01.084686+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "b41262e1-8c55-44ec-8553-0d4f1479f1e9",
+            "upc": "196151814853",
+            "ean": "151814853",
+            "sizeEu": "45",
+            "sizeUs": "11",
+            "sizeJp": "29",
+            "sizeUk": "10",
+            "createdAt": "2022-12-19T13:08:00.786429+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "d8b52a4c-28dc-4457-bf6b-c3d98d75817d",
+            "upc": "196151814846",
+            "ean": null,
+            "sizeEu": "44.5",
+            "sizeUs": "10.5",
+            "sizeJp": "28.5",
+            "sizeUk": "9.5",
+            "createdAt": "2022-12-19T13:08:00.496537+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "27eb58df-1adb-4fbb-b098-a3006cceddac",
+            "upc": "196151814839",
+            "ean": null,
+            "sizeEu": "44",
+            "sizeUs": "10",
+            "sizeJp": "28",
+            "sizeUk": "9",
+            "createdAt": "2022-12-19T13:07:59.663882+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "00d497f6-b4ec-4d6f-a797-9607b8c5b4fc",
+            "upc": "196151814822",
+            "ean": null,
+            "sizeEu": "43",
+            "sizeUs": "9.5",
+            "sizeJp": "27.5",
+            "sizeUk": "8.5",
+            "createdAt": "2022-12-19T13:07:59.388217+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "6f487b03-e14f-435c-b543-51afa3558c26",
+            "upc": "196151814815",
+            "ean": null,
+            "sizeEu": "42.5",
+            "sizeUs": "9",
+            "sizeJp": "27",
+            "sizeUk": "8",
+            "createdAt": "2022-12-19T13:07:59.105042+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "365f0c40-b9d8-4abd-9d98-b63e303a45bb",
+            "upc": "196151814808",
+            "ean": "151814808",
+            "sizeEu": "42",
+            "sizeUs": "8.5",
+            "sizeJp": "26.5",
+            "sizeUk": "7.5",
+            "createdAt": "2022-12-19T13:07:58.782027+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "f6f8e73e-568e-40a7-88ba-a849e2206c9c",
+            "upc": "196151814792",
+            "ean": "2019990896874",
+            "sizeEu": "41",
+            "sizeUs": "8",
+            "sizeJp": "26",
+            "sizeUk": "7",
+            "createdAt": "2022-12-19T13:07:58.480108+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "48511a3e-ea8f-434a-9606-0ece85bd3b2e",
+            "upc": "196151814785",
+            "ean": null,
+            "sizeEu": "40.5",
+            "sizeUs": "7.5",
+            "sizeJp": "25.5",
+            "sizeUk": "6.5",
+            "createdAt": "2022-12-19T13:07:58.22389+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "d97c2ab9-7b74-4097-a24f-c1a4577e12d5",
+            "upc": "196151814778",
+            "ean": "3062612800031",
+            "sizeEu": "40",
+            "sizeUs": "7",
+            "sizeJp": "25",
+            "sizeUk": "6",
+            "createdAt": "2022-12-19T13:07:57.943669+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "79814c38-1c60-42a2-a7b9-6e99aaa57f5c",
+            "upc": "196151814761",
+            "ean": null,
+            "sizeEu": "39",
+            "sizeUs": "6.5",
+            "sizeJp": "24.5",
+            "sizeUk": "6",
+            "createdAt": "2022-12-19T13:07:57.714529+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "4a8833fc-867e-4334-b9ac-08bcb3adbecf",
+            "upc": "196151814754",
+            "ean": null,
+            "sizeEu": "38.5",
+            "sizeUs": "6",
+            "sizeJp": "24",
+            "sizeUk": "5.5",
+            "createdAt": "2022-12-19T13:07:57.471614+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "e9dfb646-0f8d-4165-9cd9-757c0d7ad39d",
+            "upc": "196151814747",
+            "ean": "46877192",
+            "sizeEu": "38",
+            "sizeUs": "5.5",
+            "sizeJp": "24",
+            "sizeUk": "5",
+            "createdAt": "2022-12-19T13:07:57.228273+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "6196a270-febd-4311-820f-5a1ef4660351",
+            "upc": "196151814730",
+            "ean": null,
+            "sizeEu": "37.5",
+            "sizeUs": "5",
+            "sizeJp": "23.5",
+            "sizeUk": "4.5",
+            "createdAt": "2022-12-19T13:07:56.981588+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "c9896b85-daf8-40bb-86d2-ea4e4545a8dc",
+            "upc": "196151814723",
+            "ean": null,
+            "sizeEu": "36.5",
+            "sizeUs": "4.5",
+            "sizeJp": "23.5",
+            "sizeUk": "4",
+            "createdAt": "2022-12-19T13:07:56.732829+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "480f40e1-f7f8-46fc-b45c-be560cdb6d6a",
+            "upc": "196151814716",
+            "ean": null,
+            "sizeEu": "36",
+            "sizeUs": "4",
+            "sizeJp": "23",
+            "sizeUk": "3.5",
+            "createdAt": "2022-12-19T13:07:56.483115+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        },
+        {
+            "id": "24229457-1183-4796-884b-e2f1e8656f4f",
+            "upc": "196151814709",
+            "ean": null,
+            "sizeEu": "35.5",
+            "sizeUs": "3.5",
+            "sizeJp": "22.5",
+            "sizeUk": "3",
+            "createdAt": "2022-12-19T13:07:56.213879+00:00",
+            "product": {
+                "id": "7d4c66bb-6cf2-4c43-98ca-14b031c2b9f6",
+                "name": "Jordan 4 Retro Midnight Navy",
+                "sku": "DH6927-140"
+            }
+        }
+    ],
+    "error": null,
+    "usage": {
+        "plan": "API",
+        "remaining": "unlimited"
+    }
+}
+```
+</ResponseExample>

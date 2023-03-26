@@ -1,0 +1,95 @@
+---
+title: "360 Images"
+api: "GET https://app.retailed.io/api/v1/sneakers/product_360"
+description: "Get 360 images of sneakers"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Query Parameters
+
+<ParamField query="id" type="string" optional={true} placeholder="b5242fa5-48a4-444f-bd08-6a5db282b97b">
+    Retailed internal ID
+</ParamField>
+
+<ParamField query="sku" type="string" optional={true} placeholder="DV6773-220">
+    Sneaker code SKU
+</ParamField>
+
+### Response
+
+<ResponseField name="data" type="list">
+    Urls of 360 images
+</ResponseField>
+
+<ResponseField name="error" type="object">
+    Not empty if an error occured
+</ResponseField>
+
+<ResponseField name="usage" type="object">
+    API usage
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://app.retailed.io/api/v1/sneakers/product_360?sku=DH6927-140' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+    "data": [
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image1.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image2.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image3.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image4.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image5.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image6.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image7.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image8.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image9.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image10.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image11.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image12.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image13.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image14.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image15.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image16.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image17.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image18.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image19.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image20.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image21.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image22.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image23.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image24.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image25.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image26.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image27.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image28.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image29.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image30.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image31.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image32.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image33.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image34.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image35.webp",
+        "https://retailed.fra1.digitaloceanspaces.com/product/360/jordan-4-retro-midnight-navy/image36.webp"
+    ],
+    "error": null,
+    "usage": {
+        "plan": "API",
+        "remaining": "unlimited"
+    }
+}
+```
+</ResponseExample>
