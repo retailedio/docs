@@ -87,6 +87,17 @@
           ]
         }
       ]
+    },
+    {
+      "group": "Help",
+        "pages": [
+          {
+            "group": "Wordpress",
+            "pages": [
+              "help/wordpress/create_woocommerce_product"
+            ]
+          }
+        ]
     }
   ],
   "footerSocials": {

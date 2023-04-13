@@ -1,0 +1,87 @@
+---
+title: "Create a product on WordPress"
+description: "Learn how to create a product on WordPress with the WooCommerce plugin."
+---
+
+This article will show you how to create a product on WordPress with the WooCommerce plugin.
+
+Syncing your products with our API is done automatically with Retailed Business Suite. You don't need to do anything.
+
+## Requirements
+
+- WordPress
+- WooCommerce Plugin
+- [WooCommerce 360 Image Plugin](https://woocommerce.com/products/woocommerce-360-image/)
+- [WooCommerce Google Product Feed Plugin](https://woocommerce.com/products/google-product-feed/)
+
+## Product Creation
+
+1. Log into your WordPress dashboard.
+2. Click on **Products** > **Add new product** in the left sidebar.
+3. Select "Variable Product" from the dropdown menu.
+
+<Frame>
+    <img src="/images/wp/create_wp_product_variants.png" alt="Add Product" />
+</Frame>
+
+4. Add a product SKU
+
+<Frame>
+    <img src="/images/wp/create_wp_product_sku.png" alt="Add SKU" />
+</Frame>
+
+5. Add attribut "Size". Don't forget to click on "Used for variations" to make the attribut available for the variants.
+
+<Tip>If the API doesn't have a price, size will not be available for sale. But if in the future the API finds data, the price of the size will be updated and available for sale again).</Tip>
+
+<Frame>
+    <img src="/images/wp/create_wp_product_attributs.png" alt="Add Attributs" />
+</Frame>
+
+<Note>
+    If you want to add a GS-W-PS-TD SKU on the product, you need to add a "Size" attribut with the value "SKU (xx)".
+    Example: "SKU (GS)" with the value "DQ5130-400".
+</Note>
+
+Create an attribute and fill in the SKU. Our synchronization will compare the prices and select the lowest.
+
+Don't check "Used for variations" for this attribute.
+
+<Frame>
+    <img src="/images/wp/create_wp_product_attribut_sku.png" alt="Add SKU variant" />
+</Frame>
+
+Name available :
+- `SKU (GS)`
+- `SKU (W)`
+- `SKU (PS)`
+- `SKU (TD)`
+
+6. Click on "Save Attributes" to save the attributs.
+7. Click on "Variations" in the left sidebar.
+8. Click on "Create variations from all attributes" to create the variants.
+
+<Frame>
+    <img src="/images/wp/create_wp_product_create_att.png" alt="Create Attributs" />
+</Frame>
+
+9. Click on "Save variations" to save the variants.
+
+<Frame>
+    <img src="/images/wp/create_wp_product_create_save_variants.png" alt="Create Variants" />
+</Frame>
+
+10. Save the product by selecting "Save Draft". The product will not be visible on your store until you publish it.
+
+<Frame>
+    <img src="/images/wp/create_wp_product_save.png" alt="Save Product" />
+</Frame>
+
+Once saved, the product will **be updated by our synchronization within ~5min**.
+
+## Fields updated
+- Name
+- Description
+- Price
+- Images
+- Stock (unlimited or not)
