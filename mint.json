@@ -89,6 +89,22 @@
       ]
     },
     {
+      "group": "StockX",
+      "pages": [
+        {
+          "group": "Product",
+          "pages": [
+            "database/stockx/search",
+            "database/stockx/product",
+            "database/stockx/product_360",
+            "database/stockx/product_activity",
+            "database/stockx/product_graph"
+          ]
+        },
+        "database/stockx/trends"
+      ]
+    },
+    {
       "group": "Help",
         "pages": [
           {

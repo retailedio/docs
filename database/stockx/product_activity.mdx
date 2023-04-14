@@ -1,0 +1,346 @@
+---
+title: "StockX Product Activity"
+api: "GET https://app.retailed.io/api/v1/stockx/product/activity"
+description: "Get StockX product activity"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="nike-air-max-1-travis-scott-wheat">
+    Product query : `air-jordan-3-retro-white-cement-reimagined` or `c318bbcc-312a-4396-9252-698c203d1dea`
+</ParamField>
+
+<ParamField query="type" type="string" optional={false} placeholder="bid">
+    Type : `ask`, `bid`, or `sale`
+</ParamField>
+
+<ParamField query="country" type="string" optional={false} placeholder="US">
+    Country code : `US` or `FR`.
+</ParamField>
+
+<ParamField query="currency" type="string" optional={false} placeholder="USD">
+    Currency code : `USD` or `EUR`.
+</ParamField>
+
+### Response
+
+<ResponseField name="object" type="Product Object">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="bids" type="list">
+            <Expandable title="properties" defaultOpen={true}>
+                <ResponseField name="amount" type="string">
+                    Amount of the bid.
+                </ResponseField>
+                <ResponseField name="count" type="string">
+                    Number of bids.
+                </ResponseField>
+                <ResponseField name="size" type="string">
+                    Size of the bid.
+                </ResponseField>
+            </Expandable>
+        </ResponseField>
+        <ResponseField name="asks" type="list">
+            <Expandable title="properties" defaultOpen={true}>
+                <ResponseField name="amount" type="string">
+                    Amount of the ask.
+                </ResponseField>
+                <ResponseField name="count" type="string">
+                    Number of asks.
+                </ResponseField>
+                <ResponseField name="size" type="string">
+                    Size of the ask.
+                </ResponseField>
+            </Expandable>
+        </ResponseField>
+        <ResponseField name="sales" type="list">
+            <Expandable title="properties" defaultOpen={true}>
+                <ResponseField name="amount" type="string">
+                    Amount of the sale.
+                </ResponseField>
+                <ResponseField name="count" type="string">
+                    Number of sales.
+                </ResponseField>
+                <ResponseField name="size" type="string">
+                    Size of the sale.
+                </ResponseField>
+            </Expandable>
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash activity
+curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product/activity?query=lego-star-wars-tie-fighter-set-9492&type=bid' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json activity
+{
+    "bids": [
+    {
+        "amount": "348",
+        "count": 1,
+        "size": "12.5"
+    },
+    {
+        "amount": "329",
+        "count": 1,
+        "size": "11.5"
+    },
+    {
+        "amount": "317",
+        "count": 1,
+        "size": "10"
+    },
+    {
+        "amount": "309",
+        "count": 1,
+        "size": "9.5"
+    },
+    {
+        "amount": "308",
+        "count": 1,
+        "size": "11.5"
+    },
+    {
+        "amount": "307",
+        "count": 1,
+        "size": "10"
+    },
+    {
+        "amount": "304",
+        "count": 1,
+        "size": "12"
+    },
+    {
+        "amount": "303",
+        "count": 1,
+        "size": "11"
+    },
+    {
+        "amount": "303",
+        "count": 1,
+        "size": "10.5"
+    },
+    {
+        "amount": "298",
+        "count": 2,
+        "size": "10"
+    },
+    {
+        "amount": "298",
+        "count": 1,
+        "size": "12"
+    },
+    {
+        "amount": "297",
+        "count": 1,
+        "size": "10.5"
+    },
+    {
+        "amount": "296",
+        "count": 1,
+        "size": "9.5"
+    },
+    {
+        "amount": "294",
+        "count": 1,
+        "size": "10.5"
+    },
+    {
+        "amount": "294",
+        "count": 1,
+        "size": "12"
+    },
+    {
+        "amount": "294",
+        "count": 1,
+        "size": "10"
+    },
+    {
+        "amount": "292",
+        "count": 1,
+        "size": "8.5"
+    },
+    {
+        "amount": "290",
+        "count": 1,
+        "size": "10.5"
+    },
+    {
+        "amount": "290",
+        "count": 1,
+        "size": "12.5"
+    },
+    {
+        "amount": "287",
+        "count": 1,
+        "size": "10"
+    },
+    {
+        "amount": "287",
+        "count": 1,
+        "size": "13"
+    },
+    {
+        "amount": "287",
+        "count": 1,
+        "size": "12.5"
+    },
+    {
+        "amount": "286",
+        "count": 1,
+        "size": "8.5"
+    },
+    {
+        "amount": "286",
+        "count": 1,
+        "size": "8"
+    },
+    {
+        "amount": "285",
+        "count": 1,
+        "size": "8.5"
+    },
+    {
+        "amount": "285",
+        "count": 1,
+        "size": "8"
+    },
+    {
+        "amount": "285",
+        "count": 2,
+        "size": "10"
+    },
+    {
+        "amount": "284",
+        "count": 1,
+        "size": "8.5"
+    },
+    {
+        "amount": "283",
+        "count": 1,
+        "size": "9.5"
+    },
+    {
+        "amount": "282",
+        "count": 1,
+        "size": "10"
+    },
+    {
+        "amount": "282",
+        "count": 1,
+        "size": "11"
+    },
+    {
+        "amount": "281",
+        "count": 1,
+        "size": "9.5"
+    },
+    {
+        "amount": "281",
+        "count": 1,
+        "size": "10"
+    },
+    {
+        "amount": "281",
+        "count": 1,
+        "size": "10.5"
+    },
+    {
+        "amount": "280",
+        "count": 1,
+        "size": "13"
+    },
+    {
+        "amount": "278",
+        "count": 1,
+        "size": "8"
+    },
+    {
+        "amount": "276",
+        "count": 1,
+        "size": "10.5"
+    },
+    {
+        "amount": "276",
+        "count": 2,
+        "size": "10"
+    },
+    {
+        "amount": "276",
+        "count": 1,
+        "size": "13"
+    },
+    {
+        "amount": "276",
+        "count": 4,
+        "size": "9.5"
+    },
+    {
+        "amount": "276",
+        "count": 2,
+        "size": "12"
+    },
+    {
+        "amount": "275",
+        "count": 1,
+        "size": "11.5"
+    },
+    {
+        "amount": "275",
+        "count": 1,
+        "size": "8.5"
+    },
+    {
+        "amount": "275",
+        "count": 3,
+        "size": "10.5"
+    },
+    {
+        "amount": "275",
+        "count": 1,
+        "size": "9"
+    },
+    {
+        "amount": "275",
+        "count": 1,
+        "size": "12"
+    },
+    {
+        "amount": "274",
+        "count": 1,
+        "size": "10.5"
+    },
+    {
+        "amount": "274",
+        "count": 1,
+        "size": "11"
+    },
+    {
+        "amount": "272",
+        "count": 2,
+        "size": "8.5"
+    },
+    {
+        "amount": "272",
+        "count": 1,
+        "size": "11.5"
+    }
+    ],
+    "asks": [],
+    "sales": []
+}
+```
+</ResponseExample>

@@ -1,0 +1,1071 @@
+---
+title: "StockX Trends"
+api: "GET https://app.retailed.io/api/v1/stockx/trends"
+description: "Get the latest trends from StockX"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="Air Jordan Retro">
+    Category query : `sneakers`, `streetwear`, `electronics`, `trading cards`, `collectibles`, `apparel`, `handbags`, `watches`
+</ParamField>
+
+<ParamField query="sort_by" type="string" optional={true} placeholder="release_date">
+    Sort by : `featured`, `most_active` or `release_date`
+</ParamField>
+
+<ParamField query="country" type="string" optional={false} placeholder="US">
+    Country code : `US` or `FR`
+</ParamField>
+
+
+### Response
+
+<ResponseField name="list" type="Products List">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="id" type="string">
+            StockX product id
+        </ResponseField>
+        <ResponseField name="slug" type="string">
+            StockX product slug
+        </ResponseField>
+        <ResponseField name="name" type="string">
+            Product name
+        </ResponseField>
+        <ResponseField name="sku" type="string">
+            Product SKU
+        </ResponseField>
+        <ResponseField name="brand" type="string">
+            Product brand
+        </ResponseField>
+        <ResponseField name="image" type="string">
+            Product image
+        </ResponseField>
+        <ResponseField name="colorway" type="string">
+            Product colorway
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash trends
+curl --location --request GET 'https://app.retailed.io/api/v1/stockx/trends?query=sneakers&sort_by=most_active' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json trends
+[
+    {
+        "id": "6693bae8-39f1-4809-a6a3-b26c91a7aa5a",
+        "slug": "a-bathing-ape-bape-sk8-sta-grey-gold-white",
+        "name": "A Bathing Ape Bape SK8 Sta Grey Gold White",
+        "brand": "bape",
+        "sku": "1J30-291-025/1J30-191-025",
+        "image": "https://images.stockx.com/images/A-Bathing-Ape-Bape-SK8-Sta-Grey-Gold-White.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-14"
+    },
+    {
+        "id": "0b450075-9f93-4423-8677-4d8029ff7348",
+        "slug": "nike-air-force-1-low-07-spring-mix-womens",
+        "name": "Nike Air Force 1 Low '07 Spring Mix (Women's)",
+        "brand": "nike",
+        "sku": "FJ4591-441",
+        "image": "https://images.stockx.com/images/Nike-Air-Force-1-Low-07-Spring-Mix-Womens.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-13"
+    },
+    {
+        "id": "f5460bde-a553-47a2-9fde-7ef21f574047",
+        "slug": "adidas-dublin-city-series-collegiate-royal-solar-red-2023",
+        "name": "adidas Dublin City Series Collegiate Royal Solar Red (2023)",
+        "brand": "adidas",
+        "sku": "GY7384",
+        "image": "https://images.stockx.com/images/adidas-Dublin-City-Series-Collegiate-Royal-Solar-Red-2023.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-13"
+    },
+    {
+        "id": "f038db38-fd88-4572-9ff0-224eec1f3dd4",
+        "slug": "air-jordan-luka-1-easter",
+        "name": "Jordan Luka 1 Easter",
+        "brand": "jordan",
+        "sku": "DN1772-305",
+        "image": "https://images.stockx.com/images/Air-Jordan-Luka-1-Easter.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-13"
+    },
+    {
+        "id": "315ac058-31b8-4d5c-a911-cf9a20f2d829",
+        "slug": "air-jordan-1-elevate-low-french-blue-womens",
+        "name": "Jordan 1 Elevate Low French Blue (Women's)",
+        "brand": "jordan",
+        "sku": "DH7004-400",
+        "image": "https://images.stockx.com/images/Air-Jordan-1-Elevate-Low-French-Blue-Womens.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-13"
+    },
+    {
+        "id": "425376f8-4b88-483b-ab4b-2dad9273d579",
+        "slug": "air-jordan-luka-1-easter-gs",
+        "name": "Jordan Luka 1 Easter (GS)",
+        "brand": "jordan",
+        "sku": "DQ6513-305",
+        "image": "https://images.stockx.com/images/Air-Jordan-Luka-1-Easter-GS.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-13"
+    },
+    {
+        "id": "42ad3f4b-5c52-4747-bd5e-06ce62c7e58b",
+        "slug": "converse-chuck-taylor-all-star-70-hi-devin-booker-the-next-icon",
+        "name": "Converse Chuck Taylor All-Star 70 Hi Devin Booker The Next Icon",
+        "brand": "converse",
+        "sku": "A05290C",
+        "image": "https://images.stockx.com/images/Converse-Chuck-Taylor-All-Star-70-Hi-Devin-Booker-The-Next-Icon.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-12"
+    },
+    {
+        "id": "3a29d108-d020-4773-a128-e10688ab53f4",
+        "slug": "nike-moc-flow-sp-undercover-black",
+        "name": "Nike Moc Flow SP Undercover Black",
+        "brand": "nike",
+        "sku": "DV5593-002",
+        "image": "https://images.stockx.com/images/Nike-Moc-Flow-SP-Undercover-Black.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-12"
+    },
+    {
+        "id": "e44da8e3-3ce1-436b-a776-32cacb27259a",
+        "slug": "nike-moc-flow-sp-undercover-ale-brown-team-royal",
+        "name": "Nike Moc Flow SP Undercover Ale Brown Team Royal",
+        "brand": "nike",
+        "sku": "DV5593-201",
+        "image": "https://images.stockx.com/images/Nike-Moc-Flow-SP-Undercover-Ale-Brown-Team-Royal.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-12"
+    },
+    {
+        "id": "4d15cebe-33a9-4aa3-a6b9-7609d8c76900",
+        "slug": "nike-dunk-low-black-panda-20-td",
+        "name": "Nike Dunk Low Black Panda 2.0 (TD)",
+        "brand": "nike",
+        "sku": "FD1233-001",
+        "image": "https://images.stockx.com/images/Nike-Dunk-Low-Black-Panda-20-TD.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-12"
+    },
+    {
+        "id": "4ef9282f-10d5-4294-8833-69aa6473f2e7",
+        "slug": "nike-dunk-low-black-panda-20-ps",
+        "name": "Nike Dunk Low Black Panda 2.0 (PS)",
+        "brand": "nike",
+        "sku": "FD1228-001",
+        "image": "https://images.stockx.com/images/Nike-Dunk-Low-Black-Panda-20-PS.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-12"
+    },
+    {
+        "id": "03c9cff4-d31c-41c5-afab-3bb6b6799eb7",
+        "slug": "air-jordan-1-mid-strawberries-and-cream-womens",
+        "name": "Jordan 1 Mid Strawberries and Cream (Women's)",
+        "brand": "jordan",
+        "sku": "BQ6472-186",
+        "image": "https://images.stockx.com/images/Air-Jordan-1-Mid-Strawberries-and-Cream-Womens-Product.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-11"
+    },
+    {
+        "id": "9b2815aa-cd03-49fd-90fe-88fdcabb46e7",
+        "slug": "mschf-bwd-shoe",
+        "name": "MSCHF BWD Shoe",
+        "brand": "mschf",
+        "sku": "MSCHF-004",
+        "image": "https://images.stockx.com/images/MSCHF-BWD-Shoe.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-11"
+    },
+    {
+        "id": "6a3fb90e-fc44-47c4-b647-fe6f9b96fd04",
+        "slug": "nike-dunk-mid-panda",
+        "name": "Nike Dunk Mid Panda",
+        "brand": "nike",
+        "sku": "DV0830-102",
+        "image": "https://images.stockx.com/images/Nike-Dunk-Mid-Panda.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-11"
+    },
+    {
+        "id": "1e20846e-c3f4-4837-bc8d-3aa5465d9bed",
+        "slug": "air-jordan-1-mid-lucky-green-aquatone-womens",
+        "name": "Jordan 1 Mid Lucky Green Aquatone (Women's)",
+        "brand": "jordan",
+        "sku": "BQ6472-033",
+        "image": "https://images.stockx.com/images/Air-Jordan-1-Mid-Lucky-Green-Aquatone.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-11"
+    },
+    {
+        "id": "3d0e58cd-ddd0-4132-8cd7-26dab04cad31",
+        "slug": "nike-air-max-1-time-warp",
+        "name": "Nike Air Max 1 Time Warp",
+        "brand": "nike",
+        "sku": "FJ5472-121",
+        "image": "https://images.stockx.com/images/Nike-Air-Max-1-Time-Warp.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-11"
+    },
+    {
+        "id": "e6a07f1a-e63e-479d-b86a-8baeab16a866",
+        "slug": "nike-air-vapormax-plus-rainbow-womens",
+        "name": "Nike Air VaporMax Plus Rainbow (Women's)",
+        "brand": "nike",
+        "sku": "FJ4550-606",
+        "image": "https://images.stockx.com/images/Nike-Air-VaporMax-Plus-Rainbow-Womens.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-11"
+    },
+    {
+        "id": "29203a06-12f8-4f98-b29b-ad1153b78323",
+        "slug": "nike-air-force-1-low-07-prm-pearl-pink-gum-womens",
+        "name": "Nike Air Force 1 Low '07 PRM Pearl Pink Gum (Women's)",
+        "brand": "nike",
+        "sku": "DR9503-601",
+        "image": "https://images.stockx.com/images/Nike-Air-Force-1-Low-07-PRM-Pearl-Pink-Gum-Womens.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-11"
+    },
+    {
+        "id": "94e263cf-9823-4df4-81af-b5004f178be6",
+        "slug": "air-jordan-1-mid-se-craft-tech-grey",
+        "name": "Jordan 1 Mid SE Craft Tech Grey",
+        "brand": "jordan",
+        "sku": "DM9652-120",
+        "image": "https://images.stockx.com/images/Air-Jordan-1-Mid-SE-Craft-Tech-Grey.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-11"
+    },
+    {
+        "id": "fcb44eef-b64b-4d06-84cc-279db82e0876",
+        "slug": "nike-little-posite-one-polarized-pink-gs",
+        "name": "Nike Little Posite One Polarized Pink (GS)",
+        "brand": "nike",
+        "sku": "DX1947-600",
+        "image": "https://images.stockx.com/images/Nike-Little-Posite-One-Polarized-Pink-GS.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-10"
+    },
+    {
+        "id": "6d609bf2-5904-4fcc-ac59-9dcd6432eaf9",
+        "slug": "nike-air-force-1-low-07-lv8-time-warp-royal",
+        "name": "Nike Air Force 1 Low '07 LV8 Time Warp Royal",
+        "brand": "nike",
+        "sku": "FJ5471-121",
+        "image": "https://images.stockx.com/images/Nike-Air-Force-1-Low-07-LV8-Time-Warp-Royal.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-10"
+    },
+    {
+        "id": "ee489371-ab79-4b4c-a1aa-bdd44de66282",
+        "slug": "adidas-gazelle-legend-ink-gum",
+        "name": "adidas Gazelle Legend Ink Gum",
+        "brand": "adidas",
+        "sku": "GY7369",
+        "image": "https://images.stockx.com/images/adidas-Gazelle-Legend-Ink-Gum.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-09"
+    },
+    {
+        "id": "58fe3837-63a3-4774-94f1-e4e45174c521",
+        "slug": "air-jordan-1-retro-high-og-skyline",
+        "name": "Jordan 1 Retro High OG Skyline",
+        "brand": "jordan",
+        "sku": "DX0054-805",
+        "image": "https://images.stockx.com/images/Air-Jordan-1-Retro-High-OG-Skyline-Product.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-08"
+    },
+    {
+        "id": "4374def0-1ad3-453d-abe9-55870d8d296f",
+        "slug": "nike-zoom-gt-cut-2-pearl-pink",
+        "name": "Nike Zoom GT Cut 2 Pearl Pink",
+        "brand": "nike",
+        "sku": "DJ6015-602",
+        "image": "https://images.stockx.com/images/Nike-Zoom-GT-Cut-2-Pearl-Pink.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-08"
+    },
+    {
+        "id": "85a21ae7-bfa5-4547-9915-1b8cdf804073",
+        "slug": "salomon-xt-6-atmos-stars-collide",
+        "name": "Salomon XT-6 atmos Stars Collide",
+        "brand": "salomon",
+        "sku": "L47346600",
+        "image": "https://images.stockx.com/images/Salomon-XT-6-atmos-Stars-Collide.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-08"
+    },
+    {
+        "id": "a90e675e-340b-4ccf-b873-eb4845e8ea79",
+        "slug": "nike-air-force-1-low-four-horsemen-lebron",
+        "name": "Nike Air Force 1 Low Four Horsemen LeBron",
+        "brand": "nike",
+        "sku": "FB9128-100",
+        "image": "https://images.stockx.com/images/Nike-Air-Force-1-Low-Four-Horsemen-LeBron-Product.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-08"
+    },
+    {
+        "id": "81f1d5b2-7e6b-4a3c-ba4f-71321110975f",
+        "slug": "air-jordan-2-retro-low-craft-atmosphere",
+        "name": "Jordan 2 Retro Low Craft Atmosphere",
+        "brand": "jordan",
+        "sku": "DX6930-600",
+        "image": "https://images.stockx.com/images/Air-Jordan-2-Retro-Low-Craft-Atmosphere.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-08"
+    },
+    {
+        "id": "264845a5-c69b-432d-acbf-f536980f0a09",
+        "slug": "nike-zoom-vomero-5-light-bone-yellow-w",
+        "name": "Nike Zoom Vomero 5 Light Bone Yellow (Women's)",
+        "brand": "nike",
+        "sku": "FJ7694-020",
+        "image": "https://images.stockx.com/images/Nike-Zoom-Vomero-5-Light-Bone-Yellow-W.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-08"
+    },
+    {
+        "id": "beae6b2d-bb8f-423c-96b3-51d1148db102",
+        "slug": "air-jordan-1-retro-low-golf-phantom-volt",
+        "name": "Jordan 1 Retro Low Golf Phantom Volt",
+        "brand": "jordan",
+        "sku": "DD9315-108",
+        "image": "https://images.stockx.com/images/Air-Jordan-1-Retro-Low-Golf-Phantom-Volt.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-08"
+    },
+    {
+        "id": "71f4ffb2-190c-49ce-a6e7-e2d3809af644",
+        "slug": "puma-plexus-juunj-black",
+        "name": "Puma Plexus Juun.J Black",
+        "brand": "puma",
+        "sku": "391697-01",
+        "image": "https://images.stockx.com/images/Puma-Plexus-JuunJ-Black.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-08"
+    },
+    {
+        "id": "31dc9325-dc9e-47a4-b001-4da463db5ddd",
+        "slug": "nike-air-max-plus-black-pink-2023",
+        "name": "Nike Air Max Plus Black Pink (2023)",
+        "brand": "nike",
+        "sku": "FJ5481-010",
+        "image": "https://images.stockx.com/images/Nike-Air-Max-Plus-Black-Pink-2023.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-08"
+    },
+    {
+        "id": "d4ccad0d-8553-4777-a5ad-7f596d6fe349",
+        "slug": "asics-gel-1130-mk-ii-hal-studio-forest",
+        "name": "Asics Gel-1130 MK-II HAL Studio Forest",
+        "brand": "asics",
+        "sku": "",
+        "image": "https://images.stockx.com/images/Asics-Gel-1130-MK-II-HAL-Studio-Forest.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-08"
+    },
+    {
+        "id": "2448dfd6-709d-4f27-af36-2e7ffa848b26",
+        "slug": "nike-air-foamposite-one-penny-pe",
+        "name": "Nike Air Foamposite One Penny PE",
+        "brand": "nike",
+        "sku": "DV0815-100",
+        "image": "https://images.stockx.com/images/Nike-Air-Foamposite-One-Penny-PE-Product.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-07"
+    },
+    {
+        "id": "c5135c3e-0c5b-4ffd-a8b9-fdf25aaa63d7",
+        "slug": "nike-sb-dunk-low-pro-midnight-navy-desert-ochre",
+        "name": "Nike SB Dunk Low Pro PRM 90s Backpack",
+        "brand": "nike",
+        "sku": "DX6775-400",
+        "image": "https://images.stockx.com/images/Nike-SB-Dunk-Low-Pro-Midnight-Navy-Desert-Ochre.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-07"
+    },
+    {
+        "id": "84b171f0-f109-4f86-815f-e5eb928a221d",
+        "slug": "air-jordan-tatum-1-zoo",
+        "name": "Jordan Tatum 1 Zoo",
+        "brand": "jordan",
+        "sku": "DX5572-001/DX6734-001",
+        "image": "https://images.stockx.com/images/Air-Jordan-Tatum-1-Zoo-Product.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-07"
+    },
+    {
+        "id": "727838c6-8789-4ee9-a53f-ea921548d85e",
+        "slug": "new-balance-990v6-miusa-black-grey-white",
+        "name": "New Balance 990v6 MiUSA Black Grey White",
+        "brand": "new balance",
+        "sku": "M990BK6",
+        "image": "https://images.stockx.com/images/New-Balance-990v6-MiUSA-Black-Grey-White.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-07"
+    },
+    {
+        "id": "76dc7670-8ccd-453a-997f-85fea0792bc9",
+        "slug": "nike-air-foamposite-one-penny-pe-gs",
+        "name": "Nike Little Posite One Penny PE (GS)",
+        "brand": "nike",
+        "sku": "DV2238-100",
+        "image": "https://images.stockx.com/images/Nike-Air-Foamposite-One-Penny-PE-GS.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-07"
+    },
+    {
+        "id": "d7dea94c-2ec5-4a2f-acf3-f78702fcce5b",
+        "slug": "a-bathing-ape-mad-sta-white-gold",
+        "name": "A Bathing Ape Mad Sta White Gold",
+        "brand": "bape",
+        "sku": "1J30-291-015/1J30-191-015",
+        "image": "https://images.stockx.com/images/A-Bathing-Ape-Mad-Sta-White-Gold.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-07"
+    },
+    {
+        "id": "17200ae2-5a72-4cc1-a63c-e4170a568dcf",
+        "slug": "air-jordan-tatum-1-zoo-ps",
+        "name": "Jordan Tatum 1 Zoo (PS)",
+        "brand": "jordan",
+        "sku": "FJ4654-001",
+        "image": "https://images.stockx.com/images/Air-Jordan-Tatum-1-Zoo-PS.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-07"
+    },
+    {
+        "id": "a842f80a-d2c3-4558-b41d-26ed05d0233d",
+        "slug": "air-jordan-tatum-1-zoo-td",
+        "name": "Jordan Tatum 1 Zoo (TD)",
+        "brand": "jordan",
+        "sku": "FJ4655-001",
+        "image": "https://images.stockx.com/images/Air-Jordan-Tatum-1-Zoo-TD.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-07"
+    },
+    {
+        "id": "6152b721-c13b-4a1a-a4a6-9845663b45dc",
+        "slug": "nike-air-foamposite-one-penny-pe-td",
+        "name": "Nike Little Posite One Penny PE (TD)",
+        "brand": "nike",
+        "sku": "DV2240-100",
+        "image": "https://images.stockx.com/images/Nike-Air-Foamposite-One-Penny-PE-TD.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-07"
+    },
+    {
+        "id": "1b826f99-d14c-4b6e-8817-92393bd43aa4",
+        "slug": "nike-air-foamposite-one-penny-pe-ps",
+        "name": "Nike Little Posite One Penny PE (PS)",
+        "brand": "nike",
+        "sku": "DV2239-100",
+        "image": "https://images.stockx.com/images/Nike-Air-Foamposite-One-Penny-PE-PS.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-07"
+    },
+    {
+        "id": "56b08d04-8b27-4a6f-ae36-5e2a3f501f5d",
+        "slug": "air-jordan-tatum-1-zoo-gs",
+        "name": "Jordan Tatum 1 Zoo (GS)",
+        "brand": "jordan",
+        "sku": "FJ4653-001",
+        "image": "https://images.stockx.com/images/Air-Jordan-Tatum-1-Zoo-GS.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-07"
+    },
+    {
+        "id": "e4c58cf9-1445-45a4-94d6-007537c5bae0",
+        "slug": "under-armour-curry-flow-10-girl-dad",
+        "name": "Under Armour Curry Flow 10 Girl Dad",
+        "brand": "under armour",
+        "sku": "3026273-602",
+        "image": "https://images.stockx.com/images/Under-Armour-Curry-Flow-10-Girl-Dad.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-07"
+    },
+    {
+        "id": "d1f19652-6c42-4bf3-b68b-dbd68c4d35d4",
+        "slug": "new-balance-990v6-miusa-black-grey-white-womens",
+        "name": "New Balance 990v6 MiUSA Black Grey White (Women's)",
+        "brand": "new balance",
+        "sku": "W990BK6",
+        "image": "https://images.stockx.com/images/New-Balance-990v6-MiUSA-Black-Grey-White-Womens.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-07"
+    },
+    {
+        "id": "cae7ae16-0b4a-47c1-861e-15d8d9b6edee",
+        "slug": "under-armour-curry-flow-10-girl-dad-gs",
+        "name": "Under Armour Curry Flow 10 Girl Dad (GS)",
+        "brand": "under armour",
+        "sku": "3026296-600",
+        "image": "https://images.stockx.com/images/under-armour-curry-flow-10-girl-dad-gs.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-07"
+    },
+    {
+        "id": "27507e13-0be5-4dec-b706-8975b1784676",
+        "slug": "puma-lamelo-ball-mb02-orange-glow",
+        "name": "Puma LaMelo Ball MB.02 Orange Glow",
+        "brand": "puma",
+        "sku": "378288-02",
+        "image": "https://images.stockx.com/images/Puma-LaMelo-Ball-MB02-Orange-Glow.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-07"
+    },
+    {
+        "id": "784c6e81-9284-42b4-b4df-6093226b5bcb",
+        "slug": "a-bathing-ape-mad-sta-black-silver",
+        "name": "A Bathing Ape Mad Sta Black Silver",
+        "brand": "bape",
+        "sku": "1J30-291-015/1J30-191-015",
+        "image": "https://images.stockx.com/images/A-Bathing-Ape-Mad-Sta-Black-Silver.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-07"
+    },
+    {
+        "id": "ed94d6f4-98e1-48be-ab3f-4b0fc4c97d38",
+        "slug": "nike-dunk-low-lx-pink-foam-w",
+        "name": "Nike Dunk Low LX Pink Foam (Women's)",
+        "brand": "nike",
+        "sku": "DV3054-600",
+        "image": "https://images.stockx.com/images/Nike-Dunk-Low-LX-Pink-Foam-W-Product.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "17617ead-24ad-4c20-b863-0dfd22a0f09d",
+        "slug": "reebok-club-c-jjjjound-white-olive",
+        "name": "Reebok Club C JJJJound White Olive",
+        "brand": "reebok",
+        "sku": "GX9657",
+        "image": "https://images.stockx.com/images/Reebok-Club-C-JJJJound-White-Olive.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "52d7e33f-61ba-4694-bea9-952b240d69bb",
+        "slug": "nike-lebron-20-black-metallic-gold",
+        "name": "Nike LeBron 20 Black Metallic Gold",
+        "brand": "nike",
+        "sku": "DJ5423-003",
+        "image": "https://images.stockx.com/images/Nike-LeBron-20-Black-Metallic-Gold-Product.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "10330849-f472-4941-be61-987ec918e232",
+        "slug": "nike-lebron-20-uninterrupted-speak-your-truth",
+        "name": "Nike LeBron 20 Uninterrupted Speak Your Truth",
+        "brand": "nike",
+        "sku": "FN0941-001/FN0942-001",
+        "image": "https://images.stockx.com/images/Nike-LeBron-20-Uninterrupted-Speak-Your-Truth.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "ec3e5062-111d-4b41-bcc2-4af94b48a6d2",
+        "slug": "dr-martens-penton-tassel-loafer-supreme-black",
+        "name": "Dr. Martens Penton Tassel Loafer Supreme Black",
+        "brand": "dr. martens",
+        "sku": "31372001",
+        "image": "https://images.stockx.com/images/Dr-Martens-Penton-Tassel-Loafer-Supreme-Black.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "546a3992-6360-4769-83cd-0fa66d786396",
+        "slug": "dr-martens-penton-tassel-loafer-supreme-cow-print",
+        "name": "Dr. Martens Penton Tassel Loafer Supreme Cow Print",
+        "brand": "dr. martens",
+        "sku": "31373935",
+        "image": "https://images.stockx.com/images/Dr-Martens-Penton-Tassel-Loafer-Supreme-Cow-Print-Product.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "35f4af3b-7244-4586-959c-d429ce696494",
+        "slug": "dr-martens-penton-tassel-loafer-supreme-blue",
+        "name": "Dr. Martens Penton Tassel Loafer Supreme Royal",
+        "brand": "dr. martens",
+        "sku": "31372416",
+        "image": "https://images.stockx.com/images/Dr-Martens-Penton-Tassel-Loafer-Supreme-Blue.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "393d8126-3f07-4bd8-8ab4-2a9b767d02d9",
+        "slug": "new-balance-550-white-rain-cloud-womens",
+        "name": "New Balance 550 White Rain Cloud (Women's)",
+        "brand": "new balance",
+        "sku": "BBW550BB",
+        "image": "https://images.stockx.com/images/New-Balance-550-White-Rain-Cloud-Womens.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "e9549ead-a4ec-4c98-a111-32eb8992bdae",
+        "slug": "nike-air-force-1-low-07-retro-color-of-the-month-jewel-swoosh-triple-white",
+        "name": "Nike Air Force 1 Low '07 Retro Color of the Month Jewel Swoosh Triple White",
+        "brand": "nike",
+        "sku": "FN5924-100",
+        "image": "https://images.stockx.com/images/Nike-Air-Force-1-Low-07-Retro-Color-of-the-Month-Jewel-Swoosh-Triple-White.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "004d956f-b4e7-4c52-9ae5-20139df0da07",
+        "slug": "nike-dunk-high-wheat-gold-safety-orange",
+        "name": "Nike Dunk High Wheat Gold Safety Orange",
+        "brand": "nike",
+        "sku": "DV7215-700",
+        "image": "https://images.stockx.com/images/Nike-Dunk-High-Wheat-Gold-Safety-Orange.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "3440bf56-74df-4eeb-8adf-44c648679dcc",
+        "slug": "new-balance-550-white-blue-red",
+        "name": "New Balance 550 White True Red Atlantic Blue",
+        "brand": "new balance",
+        "sku": "BB550NCH",
+        "image": "https://images.stockx.com/images/New-Balance-550-White-Blue-Red.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "92619a1d-c3ba-48e7-9442-c95884ac9811",
+        "slug": "new-balance-550-turtledove",
+        "name": "New Balance 550 Turtledove",
+        "brand": "new balance",
+        "sku": "BB550HSA",
+        "image": "https://images.stockx.com/images/New-Balance-550-Turtledove.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "ddef765b-6a5e-45af-90ac-53afc06f42c6",
+        "slug": "reebok-club-c-85-jjjjound-core-black",
+        "name": "Reebok Club C 85 JJJJound Core Black",
+        "brand": "reebok",
+        "sku": "IG8240",
+        "image": "https://images.stockx.com/images/Reebok-Club-C-85-JJJJound-Core-Black.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "f56ad21a-34ee-4654-94f3-1df60b9eb917",
+        "slug": "nike-air-vapormax-2023-flyknit-oreo",
+        "name": "Nike Air VaporMax 2023 Flyknit Oreo",
+        "brand": "nike",
+        "sku": "DV1678-001",
+        "image": "https://images.stockx.com/images/Nike-Air-VaporMax-2023-Flyknit-Oreo.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "be17b8b2-6315-4475-940d-eba289be33bf",
+        "slug": "new-balance-550-la-rams",
+        "name": "New Balance 550 LA Rams",
+        "brand": "new balance",
+        "sku": "BB550NCG",
+        "image": "https://images.stockx.com/images/New-Balance-550-La-Rams.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "3e498350-4dbb-44b6-8e05-e675717fff38",
+        "slug": "new-balance-550-granite",
+        "name": "New Balance 550 Granite",
+        "brand": "new balance",
+        "sku": "BB550HSB",
+        "image": "https://images.stockx.com/images/New-Balance-550-Granite.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "a390f50a-ee1c-4e05-8bd5-2557262db292",
+        "slug": "nike-dunk-high-retro-flc-black-university-blue-white",
+        "name": "Nike Dunk High Retro FLC Black University Blue White",
+        "brand": "nike",
+        "sku": "FJ4210-001",
+        "image": "https://images.stockx.com/images/Nike-Dunk-High-Retro-FLC-Black-University-Blue-White.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "ed424f99-963e-4267-89eb-8555663938e8",
+        "slug": "converse-chuck-taylor-all-star-70-hi-liverpool-fc",
+        "name": "Converse Chuck Taylor All-Star 70 Hi Liverpool F.C",
+        "brand": "converse",
+        "sku": "A05964C",
+        "image": "https://images.stockx.com/images/Converse-Chuck-Taylor-All-Star-70-Hi-Liverpool-FC.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "2bf840d1-eef2-4b75-a638-d5ed37ceab85",
+        "slug": "nike-lebron-20-black-metallic-gold-gs",
+        "name": "Nike LeBron 20 Black Metallic Gold (GS)",
+        "brand": "nike",
+        "sku": "DQ8651-003",
+        "image": "https://images.stockx.com/images/Nike-LeBron-20-Black-Metallic-Gold-GS.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "04320510-e449-421c-8aa3-2f6fd928410e",
+        "slug": "nike-air-vapormax-2023-flyknit-pure-platinum",
+        "name": "Nike Air VaporMax 2023 Flyknit Pure Platinum",
+        "brand": "nike",
+        "sku": "DV1678-002",
+        "image": "https://images.stockx.com/images/Nike-Air-VaporMax-2023-Flyknit-Pure-Platinum.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "a6f29b94-00de-4f76-bdf1-920b5fa74313",
+        "slug": "converse-run-star-hike-platform-liverpool-fc",
+        "name": "Converse Run Star Hike Platform Liverpool F.C",
+        "brand": "converse",
+        "sku": "A05965C",
+        "image": "https://images.stockx.com/images/Converse-Run-Star-Hike-Platform-Liverpool-FC.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "bd67a480-7e37-48f7-ba19-6492a349432d",
+        "slug": "nike-air-vapormax-2023-flyknit-white-pure-platinum-womens",
+        "name": "Nike Air VaporMax 2023 Flyknit White Pure Platinum (Women's)",
+        "brand": "nike",
+        "sku": "DV6840-100",
+        "image": "https://images.stockx.com/images/Nike-Air-VaporMax-2023-Flyknit-White-Pure-Platinum-Womens.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-06"
+    },
+    {
+        "id": "9782de61-4da7-4660-8459-9a3a03c27671",
+        "slug": "nike-dunk-low-atl",
+        "name": "Nike Dunk Low ATL",
+        "brand": "nike",
+        "sku": "FD0724-657",
+        "image": "https://images.stockx.com/images/Nike-Dunk-Low-ATL.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-05"
+    },
+    {
+        "id": "eb7bf79c-5439-4f96-a211-a537d99b1fb7",
+        "slug": "air-jordan-5-retro-low-crafted-for-her-desert-berry-gs",
+        "name": "Jordan 5 Retro Low Crafted For Her Desert Berry (GS)",
+        "brand": "jordan",
+        "sku": "DX4390-116",
+        "image": "https://images.stockx.com/images/Air-Jordan-5-Retro-Low-Crafted-For-Her-Desert-Berry-GS.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-05"
+    },
+    {
+        "id": "a106e15f-3362-4111-8e85-735dcbcf861d",
+        "slug": "new-balance-580-blue-multi-color-gum",
+        "name": "New Balance 580 Blue Multi-Color Gum",
+        "brand": "new balance",
+        "sku": "MT580HSB",
+        "image": "https://images.stockx.com/images/New-Balance-580-Blue-Multi-Color-Gum.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-05"
+    },
+    {
+        "id": "cc5d324d-1bef-410c-ac6b-0bf97476a959",
+        "slug": "nike-dunk-low-off-white-futura-unc",
+        "name": "Nike Dunk Low Off-White Futura UNC",
+        "brand": "nike",
+        "sku": "DD0856-403",
+        "image": "https://images.stockx.com/images/Nike-Dunk-Low-OFF-WHITE-Futura-UNC.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-05"
+    },
+    {
+        "id": "010e71c7-030b-461f-be4a-d891067a06ba",
+        "slug": "nike-acg-moc-moss-anthracite",
+        "name": "Nike ACG Moc Moss Anthracite",
+        "brand": "nike",
+        "sku": "DZ3407-300",
+        "image": "https://images.stockx.com/images/Nike-ACG-Moc-Moss-Anthracite.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-05"
+    },
+    {
+        "id": "4d7aa0c0-2fbd-4f5b-ba79-4adba86e6ad3",
+        "slug": "air-jordan-1-low-se-recycled-grind-gs",
+        "name": "Jordan 1 Low SE Recycled Grind (GS)",
+        "brand": "jordan",
+        "sku": "DX4375-800",
+        "image": "https://images.stockx.com/images/Air-Jordan-1-Low-SE-Recycled-Grind-GS.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-05"
+    },
+    {
+        "id": "0c27b8a3-c8e8-4473-acde-bd54ac442a74",
+        "slug": "converse-cons-one-star-pro-alltimers",
+        "name": "Converse CONS One Star Pro Alltimers",
+        "brand": "converse",
+        "sku": "A05337C",
+        "image": "https://images.stockx.com/images/Converse-CONS-One-Star-Pro-Alltimers.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-05"
+    },
+    {
+        "id": "5cd0dd6e-7b5b-49f1-ba26-d83604cefbe1",
+        "slug": "converse-cons-fastbreak-pro-mid-alltimers",
+        "name": "Converse CONS Fastbreak Pro Mid Alltimers",
+        "brand": "converse",
+        "sku": "A05336C",
+        "image": "https://images.stockx.com/images/Converse-CONS-Fastbreak-Pro-Mid-Alltimers.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-05"
+    },
+    {
+        "id": "b59f98ce-773a-4bf8-9fa5-45efdc106496",
+        "slug": "new-balance-580-phantom-multi-color",
+        "name": "New Balance 580 Phantom Multi-Color",
+        "brand": "new balance",
+        "sku": "MT580HSC",
+        "image": "https://images.stockx.com/images/New-Balance-580-Phantom-Multi-Color.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-05"
+    },
+    {
+        "id": "a4d006cb-5250-43a0-b54b-947cdfee2664",
+        "slug": "nike-dunk-low-off-white-futura-syracuse",
+        "name": "Nike Dunk Low Off-White Futura Syracuse",
+        "brand": "nike",
+        "sku": "DD0856-801",
+        "image": "https://images.stockx.com/images/Nike-Dunk-Low-OFF-WHITE-Futura-Syracuse.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-05"
+    },
+    {
+        "id": "63eeeb18-28e3-407b-a760-a24566d22a39",
+        "slug": "new-balance-860v2-aime-leon-dore-green",
+        "name": "New Balance 860v2 Aime Leon Dore Green",
+        "brand": "new balance",
+        "sku": "ML860AL2",
+        "image": "https://images.stockx.com/images/New-Balance-860v2-Aime-Leon-Dore-Green.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-04"
+    },
+    {
+        "id": "ac8f42a8-9cb6-477c-b293-0feceb524f5d",
+        "slug": "nike-air-more-uptempo-slide-og-black-white",
+        "name": "Nike Air More Uptempo Slide OG Black White",
+        "brand": "nike",
+        "sku": "DV2137-001/DV2132-001",
+        "image": "https://images.stockx.com/images/Nike-Air-More-Uptempo-Slide-OG-Black-White-Product.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-04"
+    },
+    {
+        "id": "32e9d43d-531f-4727-813e-39ed19444225",
+        "slug": "new-balance-860v2-aime-leon-dore-blue",
+        "name": "New Balance 860v2 Aime Leon Dore Blue",
+        "brand": "new balance",
+        "sku": "ML860AM2",
+        "image": "https://images.stockx.com/images/New-Balance-860v2-Aime-Leon-Dore-Blue.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-04"
+    },
+    {
+        "id": "83b953a3-ad8c-4011-832d-7898ceec0854",
+        "slug": "new-balance-860v2-aime-leon-dore-red",
+        "name": "New Balance 860v2 Aime Leon Dore Red",
+        "brand": "new balance",
+        "sku": "ML860AD2",
+        "image": "https://images.stockx.com/images/New-Balance-860v2-Aime-Leon-Dore-Red.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-04"
+    },
+    {
+        "id": "a983344c-a0fe-4d3a-9dc1-92ba97481a95",
+        "slug": "nike-air-force-1-low-atl",
+        "name": "Nike Air Force 1 Low '07 ATL",
+        "brand": "nike",
+        "sku": "FD8306-657",
+        "image": "https://images.stockx.com/images/Nike-Air-Force-1-Low-ATL.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-04"
+    },
+    {
+        "id": "969295f5-7b3f-425d-9ede-00f7cbba43c9",
+        "slug": "nike-dunk-mid-coconut-milk-plum-orange",
+        "name": "Nike Dunk Mid Coconut Milk Plum Orange",
+        "brand": "nike",
+        "sku": "DV0830-101",
+        "image": "https://images.stockx.com/images/Nike-Dunk-Mid-Coconut-Milk-Plum-Orange.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-04"
+    },
+    {
+        "id": "bbfd353d-bc7f-4c5e-96a1-ff6a8780f31b",
+        "slug": "new-balance-9060-team-forest-green",
+        "name": "New Balance 9060 Team Forest Green",
+        "brand": "new balance",
+        "sku": "U9060RVA",
+        "image": "https://images.stockx.com/images/New-Balance-9060-Team-Forest-Green.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-04"
+    },
+    {
+        "id": "524ea521-4a25-4073-9323-4fee206162e2",
+        "slug": "new-balance-fresh-foam-bb-chicago",
+        "name": "New Balance Fresh Foam BB Chicago",
+        "brand": "new balance",
+        "sku": "BBFRSHH1",
+        "image": "https://images.stockx.com/images/New-Balance-Fresh-Foam-BB-Chicago.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-04"
+    },
+    {
+        "id": "ea729ed4-8545-464d-95b6-7d9df1bd1dd4",
+        "slug": "adidas-ultra-boost-10-dna-lucid-blue-marble",
+        "name": "adidas Ultra Boost 1.0 DNA Lucid Blue Marble",
+        "brand": "adidas",
+        "sku": "ID4369",
+        "image": "https://images.stockx.com/images/adidas-Ultra-Boost-10-DNA-Lucid-Blue-Marble.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-04"
+    },
+    {
+        "id": "098f240a-a14a-406c-b47b-61e9aee30719",
+        "slug": "nike-blazer-low-platform-needlework-womens",
+        "name": "Nike Blazer Low Platform Needlework (Women's)",
+        "brand": "nike",
+        "sku": "FJ4556-133",
+        "image": "https://images.stockx.com/images/Nike-Blazer-Low-Platform-Needlework-Womens.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-04"
+    },
+    {
+        "id": "1dd1a96c-9e7d-40ae-8f4c-8076e4e60388",
+        "slug": "notwoways-arw-subsolar",
+        "name": "notwoways ARW Subsolar",
+        "brand": "notwoways",
+        "sku": "NTWM2-SSLR",
+        "image": "https://images.stockx.com/images/notwoways-ARW-Subsolar.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-04"
+    },
+    {
+        "id": "35a34202-9022-448d-921f-139f2b0edede",
+        "slug": "air-jordan-6-retro-low-golf-nrg-bordeaux",
+        "name": "Jordan 6 Retro Low Golf NRG Bordeaux",
+        "brand": "jordan",
+        "sku": "DV6796-116",
+        "image": "https://images.stockx.com/images/Air-Jordan-6-Retro-Low-Golf-NRG-Bordeaux.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-04"
+    },
+    {
+        "id": "ca9e57f7-fa23-4a74-8afe-a9c21182ed8d",
+        "slug": "nike-air-max-95-saturn-gold-alabaster-womens",
+        "name": "Nike Air Max 95 Saturn Gold Alabaster (Women's)",
+        "brand": "nike",
+        "sku": "FD9857-700",
+        "image": "https://images.stockx.com/images/Nike-Air-Max-95-Saturn-Gold-Alabaster-Womens.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-04"
+    },
+    {
+        "id": "a94b5775-e3b0-4433-b271-3dbbb71dae0a",
+        "slug": "nike-air-force-1-low-sacai-white-hello-sacai-tokyo-exclusive",
+        "name": "Nike Air Force 1 Low sacai White (Hello sacai Tokyo Exclusive)",
+        "brand": "nike",
+        "sku": "",
+        "image": "https://images.stockx.com/images/Nike-Air-Force-1-Low-sacai-White-Hello-sacai-Tokyo-Exclusive.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-03"
+    },
+    {
+        "id": "0ec87371-4109-4c25-932d-09a5a0ef7231",
+        "slug": "new-balance-1906r-grey-deep-red",
+        "name": "New Balance 1906R Grey Deep Red",
+        "brand": "new balance",
+        "sku": "M1906RJC",
+        "image": "https://images.stockx.com/images/New-Balance-1906R-Grey-Deep-Red.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-03"
+    },
+    {
+        "id": "cdbc363c-9a7b-413d-b44d-eed186f40b58",
+        "slug": "adidas-busenitz-white-better-scarlet",
+        "name": "adidas Busenitz White Better Scarlet",
+        "brand": "adidas",
+        "sku": "HQ2030",
+        "image": "https://images.stockx.com/images/adidas-Busenitz-White-Better-Scarlet.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-03"
+    },
+    {
+        "id": "86b7dc1c-0703-4e96-a909-da77f18bcf96",
+        "slug": "new-balance-1906r-black-metallic-silver",
+        "name": "New Balance 1906R Black Metallic Silver",
+        "brand": "new balance",
+        "sku": "M1906RJB",
+        "image": "https://images.stockx.com/images/New-Balance-1906R-Black-Metallic-Silver.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-03"
+    },
+    {
+        "id": "5da07c9c-495a-4229-83c8-1226992ea009",
+        "slug": "nike-zoom-mercurial-vapor-15-elite-fg-luminous-pack",
+        "name": "Nike Zoom Mercurial Vapor 15 Elite FG Luminous Pack",
+        "brand": "nike",
+        "sku": "DJ4978-605",
+        "image": "https://images.stockx.com/images/Nike-Zoom-Mercurial-Vapor-15-Elite-FG-Luminous-Pack.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-03"
+    },
+    {
+        "id": "bd59345a-c594-49ca-b1ab-5cedf0c2ac06",
+        "slug": "air-jordan-11-retro-low-cement-grey",
+        "name": "Jordan 11 Retro Low Cement Grey",
+        "brand": "jordan",
+        "sku": "AV2187-140",
+        "image": "https://images.stockx.com/images/Air-Jordan-11-Retro-Low-Cement-Grey-Product.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-01"
+    },
+    {
+        "id": "587efff1-5d0e-4f99-8775-71dc5454473f",
+        "slug": "air-jordan-11-retro-low-cement-grey-gs",
+        "name": "Jordan 11 Retro Low Cement Grey (GS)",
+        "brand": "jordan",
+        "sku": "528896-140",
+        "image": "https://images.stockx.com/images/Air-Jordan-11-Retro-Low-Cement-Grey-GS.jpg",
+        "category": "sneakers",
+        "release_date": "2023-04-01"
+    }
+]
+```
+</ResponseExample>

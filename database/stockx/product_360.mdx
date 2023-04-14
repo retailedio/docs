@@ -1,0 +1,81 @@
+---
+title: "StockX Product 360"
+api: "GET https://app.retailed.io/api/v1/stockx/product/360"
+description: "Get 360 product images"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="nike-air-max-1-travis-scott-wheat">
+    Product query : `air-jordan-3-retro-white-cement-reimagined` or `c318bbcc-312a-4396-9252-698c203d1dea`
+</ParamField>
+
+### Response
+
+<ResponseField name="object" type="Product Object">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="results" type="list">
+            360 product images
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash product
+curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product/360?query=nike-air-max-1-travis-scott-wheat' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json product
+{
+    "results": [
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img01.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img02.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img03.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img04.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img05.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img06.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img07.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img08.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img09.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img10.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img11.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img12.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img13.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img14.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img15.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img16.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img17.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img18.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img19.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img20.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img21.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img22.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img23.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img24.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img25.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img26.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img27.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img28.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img29.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img30.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img31.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img32.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img33.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img34.jpg",
+        "https://images.stockx.com/360/Nike-Air-Max-1-Travis-Scott-Wheat/Images/Nike-Air-Max-1-Travis-Scott-Wheat/Lv2/img35.jpg"
+    ]
+}
+```
+</ResponseExample>

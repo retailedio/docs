@@ -1,0 +1,76 @@
+---
+title: "StockX Product Graph"
+api: "GET https://app.retailed.io/api/v1/stockx/product/graph"
+description: "Get StockX product graph"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="nike-air-max-1-travis-scott-wheat">
+    Product query : `air-jordan-3-retro-white-cement-reimagined` or `c318bbcc-312a-4396-9252-698c203d1dea`
+</ParamField>
+
+<ParamField query="start_date" type="string" optional={false} placeholder="2022-01-01">
+    Start date : `2021-01-01`
+</ParamField>
+
+<ParamField query="end_date" type="string" optional={false} placeholder="2022-05-29">
+    End date : `2021-05-29`
+</ParamField>
+
+<ParamField query="country" type="string" optional={false} placeholder="US">
+    Country code : `US` or `FR`.
+</ParamField>
+
+<ParamField query="currency" type="string" optional={false} placeholder="USD">
+    Currency code : `USD` or `EUR`.
+</ParamField>
+
+### Response
+
+<ResponseField name="object" type="Graph List">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="x" type="string">
+            Date
+        </ResponseField>
+        <ResponseField name="y" type="number">
+            Price
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash graph
+curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product/graph?query=lego-star-wars-tie-fighter-set-9492&start_date=2022-01-01&end_date=2022-05-29' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json graph
+[
+    {
+        "x": "2022-01-01T00:00:00.000Z",
+        "y": 1375
+    },
+    {
+        "x": "2022-01-02T11:45:36.000Z",
+        "y": 1313
+    },
+    {
+        "x": "2022-01-03T23:31:12.000Z",
+        "y": 1313
+    }
+    ...
+]
+```
+</ResponseExample>

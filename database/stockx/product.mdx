@@ -1,0 +1,1421 @@
+---
+title: "StockX Product"
+api: "GET https://app.retailed.io/api/v1/stockx/product"
+description: "Get product information from StockX"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="nike-air-max-1-travis-scott-wheat">
+    Product query : `air-jordan-3-retro-white-cement-reimagined` or `c318bbcc-312a-4396-9252-698c203d1dea`
+</ParamField>
+
+<ParamField query="country" type="string" optional={false} placeholder="US">
+    Country code : `US` or `FR`.
+</ParamField>
+
+<ParamField query="currency" type="string" optional={false} placeholder="USD">
+    Currency code : `USD` or `EUR`.
+</ParamField>
+
+### Response
+
+<ResponseField name="object" type="Product Object">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="id" type="string">
+            StockX product id
+        </ResponseField>
+        <ResponseField name="slug" type="string">
+            StockX product slug
+        </ResponseField>
+        <ResponseField name="name" type="string">
+            StockX product name
+        </ResponseField>
+        <ResponseField name="brand" type="string">
+            StockX product brand
+        </ResponseField>
+        <ResponseField name="image" type="string">
+            StockX product image
+        </ResponseField>
+        <ResponseField name="description" type="string">
+            StockX product description
+        </ResponseField>
+        <ResponseField name="category" type="string">
+            StockX product category : `sneakers`, `streetwear`, `watches`, `handbags`...
+        </ResponseField>
+        <ResponseField name="model" type="string">
+            StockX product model
+        </ResponseField>
+        <ResponseField name="sku" type="string">
+            StockX product SKU
+        </ResponseField>
+        <ResponseField name="traits" type="array">
+            <Expandable title="properties" defaultOpen={true}>
+                <ResponseField name="name" type="string">
+                    Trait name
+                </ResponseField>
+                <ResponseField name="value" type="string">
+                    Trait value
+                </ResponseField>
+            </Expandable>
+        </ResponseField>
+        <ResponseField name="variants" type="array">
+            <Expandable title="properties" defaultOpen={true}>
+                <ResponseField name="id" type="string">
+                    StockX product variant id
+                </ResponseField>
+                <ResponseField name="sizes" type="array">
+                    <Expandable title="properties" defaultOpen={true}>
+                        <ResponseField name="size" type="string">
+                            StockX product variant size
+                        </ResponseField>
+                        <ResponseField name="type" type="string">
+                            StockX product variant size type
+                        </ResponseField>
+                    </Expandable>
+                </ResponseField>
+                <ResponseField name="gtins" type="array">
+                    <Expandable title="properties" defaultOpen={true}>
+                        <ResponseField name="type" type="string">
+                            StockX product variant GTIN type
+                        </ResponseField>
+                        <ResponseField name="identifier" type="string">
+                            StockX product variant GTIN identifier
+                        </ResponseField>
+                    </Expandable>
+                </ResponseField>
+                <ResponseField name="market" type="object">
+                    <Expandable title="properties" defaultOpen={true}>
+                        <ResponseField name="bids" type="object">
+                            <Expandable title="properties" defaultOpen={true}>
+                                <ResponseField name="lowest_ask" type="number">
+                                    StockX product variant lowest ask
+                                </ResponseField>
+                                <ResponseField name="highest_bid" type="number">
+                                    StockX product variant highest bid
+                                </ResponseField>
+                                <ResponseField name="number_asks" type="number">
+                                    StockX product variant number of asks
+                                </ResponseField>
+                                <ResponseField name="number_bids" type="number">
+                                    StockX product variant number of bids
+                                </ResponseField>
+                            </Expandable>
+                        </ResponseField>
+                        <ResponseField name="sales" type="object">
+                            <Expandable title="properties" defaultOpen={true}>
+                                <ResponseField name="annual_high" type="number">
+                                    StockX product variant annual high
+                                </ResponseField>
+                                <ResponseField name="annual_low" type="number">
+                                    StockX product variant annual low
+                                </ResponseField>
+                                <ResponseField name="volatility" type="number">
+                                    StockX product variant volatility
+                                </ResponseField>
+                            </Expandable>
+                        </ResponseField>
+                    </Expandable>
+                </ResponseField>
+            </Expandable>
+        </ResponseField>
+        <ResponseField name="market" type="object">
+            <Expandable title="properties" defaultOpen={true}>
+                <ResponseField name="bids" type="object">
+                    <Expandable title="properties" defaultOpen={true}>
+                        <ResponseField name="lowest_ask" type="number">
+                            StockX product lowest ask
+                        </ResponseField>
+                        <ResponseField name="highest_bid" type="number">
+                            StockX product highest bid
+                        </ResponseField>
+                        <ResponseField name="number_asks" type="number">
+                            StockX product number of asks
+                        </ResponseField>
+                        <ResponseField name="number_bids" type="number">
+                            StockX product number of bids
+                        </ResponseField>
+                    </Expandable>
+                </ResponseField>
+                <ResponseField name="sales" type="object">
+                    <Expandable title="properties" defaultOpen={true}>
+                        <ResponseField name="annual_high" type="number">
+                            StockX product annual high
+                        </ResponseField>
+                        <ResponseField name="annual_low" type="number">
+                            StockX product annual low
+                        </ResponseField>
+                        <ResponseField name="volatility" type="number">
+                            StockX product volatility
+                        </ResponseField>
+                    </Expandable>
+                </ResponseField>
+            </Expandable>
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash product
+curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?query=nike-air-max-1-travis-scott-wheat' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json product
+{
+    "id": "c318bbcc-312a-4396-9252-698c203d1dea",
+    "slug": "nike-air-max-1-travis-scott-wheat",
+    "name": "Nike Air Max 1 Travis Scott Cactus Jack Saturn Gold",
+    "brand": "nike",
+    "image": "https://images.stockx.com/images/Nike-Air-Max-1-Travis-Scott-Wheat-Product.jpg",
+    "description": "In collaboration with Travis Scott's record label Cactus Jack, the Nike Air Max 1 Travis Scott Cactus Jack Saturn Gold pays homage to outdoor exploration and the Nike ACG Pocket Knife hiking shoe. It boasts a light yellow layered mesh upper with matching Durabuck overlays and reversed Swoosh logos. A drawstring Gillie lacing system nods to common features on trail runners. At the base, a yellowed sole with a cloudy Air unit adds the finishing touch.\n<br>\n<br>\nThe Nike Air Max 1 Travis Scott Cactus Jack Saturn Gold released in May of 2022 and retailed for $150.",
+    "category": "sneakers",
+    "model": "nike-air-max-1",
+    "sku": "DO9392-700",
+    "traits": [
+    {
+        "name": "style",
+        "value": "DO9392-700"
+    },
+    {
+        "name": "colorway",
+        "value": "Saturn Gold/Tea Tree Mist/Tent"
+    },
+    {
+        "name": "retail-price",
+        "value": "150"
+    },
+    {
+        "name": "release-date",
+        "value": "2022-05-27"
+    },
+    {
+        "name": "included-accessories",
+        "value": "Grey extra laces"
+    },
+    {
+        "name": "featured",
+        "value": "false"
+    }
+    ],
+    "variants": [
+    {
+        "id": "c9967320-50ce-4e0d-a14e-efa4d4f37771",
+        "sizes": [
+        {
+            "size": "US M 3.5",
+            "type": "us m"
+        },
+        {
+            "size": "UK 3",
+            "type": "uk"
+        },
+        {
+            "size": "CM 22.5",
+            "type": "cm"
+        },
+        {
+            "size": "KR 225",
+            "type": "kr"
+        },
+        {
+            "size": "EU 35.5",
+            "type": "eu"
+        },
+        {
+            "size": "US W 5",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114066"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 255,
+                "highest_bid": 170,
+                "number_asks": 5,
+                "number_bids": 3
+            },
+            "sales": {
+                "annual_high": 282,
+                "annual_low": 228,
+                "volatility": 0.069815,
+                "price_premium": 0.727,
+                "last_sale": 259,
+                "change_value": 4,
+                "change_percentage": 0.015686
+            }
+        }
+    },
+    {
+        "id": "c7e40ad8-030e-4444-baaf-30569c52347b",
+        "sizes": [
+        {
+            "size": "US M 4",
+            "type": "us m"
+        },
+        {
+            "size": "UK 3.5",
+            "type": "uk"
+        },
+        {
+            "size": "CM 23",
+            "type": "cm"
+        },
+        {
+            "size": "KR 230",
+            "type": "kr"
+        },
+        {
+            "size": "EU 36",
+            "type": "eu"
+        },
+        {
+            "size": "US W 5.5",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114073"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 190,
+                "highest_bid": 141,
+                "number_asks": 19,
+                "number_bids": 6
+            },
+            "sales": {
+                "annual_high": 397,
+                "annual_low": 116,
+                "volatility": 0.127696,
+                "price_premium": 0.387,
+                "last_sale": 208,
+                "change_value": 18,
+                "change_percentage": 0.093631
+            }
+        }
+    },
+    {
+        "id": "be3919d2-0b5d-4eb9-8c88-707cce8a53e5",
+        "sizes": [
+        {
+            "size": "US M 4.5",
+            "type": "us m"
+        },
+        {
+            "size": "UK 4",
+            "type": "uk"
+        },
+        {
+            "size": "CM 23.5 (US M 4.5)",
+            "type": "cm"
+        },
+        {
+            "size": "KR 235 (US M 4.5)",
+            "type": "kr"
+        },
+        {
+            "size": "EU 36.5",
+            "type": "eu"
+        },
+        {
+            "size": "US W 6",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "EAN-13",
+            "identifier": "2000220711036"
+        },
+        {
+            "type": "UPC",
+            "identifier": "195867114080"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 212,
+                "highest_bid": 170,
+                "number_asks": 13,
+                "number_bids": 4
+            },
+            "sales": {
+                "annual_high": 387,
+                "annual_low": 151,
+                "volatility": 0.094866,
+                "price_premium": 0.349,
+                "last_sale": 203,
+                "change_value": 7,
+                "change_percentage": 0.032704
+            }
+        }
+    },
+    {
+        "id": "9470c529-b18a-44a2-8403-4c092cebd539",
+        "sizes": [
+        {
+            "size": "US M 5",
+            "type": "us m"
+        },
+        {
+            "size": "UK 4.5",
+            "type": "uk"
+        },
+        {
+            "size": "CM 23.5 (US M 5)",
+            "type": "cm"
+        },
+        {
+            "size": "KR 235 (US M 5)",
+            "type": "kr"
+        },
+        {
+            "size": "EU 37.5",
+            "type": "eu"
+        },
+        {
+            "size": "US W 6.5",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114097"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 174,
+                "highest_bid": 145,
+                "number_asks": 34,
+                "number_bids": 10
+            },
+            "sales": {
+                "annual_high": 559,
+                "annual_low": 140,
+                "volatility": 0.131562,
+                "price_premium": 0.196,
+                "last_sale": 180,
+                "change_value": 33,
+                "change_percentage": 0.219971
+            }
+        }
+    },
+    {
+        "id": "abce6769-5444-4033-80e1-473bd8325db7",
+        "sizes": [
+        {
+            "size": "US M 5.5",
+            "type": "us m"
+        },
+        {
+            "size": "UK 5",
+            "type": "uk"
+        },
+        {
+            "size": "CM 24 (US M 5.5)",
+            "type": "cm"
+        },
+        {
+            "size": "KR 240 (US M 5.5)",
+            "type": "kr"
+        },
+        {
+            "size": "EU 38",
+            "type": "eu"
+        },
+        {
+            "size": "US W 7",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114103"
+        },
+        {
+            "type": "EAN-13",
+            "identifier": "6923175332377"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 176,
+                "highest_bid": 160,
+                "number_asks": 25,
+                "number_bids": 10
+            },
+            "sales": {
+                "annual_high": 500,
+                "annual_low": 153,
+                "volatility": 0.112033,
+                "price_premium": 0.287,
+                "last_sale": 194,
+                "change_value": -53,
+                "change_percentage": -0.217378
+            }
+        }
+    },
+    {
+        "id": "2fba0368-f3a2-466b-b7ed-52b3f34163d6",
+        "sizes": [
+        {
+            "size": "US M 6",
+            "type": "us m"
+        },
+        {
+            "size": "UK 5.5",
+            "type": "uk"
+        },
+        {
+            "size": "CM 24 (US M 6)",
+            "type": "cm"
+        },
+        {
+            "size": "KR 240 (US M 6)",
+            "type": "kr"
+        },
+        {
+            "size": "EU 38.5",
+            "type": "eu"
+        },
+        {
+            "size": "US W 7.5",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114110"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 195,
+                "highest_bid": 150,
+                "number_asks": 31,
+                "number_bids": 14
+            },
+            "sales": {
+                "annual_high": 500,
+                "annual_low": 151,
+                "volatility": 0.089219,
+                "price_premium": 0.133,
+                "last_sale": 170,
+                "change_value": -20,
+                "change_percentage": -0.105263
+            }
+        }
+    },
+    {
+        "id": "800863d8-c4bb-487d-9cc6-033593f5c593",
+        "sizes": [
+        {
+            "size": "US M 6.5",
+            "type": "us m"
+        },
+        {
+            "size": "UK 6 (EU 39)",
+            "type": "uk"
+        },
+        {
+            "size": "CM 24.5",
+            "type": "cm"
+        },
+        {
+            "size": "KR 245",
+            "type": "kr"
+        },
+        {
+            "size": "EU 39",
+            "type": "eu"
+        },
+        {
+            "size": "US W 8",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114127"
+        },
+        {
+            "type": "EAN-13",
+            "identifier": "6923195332371"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 213,
+                "highest_bid": 180,
+                "number_asks": 34,
+                "number_bids": 14
+            },
+            "sales": {
+                "annual_high": 441,
+                "annual_low": 161,
+                "volatility": 0.11546,
+                "price_premium": 0.42,
+                "last_sale": 213,
+                "change_value": -43,
+                "change_percentage": -0.167969
+            }
+        }
+    },
+    {
+        "id": "5e1b81b2-7236-47c0-95b2-91fc0f25a3d5",
+        "sizes": [
+        {
+            "size": "US M 7",
+            "type": "us m"
+        },
+        {
+            "size": "UK 6 (EU 40)",
+            "type": "uk"
+        },
+        {
+            "size": "CM 25",
+            "type": "cm"
+        },
+        {
+            "size": "KR 250",
+            "type": "kr"
+        },
+        {
+            "size": "EU 40",
+            "type": "eu"
+        },
+        {
+            "size": "US W 8.5",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114134"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 210,
+                "highest_bid": 191,
+                "number_asks": 23,
+                "number_bids": 17
+            },
+            "sales": {
+                "annual_high": 961,
+                "annual_low": 185,
+                "volatility": 0.127811,
+                "price_premium": 0.472,
+                "last_sale": 221,
+                "change_value": 3,
+                "change_percentage": 0.013126
+            }
+        }
+    },
+    {
+        "id": "c49f057a-ca32-43f6-bcff-23859649d482",
+        "sizes": [
+        {
+            "size": "US M 7.5",
+            "type": "us m"
+        },
+        {
+            "size": "UK 6.5",
+            "type": "uk"
+        },
+        {
+            "size": "CM 25.5",
+            "type": "cm"
+        },
+        {
+            "size": "KR 255",
+            "type": "kr"
+        },
+        {
+            "size": "EU 40.5",
+            "type": "eu"
+        },
+        {
+            "size": "US W 9",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114141"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 236,
+                "highest_bid": 181,
+                "number_asks": 21,
+                "number_bids": 15
+            },
+            "sales": {
+                "annual_high": 1112,
+                "annual_low": 170,
+                "volatility": 0.128247,
+                "price_premium": 0.697,
+                "last_sale": 255,
+                "change_value": 20,
+                "change_percentage": 0.083489
+            }
+        }
+    },
+    {
+        "id": "3d3b3ac9-8560-4c36-9168-01aa40ccfcc9",
+        "sizes": [
+        {
+            "size": "US M 8",
+            "type": "us m"
+        },
+        {
+            "size": "UK 7",
+            "type": "uk"
+        },
+        {
+            "size": "CM 26",
+            "type": "cm"
+        },
+        {
+            "size": "KR 260",
+            "type": "kr"
+        },
+        {
+            "size": "EU 41",
+            "type": "eu"
+        },
+        {
+            "size": "US W 9.5",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114158"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 254,
+                "highest_bid": 231,
+                "number_asks": 47,
+                "number_bids": 43
+            },
+            "sales": {
+                "annual_high": 1200,
+                "annual_low": 187,
+                "volatility": 0.096747,
+                "price_premium": 0.6,
+                "last_sale": 240,
+                "change_value": -25,
+                "change_percentage": -0.095929
+            }
+        }
+    },
+    {
+        "id": "399319ad-1f0d-43ae-b034-d300fde28091",
+        "sizes": [
+        {
+            "size": "US M 8.5",
+            "type": "us m"
+        },
+        {
+            "size": "UK 7.5",
+            "type": "uk"
+        },
+        {
+            "size": "CM 26.5",
+            "type": "cm"
+        },
+        {
+            "size": "KR 265",
+            "type": "kr"
+        },
+        {
+            "size": "EU 42",
+            "type": "eu"
+        },
+        {
+            "size": "US W 10",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114165"
+        },
+        {
+            "type": "EAN-13",
+            "identifier": "2006944001026"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 251,
+                "highest_bid": 225,
+                "number_asks": 42,
+                "number_bids": 52
+            },
+            "sales": {
+                "annual_high": 680,
+                "annual_low": 195,
+                "volatility": 0.130678,
+                "price_premium": 0.653,
+                "last_sale": 248,
+                "change_value": -68,
+                "change_percentage": -0.216104
+            }
+        }
+    },
+    {
+        "id": "c0d96ae8-3079-4b25-96b1-93dc3324d411",
+        "sizes": [
+        {
+            "size": "US M 9",
+            "type": "us m"
+        },
+        {
+            "size": "UK 8",
+            "type": "uk"
+        },
+        {
+            "size": "CM 27",
+            "type": "cm"
+        },
+        {
+            "size": "KR 270",
+            "type": "kr"
+        },
+        {
+            "size": "EU 42.5",
+            "type": "eu"
+        },
+        {
+            "size": "US W 10.5",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114172"
+        },
+        {
+            "type": "EAN-13",
+            "identifier": "38826856"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 262,
+                "highest_bid": 235,
+                "number_asks": 57,
+                "number_bids": 49
+            },
+            "sales": {
+                "annual_high": 1450,
+                "annual_low": 213,
+                "volatility": 0.105904,
+                "price_premium": 0.668,
+                "last_sale": 251,
+                "change_value": 1,
+                "change_percentage": 0.000964
+            }
+        }
+    },
+    {
+        "id": "86a7a18b-aa9e-40b8-86a2-d376c2ef5f05",
+        "sizes": [
+        {
+            "size": "US M 9.5",
+            "type": "us m"
+        },
+        {
+            "size": "UK 8.5",
+            "type": "uk"
+        },
+        {
+            "size": "CM 27.5",
+            "type": "cm"
+        },
+        {
+            "size": "KR 275",
+            "type": "kr"
+        },
+        {
+            "size": "EU 43",
+            "type": "eu"
+        },
+        {
+            "size": "US W 11",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114189"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 265,
+                "highest_bid": 260,
+                "number_asks": 47,
+                "number_bids": 49
+            },
+            "sales": {
+                "annual_high": 1162,
+                "annual_low": 232,
+                "volatility": 0.102129,
+                "price_premium": 1.322,
+                "last_sale": 349,
+                "change_value": 89,
+                "change_percentage": 0.339287
+            }
+        }
+    },
+    {
+        "id": "52e1f26b-2a94-4a88-acd5-e497811fe68e",
+        "sizes": [
+        {
+            "size": "US M 10",
+            "type": "us m"
+        },
+        {
+            "size": "UK 9",
+            "type": "uk"
+        },
+        {
+            "size": "CM 28",
+            "type": "cm"
+        },
+        {
+            "size": "KR 280",
+            "type": "kr"
+        },
+        {
+            "size": "EU 44",
+            "type": "eu"
+        },
+        {
+            "size": "US W 11.5",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114196"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 292,
+                "highest_bid": 262,
+                "number_asks": 53,
+                "number_bids": 47
+            },
+            "sales": {
+                "annual_high": 1804,
+                "annual_low": 236,
+                "volatility": 0.094936,
+                "price_premium": 0.934,
+                "last_sale": 291,
+                "change_value": -33,
+                "change_percentage": -0.10304
+            }
+        }
+    },
+    {
+        "id": "7de6f057-ced2-4f1e-823d-149239c83b6a",
+        "sizes": [
+        {
+            "size": "US M 10.5",
+            "type": "us m"
+        },
+        {
+            "size": "UK 9.5",
+            "type": "uk"
+        },
+        {
+            "size": "CM 28.5",
+            "type": "cm"
+        },
+        {
+            "size": "KR 285",
+            "type": "kr"
+        },
+        {
+            "size": "EU 44.5",
+            "type": "eu"
+        },
+        {
+            "size": "US W 12",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114202"
+        },
+        {
+            "type": "EAN-13",
+            "identifier": "12210185743"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 280,
+                "highest_bid": 252,
+                "number_asks": 46,
+                "number_bids": 41
+            },
+            "sales": {
+                "annual_high": 1340,
+                "annual_low": 220,
+                "volatility": 0.09231,
+                "price_premium": 1.061,
+                "last_sale": 310,
+                "change_value": 35,
+                "change_percentage": 0.124202
+            }
+        }
+    },
+    {
+        "id": "5dcfff98-7a1d-4e35-881d-6a569f347a01",
+        "sizes": [
+        {
+            "size": "US M 11",
+            "type": "us m"
+        },
+        {
+            "size": "UK 10",
+            "type": "uk"
+        },
+        {
+            "size": "CM 29",
+            "type": "cm"
+        },
+        {
+            "size": "KR 290",
+            "type": "kr"
+        },
+        {
+            "size": "EU 45",
+            "type": "eu"
+        },
+        {
+            "size": "US W 12.5",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114219"
+        },
+        {
+            "type": "EAN-13",
+            "identifier": "41639191"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 304,
+                "highest_bid": 265,
+                "number_asks": 59,
+                "number_bids": 33
+            },
+            "sales": {
+                "annual_high": 1050,
+                "annual_low": 242,
+                "volatility": 0.063807,
+                "price_premium": 1,
+                "last_sale": 300,
+                "change_value": 20,
+                "change_percentage": 0.071429
+            }
+        }
+    },
+    {
+        "id": "042348c0-647a-4740-a768-18ab3e545f1d",
+        "sizes": [
+        {
+            "size": "US M 11.5",
+            "type": "us m"
+        },
+        {
+            "size": "UK 10.5",
+            "type": "uk"
+        },
+        {
+            "size": "CM 29.5",
+            "type": "cm"
+        },
+        {
+            "size": "KR 295",
+            "type": "kr"
+        },
+        {
+            "size": "EU 45.5",
+            "type": "eu"
+        },
+        {
+            "size": "US W 13",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114226"
+        },
+        {
+            "type": "EAN-13",
+            "identifier": "5059653686319"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 323,
+                "highest_bid": 263,
+                "number_asks": 32,
+                "number_bids": 24
+            },
+            "sales": {
+                "annual_high": 923,
+                "annual_low": 232,
+                "volatility": 0.081852,
+                "price_premium": 1.147,
+                "last_sale": 322,
+                "change_value": 22,
+                "change_percentage": 0.073333
+            }
+        }
+    },
+    {
+        "id": "a2d123d1-280a-4c3c-af60-6b7db53999dd",
+        "sizes": [
+        {
+            "size": "US M 12",
+            "type": "us m"
+        },
+        {
+            "size": "UK 11",
+            "type": "uk"
+        },
+        {
+            "size": "CM 30",
+            "type": "cm"
+        },
+        {
+            "size": "KR 300",
+            "type": "kr"
+        },
+        {
+            "size": "EU 46",
+            "type": "eu"
+        },
+        {
+            "size": "US W 13.5",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114233"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 290,
+                "highest_bid": 275,
+                "number_asks": 45,
+                "number_bids": 25
+            },
+            "sales": {
+                "annual_high": 1005,
+                "annual_low": 252,
+                "volatility": 0.039523,
+                "price_premium": 0.933,
+                "last_sale": 290,
+                "change_value": 13,
+                "change_percentage": 0.046931
+            }
+        }
+    },
+    {
+        "id": "c25ff98c-fd78-4397-b50c-287eeecb1d52",
+        "sizes": [
+        {
+            "size": "US M 12.5",
+            "type": "us m"
+        },
+        {
+            "size": "UK 11.5",
+            "type": "uk"
+        },
+        {
+            "size": "CM 30.5",
+            "type": "cm"
+        },
+        {
+            "size": "KR 305",
+            "type": "kr"
+        },
+        {
+            "size": "EU 47",
+            "type": "eu"
+        },
+        {
+            "size": "US W 14",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114240"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 345,
+                "highest_bid": 290,
+                "number_asks": 10,
+                "number_bids": 13
+            },
+            "sales": {
+                "annual_high": 915,
+                "annual_low": 215,
+                "volatility": 0.049594,
+                "price_premium": 0.993,
+                "last_sale": 299,
+                "change_value": 43,
+                "change_percentage": 0.167969
+            }
+        }
+    },
+    {
+        "id": "6ad9ec7a-ef95-4afc-bd92-f6af76ca0b55",
+        "sizes": [
+        {
+            "size": "US M 13",
+            "type": "us m"
+        },
+        {
+            "size": "UK 12",
+            "type": "uk"
+        },
+        {
+            "size": "CM 31",
+            "type": "cm"
+        },
+        {
+            "size": "KR 310",
+            "type": "kr"
+        },
+        {
+            "size": "EU 47.5",
+            "type": "eu"
+        },
+        {
+            "size": "US W 14.5",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "EAN-13",
+            "identifier": "2000220711203"
+        },
+        {
+            "type": "UPC",
+            "identifier": "195867114257"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 347,
+                "highest_bid": 280,
+                "number_asks": 26,
+                "number_bids": 20
+            },
+            "sales": {
+                "annual_high": 1450,
+                "annual_low": 246,
+                "volatility": 0.07708,
+                "price_premium": 1.307,
+                "last_sale": 346,
+                "change_value": 41,
+                "change_percentage": 0.134426
+            }
+        }
+    },
+    {
+        "id": "7228310b-4bf8-492e-bfa1-cf328d1650f0",
+        "sizes": [
+        {
+            "size": "US M 14",
+            "type": "us m"
+        },
+        {
+            "size": "UK 13",
+            "type": "uk"
+        },
+        {
+            "size": "CM 32",
+            "type": "cm"
+        },
+        {
+            "size": "KR 320",
+            "type": "kr"
+        },
+        {
+            "size": "EU 48.5",
+            "type": "eu"
+        },
+        {
+            "size": "US W 15.5",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114264"
+        },
+        {
+            "type": "EAN-13",
+            "identifier": "2000009251210"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 295,
+                "highest_bid": 259,
+                "number_asks": 24,
+                "number_bids": 10
+            },
+            "sales": {
+                "annual_high": 632,
+                "annual_low": 200,
+                "volatility": 0.101478,
+                "price_premium": 0.973,
+                "last_sale": 296,
+                "change_value": 1,
+                "change_percentage": 0.00339
+            }
+        }
+    },
+    {
+        "id": "1b64855c-96d9-4e1b-936a-00a25d11a1a9",
+        "sizes": [
+        {
+            "size": "US M 15",
+            "type": "us m"
+        },
+        {
+            "size": "UK 14",
+            "type": "uk"
+        },
+        {
+            "size": "CM 33",
+            "type": "cm"
+        },
+        {
+            "size": "KR 330",
+            "type": "kr"
+        },
+        {
+            "size": "EU 49.5",
+            "type": "eu"
+        },
+        {
+            "size": "US W 16.5",
+            "type": "us w"
+        }
+        ],
+        "gtins": [
+        {
+            "type": "UPC",
+            "identifier": "195867114271"
+        },
+        {
+            "type": "EAN-13",
+            "identifier": "2000220711234"
+        }
+        ],
+        "market": {
+            "bids": {
+                "lowest_ask": 263,
+                "highest_bid": 220,
+                "number_asks": 17,
+                "number_bids": 6
+            },
+            "sales": {
+                "annual_high": 900,
+                "annual_low": 180,
+                "volatility": 0.10324,
+                "price_premium": 0.667,
+                "last_sale": 250,
+                "change_value": 10,
+                "change_percentage": 0.041667
+            }
+        }
+    }
+    ],
+    "market": {
+        "bids": {
+            "lowest_ask": 174,
+            "highest_bid": 290,
+            "number_asks": 715,
+            "number_bids": 505
+        },
+        "sales": {
+            "annual_high": 1804,
+            "annual_low": 116,
+            "volatility": 0.190628,
+            "price_premium": 0.668,
+            "last_sale": 251,
+            "change_value": 11,
+            "change_percentage": 0.04267
+        }
+    }
+}
+```
+</ResponseExample>

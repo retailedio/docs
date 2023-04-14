@@ -1,0 +1,160 @@
+---
+title: "StockX Search"
+api: "GET https://app.retailed.io/api/v1/stockx/search"
+description: "Search for products on StockX"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="Air Jordan Retro">
+    Search query. Can be a product name, brand, or SKU like `Air Jordan Retro`, `DN3707-100` or `air-jordan-3-retro-white-cement-reimagined`
+</ParamField>
+
+<ParamField query="limit" type="number" optional={true} placeholder="10">
+    Limit the number of results returned. Default is `10`.
+</ParamField>
+
+<ParamField query="page" type="number" optional={true} placeholder="1">
+    Page number to return. Default is `1`.
+</ParamField>
+
+### Response
+
+<ResponseField name="list" type="Search List">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="id" type="string">
+            StockX product id
+        </ResponseField>
+        <ResponseField name="slug" type="string">
+            StockX product slug
+        </ResponseField>
+        <ResponseField name="name" type="string">
+            Product name
+        </ResponseField>
+        <ResponseField name="sku" type="string">
+            Product SKU
+        </ResponseField>
+        <ResponseField name="brand" type="string">
+            Product brand
+        </ResponseField>
+        <ResponseField name="image" type="string">
+            Product image
+        </ResponseField>
+        <ResponseField name="colorway" type="string">
+            Product colorway
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash search
+curl --location --request GET 'https://app.retailed.io/api/v1/stockx/search?query=Air Jordan Retro' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json search
+[
+    {
+        "id": "726706b0-cde9-4df3-aa5c-81b120c79560",
+        "slug": "air-jordan-3-retro-white-cement-reimagined",
+        "name": "Jordan 3 Retro",
+        "sku": "DN3707-100",
+        "brand": "jordan",
+        "image": "https://images.stockx.com/images/Air-Jordan-3-Retro-White-Cement-Reimagined-Product.jpg",
+        "colorway": "white-cement-reimagined"
+    },
+    {
+        "id": "0b629369-b70d-464a-a3f9-94feea26601e",
+        "slug": "air-jordan-1-retro-high-og-lucky-green",
+        "name": "Jordan 1 Retro High OG",
+        "sku": "DZ5485-031",
+        "brand": "jordan",
+        "image": "https://images.stockx.com/images/Air-Jordan-1-Retro-High-OG-Lucky-Green-Product.jpg",
+        "colorway": "lucky-green"
+    },
+    {
+        "id": "9a4d44f9-4b16-4abc-ba58-c0db340ee791",
+        "slug": "air-jordan-1-retro-high-og-chicago-reimagined-lost-and-found",
+        "name": "Jordan 1 Retro High OG",
+        "sku": "DZ5485-612",
+        "brand": "jordan",
+        "image": "https://images.stockx.com/images/Air-Jordan-1-Retro-High-OG-Chicago-Reimagined-Product.jpg",
+        "colorway": "chicago-lost-and-found"
+    },
+    {
+        "id": "58fe3837-63a3-4774-94f1-e4e45174c521",
+        "slug": "air-jordan-1-retro-high-og-skyline",
+        "name": "Jordan 1 Retro High OG",
+        "sku": "DX0054-805",
+        "brand": "jordan",
+        "image": "https://images.stockx.com/images/Air-Jordan-1-Retro-High-OG-Skyline-Product.jpg",
+        "colorway": "skyline"
+    },
+    {
+        "id": "ea540dc0-f05c-48e0-b703-363009124853",
+        "slug": "air-jordan-4-retro-sb-pine-green",
+        "name": "Jordan 4 Retro SB",
+        "sku": "DR5415-103",
+        "brand": "jordan",
+        "image": "https://images.stockx.com/images/Air-Jordan-4-Retro-SB-Pine-Green-Product.jpg",
+        "colorway": "pine-green"
+    },
+    {
+        "id": "bd59345a-c594-49ca-b1ab-5cedf0c2ac06",
+        "slug": "air-jordan-11-retro-low-cement-grey",
+        "name": "Jordan 11 Retro Low",
+        "sku": "AV2187-140",
+        "brand": "jordan",
+        "image": "https://images.stockx.com/images/Air-Jordan-11-Retro-Low-Cement-Grey-Product.jpg",
+        "colorway": "cement-grey"
+    },
+    {
+        "id": "587efff1-5d0e-4f99-8775-71dc5454473f",
+        "slug": "air-jordan-11-retro-low-cement-grey-gs",
+        "name": "Jordan 11 Retro Low",
+        "sku": "528896-140",
+        "brand": "jordan",
+        "image": "https://images.stockx.com/images/Air-Jordan-11-Retro-Low-Cement-Grey-GS.jpg",
+        "colorway": "cement-grey-(gs)"
+    },
+    {
+        "id": "809b39f3-905d-45f7-9151-ffc1e587c155",
+        "slug": "air-jordan-4-retro-se-craft-photon-dust",
+        "name": "Jordan 4 Retro SE",
+        "sku": "DV3742-021",
+        "brand": "jordan",
+        "image": "https://images.stockx.com/images/Air-Jordan-4-Retro-SE-Craft-Photon-Dust-Product.jpg",
+        "colorway": "craft-photon-dust"
+    },
+    {
+        "id": "69351631-c019-45dc-b5f5-ca793d9b81c9",
+        "slug": "air-jordan-5-retro-unc-university-blue",
+        "name": "Jordan 5 Retro",
+        "sku": "DV1310-401",
+        "brand": "jordan",
+        "image": "https://images.stockx.com/images/Air-Jordan-5-Retro-UNC-University-Blue-Product.jpg",
+        "colorway": "unc-university-blue"
+    },
+    {
+        "id": "677efdd6-b6c4-47f5-99aa-ed7ecb0c7fc7",
+        "slug": "air-jordan-4-retro-oil-green-w",
+        "name": "Jordan 4 Retro",
+        "sku": "AQ9129-103",
+        "brand": "jordan",
+        "image": "https://images.stockx.com/images/Air-Jordan-4-Retro-Oil-Green-W-Product.jpg",
+        "colorway": "seafoam-(women's)"
+    }
+]
+```
+</ResponseExample>
