@@ -1,0 +1,80 @@
+---
+title: "Releases"
+api: "GET https://app.retailed.io/api/v1/sneakers/releases"
+description: "Get all sneakers releases for a given date"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Query Parameters
+
+<ParamField query="released_at" type="string" optional={true} placeholder="2023-04-19">
+    Sneaker released at.
+</ParamField>
+
+### Response
+
+<ResponseField name="count" type="number">
+    Indicates the number of sneakers returned
+</ResponseField>
+
+<ResponseField name="data" type="object">
+    Array of sneakers
+</ResponseField>
+
+<ResponseField name="error" type="object">
+    Not empty if an error occured
+</ResponseField>
+
+<ResponseField name="usage" type="object">
+    API usage
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://app.retailed.io/api/v1/sneakers/releases?released_at=2023-04-19' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+    "count": 4,
+    "data": [
+        {
+            "id": "74ef6994-7b61-42fa-bc4d-e0ee19e39b5e",
+            "name": "Nike Ja 1 Day One (GS)",
+            "sku": "DX2294-400"
+        },
+        {
+            "id": "bd5fbeb9-6774-4555-8146-b008978c744c",
+            "name": "Nike Air Force 1 Low '07 LX Command Force Obsidian Gorge Green (Women's)",
+            "sku": "DR0148-300"
+        },
+        {
+            "id": "a9dbaaca-7503-4094-8e59-522983e93604",
+            "name": "Nike ACG Mountain Fly 2 Low Neutral Olive",
+            "sku": "DV7903-200"
+        },
+        {
+            "id": "71736129-4ae8-45b6-a119-cb1fedfc47eb",
+            "name": "Nike Ja 1 Day One",
+            "sku": "DR8785-400"
+        }
+    ],
+    "error": null,
+    "usage": {
+        "plan": "API",
+        "remaining": "unlimited"
+    }
+}
+```
+</ResponseExample>

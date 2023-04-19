@@ -70,6 +70,7 @@
       "group": "Sneakers",
       "pages": [
         "database/sneakers/search",
+        "database/sneakers/releases",
         {
           "group": "Product",
           "pages": [
