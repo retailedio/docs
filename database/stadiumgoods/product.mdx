@@ -1,0 +1,72 @@
+---
+title: "StadiumGoods Product"
+api: "GET https://app.retailed.io/api/v1/stadiumgoods/product"
+description: "Get product information from StadiumGoods"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="BQ6472-015">
+    Product SKU : `BQ6472-015`
+</ParamField>
+
+### Response
+
+<ResponseField name="object" type="Product Object">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="id" type="string">
+            StadiumGoods product id
+        </ResponseField>
+        <ResponseField name="slug" type="string">
+            StadiumGoods product slug
+        </ResponseField>
+        <ResponseField name="name" type="string">
+            StadiumGoods product name
+        </ResponseField>
+        <ResponseField name="description" type="string">
+            StadiumGoods product description
+        </ResponseField>
+        <ResponseField name="sku" type="string">
+            StadiumGoods product SKU
+        </ResponseField>
+        <ResponseField name="image" type="list">
+            StadiumGoods product images
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash product
+curl --location --request GET 'https://app.retailed.io/api/v1/stadiumgoods/product?query=BQ6472-015' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json product
+{
+    "id": "17523559",
+    "slug": "wmns-air-jordan-1-mid-grey-fog-17523559",
+    "name": "WMNS Air Jordan 1 Mid Grey Fog",
+    "description": "The Women’s Air Jordan 1 Mid “Grey Fog” is a women's colorway of Michael Jordan’s first signature shoe in its mid-top style that excels in versatility. The “Grey Fog” brings another appealing look to the Air Jordan 1 Mid, one of the most popular shoes in Jordan Brand’s collection. Designed to be dressed up or down, the “Grey Fog” features white leather on the perforated toe, mid-panel, and collar. Contrasting Grey Fog leather appears on the overlays on the toe cap, forefoot, eyelets, collar, and heel. The Swoosh is found in black leather and a black Wings logo appears on the collar. Additional branding, including a black Jumpman logo and “Air” detailing, can be found on the white nylon tongue tag.",
+    "sku": "BQ6472-015",
+    "images": [
+        "https://img.stadiumgoods.com/jordan-wmns-air-jordan-1-mid-grey-fog_17523559_43042724_2048.jpg",
+        "https://img.stadiumgoods.com/jordan-wmns-air-jordan-1-mid-grey-fog_17523559_43042726_2048.jpg",
+        "https://img.stadiumgoods.com/jordan-wmns-air-jordan-1-mid-grey-fog_17523559_43043800_2048.jpg",
+        "https://img.stadiumgoods.com/jordan-wmns-air-jordan-1-mid-grey-fog_17523559_43043813_2048.jpg",
+        "https://img.stadiumgoods.com/jordan-wmns-air-jordan-1-mid-grey-fog_17523559_43043819_2048.jpg",
+        "https://img.stadiumgoods.com/jordan-wmns-air-jordan-1-mid-grey-fog_17523559_43043827_2048.jpg"
+    ]
+}
+```
+</ResponseExample>
