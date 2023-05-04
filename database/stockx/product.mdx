@@ -110,14 +110,11 @@ description: "Get product information from StockX"
                         </ResponseField>
                         <ResponseField name="sales" type="object">
                             <Expandable title="properties" defaultOpen={true}>
-                                <ResponseField name="annual_high" type="number">
-                                    StockX product variant annual high
+                                <ResponseField name="last_sale" type="number">
+                                    StockX product last sale
                                 </ResponseField>
-                                <ResponseField name="annual_low" type="number">
-                                    StockX product variant annual low
-                                </ResponseField>
-                                <ResponseField name="volatility" type="number">
-                                    StockX product variant volatility
+                                <ResponseField name="sales_last_72h" type="number">
+                                    72h last sales
                                 </ResponseField>
                             </Expandable>
                         </ResponseField>
@@ -145,14 +142,11 @@ description: "Get product information from StockX"
                 </ResponseField>
                 <ResponseField name="sales" type="object">
                     <Expandable title="properties" defaultOpen={true}>
-                        <ResponseField name="annual_high" type="number">
-                            StockX product annual high
+                        <ResponseField name="last_sale" type="number">
+                            StockX product last sale
                         </ResponseField>
-                        <ResponseField name="annual_low" type="number">
-                            StockX product annual low
-                        </ResponseField>
-                        <ResponseField name="volatility" type="number">
-                            StockX product volatility
+                        <ResponseField name="sales_last_72h" type="number">
+                            72h last sales
                         </ResponseField>
                     </Expandable>
                 </ResponseField>
@@ -246,19 +240,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 255,
-                "highest_bid": 170,
-                "number_asks": 5,
+                "lowest_ask": 254,
+                "highest_bid": 87,
+                "number_asks": 9,
                 "number_bids": 3
             },
             "sales": {
-                "annual_high": 282,
-                "annual_low": 228,
-                "volatility": 0.069815,
-                "price_premium": 0.727,
-                "last_sale": 259,
-                "change_value": 4,
-                "change_percentage": 0.015686
+                "last_sale": 200,
+                "sales_last_72h": 0
             }
         }
     },
@@ -298,19 +287,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 190,
-                "highest_bid": 141,
-                "number_asks": 19,
-                "number_bids": 6
+                "lowest_ask": 185,
+                "highest_bid": 100,
+                "number_asks": 22,
+                "number_bids": 7
             },
             "sales": {
-                "annual_high": 397,
-                "annual_low": 116,
-                "volatility": 0.127696,
-                "price_premium": 0.387,
-                "last_sale": 208,
-                "change_value": 18,
-                "change_percentage": 0.093631
+                "last_sale": 184,
+                "sales_last_72h": 0
             }
         }
     },
@@ -354,19 +338,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 212,
-                "highest_bid": 170,
-                "number_asks": 13,
-                "number_bids": 4
+                "lowest_ask": 205,
+                "highest_bid": 121,
+                "number_asks": 17,
+                "number_bids": 6
             },
             "sales": {
-                "annual_high": 387,
-                "annual_low": 151,
-                "volatility": 0.094866,
-                "price_premium": 0.349,
-                "last_sale": 203,
-                "change_value": 7,
-                "change_percentage": 0.032704
+                "last_sale": 145,
+                "sales_last_72h": 1
             }
         }
     },
@@ -406,19 +385,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 174,
-                "highest_bid": 145,
-                "number_asks": 34,
-                "number_bids": 10
+                "lowest_ask": 176,
+                "highest_bid": 160,
+                "number_asks": 28,
+                "number_bids": 8
             },
             "sales": {
-                "annual_high": 559,
-                "annual_low": 140,
-                "volatility": 0.131562,
-                "price_premium": 0.196,
-                "last_sale": 180,
-                "change_value": 33,
-                "change_percentage": 0.219971
+                "last_sale": 217,
+                "sales_last_72h": 1
             }
         }
     },
@@ -462,19 +436,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 176,
-                "highest_bid": 160,
-                "number_asks": 25,
-                "number_bids": 10
+                "lowest_ask": 192,
+                "highest_bid": 170,
+                "number_asks": 24,
+                "number_bids": 15
             },
             "sales": {
-                "annual_high": 500,
-                "annual_low": 153,
-                "volatility": 0.112033,
-                "price_premium": 0.287,
-                "last_sale": 194,
-                "change_value": -53,
-                "change_percentage": -0.217378
+                "last_sale": 192,
+                "sales_last_72h": 2
             }
         }
     },
@@ -514,19 +483,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 195,
-                "highest_bid": 150,
-                "number_asks": 31,
-                "number_bids": 14
+                "lowest_ask": 191,
+                "highest_bid": 167,
+                "number_asks": 36,
+                "number_bids": 13
             },
             "sales": {
-                "annual_high": 500,
-                "annual_low": 151,
-                "volatility": 0.089219,
-                "price_premium": 0.133,
-                "last_sale": 170,
-                "change_value": -20,
-                "change_percentage": -0.105263
+                "last_sale": 190,
+                "sales_last_72h": 0
             }
         }
     },
@@ -570,19 +534,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 213,
-                "highest_bid": 180,
-                "number_asks": 34,
+                "lowest_ask": 216,
+                "highest_bid": 177,
+                "number_asks": 35,
                 "number_bids": 14
             },
             "sales": {
-                "annual_high": 441,
-                "annual_low": 161,
-                "volatility": 0.11546,
-                "price_premium": 0.42,
-                "last_sale": 213,
-                "change_value": -43,
-                "change_percentage": -0.167969
+                "last_sale": 251,
+                "sales_last_72h": 1
             }
         }
     },
@@ -622,19 +581,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 210,
-                "highest_bid": 191,
-                "number_asks": 23,
-                "number_bids": 17
+                "lowest_ask": 202,
+                "highest_bid": 195,
+                "number_asks": 27,
+                "number_bids": 19
             },
             "sales": {
-                "annual_high": 961,
-                "annual_low": 185,
-                "volatility": 0.127811,
-                "price_premium": 0.472,
-                "last_sale": 221,
-                "change_value": 3,
-                "change_percentage": 0.013126
+                "last_sale": 203,
+                "sales_last_72h": 0
             }
         }
     },
@@ -674,19 +628,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 236,
-                "highest_bid": 181,
-                "number_asks": 21,
-                "number_bids": 15
+                "lowest_ask": 235,
+                "highest_bid": 195,
+                "number_asks": 24,
+                "number_bids": 19
             },
             "sales": {
-                "annual_high": 1112,
-                "annual_low": 170,
-                "volatility": 0.128247,
-                "price_premium": 0.697,
-                "last_sale": 255,
-                "change_value": 20,
-                "change_percentage": 0.083489
+                "last_sale": 275,
+                "sales_last_72h": 1
             }
         }
     },
@@ -726,19 +675,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 254,
-                "highest_bid": 231,
-                "number_asks": 47,
-                "number_bids": 43
+                "lowest_ask": 250,
+                "highest_bid": 220,
+                "number_asks": 46,
+                "number_bids": 38
             },
             "sales": {
-                "annual_high": 1200,
-                "annual_low": 187,
-                "volatility": 0.096747,
-                "price_premium": 0.6,
-                "last_sale": 240,
-                "change_value": -25,
-                "change_percentage": -0.095929
+                "last_sale": 250,
+                "sales_last_72h": 1
             }
         }
     },
@@ -782,19 +726,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 251,
-                "highest_bid": 225,
-                "number_asks": 42,
-                "number_bids": 52
+                "lowest_ask": 261,
+                "highest_bid": 216,
+                "number_asks": 48,
+                "number_bids": 39
             },
             "sales": {
-                "annual_high": 680,
-                "annual_low": 195,
-                "volatility": 0.130678,
-                "price_premium": 0.653,
-                "last_sale": 248,
-                "change_value": -68,
-                "change_percentage": -0.216104
+                "last_sale": 312,
+                "sales_last_72h": 1
             }
         }
     },
@@ -838,19 +777,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 262,
-                "highest_bid": 235,
-                "number_asks": 57,
-                "number_bids": 49
+                "lowest_ask": 242,
+                "highest_bid": 221,
+                "number_asks": 59,
+                "number_bids": 39
             },
             "sales": {
-                "annual_high": 1450,
-                "annual_low": 213,
-                "volatility": 0.105904,
-                "price_premium": 0.668,
-                "last_sale": 251,
-                "change_value": 1,
-                "change_percentage": 0.000964
+                "last_sale": 264,
+                "sales_last_72h": 1
             }
         }
     },
@@ -890,19 +824,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 265,
-                "highest_bid": 260,
-                "number_asks": 47,
-                "number_bids": 49
+                "lowest_ask": 270,
+                "highest_bid": 240,
+                "number_asks": 51,
+                "number_bids": 48
             },
             "sales": {
-                "annual_high": 1162,
-                "annual_low": 232,
-                "volatility": 0.102129,
-                "price_premium": 1.322,
-                "last_sale": 349,
-                "change_value": 89,
-                "change_percentage": 0.339287
+                "last_sale": 270,
+                "sales_last_72h": 1
             }
         }
     },
@@ -942,19 +871,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 292,
-                "highest_bid": 262,
+                "lowest_ask": 287,
+                "highest_bid": 268,
                 "number_asks": 53,
-                "number_bids": 47
+                "number_bids": 43
             },
             "sales": {
-                "annual_high": 1804,
-                "annual_low": 236,
-                "volatility": 0.094936,
-                "price_premium": 0.934,
-                "last_sale": 291,
-                "change_value": -33,
-                "change_percentage": -0.10304
+                "last_sale": 287,
+                "sales_last_72h": 2
             }
         }
     },
@@ -993,24 +917,19 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         },
         {
             "type": "EAN-13",
-            "identifier": "12210185743"
+            "identifier": "12210210377"
         }
         ],
         "market": {
             "bids": {
-                "lowest_ask": 280,
-                "highest_bid": 252,
-                "number_asks": 46,
-                "number_bids": 41
+                "lowest_ask": 298,
+                "highest_bid": 267,
+                "number_asks": 36,
+                "number_bids": 39
             },
             "sales": {
-                "annual_high": 1340,
-                "annual_low": 220,
-                "volatility": 0.09231,
-                "price_premium": 1.061,
-                "last_sale": 310,
-                "change_value": 35,
-                "change_percentage": 0.124202
+                "last_sale": 267,
+                "sales_last_72h": 3
             }
         }
     },
@@ -1054,19 +973,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 304,
-                "highest_bid": 265,
-                "number_asks": 59,
-                "number_bids": 33
+                "lowest_ask": 306,
+                "highest_bid": 275,
+                "number_asks": 49,
+                "number_bids": 41
             },
             "sales": {
-                "annual_high": 1050,
-                "annual_low": 242,
-                "volatility": 0.063807,
-                "price_premium": 1,
-                "last_sale": 300,
-                "change_value": 20,
-                "change_percentage": 0.071429
+                "last_sale": 299,
+                "sales_last_72h": 1
             }
         }
     },
@@ -1110,19 +1024,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 323,
-                "highest_bid": 263,
-                "number_asks": 32,
-                "number_bids": 24
+                "lowest_ask": 300,
+                "highest_bid": 270,
+                "number_asks": 29,
+                "number_bids": 20
             },
             "sales": {
-                "annual_high": 923,
-                "annual_low": 232,
-                "volatility": 0.081852,
-                "price_premium": 1.147,
-                "last_sale": 322,
-                "change_value": 22,
-                "change_percentage": 0.073333
+                "last_sale": 265,
+                "sales_last_72h": 0
             }
         }
     },
@@ -1162,19 +1071,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 290,
-                "highest_bid": 275,
-                "number_asks": 45,
-                "number_bids": 25
+                "lowest_ask": 300,
+                "highest_bid": 280,
+                "number_asks": 50,
+                "number_bids": 24
             },
             "sales": {
-                "annual_high": 1005,
-                "annual_low": 252,
-                "volatility": 0.039523,
-                "price_premium": 0.933,
                 "last_sale": 290,
-                "change_value": 13,
-                "change_percentage": 0.046931
+                "sales_last_72h": 2
             }
         }
     },
@@ -1214,19 +1118,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 345,
-                "highest_bid": 290,
-                "number_asks": 10,
-                "number_bids": 13
+                "lowest_ask": 320,
+                "highest_bid": 241,
+                "number_asks": 18,
+                "number_bids": 8
             },
             "sales": {
-                "annual_high": 915,
-                "annual_low": 215,
-                "volatility": 0.049594,
-                "price_premium": 0.993,
-                "last_sale": 299,
-                "change_value": 43,
-                "change_percentage": 0.167969
+                "last_sale": 282,
+                "sales_last_72h": 0
             }
         }
     },
@@ -1270,19 +1169,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 347,
-                "highest_bid": 280,
-                "number_asks": 26,
-                "number_bids": 20
+                "lowest_ask": 325,
+                "highest_bid": 317,
+                "number_asks": 31,
+                "number_bids": 15
             },
             "sales": {
-                "annual_high": 1450,
-                "annual_low": 246,
-                "volatility": 0.07708,
-                "price_premium": 1.307,
-                "last_sale": 346,
-                "change_value": 41,
-                "change_percentage": 0.134426
+                "last_sale": 398,
+                "sales_last_72h": 0
             }
         }
     },
@@ -1326,19 +1220,14 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 295,
-                "highest_bid": 259,
-                "number_asks": 24,
+                "lowest_ask": 270,
+                "highest_bid": 230,
+                "number_asks": 28,
                 "number_bids": 10
             },
             "sales": {
-                "annual_high": 632,
-                "annual_low": 200,
-                "volatility": 0.101478,
-                "price_premium": 0.973,
-                "last_sale": 296,
-                "change_value": 1,
-                "change_percentage": 0.00339
+                "last_sale": 280,
+                "sales_last_72h": 0
             }
         }
     },
@@ -1382,38 +1271,28 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
         ],
         "market": {
             "bids": {
-                "lowest_ask": 263,
-                "highest_bid": 220,
-                "number_asks": 17,
-                "number_bids": 6
+                "lowest_ask": 264,
+                "highest_bid": 215,
+                "number_asks": 14,
+                "number_bids": 8
             },
             "sales": {
-                "annual_high": 900,
-                "annual_low": 180,
-                "volatility": 0.10324,
-                "price_premium": 0.667,
                 "last_sale": 250,
-                "change_value": 10,
-                "change_percentage": 0.041667
+                "sales_last_72h": 0
             }
         }
     }
     ],
     "market": {
         "bids": {
-            "lowest_ask": 174,
-            "highest_bid": 290,
-            "number_asks": 715,
-            "number_bids": 505
+            "lowest_ask": 176,
+            "highest_bid": 317,
+            "number_asks": 747,
+            "number_bids": 480
         },
         "sales": {
-            "annual_high": 1804,
-            "annual_low": 116,
-            "volatility": 0.190628,
-            "price_premium": 0.668,
-            "last_sale": 251,
-            "change_value": 11,
-            "change_percentage": 0.04267
+            "last_sale": 275,
+            "sales_last_72h": 21
         }
     }
 }
