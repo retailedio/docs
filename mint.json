@@ -97,6 +97,7 @@
         "database/stockx/product_360",
         "database/stockx/product_activity",
         "database/stockx/product_graph",
+        "database/stockx/product_history",
         "database/stockx/trends"
       ]
     },

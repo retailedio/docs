@@ -1,0 +1,89 @@
+---
+title: "StockX Product History"
+api: "GET https://app.retailed.io/api/v1/stockx/product/history"
+description: "Get StockX product history"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="nike-air-max-1-travis-scott-wheat">
+    Product query : `air-jordan-3-retro-white-cement-reimagined` or `c318bbcc-312a-4396-9252-698c203d1dea`
+</ParamField>
+
+<ParamField query="currency" type="string" optional={false} placeholder="USD">
+    Currency code : `USD` or `EUR`.
+</ParamField>
+
+### Response
+
+<ResponseField name="object" type="History Object">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="sales_information" type="Sales Information Object">
+            <Expandable title="properties" defaultOpen={true}>
+                <ResponseField name="annual_high" type="number">
+                    Annual high price
+                </ResponseField>
+                <ResponseField name="annual_low" type="number">
+                    Annual low price
+                </ResponseField>
+                <ResponseField name="volatility" type="number">
+                    Volatility
+                </ResponseField>
+                <ResponseField name="price_premium" type="number">
+                    Price premium
+                </ResponseField>
+            </Expandable>
+        </ResponseField>
+        <ResponseField name="dead_stock" type="Dead Stock Object">
+            <Expandable title="properties" defaultOpen={true}>
+                <ResponseField name="range_low" type="number">
+                    Range low price
+                </ResponseField>
+                <ResponseField name="range_high" type="number">
+                    Range high price
+                </ResponseField>
+                <ResponseField name="average_price" type="number">
+                    Average price
+                </ResponseField>
+                <ResponseField name="sold" type="number">
+                    Number of sold items
+                </ResponseField>
+            </Expandable>
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash history
+curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product/history?query=nike-air-max-1-travis-scott-wheat&currency=EUR' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json history
+{
+    "sales_information": {
+        "annual_high": 493,
+        "annual_low": 109,
+        "volatility": 0.114592,
+        "price_premium": 1.022
+    },
+    "dead_stock": {
+        "range_low": 252,
+        "range_high": 316,
+        "average_price": 275,
+        "sold": 9517
+    }
+}
+```
+</ResponseExample>
