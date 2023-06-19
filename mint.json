@@ -117,6 +117,12 @@
             ]
           }
         ]
+    },
+    {
+      "group": "Shopify",
+      "pages": [
+        "database/shopify/products"
+      ]
     }
   ],
   "footerSocials": {

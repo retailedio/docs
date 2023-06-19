@@ -1,0 +1,758 @@
+---
+title: "Products"
+api: "GET https://app.retailed.io/api/v1/shopify/products"
+description: "Returns products from a Shopify store"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Query Parameters
+
+<ParamField query="index" type="string" optional={true} placeholder="mystore">
+    Shopify slug of the store. Contact us if you need to get the slug of your store.
+</ParamField>
+
+<ParamField query="query" type="string" optional={true} placeholder="DV6773-220">
+    Sneaker slug, name or sku
+</ParamField>
+
+### Response
+
+<ResponseField name="data" type="array">
+    Products data
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://app.retailed.io/api/v1/shopify/products?index=mystore&query=DM1275-250' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json Response
+[
+    {
+        "id": 6814273798253,
+        "title": "Travis Scott Cact.us Corp BH Jacket Limestone",
+        "body_html": "<p><meta charset=\"utf-8\"><span data-mce-fragment=\"1\">Pour accompagner la sortie de la </span><a title=\"Travis Scott Cactus Jack - Collection - mystore\" href=\"https://mystore.com/collections/travis-scott-cactus-jack\" data-mce-fragment=\"1\" data-mce-href=\"https://mystore.com/collections/travis-scott-cactus-jack\"><strong data-mce-fragment=\"1\"><span style=\"text-decoration: underline;\" data-mce-fragment=\"1\" data-mce-style=\"text-decoration: underline;\">Air Max 1</span></strong></a><span data-mce-fragment=\"1\"> et de la </span><a title=\"Travis Scott Cactus Jack - Collection - mystore\" href=\"https://mystore.com/collections/travis-scott-cactus-jack\" data-mce-fragment=\"1\" data-mce-href=\"https://mystore.com/collections/travis-scott-cactus-jack\"><strong data-mce-fragment=\"1\"><span style=\"text-decoration: underline;\" data-mce-fragment=\"1\" data-mce-style=\"text-decoration: underline;\">Air Trainer 1</span></strong></a><span data-mce-fragment=\"1\">, </span><a title=\"Nike - Collection - mystore\" href=\"https://mystore.com/collections/nike\" data-mce-fragment=\"1\" data-mce-href=\"https://mystore.com/collections/nike\"><strong data-mce-fragment=\"1\"><span style=\"text-decoration: underline;\" data-mce-fragment=\"1\" data-mce-style=\"text-decoration: underline;\">Nike</span></strong></a><span data-mce-fragment=\"1\"> et </span><strong data-mce-fragment=\"1\">Cact.us Corp</strong><span data-mce-fragment=\"1\"> ont également dévoilé une collection de vêtements.</span></p>\n<p>La <strong>Nike Travis Scott Cact.us Corp BH Jacket Limestone</strong> est une veste <strong>technique</strong> conçue avec au moins 75% de fibres de <strong>polyester recyclé</strong>. Dans un beige uni, cette pièce intègre du <strong>GORE-TEX</strong> pour résister aux intempéries. La capuche doublé équipée de la technologie <strong>Polartec</strong> vous garde au chaud en toute circonstance. <meta charset=\"utf-8\"><span data-mce-fragment=\"1\">Petite particularité dans la poche. Elle permet de </span><strong data-mce-fragment=\"1\">bloquer les emissions et receptions de signaux</strong><span data-mce-fragment=\"1\"> des téléphones portables quand ils sont à l'intérieur. </span></p>\n<p><meta charset=\"utf-8\"><strong>SKU</strong><span> : DM1275-250</span><br><strong>Date de sortie</strong><span> : Mai 2022</span><br><strong>Saison</strong><span> : SS22</span></p>",
+        "vendor": "Nike",
+        "product_type": "Accessoire",
+        "created_at": "2022-05-27T11:44:56+02:00",
+        "handle": "nike-travis-scott-cact-us-corp-bh-jacket-limestone",
+        "updated_at": "2023-06-15T11:07:57+02:00",
+        "published_at": "2022-06-01T15:12:58+02:00",
+        "template_suffix": "",
+        "published_scope": "web",
+        "tags": "Annee|2022, Categorie Streetwear|Jacket, Couleur|Beige, Couleur|Marron, CoupeStreetwear|Standard, EXCLUSIONBLACKFRIDAY2022, EXCLUSIONWINTER, EXCLUSIONWTNDAY2023, Fil d'Ariane|Streetwear > Jacket, INCLUSIONHAPPYHOUR, Marque|Nike, Matières|Synthétique, Sizingtype|Unisexe, TAGLEO",
+        "variants": [
+            {
+                "id": 40098844016749,
+                "product_id": 6814273798253,
+                "title": "S - 540€",
+                "price": "540.00",
+                "sku": "DM1275-250",
+                "position": 1,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": null,
+                "option1": "S - 540€",
+                "option2": null,
+                "option3": null,
+                "created_at": "2022-06-01T15:10:55+02:00",
+                "updated_at": "2023-02-27T11:37:20+01:00",
+                "taxable": true,
+                "barcode": "19524476882007049",
+                "grams": 1000,
+                "image_id": null,
+                "weight": 1,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            },
+            {
+                "id": 40098844049517,
+                "product_id": 6814273798253,
+                "title": "M - 540€",
+                "price": "540.00",
+                "sku": "DM1275-250",
+                "position": 2,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": null,
+                "option1": "M - 540€",
+                "option2": null,
+                "option3": null,
+                "created_at": "2022-06-01T15:10:55+02:00",
+                "updated_at": "2023-02-27T11:37:20+01:00",
+                "taxable": true,
+                "barcode": "",
+                "grams": 1000,
+                "image_id": null,
+                "weight": 1,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            },
+            {
+                "id": 40098844082285,
+                "product_id": 6814273798253,
+                "title": "L - 540€",
+                "price": "540.00",
+                "sku": "DM1275-250",
+                "position": 3,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": null,
+                "option1": "L - 540€",
+                "option2": null,
+                "option3": null,
+                "created_at": "2022-06-01T15:10:55+02:00",
+                "updated_at": "2023-02-27T11:37:20+01:00",
+                "taxable": true,
+                "barcode": "",
+                "grams": 1000,
+                "image_id": null,
+                "weight": 1,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            },
+            {
+                "id": 40098844115053,
+                "product_id": 6814273798253,
+                "title": "XL - 540€",
+                "price": "540.00",
+                "sku": "DM1275-250",
+                "position": 4,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": null,
+                "option1": "XL - 540€",
+                "option2": null,
+                "option3": null,
+                "created_at": "2022-06-01T15:10:55+02:00",
+                "updated_at": "2023-02-27T11:37:20+01:00",
+                "taxable": true,
+                "barcode": "",
+                "grams": 1000,
+                "image_id": null,
+                "weight": 1,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            }
+        ],
+        "options": [
+            {
+                "id": 8795503394925,
+                "product_id": 6814273798253,
+                "name": "TAILLE",
+                "position": 1,
+                "values": [
+                    "S - 540€",
+                    "M - 540€",
+                    "L - 540€",
+                    "XL - 540€"
+                ]
+            }
+        ],
+        "images": [
+            {
+                "id": 29161760522349,
+                "product_id": 6814273798253,
+                "position": 1,
+                "created_at": "2022-05-27T16:29:47+02:00",
+                "updated_at": "2022-05-27T16:29:49+02:00",
+                "alt": "Nike Travis Scott Cact.us Corp BH Jacket Limestone",
+                "width": 700,
+                "height": 420,
+                "src": "https://cdn.shopify.com/s/files/1/2358/2817/products/nike-travis-scott-cact-us-corp-bh-jacket-limestone-mystore-1_1.png?v=1653661789",
+                "variant_ids": []
+            },
+            {
+                "id": 29161760587885,
+                "product_id": 6814273798253,
+                "position": 2,
+                "created_at": "2022-05-27T16:29:49+02:00",
+                "updated_at": "2022-05-27T16:29:50+02:00",
+                "alt": "Nike Travis Scott Cact.us Corp BH Jacket Limestone",
+                "width": 700,
+                "height": 420,
+                "src": "https://cdn.shopify.com/s/files/1/2358/2817/products/nike-travis-scott-cact-us-corp-bh-jacket-limestone-mystore-1_2.png?v=1653661790",
+                "variant_ids": []
+            }
+        ],
+        "image": {
+            "id": 29161760522349,
+            "product_id": 6814273798253,
+            "position": 1,
+            "created_at": "2022-05-27T16:29:47+02:00",
+            "updated_at": "2022-05-27T16:29:49+02:00",
+            "alt": "Nike Travis Scott Cact.us Corp BH Jacket Limestone",
+            "width": 700,
+            "height": 420,
+            "src": "https://cdn.shopify.com/s/files/1/2358/2817/products/nike-travis-scott-cact-us-corp-bh-jacket-limestone-mystore-1_1.png?v=1653661789",
+            "variant_ids": []
+        }
+    },
+    {
+        "id": 6814274289773,
+        "title": "Travis Scott Cact.us Corp BH Vest Velvet Brown",
+        "body_html": "<p><span data-mce-fragment=\"1\">Pour accompagner la sortie de la </span><span style=\"text-decoration: underline;\"><a title=\"Nike Air Max 1 Travis Scott Cactus Jack Baroque Brown\" href=\"https://mystore.com/products/nike-air-max-1-travis-scott-cactus-jack-baroque-brown\"><strong data-mce-fragment=\"1\">Air Max 1</strong></a></span><span data-mce-fragment=\"1\"> et de la </span><a title=\"Nike Air Trainer 1 SP Travis Scott Wheat\" href=\"https://mystore.com/products/nike-air-trainer-1-sp-travis-scott-wheat\"><strong data-mce-fragment=\"1\"><span data-mce-fragment=\"1\" style=\"text-decoration: underline;\" data-mce-style=\"text-decoration: underline;\">Air Trainer 1</span></strong></a><span data-mce-fragment=\"1\">, </span><a data-mce-fragment=\"1\" href=\"https://mystore.com/collections/nike\" title=\"Nike - Collection - mystore\" data-mce-href=\"https://mystore.com/collections/nike\"><strong data-mce-fragment=\"1\"><span data-mce-fragment=\"1\" style=\"text-decoration: underline;\" data-mce-style=\"text-decoration: underline;\">Nike</span></strong></a><span data-mce-fragment=\"1\"> et </span><strong data-mce-fragment=\"1\">Cact.us Corp</strong><span data-mce-fragment=\"1\"> ont également dévoilé une collection de vêtements.</span></p>\n<p>La<span> </span><strong>Nike Travis Scott Cact.us Corp BH Vest Velvet Brown</strong><span> </span>est une veste<span> </span><strong>technique</strong><span> sans manche </span>conçue avec une isolation <strong>PrimeLoft<meta charset=\"utf-8\">®</strong>. Dans un <strong>marron</strong> uni, cette pièce vous procurera une chaleur optimale. <meta charset=\"utf-8\"><span data-mce-fragment=\"1\">Les sangles réglables vous permettent de personnaliser la coupe pour bénéficier d'un confort inégalé !</span></p>\n<p><strong>SKU</strong> : DM1277-220<br><strong>Date de sortie</strong> : Mai 2022<br><strong>Saison</strong> : SS22</p>",
+        "vendor": "Nike",
+        "product_type": "Accessoire",
+        "created_at": "2022-05-27T11:50:28+02:00",
+        "handle": "nike-travis-scott-cact-us-corp-bh-vest-velvet-brown",
+        "updated_at": "2023-06-15T11:07:57+02:00",
+        "published_at": "2022-06-02T14:56:27+02:00",
+        "template_suffix": "",
+        "published_scope": "web",
+        "tags": "Annee|2022, Categorie Streetwear|Jacket, Couleur|Marron, CoupeStreetwear|Standard, EXCLUSIONBLACKFRIDAY2022, EXCLUSIONWINTER, EXCLUSIONWTNDAY2023, EXPRESS, Fil d'Ariane|Streetwear > Jacket, INCLUSIONHAPPYHOUR, Marque|Nike, Matières|Synthétique, Sizingtype|Unisexe, stock48, TAGLEO",
+        "variants": [
+            {
+                "id": 40484626956397,
+                "product_id": 6814274289773,
+                "title": "XS - 230€",
+                "price": "230.00",
+                "sku": "DM1277-220",
+                "position": 1,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": null,
+                "option1": "XS - 230€",
+                "option2": null,
+                "option3": null,
+                "created_at": "2022-12-13T16:20:19+01:00",
+                "updated_at": "2023-04-18T17:57:55+02:00",
+                "taxable": true,
+                "barcode": "",
+                "grams": 1000,
+                "image_id": null,
+                "weight": 1,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            },
+            {
+                "id": 40496747511917,
+                "product_id": 6814274289773,
+                "title": "XS - 185€ - EXPRESS 48H",
+                "price": "185.00",
+                "sku": "DM1277-220",
+                "position": 2,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": "shopify",
+                "option1": "XS - 185€ - EXPRESS 48H",
+                "option2": null,
+                "option3": null,
+                "created_at": "2022-12-28T14:50:27+01:00",
+                "updated_at": "2023-04-18T17:57:54+02:00",
+                "taxable": true,
+                "barcode": "",
+                "grams": 10000,
+                "image_id": null,
+                "weight": 10,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            },
+            {
+                "id": 40098853650541,
+                "product_id": 6814274289773,
+                "title": "S - 170€",
+                "price": "170.00",
+                "sku": "DM1277-220",
+                "position": 3,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": null,
+                "option1": "S - 170€",
+                "option2": null,
+                "option3": null,
+                "created_at": "2022-06-01T15:20:24+02:00",
+                "updated_at": "2023-04-18T17:57:56+02:00",
+                "taxable": true,
+                "barcode": "",
+                "grams": 1000,
+                "image_id": null,
+                "weight": 1,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            },
+            {
+                "id": 40471809753197,
+                "product_id": 6814274289773,
+                "title": "S - 170€ - EXPRESS 48H",
+                "price": "170.00",
+                "sku": "DM1277-220",
+                "position": 4,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": "shopify",
+                "option1": "S - 170€ - EXPRESS 48H",
+                "option2": null,
+                "option3": null,
+                "created_at": "2022-11-28T16:58:54+01:00",
+                "updated_at": "2023-04-18T17:57:56+02:00",
+                "taxable": true,
+                "barcode": "",
+                "grams": 10000,
+                "image_id": null,
+                "weight": 10,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            },
+            {
+                "id": 40098853683309,
+                "product_id": 6814274289773,
+                "title": "M - 170€",
+                "price": "170.00",
+                "sku": "DM1277-220",
+                "position": 5,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": null,
+                "option1": "M - 170€",
+                "option2": null,
+                "option3": null,
+                "created_at": "2022-06-01T15:20:24+02:00",
+                "updated_at": "2023-04-18T17:57:58+02:00",
+                "taxable": true,
+                "barcode": "",
+                "grams": 1000,
+                "image_id": null,
+                "weight": 1,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            },
+            {
+                "id": 40496749805677,
+                "product_id": 6814274289773,
+                "title": "M - 165€ - EXPRESS 48H",
+                "price": "165.00",
+                "sku": "DM1277-220",
+                "position": 6,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": "shopify",
+                "option1": "M - 165€ - EXPRESS 48H",
+                "option2": null,
+                "option3": null,
+                "created_at": "2022-12-28T14:56:41+01:00",
+                "updated_at": "2023-04-18T17:57:57+02:00",
+                "taxable": true,
+                "barcode": "",
+                "grams": 10000,
+                "image_id": null,
+                "weight": 10,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            },
+            {
+                "id": 40098853716077,
+                "product_id": 6814274289773,
+                "title": "L - 170€",
+                "price": "170.00",
+                "sku": "DM1277-220",
+                "position": 7,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": null,
+                "option1": "L - 170€",
+                "option2": null,
+                "option3": null,
+                "created_at": "2022-06-01T15:20:24+02:00",
+                "updated_at": "2023-04-18T17:57:59+02:00",
+                "taxable": true,
+                "barcode": "",
+                "grams": 1000,
+                "image_id": null,
+                "weight": 1,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            },
+            {
+                "id": 40496747348077,
+                "product_id": 6814274289773,
+                "title": "L - 175€ - EXPRESS 48H",
+                "price": "175.00",
+                "sku": "DM1277-220",
+                "position": 8,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": "shopify",
+                "option1": "L - 175€ - EXPRESS 48H",
+                "option2": null,
+                "option3": null,
+                "created_at": "2022-12-28T14:48:50+01:00",
+                "updated_at": "2023-04-18T17:57:59+02:00",
+                "taxable": true,
+                "barcode": "",
+                "grams": 10000,
+                "image_id": null,
+                "weight": 10,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            },
+            {
+                "id": 40098853748845,
+                "product_id": 6814274289773,
+                "title": "XL - 170€",
+                "price": "170.00",
+                "sku": "DM1277-220",
+                "position": 9,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": null,
+                "option1": "XL - 170€",
+                "option2": null,
+                "option3": null,
+                "created_at": "2022-06-01T15:20:24+02:00",
+                "updated_at": "2023-04-18T17:58:00+02:00",
+                "taxable": true,
+                "barcode": "",
+                "grams": 1000,
+                "image_id": null,
+                "weight": 1,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            }
+        ],
+        "options": [
+            {
+                "id": 8795503919213,
+                "product_id": 6814274289773,
+                "name": "TAILLE",
+                "position": 1,
+                "values": [
+                    "XS - 230€",
+                    "XS - 185€ - EXPRESS 48H",
+                    "S - 170€",
+                    "S - 170€ - EXPRESS 48H",
+                    "M - 170€",
+                    "M - 165€ - EXPRESS 48H",
+                    "L - 170€",
+                    "L - 175€ - EXPRESS 48H",
+                    "XL - 170€"
+                ]
+            }
+        ],
+        "images": [
+            {
+                "id": 29170267291757,
+                "product_id": 6814274289773,
+                "position": 1,
+                "created_at": "2022-05-31T18:13:45+02:00",
+                "updated_at": "2022-05-31T18:13:46+02:00",
+                "alt": "Travis Scott Cact.us Corp BH Vest Velvet Brown",
+                "width": 700,
+                "height": 420,
+                "src": "https://cdn.shopify.com/s/files/1/2358/2817/products/TravisScottCact.usCorpBHVestVelvetBrown.png?v=1654013626",
+                "variant_ids": []
+            },
+            {
+                "id": 29170267324525,
+                "product_id": 6814274289773,
+                "position": 2,
+                "created_at": "2022-05-31T18:13:45+02:00",
+                "updated_at": "2022-05-31T18:13:47+02:00",
+                "alt": "Travis Scott Cact.us Corp BH Vest Velvet Brown",
+                "width": 700,
+                "height": 420,
+                "src": "https://cdn.shopify.com/s/files/1/2358/2817/products/TravisScottCact.usCorpBHVestVelvetBrown1.png?v=1654013627",
+                "variant_ids": []
+            }
+        ],
+        "image": {
+            "id": 29170267291757,
+            "product_id": 6814274289773,
+            "position": 1,
+            "created_at": "2022-05-31T18:13:45+02:00",
+            "updated_at": "2022-05-31T18:13:46+02:00",
+            "alt": "Travis Scott Cact.us Corp BH Vest Velvet Brown",
+            "width": 700,
+            "height": 420,
+            "src": "https://cdn.shopify.com/s/files/1/2358/2817/products/TravisScottCact.usCorpBHVestVelvetBrown.png?v=1654013626",
+            "variant_ids": []
+        }
+    },
+    {
+        "id": 6814280220781,
+        "title": "Travis Scott Cact.us Corp BH T-Shirt Brown",
+        "body_html": "<p><meta charset=\"utf-8\"><span data-mce-fragment=\"1\">Pour accompagner la sortie de la </span><a href=\"https://mystore.com/collections/travis-scott-cactus-jack\" title=\"Travis Scott Cactus Jack - Collection - mystore\" data-mce-fragment=\"1\" data-mce-href=\"https://mystore.com/collections/travis-scott-cactus-jack\"><strong data-mce-fragment=\"1\"><span style=\"text-decoration: underline;\" data-mce-fragment=\"1\" data-mce-style=\"text-decoration: underline;\">Air Max 1</span></strong></a><span data-mce-fragment=\"1\"> et de la </span><a href=\"https://mystore.com/collections/travis-scott-cactus-jack\" title=\"Travis Scott Cactus Jack - Collection - mystore\" data-mce-fragment=\"1\" data-mce-href=\"https://mystore.com/collections/travis-scott-cactus-jack\"><strong data-mce-fragment=\"1\"><span style=\"text-decoration: underline;\" data-mce-fragment=\"1\" data-mce-style=\"text-decoration: underline;\">Air Trainer 1</span></strong></a><span data-mce-fragment=\"1\">, </span><a href=\"https://mystore.com/collections/nike\" title=\"Nike - Collection - mystore\" data-mce-fragment=\"1\" data-mce-href=\"https://mystore.com/collections/nike\"><strong data-mce-fragment=\"1\"><span style=\"text-decoration: underline;\" data-mce-fragment=\"1\" data-mce-style=\"text-decoration: underline;\">Nike</span></strong></a><span data-mce-fragment=\"1\"> et </span><strong data-mce-fragment=\"1\">Cact.us Corp</strong><span data-mce-fragment=\"1\"> ont également dévoilé une collection de vêtements.</span></p>\n<p>Le <strong>Nike Travis Scott Cact.us Corp BH T-Shirt Brown</strong> a été imaginé en <strong>coton épais</strong> pour reprendre les codes des vêtements de travail utilisés au <strong>Texas</strong>, état d'Origine de <strong>Travis Scott</strong>. Au-dessus d'une base marron, on distingue notamment à l'arrière un imprimé de l'antenne satellite de la <strong>NASA</strong> présente à <strong>Houston</strong>. </p>\n<p><meta charset=\"utf-8\"><strong>SKU</strong><span> : DM1285-259</span><br><strong>Date de sortie</strong><span> : Mai 2022</span><br><strong>Saison</strong><span> : SS22</span></p>",
+        "vendor": "Nike",
+        "product_type": "Accessoire",
+        "created_at": "2022-05-27T12:40:19+02:00",
+        "handle": "nike-cact-us-corp-bh-t-shirt-brown",
+        "updated_at": "2023-06-15T11:07:56+02:00",
+        "published_at": "2022-06-01T15:27:08+02:00",
+        "template_suffix": "",
+        "published_scope": "web",
+        "tags": "Annee|2022, Categorie Streetwear|T-Shirt, Couleur|Marron, CoupeStreetwear|Standard, EXCLUSIONBLACKFRIDAY2022, EXCLUSIONWINTER, EXCLUSIONWTNDAY2023, EXPRESS, Fil d'Ariane|Streetwear > T-Shirt, INCLUSIONHAPPYHOUR, Marque|Nike, Matières|Coton, Sizingtype|Unisexe, stock48, TAGLEO",
+        "variants": [
+            {
+                "id": 40098861219949,
+                "product_id": 6814280220781,
+                "title": "S - 100€",
+                "price": "100.00",
+                "sku": "DM1285-259",
+                "position": 1,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": null,
+                "option1": "S - 100€",
+                "option2": null,
+                "option3": null,
+                "created_at": "2022-06-01T15:25:46+02:00",
+                "updated_at": "2023-04-18T18:11:07+02:00",
+                "taxable": true,
+                "barcode": "",
+                "grams": 1000,
+                "image_id": null,
+                "weight": 1,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            },
+            {
+                "id": 40547060875373,
+                "product_id": 6814280220781,
+                "title": "S - 100€ - EXPRESS 48H",
+                "price": "100.00",
+                "sku": "DM1285-259",
+                "position": 2,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": "shopify",
+                "option1": "S - 100€ - EXPRESS 48H",
+                "option2": null,
+                "option3": null,
+                "created_at": "2023-02-09T17:16:49+01:00",
+                "updated_at": "2023-04-28T08:42:26+02:00",
+                "taxable": true,
+                "barcode": "",
+                "grams": 10000,
+                "image_id": null,
+                "weight": 10,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            },
+            {
+                "id": 40098861252717,
+                "product_id": 6814280220781,
+                "title": "M - 100€",
+                "price": "100.00",
+                "sku": "DM1285-259",
+                "position": 3,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": null,
+                "option1": "M - 100€",
+                "option2": null,
+                "option3": null,
+                "created_at": "2022-06-01T15:25:46+02:00",
+                "updated_at": "2023-05-23T17:28:17+02:00",
+                "taxable": true,
+                "barcode": "",
+                "grams": 1000,
+                "image_id": null,
+                "weight": 1,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            },
+            {
+                "id": 40098861285485,
+                "product_id": 6814280220781,
+                "title": "L - 100€",
+                "price": "100.00",
+                "sku": "DM1285-259",
+                "position": 4,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": null,
+                "option1": "L - 100€",
+                "option2": null,
+                "option3": null,
+                "created_at": "2022-06-01T15:25:46+02:00",
+                "updated_at": "2023-04-18T18:11:29+02:00",
+                "taxable": true,
+                "barcode": "",
+                "grams": 1000,
+                "image_id": null,
+                "weight": 1,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            },
+            {
+                "id": 40098861318253,
+                "product_id": 6814280220781,
+                "title": "XL - 100€",
+                "price": "100.00",
+                "sku": "DM1285-259",
+                "position": 5,
+                "compare_at_price": "",
+                "fulfillment_service": "manual",
+                "inventory_management": null,
+                "option1": "XL - 100€",
+                "option2": null,
+                "option3": null,
+                "created_at": "2022-06-01T15:25:46+02:00",
+                "updated_at": "2023-04-18T18:11:36+02:00",
+                "taxable": true,
+                "barcode": "",
+                "grams": 1000,
+                "image_id": null,
+                "weight": 1,
+                "weight_unit": "kg",
+                "requires_shipping": true,
+                "quantity_rule": {
+                    "min": 1,
+                    "max": null,
+                    "increment": 1
+                }
+            }
+        ],
+        "options": [
+            {
+                "id": 8795510538349,
+                "product_id": 6814280220781,
+                "name": "TAILLE",
+                "position": 1,
+                "values": [
+                    "S - 100€",
+                    "S - 100€ - EXPRESS 48H",
+                    "M - 100€",
+                    "L - 100€",
+                    "XL - 100€"
+                ]
+            }
+        ],
+        "images": [
+            {
+                "id": 29161615753325,
+                "product_id": 6814280220781,
+                "position": 1,
+                "created_at": "2022-05-27T14:12:52+02:00",
+                "updated_at": "2022-05-27T14:12:54+02:00",
+                "alt": "Nike Cact.us Corp BH T-Shirt Brown",
+                "width": 700,
+                "height": 420,
+                "src": "https://cdn.shopify.com/s/files/1/2358/2817/products/nike-cact-us-corp-bh-t-shirt-brown-mystore-1_1.png?v=1653653574",
+                "variant_ids": []
+            },
+            {
+                "id": 29161615786093,
+                "product_id": 6814280220781,
+                "position": 2,
+                "created_at": "2022-05-27T14:12:54+02:00",
+                "updated_at": "2022-05-27T14:12:55+02:00",
+                "alt": "Nike Cact.us Corp BH T-Shirt Brown",
+                "width": 700,
+                "height": 420,
+                "src": "https://cdn.shopify.com/s/files/1/2358/2817/products/nike-cact-us-corp-bh-t-shirt-brown-mystore-1_2.png?v=1653653575",
+                "variant_ids": []
+            }
+        ],
+        "image": {
+            "id": 29161615753325,
+            "product_id": 6814280220781,
+            "position": 1,
+            "created_at": "2022-05-27T14:12:52+02:00",
+            "updated_at": "2022-05-27T14:12:54+02:00",
+            "alt": "Nike Cact.us Corp BH T-Shirt Brown",
+            "width": 700,
+            "height": 420,
+            "src": "https://cdn.shopify.com/s/files/1/2358/2817/products/nike-cact-us-corp-bh-t-shirt-brown-mystore-1_1.png?v=1653653574",
+            "variant_ids": []
+        }
+    }
+]
+```
+</ResponseExample>
