@@ -5,6 +5,9 @@
     "dark": "/logo/dark.png",
     "light": "/logo/light.png"
   },
+  "feedback": {
+    "thumbsRating": true
+  },
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#111827",

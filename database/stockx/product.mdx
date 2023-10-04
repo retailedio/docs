@@ -16,11 +16,15 @@ description: "Get product information from StockX"
     Product query : `air-jordan-3-retro-white-cement-reimagined` or `c318bbcc-312a-4396-9252-698c203d1dea`
 </ParamField>
 
-<ParamField query="country" type="string" optional={false} placeholder="US">
+<ParamField query="country" type="string" optional={true} placeholder="US">
     Country code : `US` or `FR` or `GB`
 </ParamField>
 
-<ParamField query="currency" type="string" optional={false} placeholder="USD">
+<ParamField query="language" type="string" optional={true} placeholder="en-US">
+    Country code : `en-US` or `fr-FR` or `en-GB`
+</ParamField>
+
+<ParamField query="currency" type="string" optional={true} placeholder="USD">
     Currency code : `USD` or `EUR` or `GBP`
 </ParamField>
 
