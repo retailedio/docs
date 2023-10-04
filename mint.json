@@ -8,6 +8,7 @@
   "feedback": {
     "thumbsRating": true
   },
+  "versions": ["v1"],
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#111827",
@@ -21,14 +22,21 @@
     }
   ],
   "topbarCtaButton": {
-    "name": "Login to Retailed B2B",
+    "name": "Login to Retailed Pro",
     "url": "https://app.retailed.io"
   },
   "anchors": [
     {
       "name": "Database",
       "icon": "database",
-      "url": "database"
+      "url": "v1/database",
+      "version": "v1"
+    },
+    {
+      "name": "API Reference",
+      "icon": "rectangle-terminal",
+      "url": "v1/api-reference",
+      "version": "v1"
     },
     {
       "name": "Community",
@@ -48,46 +56,63 @@
   ],
   "navigation": [
     {
-      "group": "Getting Started",
-      "pages": ["introduction"]
-    },
-    {
-      "group": "Database",
+      "group": "Documentation",
       "pages": [
-        "database/overview",
-        "database/pricing",
-        "database/integrations",
-        "database/authentication",
-        "database/faq"
+        "v1/introduction",
+        "v1/services",
+        "v1/integrations",
+        "v1/authentication",
+        "v1/status-code",
+        "v1/pricing",
+        "v1/monitoring-tests",
+        "v1/faq",
+        "v1/usage"
       ]
     },
     {
       "group": "General",
       "pages": [
-        "database/usage",
-        "database/brands",
-        "database/platforms"
+        "v1/database/brands",
+        "v1/database/platforms"
       ]
     },
     {
       "group": "Sneakers",
       "pages": [
-        "database/sneakers/search",
-        "database/sneakers/releases",
+        "v1/database/sneakers/search",
+        "v1/database/sneakers/releases",
         {
           "group": "Product",
           "pages": [
-            "database/sneakers/product",
-            "database/sneakers/360",
-            "database/sneakers/variants"
+            "v1/database/sneakers/product",
+            "v1/database/sneakers/360",
+            "v1/database/sneakers/variants"
           ]
         },
         {
           "group": "Prices",
           "pages": [
-            "database/sneakers/prices",
-            "database/sneakers/stats",
-            "database/sneakers/latest"
+            "v1/database/sneakers/prices",
+            "v1/database/sneakers/stats",
+            "v1/database/sneakers/latest"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Shopify",
+      "pages": [
+        "v1/database/shopify/products"
+      ]
+    },
+    {
+      "group": "Help",
+      "pages": [
+        "v1/database/integrations/faq",
+        {
+          "group": "Wordpress",
+          "pages": [
+            "v1/database/integrations/wordpress/create_woocommerce_product"
           ]
         }
       ]
@@ -95,36 +120,19 @@
     {
       "group": "StockX",
       "pages": [
-        "database/stockx/search",
-        "database/stockx/product",
-        "database/stockx/product_360",
-        "database/stockx/product_activity",
-        "database/stockx/product_graph",
-        "database/stockx/product_history",
-        "database/stockx/trends"
+        "v1/api-reference/stockx/search",
+        "v1/api-reference/stockx/product",
+        "v1/api-reference/stockx/product_360",
+        "v1/api-reference/stockx/product_activity",
+        "v1/api-reference/stockx/product_graph",
+        "v1/api-reference/stockx/product_history",
+        "v1/api-reference/stockx/trends"
       ]
     },
     {
       "group": "Stadium Goods",
       "pages": [
-        "database/stadiumgoods/product"
-      ]
-    },
-    {
-      "group": "Help",
-        "pages": [
-          {
-            "group": "Wordpress",
-            "pages": [
-              "help/wordpress/create_woocommerce_product"
-            ]
-          }
-        ]
-    },
-    {
-      "group": "Shopify",
-      "pages": [
-        "database/shopify/products"
+        "v1/api-reference/stadiumgoods/product"
       ]
     }
   ],

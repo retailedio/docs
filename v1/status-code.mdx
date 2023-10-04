@@ -1,0 +1,13 @@
+---
+title: Status Code
+description: "The following list of HTTP codes are returned by Retailed."
+---
+
+
+| Status Code | Is Billed? | Explanation                  | Resolution                                                                                                         |
+| ----------- | ---------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| 200         | Yes        | Successful API Call          | No action required.                                                                                               |
+| 400         | No         | Incorrect or Incomplete Request | Verify your parameters and their types. Check the detailed error message in the response body for more information. |
+| 404         | Yes        | URL Not Found                 | Ensure the given URL is correct. If the issue persists, confirm the company's presence in the database.            |
+| 429         | No         | API Rate Limit Exceeded       | Consider upgrading your current plan or get in touch with our sales team.                                         |
+| 500         | No         | Unexpected Error              | Retry the action and check the detailed error message in the response body for more insights.                     |
