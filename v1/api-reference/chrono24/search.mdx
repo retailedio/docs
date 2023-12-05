@@ -1,0 +1,71 @@
+---
+title: "Chrono24 Search"
+api: "GET https://app.retailed.io/api/v1/chrono24/search"
+description: "Search Chrono24 for products"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="Rolex">
+    Search query
+</ParamField>
+
+### Response
+
+<ResponseField name="object" type="Search Object">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="id" type="string">
+            Chrono24 product id
+        </ResponseField>
+        <ResponseField name="name" type="string">
+            Product name
+        </ResponseField>
+        <ResponseField name="slug" type="string">
+            Product slug
+        </ResponseField>
+        <ResponseField name="image" type="string">
+            Product image
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://app.retailed.io/api/v1/chrono24/search?query=Rolex' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json Example Response
+[
+    {
+        "id": "30847646",
+        "name": "Rolex Daytona 116508 John Mayer Green 2021",
+        "slug": "rolex-daytona-116508-john-mayer-green-2021--id30847646.htm",
+        "image": "https://cdn2.chrono24.com/images/uhren/30847646-xkn1na09k198kla29q1n3jza-ExtraLarge.jpg"
+    },
+    {
+        "id": "30114985",
+        "name": "Rolex Sea-dweller Deepsea 44 mm D-Blue James Cameron Complete Set",
+        "slug": "rolex-sea-dweller-deepsea-44-mm-d-blue-james-cameron-complete-set--id30114985.htm",
+        "image": "https://cdn2.chrono24.com/images/uhren/30114985-nqsh4tlk6k2jevaykwwslzmb-ExtraLarge.jpg"
+    },
+    {
+        "id": "25455174",
+        "name": "Rolex NEW 2023 Day-Date 40 BLACK BAGUETTE",
+        "slug": "rolex-new-2023-day-date-40-black-baguette--id25455174.htm",
+        "image": "https://cdn2.chrono24.com/images/uhren/25455174-1b3fcyw15xcips57055joa0j-ExtraLarge.jpg"
+    }
+]
+```
+</ResponseExample>

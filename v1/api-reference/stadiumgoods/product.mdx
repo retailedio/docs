@@ -13,7 +13,7 @@ description: "Get product information from StadiumGoods"
 ### Parameters
 
 <ParamField query="query" type="string" optional={false} placeholder="BQ6472-015">
-    Product SKU : `BQ6472-015`
+    Product SKU : `BQ6472-015` or StadiumGoods URL
 </ParamField>
 
 ### Response
@@ -43,7 +43,7 @@ description: "Get product information from StadiumGoods"
 
 <RequestExample>
 
-```bash product
+```bash Example Request
 curl --location --request GET 'https://app.retailed.io/api/v1/stadiumgoods/product?query=BQ6472-015' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: <token>' \
@@ -52,7 +52,7 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stadiumgoods/produ
 </RequestExample>
 
 <ResponseExample>
-```json product
+```json Example Response
 {
     "id": "17523559",
     "slug": "wmns-air-jordan-1-mid-grey-fog-17523559",

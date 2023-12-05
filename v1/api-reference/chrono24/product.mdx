@@ -1,0 +1,146 @@
+---
+title: "Chrono24 Product"
+api: "GET https://app.retailed.io/api/v1/chrono24/product"
+description: "Get product information from Chrono24"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="https://www.chrono24.com/rolex/rolex-submariner-date-41mm-126610ln-unworn-2022--id16516741.htm">
+    Chrono24 Product URL
+</ParamField>
+
+### Response
+
+<ResponseField name="object" type="Product Object">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="id" type="string">
+            Chrono24 product id
+        </ResponseField>
+        <ResponseField name="sku" type="string">
+            Product SKU
+        </ResponseField>
+        <ResponseField name="name" type="string">
+            Product name
+        </ResponseField>
+        <ResponseField name="slug" type="string">
+            Product slug
+        </ResponseField>
+        <ResponseField name="brand" type="string">
+            Product brand
+        </ResponseField>
+        <ResponseField name="model" type="string">
+            Product model
+        </ResponseField>
+        <ResponseField name="price" type="string">
+            Product price
+        </ResponseField>
+        <ResponseField name="gender" type="string">
+            Product gender
+        </ResponseField>
+        <ResponseField name="images" type="array">
+            Product images
+        </ResponseField>
+        <ResponseField name="location" type="string">
+            Product location
+        </ResponseField>
+        <ResponseField name="movement" type="string">
+            Product movement
+        </ResponseField>
+        <ResponseField name="condition" type="string">
+            Product condition
+        </ResponseField>
+        <ResponseField name="decription" type="string">
+            Product decription
+        </ResponseField>
+        <ResponseField name="breadcrumbs" type="array">
+            Product breadcrumbs
+        </ResponseField>
+        <ResponseField name="availability" type="string">
+            Product availability
+        </ResponseField>
+        <ResponseField name="listing_code" type="string">
+            Product listing code
+        </ResponseField>
+        <ResponseField name="case_material" type="string">
+            Product case material
+        </ResponseField>
+        <ResponseField name="price_currency" type="string">
+            Product price currency
+        </ResponseField>
+        <ResponseField name="price_formated" type="number">
+            Product price formated
+        </ResponseField>
+        <ResponseField name="bracelet_material" type="string">
+            Product bracelet material
+        </ResponseField>
+        <ResponseField name="price_valid_until" type="string">
+            Product price valid until
+        </ResponseField>
+        <ResponseField name="scope_of_delivery" type="string">
+            Product scope of delivery
+        </ResponseField>
+        <ResponseField name="year_of_production" type="string">
+            Product year of production
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://app.retailed.io/api/v1/chrono24/product?query=https://www.chrono24.com/rolex/rolex-submariner-date-41mm-126610ln-unworn-2022--id16516741.htm' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json Example Response
+{
+    "id": "16516741",
+    "sku": "126610LN",
+    "name": "Rolex Submariner Date 41mm 126610LN Unworn 2022",
+    "slug": "rolex-submariner-date-41mm-126610ln-unworn-2022--id16516741.htm",
+    "brand": "Rolex",
+    "model": "Submariner Date",
+    "price": "$16,614 [Negotiable]",
+    "gender": "Men's watch/Unisex",
+    "images": [
+        "https://cdn2.chrono24.com/images/uhren/16516640-wuzf1q8zn9o64ozyf2e1bw8d-ExtraLarge.jpg",
+        "https://cdn2.chrono24.com/images/uhren/16516640-eusat2gcdgwsmyvnt17skdx5-ExtraLarge.jpg",
+        "https://cdn2.chrono24.com/images/uhren/16516640-t0umtrzp0400qyoj70arj5iw-ExtraLarge.jpg",
+        "https://cdn2.chrono24.com/images/uhren/16516640-5j5ifnc4naxgsili9yl39wpu-ExtraLarge.jpg",
+        "https://cdn2.chrono24.com/images/uhren/16516640-cu5ejjuyr4hdr0zbgmg7nkv1-ExtraLarge.jpg",
+        "https://cdn2.chrono24.com/images/uhren/16516640-5q2itr8w5yx3oq81bl4ji4mg-ExtraLarge.jpg",
+        "https://cdn2.chrono24.com/images/uhren/16516640-xcc23127eeq697qi4ui4c0td-ExtraLarge.jpg",
+        "https://cdn2.chrono24.com/images/uhren/16516741-s1fz2um1kqv2h0ggcfnzu43x-ExtraLarge.jpg"
+    ],
+    "location": "United States of America, New York, New York",
+    "movement": "Automatic",
+    "condition": "Unworn(Mint condition, without signs of wear)",
+    "decription": "Reference number 126610LN Steel Automatic Year 2022 Watch with original box Watch with original papers 41mm",
+    "breadcrumbs": [
+        "Rolex watches",
+        "Submariner Date watches",
+        "Rolex 126610LN"
+    ],
+    "availability": "Item is in stock",
+    "listing_code": "9U0ED0",
+    "case_material": "Steel",
+    "price_currency": "USD",
+    "price_formated": 16614,
+    "bracelet_material": "Steel",
+    "price_valid_until": "2023-12-31",
+    "scope_of_delivery": "Original box, original papers",
+    "year_of_production": "2022"
+}
+```
+</ResponseExample>

@@ -27,9 +27,9 @@
   },
   "anchors": [
     {
-      "name": "Database",
+      "name": "Datasources",
       "icon": "database",
-      "url": "v1/database",
+      "url": "v1/datasources",
       "version": "v1"
     },
     {
@@ -65,36 +65,36 @@
         "v1/status-code",
         "v1/pricing",
         "v1/monitoring-tests",
-        "v1/faq",
+        "v1/faq"
+      ]
+    },
+    {
+      "group": "Account",
+      "pages": [
         "v1/usage"
       ]
     },
     {
-      "group": "General",
+      "group": "Sneakers (V1)",
       "pages": [
-        "v1/database/brands",
-        "v1/database/platforms"
-      ]
-    },
-    {
-      "group": "Sneakers",
-      "pages": [
-        "v1/database/sneakers/search",
-        "v1/database/sneakers/releases",
+        "v1/datasources/brands",
+        "v1/datasources/platforms",
+        "v1/datasources/sneakers/search",
+        "v1/datasources/sneakers/releases",
         {
           "group": "Product",
           "pages": [
-            "v1/database/sneakers/product",
-            "v1/database/sneakers/360",
-            "v1/database/sneakers/variants"
+            "v1/datasources/sneakers/product",
+            "v1/datasources/sneakers/360",
+            "v1/datasources/sneakers/variants"
           ]
         },
         {
           "group": "Prices",
           "pages": [
-            "v1/database/sneakers/prices",
-            "v1/database/sneakers/stats",
-            "v1/database/sneakers/latest"
+            "v1/datasources/sneakers/prices",
+            "v1/datasources/sneakers/stats",
+            "v1/datasources/sneakers/latest"
           ]
         }
       ]
@@ -102,17 +102,17 @@
     {
       "group": "Shopify",
       "pages": [
-        "v1/database/shopify/products"
+        "v1/datasources/shopify/products"
       ]
     },
     {
       "group": "Help",
       "pages": [
-        "v1/database/integrations/faq",
+        "v1/datasources/integrations/faq",
         {
           "group": "Wordpress",
           "pages": [
-            "v1/database/integrations/wordpress/create_woocommerce_product"
+            "v1/datasources/integrations/wordpress/create_woocommerce_product"
           ]
         }
       ]
@@ -128,6 +128,13 @@
         "v1/api-reference/stockx/product_history",
         "v1/api-reference/stockx/trends"
       ]
+    },
+    {
+      "group": "Chrono24",
+        "pages": [
+            "v1/api-reference/chrono24/search",
+            "v1/api-reference/chrono24/product"
+        ]
     },
     {
       "group": "Stadium Goods",
