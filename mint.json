@@ -77,7 +77,7 @@
     {
       "group": "Products (V2)",
       "pages": [
-        "v1/products/products"
+        "v1/datasources/products/products"
       ]
     },
     {
