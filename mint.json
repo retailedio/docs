@@ -75,6 +75,12 @@
       ]
     },
     {
+      "group": "Products (V2)",
+      "pages": [
+        "v1/products/products"
+      ]
+    },
+    {
       "group": "Sneakers (V1)",
       "pages": [
         "v1/datasources/brands",

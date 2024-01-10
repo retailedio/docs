@@ -1,0 +1,916 @@
+---
+title: "Products"
+api: "GET https://app.retailed.io/api/v1/products"
+description: "Get products from our database"
+---
+
+Retailed provides an extremely granular querying language through all APIs. Each API takes the same syntax and fully supports all options.
+
+<Tip>If you have any questions or need help with the API, please reach out our support team on Slack, Discord or Email.</Tip>
+
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Operators
+
+| Operator           | Description                                                                                           |
+|--------------------|-------------------------------------------------------------------------------------------------------|
+| equals             | The value must be exactly equal.                                                                      |
+| not_equals         | The query will return all documents where the value is not equal.                                     |
+| greater_than       | For numeric or date-based fields.                                                                     |
+| greater_than_equal | For numeric or date-based fields.                                                                     |
+| less_than          | For numeric or date-based fields.                                                                     |
+| less_than_equal    | For numeric or date-based fields.                                                                     |
+| like               | Case-insensitive string must be present. If string of words, all words must be present, in any order. |
+| contains           | Must contain the value entered, case-insensitive.                                                     |
+| in                 | The value must be found within the provided comma-delimited list of values.                           |
+| not_in             | The value must NOT be within the provided comma-delimited list of values.                             |
+| all                | The value must contain all values provided in the comma-delimited list.                               |
+| exists             | Only return documents where the value either exists (true) or does not exist (false).                 |
+
+### Query Parameters
+
+<ParamField query="where[or][0][and][0][name][equals]" type="string" optional={true} placeholder="stockx-us">
+    An example of a query parameter for the name field.
+</ParamField>
+
+<ParamField query="where[or][0][and][0][sku][equals]" type="string" optional={true} placeholder="CD4487-100">
+    An example of a query parameter for the sku field.
+</ParamField>
+
+<Note>I want to get all products with a retail price of 85 or 90 and with a description.</Note>
+
+```markdown Example Query
+GET https://app.retailed.io/api/v1/products?where[or][0][and][0][price][in]=85&where[or][1][and][0][price][in]=90&where[or][2][and][0][description][exists]=true&sort=-description
+```
+
+### Sort
+
+Retailed find queries support a sort parameter through all APIs. Pass the name of a top-level field to sort by that field in ascending order.
+Prefix the name of the field with a minus symbol ("-") to sort in descending order.
+Because sorting is handled by the database, the field you wish to sort on must be stored in the database to work; not a virtual field.
+
+`https://app.retailed.io/api/v1/products?sort=-createdAt`
+
+### Response
+
+1 request returns 10 products by default. If you want to get more products, contact us.
+
+<ResponseField name="products" type="Products Object">
+    <Expandable title="docs">
+        <ResponseField name="id" type="string">
+            The unique identifier for the product
+        </ResponseField>
+        <ResponseField name="productId" type="string">
+            The unique identifier for the product from the source : `websitesource-countrycode-productid`
+        </ResponseField>
+        <ResponseField name="name" type="string">
+            The name of the source website : `stockx-us`, `zalando-fr`, etc.
+        </ResponseField>
+        <ResponseField name="country" type="string">
+            The country of the source website : `us`, `fr`, etc.
+        </ResponseField>
+        <ResponseField name="currency" type="string">
+            The currency of the source website : `usd`, `eur`, etc.
+        </ResponseField>
+        <ResponseField name="currencySymbol" type="string">
+            The currency symbol of the source website : `$`, `€`, etc.
+        </ResponseField>
+        <ResponseField name="url" type="string">
+            The url of the product on the source website
+        </ResponseField>
+        <ResponseField name="domain" type="string">
+            The domain of the source website : `stockx.com`, `zalando.fr`, etc.
+        </ResponseField>
+        <ResponseField name="urlSlug" type="string">
+            The url slug of the product on the source website
+        </ResponseField>
+        <ResponseField name="errorCrawling" type="boolean">
+            Whether the product has an error while crawling
+        </ResponseField>
+        <ResponseField name="isNotFound" type="boolean">
+            Whether the product is not found on the source website
+        </ResponseField>
+        <ResponseField name="createdAt" type="string">
+            The date of creation of the product in our system
+        </ResponseField>
+        <ResponseField name="updatedAt" type="string">
+            The date of last update of the product in our system
+        </ResponseField>
+        <ResponseField name="description" type="string">
+            The description of the product
+        </ResponseField>
+        <ResponseField name="images" type="array">
+            The images of the product with the thumbnail and the original size
+        </ResponseField>
+        <ResponseField name="lastCrawledAt" type="string">
+            The date of last crawl of the product
+        </ResponseField>
+        <ResponseField name="price" type="number">
+            The retail price of the product
+        </ResponseField>
+        <ResponseField name="urlId" type="string">
+            The unique identifier for the product url
+        </ResponseField>
+        <ResponseField name="variants" type="array">
+            Related variants of the product
+        </ResponseField>
+        <ResponseField name="sizes" type="array">
+            Related sizes of the product with the value and the id
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://app.retailed.io/api/v1/products?where[or][0][and][0][productId][equals]=stockx-us-air-jordan-1-retro-high-travis-scott' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json Example Response
+{
+    "docs": [
+        {
+            "id": "65481cedbe7d9de7834dfc83",
+            "productId": "stockx-us-air-jordan-1-retro-high-travis-scott",
+            "name": "stockx-us",
+            "country": "us",
+            "currency": "usd",
+            "currencySymbol": "$",
+            "url": "https://stockx.com/air-jordan-1-retro-high-travis-scott",
+            "domain": "stockx.com",
+            "urlSlug": "air-jordan-1-retro-high-travis-scott",
+            "errorCrawling": false,
+            "isNotFound": false,
+            "createdAt": "2023-11-05T22:53:33.608Z",
+            "updatedAt": "2023-11-18T11:35:52.206Z",
+            "lastCrawledAt": "2023-11-18T11:35:41.485Z",
+            "price": 175,
+            "tax": [],
+            "urlId": "6486f442-0250-45c8-8d18-0dd2ff6eea5f",
+            "variants": [
+                {
+                    "id": "193150591310",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591310",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "4",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:41.648Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:32.881Z",
+                    "updatedAt": "2023-11-18T11:35:41.939Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591327",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591327",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "4.5",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:42.121Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:33.163Z",
+                    "updatedAt": "2023-11-18T11:35:42.331Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "0193150591327",
+                    "products": [],
+                    "barcodeFormats": "EAN-13 0193150591327",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "4.5",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:42.542Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-18T11:35:42.858Z",
+                    "updatedAt": "2023-11-18T11:35:42.858Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591334",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591334",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "5",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:43.000Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:33.720Z",
+                    "updatedAt": "2023-11-18T11:35:43.120Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591341",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591341",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "5.5",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:43.303Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:34.006Z",
+                    "updatedAt": "2023-11-18T11:35:43.403Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591358",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591358",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "6",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:43.529Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:34.310Z",
+                    "updatedAt": "2023-11-18T11:35:43.665Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591365",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591365",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "6.5",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:43.775Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:34.599Z",
+                    "updatedAt": "2023-11-18T11:35:43.891Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591372",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591372",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "7",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:44.019Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:34.899Z",
+                    "updatedAt": "2023-11-18T11:35:44.167Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "0193150591372",
+                    "products": [],
+                    "barcodeFormats": "EAN-13 0193150591372",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "7",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:44.305Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-18T11:35:44.545Z",
+                    "updatedAt": "2023-11-18T11:35:44.545Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591389",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591389",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "7.5",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:44.683Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:35.466Z",
+                    "updatedAt": "2023-11-18T11:35:44.812Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "0193150591389",
+                    "products": [],
+                    "barcodeFormats": "EAN-13 0193150591389",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "7.5",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:44.931Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-18T11:35:45.135Z",
+                    "updatedAt": "2023-11-18T11:35:45.135Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591396",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591396",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "8",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:45.242Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:36.005Z",
+                    "updatedAt": "2023-11-18T11:35:45.341Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "0193150591396",
+                    "products": [],
+                    "barcodeFormats": "EAN-13 0193150591396",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "8",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:45.447Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-18T11:35:45.675Z",
+                    "updatedAt": "2023-11-18T11:35:45.675Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591402",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591402",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "8.5",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:45.798Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:36.590Z",
+                    "updatedAt": "2023-11-18T11:35:45.928Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "0193150591402",
+                    "products": [],
+                    "barcodeFormats": "EAN-13 0193150591402",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "8.5",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:46.081Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-18T11:35:46.298Z",
+                    "updatedAt": "2023-11-18T11:35:46.298Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591419",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591419",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "9",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:46.435Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:37.155Z",
+                    "updatedAt": "2023-11-18T11:35:46.524Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "0193150591419",
+                    "products": [],
+                    "barcodeFormats": "EAN-13 0193150591419",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "9",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:46.632Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-18T11:35:46.830Z",
+                    "updatedAt": "2023-11-18T11:35:46.830Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591426",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591426",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "9.5",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:46.969Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:37.697Z",
+                    "updatedAt": "2023-11-18T11:35:47.073Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "0193150591426",
+                    "products": [],
+                    "barcodeFormats": "EAN-13 0193150591426",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "9.5",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:47.189Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-18T11:35:47.430Z",
+                    "updatedAt": "2023-11-18T11:35:47.430Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591433",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591433",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "10",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:47.538Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:38.345Z",
+                    "updatedAt": "2023-11-18T11:35:47.632Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "0193150591433",
+                    "products": [],
+                    "barcodeFormats": "EAN-13 0193150591433",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "10",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:47.751Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-18T11:35:47.939Z",
+                    "updatedAt": "2023-11-18T11:35:47.939Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591440",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591440",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "10.5",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:48.044Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:39.126Z",
+                    "updatedAt": "2023-11-18T11:35:48.143Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "0193150591440",
+                    "products": [],
+                    "barcodeFormats": "EAN-13 0193150591440",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "10.5",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:48.253Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-18T11:35:48.455Z",
+                    "updatedAt": "2023-11-18T11:35:48.455Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591457",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591457",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "11",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:48.559Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:39.372Z",
+                    "updatedAt": "2023-11-18T11:35:48.647Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "0193150591457",
+                    "products": [],
+                    "barcodeFormats": "EAN-13 0193150591457",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "11",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:48.756Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-18T11:35:48.938Z",
+                    "updatedAt": "2023-11-18T11:35:48.938Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591464",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591464",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "11.5",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:49.054Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:39.927Z",
+                    "updatedAt": "2023-11-18T11:35:49.146Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "0193150591464",
+                    "products": [],
+                    "barcodeFormats": "EAN-13 0193150591464",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "11.5",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:49.263Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-18T11:35:49.459Z",
+                    "updatedAt": "2023-11-18T11:35:49.459Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591471",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591471",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "12",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:49.568Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:40.427Z",
+                    "updatedAt": "2023-11-18T11:35:49.661Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "0193150591471",
+                    "products": [],
+                    "barcodeFormats": "EAN-13 0193150591471",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "12",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:49.767Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-18T11:35:49.978Z",
+                    "updatedAt": "2023-11-18T11:35:49.978Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591488",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591488",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "12.5",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:50.086Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:40.959Z",
+                    "updatedAt": "2023-11-18T11:35:50.191Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "0193150591488",
+                    "products": [],
+                    "barcodeFormats": "EAN-13 0193150591488",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "12.5",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:50.295Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-18T11:35:50.484Z",
+                    "updatedAt": "2023-11-18T11:35:50.484Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591495",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591495",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "13",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:50.582Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:41.524Z",
+                    "updatedAt": "2023-11-18T11:35:50.652Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "0193150591495",
+                    "products": [],
+                    "barcodeFormats": "EAN-13 0193150591495",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "13",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:50.751Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-18T11:35:50.894Z",
+                    "updatedAt": "2023-11-18T11:35:50.894Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591501",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591501",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "14",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:50.995Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:42.082Z",
+                    "updatedAt": "2023-11-18T11:35:51.071Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "0193150591501",
+                    "products": [],
+                    "barcodeFormats": "EAN-13 0193150591501",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "14",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:51.155Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-18T11:35:51.299Z",
+                    "updatedAt": "2023-11-18T11:35:51.299Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "193150591518",
+                    "products": [],
+                    "barcodeFormats": "UPC-A 193150591518",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "15",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:51.387Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-08T05:22:42.693Z",
+                    "updatedAt": "2023-11-18T11:35:51.457Z",
+                    "features": [],
+                    "reviews": []
+                },
+                {
+                    "id": "0193150591518",
+                    "products": [],
+                    "barcodeFormats": "EAN-13 0193150591518",
+                    "model": "Jordan 1 Retro High OG SP",
+                    "sku": "CD4487-100",
+                    "title": "Jordan 1 Retro High OG SP Travis Scott Mocha",
+                    "category": "sneakers",
+                    "brand": "Jordan",
+                    "color": "Sail/Black-Dark Mocha-University Red",
+                    "size": "15",
+                    "releaseDate": "2019-05-11T00:00:00.000Z",
+                    "description": "The first release as part of Travis Scott's monumental partnership with Nike, the Air Jordan 1 Travis Scott breaks the conventional rules of the Air Jordan 1 design. For starters, the side Swooshes are reversed, which each tailing facing the toe. Woven tongue tags are shifted and stitched to the side of the tongue instead of the top. Also, in the collar, there is a hidden stash pocket. A one-of-a-kind design fit for a one-of-a-kind artist.\n<br>\n<br>\nThe Air Jordan 1 Travis Scott features a white leather upper with Mocha suede overlays and black leather reversed Swooshes. Hits of red on the tongue slightly contrast the design's earth tones. On the heel, a debossed Cactus Jack logo adds a custom feel. From there, a yellowed midsole and matching Mocha outsole complete the design.\n<br>\n<br>\nThe Jordan 1 Travis Scott Mocha released in May 2019 and retailed for $175.\n<br>\n<br>\nTo shop all Air Jordan 1 shoes, <a href=\"https://stockx.com/retro-jordans/air-jordan-1\">click here.</a> \n",
+                    "lastCrawledAt": "2023-11-18T11:35:51.542Z",
+                    "errorCrawling": false,
+                    "createdAt": "2023-11-18T11:35:51.684Z",
+                    "updatedAt": "2023-11-18T11:35:51.684Z",
+                    "features": [],
+                    "reviews": []
+                }
+            ],
+            "sizes": []
+        }
+    ],
+    "totalDocs": 1,
+    "limit": 10,
+    "totalPages": 1,
+    "page": 1,
+    "pagingCounter": 1,
+    "hasPrevPage": false,
+    "hasNextPage": false,
+    "prevPage": null,
+    "nextPage": null
+}
+```
+</ResponseExample>
