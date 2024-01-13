@@ -3,42 +3,39 @@ title: "Authentication"
 description: "After completing this quick start guide you'll have generated and tested an authentication token that can be used in all subsequent requests to the Retailed API."
 ---
 
-## Create an Account
+## How to Create an Account
 
-Head over to the [Retailed Dashboard Pro](https://app.retailed.io) and follow the steps to either log in or create an account.
+Navigate to the [Retailed Dashboard](https://app.retailed.io/login) and simply follow the steps to log in or create a new account.
 
-## Get a Token
+## Retrieving a Token
 
-1. Once inside the dashboard, click **API**.
+After you've logged in to the dashboard, follow these steps to get a token:
 
-2. Click **New**.
+1.  Click **API Keys**.
+2.  Select **New**.
+3.  Assign a name for the token. This helps in future referencing. You can also add notes to describe its use-case, then select **Save**.
 
-3. Provide a name for future reference, and any notes perhaps describing a use
-case, then click **Save**.
-
-4. You'll be presented with a new token in text and a button to **copy to clipboard**. Tap the copy button, and paste the token somewhere safe.
+A new token will be displayed in text format with a **copy to clipboard** button. Use this button to copy the token and secure it in a safe place.
 
 <Tip>
-    On this dashboard, you will be able to see the logs and know how many requests you have made.
+    Remember that you can view the logs and track the number of requests made on the dashboard.
 </Tip>
 
-## Test
+## Testing the Token
 
-To test our new token, open the Terminal and prepare our environment using the
-following command, replacing `<TOKEN>` with the actual token generated from the
-Retailed console in the last step:
+Once you have your token, you can test it using the Terminal. Set up the environment by entering and executing the following command. Replace `<TOKEN>` with the token you've copied from the Retailed dashboard:
 
 ```bash
 export RETAILED_TOKEN="<TOKEN>"
 ```
 
-This saves us from copying and pasting the token every time we need to use it, and we can now make a call to the Retailed Usage service:
+This step eliminates the need to copy and paste the token each time it's in use. You are now ready to make a call to the Retailed Usage service. Use the following command to proceed:
 
 ```bash
-curl -H "x-api-key: $RETAILED_TOKEN" https://app.retailed.io/api/v1/usage | jq .
+curl -H "x-api-key: $RETAILED_TOKEN" https://app.retailed.io/api/usage | jq .
 ```
 
-Response:
+The response should look like this:
 
 ```json
 {
@@ -47,12 +44,12 @@ Response:
 }
 ```
 
-This query allows you to obtain the number of remaining requests.
+This command will return the number of remaining requests under your token.
 
 <Note>
-    Most examples throughout this documentation will assume you have set the `$RETAILED_TOKEN` variable.
+    Keep in mind that most examples in this documentation assume that you have set the `$RETAILED_TOKEN` variable.
 </Note>
 
-## Conclusion
+## Wrapping up
 
-You've now managed to authenticate with the Retailed API using a generated token.
+Congratulations! You have successfully authenticated with the Retailed API using a generated token.
