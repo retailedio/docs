@@ -145,10 +145,10 @@
     },
     {
       "group": "Chrono24",
-        "pages": [
-            "v1/api-reference/chrono24/search",
-            "v1/api-reference/chrono24/product",
-        ]
+      "pages": [
+          "v1/api-reference/chrono24/search",
+          "v1/api-reference/chrono24/product"
+      ]
     },
     {
       "group": "Stadium Goods",
