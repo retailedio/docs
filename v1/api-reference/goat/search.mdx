@@ -1,0 +1,75 @@
+---
+title: "Goat Search"
+api: "GET https://app.retailed.io/api/v1/goat/search"
+description: "Search Goat for products"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="DN3673-303">
+    Search query
+</ParamField>
+
+### Response
+
+<ResponseField name="object" type="Search Object">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="id" type="string">
+            Product ID
+        </ResponseField>
+        <ResponseField name="sku" type="string">
+            Product SKU
+        </ResponseField>
+        <ResponseField name="url" type="string">
+            Product URL
+        </ResponseField>
+        <ResponseField name="name" type="string">
+            Product Name
+        </ResponseField>
+        <ResponseField name="slug" type="string">
+            Product Slug
+        </ResponseField>
+        <ResponseField name="image" type="string">
+            Product Image
+        </ResponseField>
+        <ResponseField name="category" type="string">
+            Product Category
+        </ResponseField>
+        <ResponseField name="colorway" type="string">
+            Product Colorway
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://app.retailed.io/api/v1/goat/search?query=DN3673-303' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json Example Response
+[
+    {
+        "id": "910973",
+        "sku": "DN3673 303",
+        "url": "https://www.goat.com/en-us/sneakers/dunk-low-sb-td-st-patrick-s-day-dn3673-303",
+        "name": "Dunk Low SB TD 'St. Patrick’s Day'",
+        "slug": "dunk-low-sb-td-st-patrick-s-day-dn3673-303",
+        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/073/839/527/original/910973_00.png.png",
+        "category": "sneakers",
+        "colorway": "green"
+    }
+]
+```
+</ResponseExample>

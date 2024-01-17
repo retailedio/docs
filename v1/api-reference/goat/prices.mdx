@@ -1,0 +1,151 @@
+---
+title: "Goat Prices"
+api: "GET https://app.retailed.io/api/v1/goat/prices"
+description: "Returns the latest prices for a given product on Goat."
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="719082">
+    Goat product ID
+</ParamField>
+
+<ParamField query="country" type="string" optional={true} placeholder="US">
+    Country code to filter prices : `UK`, `FR`, `US`. Default is `US`.
+</ParamField>
+
+### Response
+
+<ResponseField name="object" type="Prices Object">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="sizeOption" type="array">
+            <Expandable title="properties" defaultOpen={true}>
+                <ResponseField name="value" type="number">
+                    Size value
+                </ResponseField>
+                <ResponseField name="presentation" type="string">
+                    Size presentation
+                </ResponseField>
+            </Expandable>
+        </ResponseField>
+        <ResponseField name="stockStatus" type="string">
+            Stock status
+        </ResponseField>
+        <ResponseField name="boxCondition" type="string">
+            Box condition
+        </ResponseField>
+        <ResponseField name="shoeCondition" type="string">
+            Shoe condition
+        </ResponseField>
+        <ResponseField name="lowestPriceCents" type="array">
+            <Expandable title="properties" defaultOpen={true}>
+                <ResponseField name="currency" type="string">
+                    Currency
+                </ResponseField>
+            </Expandable>
+        </ResponseField>
+        <ResponseField name="lastSoldPriceCents" type="array">
+            <Expandable title="properties" defaultOpen={true}>
+                <ResponseField name="amount" type="number">
+                    Amount
+                </ResponseField>
+                <ResponseField name="currency" type="string">
+                    Currency
+                </ResponseField>
+                <ResponseField name="amountUsdCents" type="number">
+                    Amount in USD
+                </ResponseField>
+            </Expandable>
+        </ResponseField>
+        <ResponseField name="instantShipLowestPriceCents" type="array">
+            <Expandable title="properties" defaultOpen={true}>
+                <ResponseField name="currency" type="string">
+                    Currency
+                </ResponseField>
+            </Expandable>
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://app.retailed.io/api/v1/goat/prices?query=719082&country=US' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json Example Response
+[
+    {
+        "sizeOption": {
+            "value": 3,
+            "presentation": "3"
+        },
+        "stockStatus": "not_in_stock",
+        "boxCondition": "good_condition",
+        "shoeCondition": "new_no_defects",
+        "lowestPriceCents": {
+            "currency": "USD"
+        },
+        "lastSoldPriceCents": {
+            "amount": 13400,
+            "currency": "USD",
+            "amountUsdCents": 13400
+        },
+        "instantShipLowestPriceCents": {
+            "currency": "USD"
+        }
+    },
+    {
+        "sizeOption": {
+            "value": 3.5,
+            "presentation": "3.5"
+        },
+        "stockStatus": "not_in_stock",
+        "boxCondition": "good_condition",
+        "shoeCondition": "new_no_defects",
+        "lowestPriceCents": {
+            "currency": "USD"
+        },
+        "lastSoldPriceCents": {
+            "amount": 16200,
+            "currency": "USD",
+            "amountUsdCents": 16200
+        },
+        "instantShipLowestPriceCents": {
+            "currency": "USD"
+        }
+    },
+    {
+        "sizeOption": {
+            "value": 3.5,
+            "presentation": "3.5"
+        },
+        "stockStatus": "not_in_stock",
+        "boxCondition": "badly_damaged",
+        "shoeCondition": "new_no_defects",
+        "lowestPriceCents": {
+            "currency": "USD"
+        },
+        "lastSoldPriceCents": {
+            "amount": 24000,
+            "currency": "USD",
+            "amountUsdCents": 24000
+        },
+        "instantShipLowestPriceCents": {
+            "currency": "USD"
+        }
+    }
+]
+```
+</ResponseExample>
