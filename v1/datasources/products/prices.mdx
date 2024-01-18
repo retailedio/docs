@@ -39,7 +39,7 @@ Retailed provides an extremely granular querying language through all APIs. Each
 </ParamField>
 
 <ParamField query="where[or][0][and][0][product][equals]" type="string" optional={true} placeholder="654955f65493f73e4e9d32b4">
-    An example of a query parameter for the product field : `654955f65493f73e4e9d32b4`, `654955f65493f73e4e9d32b4`, etc.
+    An example of a query parameter for the product id field : `654955f65493f73e4e9d32b4`, `654955f65493f73e4e9d32b4`, etc.
 </ParamField>
 
 ### Sort
@@ -82,8 +82,8 @@ Because sorting is handled by the database, the field you wish to sort on must b
 
 <RequestExample>
 
-```bash Request prices by sku and filters sizes
-curl --location --request GET 'https://app.retailed.io/api/v1/prices?where[or][0][and][0][product.sku][equals]=FN0598-200&where[or][0][and][0][size][in]=8,6,10' \
+```bash Request prices by sku and filters sizes and date
+curl --location --request GET 'https://app.retailed.io/api/v1/prices?where[or][0][and][0][product.sku][equals]=FN0598-200&where[or][0][and][0][size][in]=8,6,10&sort=-createdAt' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: <token>' \
 ```
