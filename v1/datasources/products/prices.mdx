@@ -1,0 +1,166 @@
+---
+title: "Prices"
+api: "GET https://app.retailed.io/api/v1/prices"
+description: "Get prices from our database"
+---
+
+Retailed provides an extremely granular querying language through all APIs. Each API takes the same syntax and fully supports all options.
+
+<Tip>If you have any questions or need help with the API, please reach out our support team on Slack, Discord or Email.</Tip>
+
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Operators
+
+| Operator           | Description                                                                                           |
+|--------------------|-------------------------------------------------------------------------------------------------------|
+| equals             | The value must be exactly equal.                                                                      |
+| not_equals         | The query will return all documents where the value is not equal.                                     |
+| greater_than       | For numeric or date-based fields.                                                                     |
+| greater_than_equal | For numeric or date-based fields.                                                                     |
+| less_than          | For numeric or date-based fields.                                                                     |
+| less_than_equal    | For numeric or date-based fields.                                                                     |
+| like               | Case-insensitive string must be present. If string of words, all words must be present, in any order. |
+| contains           | Must contain the value entered, case-insensitive.                                                     |
+| in                 | The value must be found within the provided comma-delimited list of values.                           |
+| not_in             | The value must NOT be within the provided comma-delimited list of values.                             |
+| all                | The value must contain all values provided in the comma-delimited list.                               |
+| exists             | Only return documents where the value either exists (true) or does not exist (false).                 |
+
+### Query Parameters
+
+<ParamField query="where[or][0][and][0][product.sku][equals]" type="string" optional={true} placeholder="FN0598-200">
+    An example of a query parameter for the sku field : `FN0598-200`, `FN0598-200`, etc.
+</ParamField>
+
+<ParamField query="where[or][0][and][0][product][equals]" type="string" optional={true} placeholder="654955f65493f73e4e9d32b4">
+    An example of a query parameter for the product field : `654955f65493f73e4e9d32b4`, `654955f65493f73e4e9d32b4`, etc.
+</ParamField>
+
+### Sort
+
+Retailed find queries support a sort parameter through all APIs. Pass the name of a top-level field to sort by that field in ascending order.
+Prefix the name of the field with a minus symbol ("-") to sort in descending order.
+Because sorting is handled by the database, the field you wish to sort on must be stored in the database to work; not a virtual field.
+
+`https://app.retailed.io/api/v1/prices?sort=-createdAt`
+
+### Response
+
+<Info>1 request returns 10 prices by default.</Info>
+
+<ResponseField name="prices" type="Prices Object">
+    <Expandable title="docs">
+        <ResponseField name="id" type="string">
+            The unique identifier for the price.
+        </ResponseField>
+        <ResponseField name="name" type="string">
+            Website price source name : `stockx-us`, `zalando-fr`, etc.
+        </ResponseField>
+        <ResponseField name="product" type="string">
+            The unique identifier for the product : `654955f65493f73e4e9d32b4`, `654955f65493f73e4e9d32b4`, etc.
+        </ResponseField>
+        <ResponseField name="size" type="string">
+            The size of the product : `8`, `6`, `10`, `M`, `XXL`, etc.
+        </ResponseField>
+        <ResponseField name="price" type="number">
+            The price of the product.
+        </ResponseField>
+        <ResponseField name="createdAt" type="date">
+            The date the price was created.
+        </ResponseField>
+        <ResponseField name="updatedAt" type="date">
+            The date the price was updated.
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Request prices by sku and filters sizes
+curl --location --request GET 'https://app.retailed.io/api/v1/prices?where[or][0][and][0][product.sku][equals]=FN0598-200&where[or][0][and][0][size][in]=8,6,10' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+
+
+</RequestExample>
+
+
+<ResponseExample>
+```json Example Response
+{
+    "docs": [
+        {
+            "id": "65a5061c9e6c83bc7638628b",
+            "name": "stockx-us",
+            "product": "654955f65493f73e4e9d32b4",
+            "size": "10",
+            "price": 241,
+            "createdAt": "2024-01-15T10:17:00.426Z",
+            "updatedAt": "2024-01-15T10:17:00.426Z"
+        },
+        {
+            "id": "65a5061a9e6c83bc763861ef",
+            "name": "stockx-us",
+            "product": "654955f65493f73e4e9d32b4",
+            "size": "8",
+            "price": 220,
+            "createdAt": "2024-01-15T10:16:58.488Z",
+            "updatedAt": "2024-01-15T10:16:58.488Z"
+        },
+        {
+            "id": "65a506189e6c83bc763860db",
+            "name": "stockx-us",
+            "product": "654955f65493f73e4e9d32b4",
+            "size": "6",
+            "price": 487,
+            "createdAt": "2024-01-15T10:16:56.295Z",
+            "updatedAt": "2024-01-15T10:16:56.295Z"
+        },
+        {
+            "id": "65a506179e6c83bc76385ffc",
+            "name": "stockx-us",
+            "product": "654955f65493f73e4e9d32b4",
+            "size": "10",
+            "price": 241,
+            "createdAt": "2024-01-15T10:16:55.081Z",
+            "updatedAt": "2024-01-15T10:16:55.081Z"
+        },
+        {
+            "id": "65a506149e6c83bc76385e5e",
+            "name": "stockx-us",
+            "product": "654955f65493f73e4e9d32b4",
+            "size": "8",
+            "price": 220,
+            "createdAt": "2024-01-15T10:16:52.550Z",
+            "updatedAt": "2024-01-15T10:16:52.550Z"
+        },
+        {
+            "id": "65a506119e6c83bc76385cd8",
+            "name": "stockx-us",
+            "product": "654955f65493f73e4e9d32b4",
+            "size": "6",
+            "price": 487,
+            "createdAt": "2024-01-15T10:16:49.902Z",
+            "updatedAt": "2024-01-15T10:16:49.902Z"
+        }
+    ],
+    "totalDocs": 6,
+    "limit": 10,
+    "totalPages": 1,
+    "page": 1,
+    "pagingCounter": 1,
+    "hasPrevPage": false,
+    "hasNextPage": false,
+    "prevPage": null,
+    "nextPage": null
+}
+```
+</ResponseExample>

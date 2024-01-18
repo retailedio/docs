@@ -1,0 +1,189 @@
+---
+title: "Variants"
+api: "GET https://app.retailed.io/api/v1/variants"
+description: "Get variants from our database"
+---
+
+Retailed provides an extremely granular querying language through all APIs. Each API takes the same syntax and fully supports all options.
+
+<Tip>If you have any questions or need help with the API, please reach out our support team on Slack, Discord or Email.</Tip>
+
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Operators
+
+| Operator           | Description                                                                                           |
+|--------------------|-------------------------------------------------------------------------------------------------------|
+| equals             | The value must be exactly equal.                                                                      |
+| not_equals         | The query will return all documents where the value is not equal.                                     |
+| greater_than       | For numeric or date-based fields.                                                                     |
+| greater_than_equal | For numeric or date-based fields.                                                                     |
+| less_than          | For numeric or date-based fields.                                                                     |
+| less_than_equal    | For numeric or date-based fields.                                                                     |
+| like               | Case-insensitive string must be present. If string of words, all words must be present, in any order. |
+| contains           | Must contain the value entered, case-insensitive.                                                     |
+| in                 | The value must be found within the provided comma-delimited list of values.                           |
+| not_in             | The value must NOT be within the provided comma-delimited list of values.                             |
+| all                | The value must contain all values provided in the comma-delimited list.                               |
+| exists             | Only return documents where the value either exists (true) or does not exist (false).                 |
+
+### Query Parameters
+
+<ParamField query="where[or][0][and][0][id][equals]" type="string" optional={true} placeholder="5702016914306">
+    An example of a query parameter for the id (upc or ean) field.
+</ParamField>
+
+<ParamField query="where[or][0][and][0][category][equals]" type="string" optional={true} placeholder="collectibles">
+    An example of a query parameter for the category field : `sneakers`, `collectibles`, etc.
+</ParamField>
+
+### Sort
+
+Retailed find queries support a sort parameter through all APIs. Pass the name of a top-level field to sort by that field in ascending order.
+Prefix the name of the field with a minus symbol ("-") to sort in descending order.
+Because sorting is handled by the database, the field you wish to sort on must be stored in the database to work; not a virtual field.
+
+`https://app.retailed.io/api/v1/variants?sort=-createdAt`
+
+### Response
+
+<Info>1 request returns 10 variants by default.</Info>
+
+<ResponseField name="variants" type="Variants Object">
+    <Expandable title="docs">
+        <ResponseField name="id" type="string">
+            The id of the variant (upc or ean).
+          </ResponseField>
+        <ResponseField name="products" type="Products Object">
+            Products related to the variant.
+        </ResponseField>
+        <ResponseField name="barcodeFormats" type="string">
+            Barcode formats of the variant.
+        </ResponseField>
+        <ResponseField name="model" type="string">
+            Model of the variant.
+        </ResponseField>
+        <ResponseField name="sku" type="string">
+            Sku of the variant.
+        </ResponseField>
+        <ResponseField name="title" type="string">
+            Title of the variant.
+        </ResponseField>
+        <ResponseField name="category" type="string">
+            Category of the variant.
+        </ResponseField>
+        <ResponseField name="brand" type="string">
+            Brand of the variant.
+        </ResponseField>
+        <ResponseField name="size" type="string">
+            Size of the variant.
+        </ResponseField>
+        <ResponseField name="releaseDate" type="string">
+            Release date of the variant.
+        </ResponseField>
+        <ResponseField name="description" type="string">
+            Description of the variant.
+        </ResponseField>
+        <ResponseField name="features" type="array">
+            Features of the variant.
+        </ResponseField>
+        <ResponseField name="lastCrawledAt" type="string">
+            Last crawled date of the variant.
+        </ResponseField>
+        <ResponseField name="errorCrawling" type="boolean">
+            Error crawling of the variant.
+        </ResponseField>
+        <ResponseField name="createdAt" type="string">
+            Created date of the variant.
+        </ResponseField>
+        <ResponseField name="updatedAt" type="string">
+            Updated date of the variant.
+        </ResponseField>
+        <ResponseField name="reviews" type="array">
+            Reviews of the variant.
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Request upc or ean
+curl --location --request GET 'https://app.retailed.io/api/v1/variants?where[or][0][and][0][id][equals]=5702016914306' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+
+<ResponseExample>
+```json Example Response
+{
+    "docs": [
+        {
+            "id": "5702016914306",
+            "products": [
+                {
+                    "id": "65495f135493f73e4ea4585d",
+                    "productId": "stockx-us-lego-friends-the-apartments-set-10292",
+                    "name": "stockx-us",
+                    "country": "us",
+                    "currency": "usd",
+                    "currencySymbol": "$",
+                    "url": "https://stockx.com/lego-friends-the-apartments-set-10292",
+                    "domain": "stockx.com",
+                    "urlSlug": "lego-friends-the-apartments-set-10292",
+                    "errorCrawling": false,
+                    "isNotFound": false,
+                    "createdAt": "2023-11-06T21:48:03.949Z",
+                    "updatedAt": "2024-01-18T09:42:46.025Z",
+                    "lastCrawledAt": "2024-01-18T09:42:44.442Z",
+                    "price": 150,
+                    "tax": [],
+                    "urlId": "3c0dd05e-999b-4cc3-a2ec-91c71ed5f7dc",
+                    "variants": [
+                        "673419340311",
+                        "5702016914306"
+                    ],
+                    "description": "LEGO paid homage to one of the most popular sitcoms of all time with the LEGO Friends The Apartments Set. The set comes with 7 minifigures of the full Friends gang, and includes a build of Joey and Chandler’s, and Monica and Rachel’s apartments. The set also includes a joining hallway for the two apartments. \n<br>\n<br>\nThe full gang is outfitted with iconic and recognizable outfits from the show, adding a hint of nostalgia for fans of the show. \n<br>\n<br>\nThe LEGO Friends The Apartments Set was released in June 2021 for a retail price of $150. ",
+                    "images": [
+                        "65a8f29547cea783f4fd2339"
+                    ],
+                    "sku": null,
+                    "title": "LEGO Friends The Apartments Set 10292"
+                }
+            ],
+            "barcodeFormats": "EAN-13 5702016914306",
+            "model": "Set 10292",
+            "sku": null,
+            "title": "LEGO Friends The Apartments Set 10292",
+            "category": "collectibles",
+            "brand": "LEGO",
+            "size": null,
+            "releaseDate": "2021-06-01T00:00:00.000Z",
+            "description": "LEGO paid homage to one of the most popular sitcoms of all time with the LEGO Friends The Apartments Set. The set comes with 7 minifigures of the full Friends gang, and includes a build of Joey and Chandler’s, and Monica and Rachel’s apartments. The set also includes a joining hallway for the two apartments. \n<br>\n<br>\nThe full gang is outfitted with iconic and recognizable outfits from the show, adding a hint of nostalgia for fans of the show. \n<br>\n<br>\nThe LEGO Friends The Apartments Set was released in June 2021 for a retail price of $150. ",
+            "features": [],
+            "lastCrawledAt": "2024-01-18T09:42:44.813Z",
+            "errorCrawling": false,
+            "createdAt": "2024-01-18T09:42:45.131Z",
+            "updatedAt": "2024-01-18T09:42:45.131Z",
+            "reviews": []
+        }
+    ],
+    "totalDocs": 1,
+    "limit": 10,
+    "totalPages": 1,
+    "page": 1,
+    "pagingCounter": 1,
+    "hasPrevPage": false,
+    "hasNextPage": false,
+    "prevPage": null,
+    "nextPage": null
+}
+```
+</ResponseExample>
