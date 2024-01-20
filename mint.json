@@ -75,15 +75,15 @@
       ]
     },
     {
-      "group": "Products (V2)",
+      "group": "Products Database",
       "pages": [
-        "v1/datasources/products/products",
-        "v1/datasources/products/variants",
-        "v1/datasources/products/prices"
+        "v1/datasources/db/products",
+        "v1/datasources/db/variants",
+        "v1/datasources/db/prices"
       ]
     },
     {
-      "group": "Sneakers (V1)",
+      "group": "Sneakers (Deprecated)",
       "pages": [
         "v1/datasources/brands",
         "v1/datasources/platforms",
