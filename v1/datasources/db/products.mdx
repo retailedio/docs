@@ -1,6 +1,6 @@
 ---
 title: "Products"
-api: "GET https://app.retailed.io/api/v1/products"
+api: "GET https://app.retailed.io/api/v1/db/products"
 description: "Get products from our database"
 ---
 
@@ -45,7 +45,7 @@ Retailed provides an extremely granular querying language through all APIs. Each
 <Note>I want to get all products with a retail price of 85 or 90 and with a description.</Note>
 
 ```markdown Example Query
-GET https://app.retailed.io/api/v1/products?where[or][0][and][0][price][in]=85&where[or][1][and][0][price][in]=90&where[or][2][and][0][description][exists]=true&sort=-description
+GET https://app.retailed.io/api/v1/db/products?where[or][0][and][0][price][in]=85&where[or][1][and][0][price][in]=90&where[or][2][and][0][description][exists]=true&sort=-description
 ```
 
 ### Sort
@@ -54,7 +54,7 @@ Retailed find queries support a sort parameter through all APIs. Pass the name o
 Prefix the name of the field with a minus symbol ("-") to sort in descending order.
 Because sorting is handled by the database, the field you wish to sort on must be stored in the database to work; not a virtual field.
 
-`https://app.retailed.io/api/v1/products?sort=-createdAt`
+`https://app.retailed.io/api/v1/db/products?sort=-createdAt`
 
 ### Response
 
@@ -134,19 +134,19 @@ Because sorting is handled by the database, the field you wish to sort on must b
 <RequestExample>
 
 ```bash Request slug
-curl --location --request GET 'https://app.retailed.io/api/v1/products?where[or][0][and][0][productId][equals]=stockx-us-air-jordan-alpha-1-university-blue' \
+curl --location --request GET 'https://app.retailed.io/api/v1/db/products?where[or][0][and][0][productId][equals]=stockx-us-air-jordan-alpha-1-university-blue' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: <token>' \
 ```
 
 ```bash Request sku
-curl --location --request GET 'https://app.retailed.io/api/v1/products?where[or][0][and][0][sku][equals]=392813-103' \
+curl --location --request GET 'https://app.retailed.io/api/v1/db/products?where[or][0][and][0][sku][equals]=392813-103' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: <token>' \
 ```
 
 ```bash Request upc or ean (relation)
-curl --location --request GET 'https://app.retailed.io/api/v1/products?where[or][0][and][0][variants.id][equals]=884500475069' \
+curl --location --request GET 'https://app.retailed.io/api/v1/db/products?where[or][0][and][0][variants.id][equals]=884500475069' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: <token>' \
 ```

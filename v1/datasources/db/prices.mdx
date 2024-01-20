@@ -1,6 +1,6 @@
 ---
 title: "Prices"
-api: "GET https://app.retailed.io/api/v1/prices"
+api: "GET https://app.retailed.io/api/v1/db/prices"
 description: "Get prices from our database"
 ---
 
@@ -48,7 +48,7 @@ Retailed find queries support a sort parameter through all APIs. Pass the name o
 Prefix the name of the field with a minus symbol ("-") to sort in descending order.
 Because sorting is handled by the database, the field you wish to sort on must be stored in the database to work; not a virtual field.
 
-`https://app.retailed.io/api/v1/prices?sort=-createdAt`
+`https://app.retailed.io/api/v1/db/prices?sort=-createdAt`
 
 ### Response
 
@@ -83,7 +83,7 @@ Because sorting is handled by the database, the field you wish to sort on must b
 <RequestExample>
 
 ```bash Request prices by sku and filters sizes and date
-curl --location --request GET 'https://app.retailed.io/api/v1/prices?where[or][0][and][0][product.sku][equals]=FN0598-200&where[or][0][and][0][size][in]=8,6,10&sort=-createdAt' \
+curl --location --request GET 'https://app.retailed.io/api/v1/db/prices?where[or][0][and][0][product.sku][equals]=FN0598-200&where[or][0][and][0][size][in]=8,6,10&sort=-createdAt' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: <token>' \
 ```
