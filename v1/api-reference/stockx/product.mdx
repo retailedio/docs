@@ -1,6 +1,6 @@
 ---
 title: "StockX Product"
-api: "GET https://app.retailed.io/api/v1/scraper/stockx/product"
+api: "GET https://app.retailed.io/api/v1/stockx/product"
 description: "Get product information from StockX"
 ---
 
@@ -49,6 +49,19 @@ description: "Get product information from StockX"
         </ResponseField>
         <ResponseField name="description" type="string">
             StockX product description
+        </ResponseField>
+        <ResponseField name="breadcrumbs" type="array">
+            <Expandable title="properties" defaultOpen={true}>
+                <ResponseField name="url" type="string">
+                    Breadcrumb url
+                </ResponseField>
+                <ResponseField name="name" type="string">
+                    Breadcrumb name
+                </ResponseField>
+                <ResponseField name="level" type="number">
+                    Breadcrumb level
+                </ResponseField>
+            </Expandable>
         </ResponseField>
         <ResponseField name="category" type="string">
             StockX product category : `sneakers`, `streetwear`, `watches`, `handbags`...
@@ -162,7 +175,7 @@ description: "Get product information from StockX"
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://app.retailed.io/api/v1/scraper/stockx/product?query=nike-air-max-1-travis-scott-wheat' \
+curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?query=nike-air-max-1-travis-scott-wheat' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: <token>' \
 ```
@@ -178,6 +191,38 @@ curl --location --request GET 'https://app.retailed.io/api/v1/scraper/stockx/pro
     "brand": "nike",
     "image": "https://images.stockx.com/images/Nike-Air-Max-1-Travis-Scott-Wheat-Product.jpg",
     "description": "In collaboration with Travis Scott's record label Cactus Jack, the Nike Air Max 1 Travis Scott Cactus Jack Saturn Gold pays homage to outdoor exploration and the Nike ACG Pocket Knife hiking shoe. It boasts a light yellow layered mesh upper with matching Durabuck overlays and reversed Swoosh logos. A drawstring Gillie lacing system nods to common features on trail runners. At the base, a yellowed sole with a cloudy Air unit adds the finishing touch.\n<br>\n<br>\nThe Nike Air Max 1 Travis Scott Cactus Jack Saturn Gold released in May of 2022 and retailed for $150.",
+    "breadcrumbs": [
+        {
+            "url": "/",
+            "name": "Home",
+            "level": 1
+        },
+        {
+            "url": "/sneakers",
+            "name": "sneakers",
+            "level": 2
+        },
+        {
+            "url": "/nike",
+            "name": "Nike",
+            "level": 3
+        },
+        {
+            "url": "/nike/air-max",
+            "name": "Air Max",
+            "level": 4
+        },
+        {
+            "url": "/nike/air-max/1",
+            "name": "1",
+            "level": 5
+        },
+        {
+            "url": "/nike-air-max-1-travis-scott-wheat",
+            "name": "Nike Air Max 1 Travis Scott Cactus Jack Saturn Gold",
+            "level": 6
+        }
+    ],
     "category": "sneakers",
     "model": "nike-air-max-1",
     "sku": "DO9392-700",
