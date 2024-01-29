@@ -42,6 +42,10 @@ Retailed provides an extremely granular querying language through all APIs. Each
     An example of a query parameter for the product id field : `654955f65493f73e4e9d32b4`, `654955f65493f73e4e9d32b4`, etc.
 </ParamField>
 
+<ParamField query="page" type="number" optional={true} placeholder="1">
+    The page number to return. Defaults to 1. You can paginate with the `totalPages` in the response.
+</ParamField>
+
 ### Sort
 
 Retailed find queries support a sort parameter through all APIs. Pass the name of a top-level field to sort by that field in ascending order.
