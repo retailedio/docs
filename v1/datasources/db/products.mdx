@@ -42,6 +42,10 @@ Retailed provides an extremely granular querying language through all APIs. Each
     An example of a query parameter for the sku field.
 </ParamField>
 
+<ParamField query="page" type="number" optional={true} placeholder="1">
+    The page number to return. Defaults to 1. You can paginate with the `totalPages` in the response.
+</ParamField>
+
 <Note>I want to get all products with a retail price of 85 or 90 and with a description.</Note>
 
 ```markdown Example Query
