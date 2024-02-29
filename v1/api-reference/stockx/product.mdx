@@ -41,11 +41,23 @@ description: "Get product information from StockX"
         <ResponseField name="name" type="string">
             StockX product name
         </ResponseField>
+        <ResponseField> name="primary_category" type="string">
+            StockX product primary category
+        </ResponseField>
+        <ResponseField name="gender" type="string">
+            StockX product gender
+        </ResponseField>
         <ResponseField name="brand" type="string">
             StockX product brand
         </ResponseField>
         <ResponseField name="image" type="string">
             StockX product image
+        </ResponseField>
+        <ResponseField name="thumb_image" type="string">
+            StockX product thumbnail image
+        </ResponseField>
+        <ResponseField name="small_image" type="string">
+            StockX product small image
         </ResponseField>
         <ResponseField name="description" type="string">
             StockX product description
@@ -186,11 +198,1242 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
 ```json Example Response
 {
     "id": "c318bbcc-312a-4396-9252-698c203d1dea",
-    "slug": "nike-air-max-1-travis-scott-wheat",
+    "sku": "DO9392-700",
     "name": "Nike Air Max 1 Travis Scott Cactus Jack Saturn Gold",
-    "brand": "nike",
-    "image": "https://images.stockx.com/images/Nike-Air-Max-1-Travis-Scott-Wheat-Product.jpg",
+    "slug": "nike-air-max-1-travis-scott-wheat",
+    "brand": "Nike",
+    "image": "https://images.stockx.com/images/Nike-Air-Max-1-Travis-Scott-Wheat-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&q=90&dpr=2&trim=color&updated_at=1648066078",
+    "small_image": "https://images.stockx.com/images/Nike-Air-Max-1-Travis-Scott-Wheat-Product.jpg?fit=fill&bg=FFFFFF&w=300&h=214&fm=webp&auto=compress&q=90&dpr=2&trim=color&updated_at=1648066078",
+    "thumb_image": "https://images.stockx.com/images/Nike-Air-Max-1-Travis-Scott-Wheat-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=100&fm=webp&auto=compress&q=90&dpr=2&trim=color&updated_at=1648066078",
     "description": "In collaboration with Travis Scott's record label Cactus Jack, the Nike Air Max 1 Travis Scott Cactus Jack Saturn Gold pays homage to outdoor exploration and the Nike ACG Pocket Knife hiking shoe. It boasts a light yellow layered mesh upper with matching Durabuck overlays and reversed Swoosh logos. A drawstring Gillie lacing system nods to common features on trail runners. At the base, a yellowed sole with a cloudy Air unit adds the finishing touch.\n<br>\n<br>\nThe Nike Air Max 1 Travis Scott Cactus Jack Saturn Gold released in May of 2022 and retailed for $150.",
+    "model": "Nike Air Max 1",
+    "primary_category": "Air Max"
+    "gender": "men",
+    "market": {
+        "bids": {
+            "lowest_ask": 170,
+            "highest_bid": 265,
+            "number_asks": 532,
+            "number_bids": 346
+        },
+        "sales": {
+            "last_sale": 195,
+            "sales_last_72h": 22
+        }
+    },
+    "traits": [
+        {
+            "name": "Style",
+            "value": "DO9392-700"
+        },
+        {
+            "name": "Colorway",
+            "value": "Saturn Gold/Tea Tree Mist/Tent"
+        },
+        {
+            "name": "Retail Price",
+            "value": "150"
+        },
+        {
+            "name": "Release Date",
+            "value": "2022-05-27"
+        },
+        {
+            "name": "Included Accessories",
+            "value": "Grey extra laces, Special paper "
+        },
+        {
+            "name": "Featured",
+            "value": "false"
+        }
+    ],
+    "category": "sneakers",
+    "variants": [
+        {
+            "id": "c9967320-50ce-4e0d-a14e-efa4d4f37771",
+            "gtins": [
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114066"
+                },
+                {
+                    "type": "UPC",
+                    "identifier": "195867114066"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 3.5",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 3",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 22.5",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 225",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 35.5",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 5",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 200,
+                    "highest_bid": 87,
+                    "number_asks": 4,
+                    "number_bids": 3
+                },
+                "sales": {
+                    "last_sale": 155,
+                    "sales_last_72h": 0
+                }
+            },
+            "traits": {
+                "size": "3.5"
+            }
+        },
+        {
+            "id": "c7e40ad8-030e-4444-baaf-30569c52347b",
+            "gtins": [
+                {
+                    "type": "UPC",
+                    "identifier": "195867114073"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 4",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 3.5",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 23",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 230",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 36",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 5.5",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 170,
+                    "highest_bid": 87,
+                    "number_asks": 15,
+                    "number_bids": 6
+                },
+                "sales": {
+                    "last_sale": 170,
+                    "sales_last_72h": 0
+                }
+            },
+            "traits": {
+                "size": "4"
+            }
+        },
+        {
+            "id": "be3919d2-0b5d-4eb9-8c88-707cce8a53e5",
+            "gtins": [
+                {
+                    "type": "UPC",
+                    "identifier": "195867114080"
+                },
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114080"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 4.5",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 4",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 23.5 (US M 4.5)",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 235 (US M 4.5)",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 36.5",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 6",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 196,
+                    "highest_bid": 152,
+                    "number_asks": 11,
+                    "number_bids": 6
+                },
+                "sales": {
+                    "last_sale": 204,
+                    "sales_last_72h": 0
+                }
+            },
+            "traits": {
+                "size": "4.5"
+            }
+        },
+        {
+            "id": "9470c529-b18a-44a2-8403-4c092cebd539",
+            "gtins": [
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114097"
+                },
+                {
+                    "type": "UPC",
+                    "identifier": "195867114097"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 5",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 4.5",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 23.5 (US M 5)",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 235 (US M 5)",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 37.5",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 6.5",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 174,
+                    "highest_bid": 92,
+                    "number_asks": 22,
+                    "number_bids": 9
+                },
+                "sales": {
+                    "last_sale": 89,
+                    "sales_last_72h": 1
+                }
+            },
+            "traits": {
+                "size": "5"
+            }
+        },
+        {
+            "id": "abce6769-5444-4033-80e1-473bd8325db7",
+            "gtins": [
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114103"
+                },
+                {
+                    "type": "UPC",
+                    "identifier": "195867114103"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 5.5",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 5",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 24 (US M 5.5)",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 240 (US M 5.5)",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 38",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 7",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 198,
+                    "highest_bid": 130,
+                    "number_asks": 21,
+                    "number_bids": 6
+                },
+                "sales": {
+                    "last_sale": 198,
+                    "sales_last_72h": 0
+                }
+            },
+            "traits": {
+                "size": "5.5"
+            }
+        },
+        {
+            "id": "2fba0368-f3a2-466b-b7ed-52b3f34163d6",
+            "gtins": [
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114110"
+                },
+                {
+                    "type": "UPC",
+                    "identifier": "195867114110"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 6",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 5.5",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 24 (US M 6)",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 240 (US M 6)",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 38.5",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 7.5",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 187,
+                    "highest_bid": 120,
+                    "number_asks": 28,
+                    "number_bids": 10
+                },
+                "sales": {
+                    "last_sale": 216,
+                    "sales_last_72h": 0
+                }
+            },
+            "traits": {
+                "size": "6"
+            }
+        },
+        {
+            "id": "800863d8-c4bb-487d-9cc6-033593f5c593",
+            "gtins": [
+                {
+                    "type": "UPC",
+                    "identifier": "195867114127"
+                },
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114127"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 6.5",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 6 (EU 39)",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 24.5",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 245",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 39",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 8",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 254,
+                    "highest_bid": 178,
+                    "number_asks": 23,
+                    "number_bids": 8
+                },
+                "sales": {
+                    "last_sale": 190,
+                    "sales_last_72h": 0
+                }
+            },
+            "traits": {
+                "size": "6.5"
+            }
+        },
+        {
+            "id": "5e1b81b2-7236-47c0-95b2-91fc0f25a3d5",
+            "gtins": [
+                {
+                    "type": "UPC",
+                    "identifier": "195867114134"
+                },
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114134"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 7",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 6 (EU 40)",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 25",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 250",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 40",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 8.5",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 217,
+                    "highest_bid": 139,
+                    "number_asks": 24,
+                    "number_bids": 8
+                },
+                "sales": {
+                    "last_sale": 243,
+                    "sales_last_72h": 0
+                }
+            },
+            "traits": {
+                "size": "7"
+            }
+        },
+        {
+            "id": "c49f057a-ca32-43f6-bcff-23859649d482",
+            "gtins": [
+                {
+                    "type": "UPC",
+                    "identifier": "195867114141"
+                },
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114141"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 7.5",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 6.5",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 25.5",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 255",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 40.5",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 9",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 227,
+                    "highest_bid": 176,
+                    "number_asks": 13,
+                    "number_bids": 13
+                },
+                "sales": {
+                    "last_sale": 180,
+                    "sales_last_72h": 0
+                }
+            },
+            "traits": {
+                "size": "7.5"
+            }
+        },
+        {
+            "id": "3d3b3ac9-8560-4c36-9168-01aa40ccfcc9",
+            "gtins": [
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114158"
+                },
+                {
+                    "type": "UPC",
+                    "identifier": "195867114158"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 8",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 7",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 26",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 260",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 41",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 9.5",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 248,
+                    "highest_bid": 199,
+                    "number_asks": 34,
+                    "number_bids": 25
+                },
+                "sales": {
+                    "last_sale": 249,
+                    "sales_last_72h": 0
+                }
+            },
+            "traits": {
+                "size": "8"
+            }
+        },
+        {
+            "id": "399319ad-1f0d-43ae-b034-d300fde28091",
+            "gtins": [
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114165"
+                },
+                {
+                    "type": "UPC",
+                    "identifier": "195867114165"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 8.5",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 7.5",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 26.5",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 265",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 42",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 10",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 248,
+                    "highest_bid": 220,
+                    "number_asks": 45,
+                    "number_bids": 30
+                },
+                "sales": {
+                    "last_sale": 249,
+                    "sales_last_72h": 0
+                }
+            },
+            "traits": {
+                "size": "8.5"
+            }
+        },
+        {
+            "id": "c0d96ae8-3079-4b25-96b1-93dc3324d411",
+            "gtins": [
+                {
+                    "type": "UPC",
+                    "identifier": "195867114172"
+                },
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114172"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 9",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 8",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 27",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 270",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 42.5",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 10.5",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 252,
+                    "highest_bid": 200,
+                    "number_asks": 49,
+                    "number_bids": 28
+                },
+                "sales": {
+                    "last_sale": 245,
+                    "sales_last_72h": 1
+                }
+            },
+            "traits": {
+                "size": "9"
+            }
+        },
+        {
+            "id": "86a7a18b-aa9e-40b8-86a2-d376c2ef5f05",
+            "gtins": [
+                {
+                    "type": "UPC",
+                    "identifier": "195867114189"
+                },
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114189"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 9.5",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 8.5",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 27.5",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 275",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 43",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 11",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 250,
+                    "highest_bid": 216,
+                    "number_asks": 35,
+                    "number_bids": 29
+                },
+                "sales": {
+                    "last_sale": 261,
+                    "sales_last_72h": 2
+                }
+            },
+            "traits": {
+                "size": "9.5"
+            }
+        },
+        {
+            "id": "52e1f26b-2a94-4a88-acd5-e497811fe68e",
+            "gtins": [
+                {
+                    "type": "UPC",
+                    "identifier": "195867114196"
+                },
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114196"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 10",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 9",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 28",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 280",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 44",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 11.5",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 250,
+                    "highest_bid": 223,
+                    "number_asks": 34,
+                    "number_bids": 43
+                },
+                "sales": {
+                    "last_sale": 310,
+                    "sales_last_72h": 3
+                }
+            },
+            "traits": {
+                "size": "10"
+            }
+        },
+        {
+            "id": "7de6f057-ced2-4f1e-823d-149239c83b6a",
+            "gtins": [
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114202"
+                },
+                {
+                    "type": "UPC",
+                    "identifier": "195867114202"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 10.5",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 9.5",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 28.5",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 285",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 44.5",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 12",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 285,
+                    "highest_bid": 227,
+                    "number_asks": 30,
+                    "number_bids": 16
+                },
+                "sales": {
+                    "last_sale": 280,
+                    "sales_last_72h": 1
+                }
+            },
+            "traits": {
+                "size": "10.5"
+            }
+        },
+        {
+            "id": "5dcfff98-7a1d-4e35-881d-6a569f347a01",
+            "gtins": [
+                {
+                    "type": "UPC",
+                    "identifier": "195867114219"
+                },
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114219"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 11",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 10",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 29",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 290",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 45",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 12.5",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 259,
+                    "highest_bid": 223,
+                    "number_asks": 45,
+                    "number_bids": 33
+                },
+                "sales": {
+                    "last_sale": 306,
+                    "sales_last_72h": 0
+                }
+            },
+            "traits": {
+                "size": "11"
+            }
+        },
+        {
+            "id": "042348c0-647a-4740-a768-18ab3e545f1d",
+            "gtins": [
+                {
+                    "type": "UPC",
+                    "identifier": "195867114226"
+                },
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114226"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 11.5",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 10.5",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 29.5",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 295",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 45.5",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 13",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 280,
+                    "highest_bid": 251,
+                    "number_asks": 22,
+                    "number_bids": 19
+                },
+                "sales": {
+                    "last_sale": 332,
+                    "sales_last_72h": 1
+                }
+            },
+            "traits": {
+                "size": "11.5"
+            }
+        },
+        {
+            "id": "a2d123d1-280a-4c3c-af60-6b7db53999dd",
+            "gtins": [
+                {
+                    "type": "UPC",
+                    "identifier": "195867114233"
+                },
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114233"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 12",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 11",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 30",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 300",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 46",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 13.5",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 300,
+                    "highest_bid": 246,
+                    "number_asks": 26,
+                    "number_bids": 16
+                },
+                "sales": {
+                    "last_sale": 318,
+                    "sales_last_72h": 3
+                }
+            },
+            "traits": {
+                "size": "12"
+            }
+        },
+        {
+            "id": "c25ff98c-fd78-4397-b50c-287eeecb1d52",
+            "gtins": [
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114240"
+                },
+                {
+                    "type": "UPC",
+                    "identifier": "195867114240"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 12.5",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 11.5",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 30.5",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 305",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 47",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 14",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 319,
+                    "highest_bid": 230,
+                    "number_asks": 13,
+                    "number_bids": 8
+                },
+                "sales": {
+                    "last_sale": 323,
+                    "sales_last_72h": 0
+                }
+            },
+            "traits": {
+                "size": "12.5"
+            }
+        },
+        {
+            "id": "6ad9ec7a-ef95-4afc-bd92-f6af76ca0b55",
+            "gtins": [
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114257"
+                },
+                {
+                    "type": "UPC",
+                    "identifier": "195867114257"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 13",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 12",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 31",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 310",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 47.5",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 14.5",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 291,
+                    "highest_bid": 265,
+                    "number_asks": 14,
+                    "number_bids": 18
+                },
+                "sales": {
+                    "last_sale": 290,
+                    "sales_last_72h": 0
+                }
+            },
+            "traits": {
+                "size": "13"
+            }
+        },
+        {
+            "id": "7228310b-4bf8-492e-bfa1-cf328d1650f0",
+            "gtins": [
+                {
+                    "type": "UPC",
+                    "identifier": "195867114264"
+                },
+                {
+                    "type": "EAN-13",
+                    "identifier": "0195867114264"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 14",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 13",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 32",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 320",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 48.5",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 15.5",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 249,
+                    "highest_bid": 180,
+                    "number_asks": 12,
+                    "number_bids": 7
+                },
+                "sales": {
+                    "last_sale": 200,
+                    "sales_last_72h": 0
+                }
+            },
+            "traits": {
+                "size": "14"
+            }
+        },
+        {
+            "id": "1b64855c-96d9-4e1b-936a-00a25d11a1a9",
+            "gtins": [
+                {
+                    "type": "UPC",
+                    "identifier": "195867114271"
+                },
+                {
+                    "type": "EAN-13",
+                    "identifier": "2000220711234"
+                }
+            ],
+            "sizes": [
+                {
+                    "size": "US M 15",
+                    "type": "us m"
+                },
+                {
+                    "size": "UK 14",
+                    "type": "uk"
+                },
+                {
+                    "size": "CM 33",
+                    "type": "cm"
+                },
+                {
+                    "size": "KR 330",
+                    "type": "kr"
+                },
+                {
+                    "size": "EU 49.5",
+                    "type": "eu"
+                },
+                {
+                    "size": "US W 16.5",
+                    "type": "us w"
+                }
+            ],
+            "market": {
+                "bids": {
+                    "lowest_ask": 254,
+                    "highest_bid": 175,
+                    "number_asks": 12,
+                    "number_bids": 5
+                },
+                "sales": {
+                    "last_sale": 195,
+                    "sales_last_72h": 0
+                }
+            },
+            "traits": {
+                "size": "15"
+            }
+        }
+    ],
     "breadcrumbs": [
         {
             "url": "/",
@@ -223,1127 +1466,6 @@ curl --location --request GET 'https://app.retailed.io/api/v1/stockx/product?que
             "level": 6
         }
     ],
-    "category": "sneakers",
-    "model": "nike-air-max-1",
-    "sku": "DO9392-700",
-    "traits": [
-    {
-        "name": "style",
-        "value": "DO9392-700"
-    },
-    {
-        "name": "colorway",
-        "value": "Saturn Gold/Tea Tree Mist/Tent"
-    },
-    {
-        "name": "retail-price",
-        "value": "150"
-    },
-    {
-        "name": "release-date",
-        "value": "2022-05-27"
-    },
-    {
-        "name": "included-accessories",
-        "value": "Grey extra laces"
-    },
-    {
-        "name": "featured",
-        "value": "false"
-    }
-    ],
-    "variants": [
-    {
-        "id": "c9967320-50ce-4e0d-a14e-efa4d4f37771",
-        "sizes": [
-        {
-            "size": "US M 3.5",
-            "type": "us m"
-        },
-        {
-            "size": "UK 3",
-            "type": "uk"
-        },
-        {
-            "size": "CM 22.5",
-            "type": "cm"
-        },
-        {
-            "size": "KR 225",
-            "type": "kr"
-        },
-        {
-            "size": "EU 35.5",
-            "type": "eu"
-        },
-        {
-            "size": "US W 5",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114066"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 254,
-                "highest_bid": 87,
-                "number_asks": 9,
-                "number_bids": 3
-            },
-            "sales": {
-                "last_sale": 200,
-                "sales_last_72h": 0
-            }
-        }
-    },
-    {
-        "id": "c7e40ad8-030e-4444-baaf-30569c52347b",
-        "sizes": [
-        {
-            "size": "US M 4",
-            "type": "us m"
-        },
-        {
-            "size": "UK 3.5",
-            "type": "uk"
-        },
-        {
-            "size": "CM 23",
-            "type": "cm"
-        },
-        {
-            "size": "KR 230",
-            "type": "kr"
-        },
-        {
-            "size": "EU 36",
-            "type": "eu"
-        },
-        {
-            "size": "US W 5.5",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114073"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 185,
-                "highest_bid": 100,
-                "number_asks": 22,
-                "number_bids": 7
-            },
-            "sales": {
-                "last_sale": 184,
-                "sales_last_72h": 0
-            }
-        }
-    },
-    {
-        "id": "be3919d2-0b5d-4eb9-8c88-707cce8a53e5",
-        "sizes": [
-        {
-            "size": "US M 4.5",
-            "type": "us m"
-        },
-        {
-            "size": "UK 4",
-            "type": "uk"
-        },
-        {
-            "size": "CM 23.5 (US M 4.5)",
-            "type": "cm"
-        },
-        {
-            "size": "KR 235 (US M 4.5)",
-            "type": "kr"
-        },
-        {
-            "size": "EU 36.5",
-            "type": "eu"
-        },
-        {
-            "size": "US W 6",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "EAN-13",
-            "identifier": "2000220711036"
-        },
-        {
-            "type": "UPC",
-            "identifier": "195867114080"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 205,
-                "highest_bid": 121,
-                "number_asks": 17,
-                "number_bids": 6
-            },
-            "sales": {
-                "last_sale": 145,
-                "sales_last_72h": 1
-            }
-        }
-    },
-    {
-        "id": "9470c529-b18a-44a2-8403-4c092cebd539",
-        "sizes": [
-        {
-            "size": "US M 5",
-            "type": "us m"
-        },
-        {
-            "size": "UK 4.5",
-            "type": "uk"
-        },
-        {
-            "size": "CM 23.5 (US M 5)",
-            "type": "cm"
-        },
-        {
-            "size": "KR 235 (US M 5)",
-            "type": "kr"
-        },
-        {
-            "size": "EU 37.5",
-            "type": "eu"
-        },
-        {
-            "size": "US W 6.5",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114097"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 176,
-                "highest_bid": 160,
-                "number_asks": 28,
-                "number_bids": 8
-            },
-            "sales": {
-                "last_sale": 217,
-                "sales_last_72h": 1
-            }
-        }
-    },
-    {
-        "id": "abce6769-5444-4033-80e1-473bd8325db7",
-        "sizes": [
-        {
-            "size": "US M 5.5",
-            "type": "us m"
-        },
-        {
-            "size": "UK 5",
-            "type": "uk"
-        },
-        {
-            "size": "CM 24 (US M 5.5)",
-            "type": "cm"
-        },
-        {
-            "size": "KR 240 (US M 5.5)",
-            "type": "kr"
-        },
-        {
-            "size": "EU 38",
-            "type": "eu"
-        },
-        {
-            "size": "US W 7",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114103"
-        },
-        {
-            "type": "EAN-13",
-            "identifier": "6923175332377"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 192,
-                "highest_bid": 170,
-                "number_asks": 24,
-                "number_bids": 15
-            },
-            "sales": {
-                "last_sale": 192,
-                "sales_last_72h": 2
-            }
-        }
-    },
-    {
-        "id": "2fba0368-f3a2-466b-b7ed-52b3f34163d6",
-        "sizes": [
-        {
-            "size": "US M 6",
-            "type": "us m"
-        },
-        {
-            "size": "UK 5.5",
-            "type": "uk"
-        },
-        {
-            "size": "CM 24 (US M 6)",
-            "type": "cm"
-        },
-        {
-            "size": "KR 240 (US M 6)",
-            "type": "kr"
-        },
-        {
-            "size": "EU 38.5",
-            "type": "eu"
-        },
-        {
-            "size": "US W 7.5",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114110"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 191,
-                "highest_bid": 167,
-                "number_asks": 36,
-                "number_bids": 13
-            },
-            "sales": {
-                "last_sale": 190,
-                "sales_last_72h": 0
-            }
-        }
-    },
-    {
-        "id": "800863d8-c4bb-487d-9cc6-033593f5c593",
-        "sizes": [
-        {
-            "size": "US M 6.5",
-            "type": "us m"
-        },
-        {
-            "size": "UK 6 (EU 39)",
-            "type": "uk"
-        },
-        {
-            "size": "CM 24.5",
-            "type": "cm"
-        },
-        {
-            "size": "KR 245",
-            "type": "kr"
-        },
-        {
-            "size": "EU 39",
-            "type": "eu"
-        },
-        {
-            "size": "US W 8",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114127"
-        },
-        {
-            "type": "EAN-13",
-            "identifier": "6923195332371"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 216,
-                "highest_bid": 177,
-                "number_asks": 35,
-                "number_bids": 14
-            },
-            "sales": {
-                "last_sale": 251,
-                "sales_last_72h": 1
-            }
-        }
-    },
-    {
-        "id": "5e1b81b2-7236-47c0-95b2-91fc0f25a3d5",
-        "sizes": [
-        {
-            "size": "US M 7",
-            "type": "us m"
-        },
-        {
-            "size": "UK 6 (EU 40)",
-            "type": "uk"
-        },
-        {
-            "size": "CM 25",
-            "type": "cm"
-        },
-        {
-            "size": "KR 250",
-            "type": "kr"
-        },
-        {
-            "size": "EU 40",
-            "type": "eu"
-        },
-        {
-            "size": "US W 8.5",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114134"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 202,
-                "highest_bid": 195,
-                "number_asks": 27,
-                "number_bids": 19
-            },
-            "sales": {
-                "last_sale": 203,
-                "sales_last_72h": 0
-            }
-        }
-    },
-    {
-        "id": "c49f057a-ca32-43f6-bcff-23859649d482",
-        "sizes": [
-        {
-            "size": "US M 7.5",
-            "type": "us m"
-        },
-        {
-            "size": "UK 6.5",
-            "type": "uk"
-        },
-        {
-            "size": "CM 25.5",
-            "type": "cm"
-        },
-        {
-            "size": "KR 255",
-            "type": "kr"
-        },
-        {
-            "size": "EU 40.5",
-            "type": "eu"
-        },
-        {
-            "size": "US W 9",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114141"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 235,
-                "highest_bid": 195,
-                "number_asks": 24,
-                "number_bids": 19
-            },
-            "sales": {
-                "last_sale": 275,
-                "sales_last_72h": 1
-            }
-        }
-    },
-    {
-        "id": "3d3b3ac9-8560-4c36-9168-01aa40ccfcc9",
-        "sizes": [
-        {
-            "size": "US M 8",
-            "type": "us m"
-        },
-        {
-            "size": "UK 7",
-            "type": "uk"
-        },
-        {
-            "size": "CM 26",
-            "type": "cm"
-        },
-        {
-            "size": "KR 260",
-            "type": "kr"
-        },
-        {
-            "size": "EU 41",
-            "type": "eu"
-        },
-        {
-            "size": "US W 9.5",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114158"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 250,
-                "highest_bid": 220,
-                "number_asks": 46,
-                "number_bids": 38
-            },
-            "sales": {
-                "last_sale": 250,
-                "sales_last_72h": 1
-            }
-        }
-    },
-    {
-        "id": "399319ad-1f0d-43ae-b034-d300fde28091",
-        "sizes": [
-        {
-            "size": "US M 8.5",
-            "type": "us m"
-        },
-        {
-            "size": "UK 7.5",
-            "type": "uk"
-        },
-        {
-            "size": "CM 26.5",
-            "type": "cm"
-        },
-        {
-            "size": "KR 265",
-            "type": "kr"
-        },
-        {
-            "size": "EU 42",
-            "type": "eu"
-        },
-        {
-            "size": "US W 10",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114165"
-        },
-        {
-            "type": "EAN-13",
-            "identifier": "2006944001026"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 261,
-                "highest_bid": 216,
-                "number_asks": 48,
-                "number_bids": 39
-            },
-            "sales": {
-                "last_sale": 312,
-                "sales_last_72h": 1
-            }
-        }
-    },
-    {
-        "id": "c0d96ae8-3079-4b25-96b1-93dc3324d411",
-        "sizes": [
-        {
-            "size": "US M 9",
-            "type": "us m"
-        },
-        {
-            "size": "UK 8",
-            "type": "uk"
-        },
-        {
-            "size": "CM 27",
-            "type": "cm"
-        },
-        {
-            "size": "KR 270",
-            "type": "kr"
-        },
-        {
-            "size": "EU 42.5",
-            "type": "eu"
-        },
-        {
-            "size": "US W 10.5",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114172"
-        },
-        {
-            "type": "EAN-13",
-            "identifier": "38826856"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 242,
-                "highest_bid": 221,
-                "number_asks": 59,
-                "number_bids": 39
-            },
-            "sales": {
-                "last_sale": 264,
-                "sales_last_72h": 1
-            }
-        }
-    },
-    {
-        "id": "86a7a18b-aa9e-40b8-86a2-d376c2ef5f05",
-        "sizes": [
-        {
-            "size": "US M 9.5",
-            "type": "us m"
-        },
-        {
-            "size": "UK 8.5",
-            "type": "uk"
-        },
-        {
-            "size": "CM 27.5",
-            "type": "cm"
-        },
-        {
-            "size": "KR 275",
-            "type": "kr"
-        },
-        {
-            "size": "EU 43",
-            "type": "eu"
-        },
-        {
-            "size": "US W 11",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114189"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 270,
-                "highest_bid": 240,
-                "number_asks": 51,
-                "number_bids": 48
-            },
-            "sales": {
-                "last_sale": 270,
-                "sales_last_72h": 1
-            }
-        }
-    },
-    {
-        "id": "52e1f26b-2a94-4a88-acd5-e497811fe68e",
-        "sizes": [
-        {
-            "size": "US M 10",
-            "type": "us m"
-        },
-        {
-            "size": "UK 9",
-            "type": "uk"
-        },
-        {
-            "size": "CM 28",
-            "type": "cm"
-        },
-        {
-            "size": "KR 280",
-            "type": "kr"
-        },
-        {
-            "size": "EU 44",
-            "type": "eu"
-        },
-        {
-            "size": "US W 11.5",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114196"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 287,
-                "highest_bid": 268,
-                "number_asks": 53,
-                "number_bids": 43
-            },
-            "sales": {
-                "last_sale": 287,
-                "sales_last_72h": 2
-            }
-        }
-    },
-    {
-        "id": "7de6f057-ced2-4f1e-823d-149239c83b6a",
-        "sizes": [
-        {
-            "size": "US M 10.5",
-            "type": "us m"
-        },
-        {
-            "size": "UK 9.5",
-            "type": "uk"
-        },
-        {
-            "size": "CM 28.5",
-            "type": "cm"
-        },
-        {
-            "size": "KR 285",
-            "type": "kr"
-        },
-        {
-            "size": "EU 44.5",
-            "type": "eu"
-        },
-        {
-            "size": "US W 12",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114202"
-        },
-        {
-            "type": "EAN-13",
-            "identifier": "12210210377"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 298,
-                "highest_bid": 267,
-                "number_asks": 36,
-                "number_bids": 39
-            },
-            "sales": {
-                "last_sale": 267,
-                "sales_last_72h": 3
-            }
-        }
-    },
-    {
-        "id": "5dcfff98-7a1d-4e35-881d-6a569f347a01",
-        "sizes": [
-        {
-            "size": "US M 11",
-            "type": "us m"
-        },
-        {
-            "size": "UK 10",
-            "type": "uk"
-        },
-        {
-            "size": "CM 29",
-            "type": "cm"
-        },
-        {
-            "size": "KR 290",
-            "type": "kr"
-        },
-        {
-            "size": "EU 45",
-            "type": "eu"
-        },
-        {
-            "size": "US W 12.5",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114219"
-        },
-        {
-            "type": "EAN-13",
-            "identifier": "41639191"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 306,
-                "highest_bid": 275,
-                "number_asks": 49,
-                "number_bids": 41
-            },
-            "sales": {
-                "last_sale": 299,
-                "sales_last_72h": 1
-            }
-        }
-    },
-    {
-        "id": "042348c0-647a-4740-a768-18ab3e545f1d",
-        "sizes": [
-        {
-            "size": "US M 11.5",
-            "type": "us m"
-        },
-        {
-            "size": "UK 10.5",
-            "type": "uk"
-        },
-        {
-            "size": "CM 29.5",
-            "type": "cm"
-        },
-        {
-            "size": "KR 295",
-            "type": "kr"
-        },
-        {
-            "size": "EU 45.5",
-            "type": "eu"
-        },
-        {
-            "size": "US W 13",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114226"
-        },
-        {
-            "type": "EAN-13",
-            "identifier": "5059653686319"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 300,
-                "highest_bid": 270,
-                "number_asks": 29,
-                "number_bids": 20
-            },
-            "sales": {
-                "last_sale": 265,
-                "sales_last_72h": 0
-            }
-        }
-    },
-    {
-        "id": "a2d123d1-280a-4c3c-af60-6b7db53999dd",
-        "sizes": [
-        {
-            "size": "US M 12",
-            "type": "us m"
-        },
-        {
-            "size": "UK 11",
-            "type": "uk"
-        },
-        {
-            "size": "CM 30",
-            "type": "cm"
-        },
-        {
-            "size": "KR 300",
-            "type": "kr"
-        },
-        {
-            "size": "EU 46",
-            "type": "eu"
-        },
-        {
-            "size": "US W 13.5",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114233"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 300,
-                "highest_bid": 280,
-                "number_asks": 50,
-                "number_bids": 24
-            },
-            "sales": {
-                "last_sale": 290,
-                "sales_last_72h": 2
-            }
-        }
-    },
-    {
-        "id": "c25ff98c-fd78-4397-b50c-287eeecb1d52",
-        "sizes": [
-        {
-            "size": "US M 12.5",
-            "type": "us m"
-        },
-        {
-            "size": "UK 11.5",
-            "type": "uk"
-        },
-        {
-            "size": "CM 30.5",
-            "type": "cm"
-        },
-        {
-            "size": "KR 305",
-            "type": "kr"
-        },
-        {
-            "size": "EU 47",
-            "type": "eu"
-        },
-        {
-            "size": "US W 14",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114240"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 320,
-                "highest_bid": 241,
-                "number_asks": 18,
-                "number_bids": 8
-            },
-            "sales": {
-                "last_sale": 282,
-                "sales_last_72h": 0
-            }
-        }
-    },
-    {
-        "id": "6ad9ec7a-ef95-4afc-bd92-f6af76ca0b55",
-        "sizes": [
-        {
-            "size": "US M 13",
-            "type": "us m"
-        },
-        {
-            "size": "UK 12",
-            "type": "uk"
-        },
-        {
-            "size": "CM 31",
-            "type": "cm"
-        },
-        {
-            "size": "KR 310",
-            "type": "kr"
-        },
-        {
-            "size": "EU 47.5",
-            "type": "eu"
-        },
-        {
-            "size": "US W 14.5",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "EAN-13",
-            "identifier": "2000220711203"
-        },
-        {
-            "type": "UPC",
-            "identifier": "195867114257"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 325,
-                "highest_bid": 317,
-                "number_asks": 31,
-                "number_bids": 15
-            },
-            "sales": {
-                "last_sale": 398,
-                "sales_last_72h": 0
-            }
-        }
-    },
-    {
-        "id": "7228310b-4bf8-492e-bfa1-cf328d1650f0",
-        "sizes": [
-        {
-            "size": "US M 14",
-            "type": "us m"
-        },
-        {
-            "size": "UK 13",
-            "type": "uk"
-        },
-        {
-            "size": "CM 32",
-            "type": "cm"
-        },
-        {
-            "size": "KR 320",
-            "type": "kr"
-        },
-        {
-            "size": "EU 48.5",
-            "type": "eu"
-        },
-        {
-            "size": "US W 15.5",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114264"
-        },
-        {
-            "type": "EAN-13",
-            "identifier": "2000009251210"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 270,
-                "highest_bid": 230,
-                "number_asks": 28,
-                "number_bids": 10
-            },
-            "sales": {
-                "last_sale": 280,
-                "sales_last_72h": 0
-            }
-        }
-    },
-    {
-        "id": "1b64855c-96d9-4e1b-936a-00a25d11a1a9",
-        "sizes": [
-        {
-            "size": "US M 15",
-            "type": "us m"
-        },
-        {
-            "size": "UK 14",
-            "type": "uk"
-        },
-        {
-            "size": "CM 33",
-            "type": "cm"
-        },
-        {
-            "size": "KR 330",
-            "type": "kr"
-        },
-        {
-            "size": "EU 49.5",
-            "type": "eu"
-        },
-        {
-            "size": "US W 16.5",
-            "type": "us w"
-        }
-        ],
-        "gtins": [
-        {
-            "type": "UPC",
-            "identifier": "195867114271"
-        },
-        {
-            "type": "EAN-13",
-            "identifier": "2000220711234"
-        }
-        ],
-        "market": {
-            "bids": {
-                "lowest_ask": 264,
-                "highest_bid": 215,
-                "number_asks": 14,
-                "number_bids": 8
-            },
-            "sales": {
-                "last_sale": 250,
-                "sales_last_72h": 0
-            }
-        }
-    }
-    ],
-    "market": {
-        "bids": {
-            "lowest_ask": 176,
-            "highest_bid": 317,
-            "number_asks": 747,
-            "number_bids": 480
-        },
-        "sales": {
-            "last_sale": 275,
-            "sales_last_72h": 21
-        }
-    }
 }
 ```
 </ResponseExample>
