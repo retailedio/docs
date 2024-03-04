@@ -8,6 +8,10 @@
   "feedback": {
     "thumbsRating": true
   },
+  "modeToggle": {
+    "default": "dark",
+    "isHidden": false
+  },
   "versions": ["v1"],
   "favicon": "/favicon.png",
   "colors": {
