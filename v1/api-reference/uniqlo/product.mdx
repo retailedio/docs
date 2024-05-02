@@ -1,0 +1,176 @@
+---
+title: "Uniqlo Product"
+api: "GET https://app.retailed.io/api/v1/scraper/uniqlo/product"
+description: "Get product information from Uniqlo"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="465200">
+    Product Id : `465200` or Uniqlo URL
+</ParamField>
+
+<ParamField query="country" type="string" optional={false} placeholder="UK">
+    Country code : `FR` or `UK`
+</ParamField>
+
+### Response
+
+<ResponseField name="object" type="Product Object">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="id" type="string">
+            Product Id
+        </ResponseField>
+        <ResponseField name="eans" type="array">
+            EANs
+        </ResponseField>
+        <ResponseField name="name" type="string">
+            Product Name
+        </ResponseField>
+        <ResponseField name="upcs" type="array">
+            UPCs
+        </ResponseField>
+        <ResponseField name="brand" type="object">
+            Brand
+        </ResponseField>
+        <ResponseField name="isbns" type="array">
+            ISBNs
+        </ResponseField>
+        <ResponseField name="active" type="boolean">
+            Active
+        </ResponseField>
+        <ResponseField name="disabled" type="boolean">
+            Disabled
+        </ResponseField>
+        <ResponseField name="variants" type="array">
+            Variants
+        </ResponseField>
+        <ResponseField name="image_url" type="string">
+            Image URL
+        </ResponseField>
+        <ResponseField name="story_ids" type="array">
+            Story Ids
+        </ResponseField>
+        <ResponseField name="family_ids" type="array">
+            Family Ids
+        </ResponseField>
+        <ResponseField name="review_ids" type="array">
+            Review Ids
+        </ResponseField>
+        <ResponseField name="category_id" type="string">
+            Category Id
+        </ResponseField>
+        <ResponseField name="description" type="string">
+            Description
+        </ResponseField>
+        <ResponseField name="question_ids" type="array">
+            Question Ids
+        </ResponseField>
+        <ResponseField name="model_numbers" type="array">
+            Model Numbers
+        </ResponseField>
+        <ResponseField name="attributes_order" type="array">
+            Attributes Order
+        </ResponseField>
+        <ResponseField name="product_page_url" type="string">
+            Product Page URL
+        </ResponseField>
+        <ResponseField name="brand_external_id" type="string">
+            Brand External Id
+        </ResponseField>
+        <ResponseField name="manufacturer_part_numbers" type="array">
+            Manufacturer Part Numbers
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<ResponseExample>
+```json Example Response
+{
+    "id": "465200",
+    "eans": [],
+    "name": "Pullover Hoodie",
+    "upcs": [],
+    "brand": {},
+    "isbns": [],
+    "active": true,
+    "disabled": false,
+    "variants": [
+        {
+            "id": "465200COL01SMA002000",
+            "pricing": {
+                "sale": 34.9,
+                "value": {},
+                "standard": 34.9,
+                "available": true,
+                "quantities": [
+                    {
+                        "unit": "",
+                        "value": 0
+                    }
+                ],
+                "multibuy_msg": "",
+                "formatted_sale": "£34.90",
+                "is_promo_price": false,
+                "price_percentage": "",
+                "sale_price_money": {},
+                "formatted_standard": "£34.90",
+                "show_standard_price": true,
+                "sale_price_available": true,
+                "standard_price_money": {},
+                "price_percentage_money": "",
+                "standard_price_available": true
+            },
+            "attributes": {
+                "size": "XS",
+                "color": "OFF WHITE"
+            },
+            "availability": {
+                "ats": "34",
+                "status": "IN_STOCK",
+                "in_stock": true,
+                "available": true,
+                "current_qty": 34,
+                "regular_qty": 34,
+                "in_stock_msg": "1 Item(s) In Stock",
+                "is_available": true,
+                "low_in_stock": false,
+                "selected_qty": "1",
+                "in_stock_date": "",
+                "pre_order_msg": "0 item(s) are available for pre-order.",
+                "qty_threshold": "3",
+                "back_order_msg": "Back Order 0 item(s)",
+                "purchase_level": "",
+                "status_quantity": "1",
+                "max_selected_qty": 34,
+                "available_for_sale": true,
+                "generally_available": true,
+                "selection_overdrive": false
+            }
+        }
+    ],
+    "image_url": "https://image.uniqlo.com/UQ/ST3/eu/imagesgoods/465200/sub/eugoods_465200_sub1.jpg?width=734",
+    "story_ids": [],
+    "family_ids": [],
+    "review_ids": [],
+    "category_id": "IDzip-hoodies2242",
+    "description": "Pullover Hoodie",
+    "question_ids": [],
+    "model_numbers": [],
+    "attributes_order": [
+        "AVAILABILITY"
+    ],
+    "product_page_url": "https://www.uniqlo.com/uk/en/product/pullover-hoodie-465200.html",
+    "brand_external_id": null,
+    "manufacturer_part_numbers": [
+        "465200"
+    ]
+}
+```
+</ResponseExample>

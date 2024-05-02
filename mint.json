@@ -157,6 +157,12 @@
       ]
     },
     {
+      "group": "Uniqlo",
+      "pages": [
+        "v1/api-reference/uniqlo/product"
+      ]
+    },
+    {
       "group": "Stadium Goods",
       "pages": [
         "v1/api-reference/stadiumgoods/product"
