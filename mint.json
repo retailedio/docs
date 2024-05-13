@@ -146,7 +146,8 @@
       "pages": [
         "v1/api-reference/goat/search",
         "v1/api-reference/goat/product",
-        "v1/api-reference/goat/prices"
+        "v1/api-reference/goat/prices",
+        "v1/api-reference/goat/trends"
       ]
     },
     {
