@@ -1,0 +1,2179 @@
+---
+title: "Farfetch Product"
+api: "GET https://app.retailed.io/api/v1/scraper/farfetch/product"
+description: "Get product information from Farfetch"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="465200">
+    Product Id : `23159266` or Farfetch URL
+</ParamField>
+
+<ParamField query="country" type="string" optional={false} placeholder="US">
+    Country code : `FR`, `UK`, etc.
+</ParamField>
+
+<ParamField query="country" type="string" optional={false} placeholder="en-US">
+    Currency code : `en-US`, `fr-FR`, etc.
+</ParamField>
+
+<ResponseExample>
+```json Example Response
+{
+    "id": "24115326",
+    "variants": [
+        {
+            "id": "ce7c04f1-ccef-47e6-8eee-4f0eb6e46817",
+            "care": null,
+            "label": "New Season",
+            "price": {
+                "payback_points_quantity": null
+            },
+            "images": [
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                }
+            ],
+            "fitting": null,
+            "made_in": {
+                "origin": "Made in Italy",
+                "disclaimers": null
+            },
+            "quantity": 0,
+            "shipping": null,
+            "price_raw": 503,
+            "main_color": "Black",
+            "composition": {
+                "parts": [
+                    {
+                        "name": null,
+                        "materials": [
+                            {
+                                "name": "Brass",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            },
+                            {
+                                "name": "Calf Leather",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "disclaimers": null
+            },
+            "description": {
+                "full": {
+                    "text_content": null
+                },
+                "short": {
+                    "text_content": "Iconic Small buckle belt"
+                },
+                "highlight": {
+                    "rich_text_content": [
+                        {
+                            "name": null,
+                            "type": "richtext",
+                            "blocks": [
+                                {
+                                    "name": "list",
+                                    "type": "block",
+                                    "items": [
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "black",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "calf leather",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "brass",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "logo-buckle fastening",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "gold-tone hardware",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "adjustable fit",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        }
+                                    ],
+                                    "display_options": {}
+                                }
+                            ],
+                            "display_options": {}
+                        }
+                    ]
+                }
+            },
+            "measurements": null,
+            "brand_style_id": "CHC24AC066SFB",
+            "price_formatted": "£503",
+            "delivery_methods": [],
+            "internal_product_id": "24115326",
+            "variation_properties": [
+                {
+                    "order": 1,
+                    "values": [
+                        {
+                            "id": "19",
+                            "order": 3,
+                            "scale": {
+                                "id": "142"
+                            },
+                            "description": "XS"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "7c702c47-c52f-4248-85b6-47f7e8fa86a8",
+            "care": null,
+            "label": "New Season",
+            "price": {
+                "payback_points_quantity": null
+            },
+            "images": [
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                }
+            ],
+            "fitting": null,
+            "made_in": {
+                "origin": "Made in Italy",
+                "disclaimers": null
+            },
+            "quantity": 0,
+            "shipping": null,
+            "price_raw": 503,
+            "main_color": "Black",
+            "composition": {
+                "parts": [
+                    {
+                        "name": null,
+                        "materials": [
+                            {
+                                "name": "Brass",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            },
+                            {
+                                "name": "Calf Leather",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "disclaimers": null
+            },
+            "description": {
+                "full": {
+                    "text_content": null
+                },
+                "short": {
+                    "text_content": "Iconic Small buckle belt"
+                },
+                "highlight": {
+                    "rich_text_content": [
+                        {
+                            "name": null,
+                            "type": "richtext",
+                            "blocks": [
+                                {
+                                    "name": "list",
+                                    "type": "block",
+                                    "items": [
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "black",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "calf leather",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "brass",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "logo-buckle fastening",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "gold-tone hardware",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "adjustable fit",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        }
+                                    ],
+                                    "display_options": {}
+                                }
+                            ],
+                            "display_options": {}
+                        }
+                    ]
+                }
+            },
+            "measurements": null,
+            "brand_style_id": "CHC24AC066SFB",
+            "price_formatted": "£503",
+            "delivery_methods": [],
+            "internal_product_id": "24115326",
+            "variation_properties": [
+                {
+                    "order": 1,
+                    "values": [
+                        {
+                            "id": "18",
+                            "order": 2,
+                            "scale": {
+                                "id": "142"
+                            },
+                            "description": "XXS"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "c7c9fa88-049c-41c1-a118-b14ee990b104",
+            "care": null,
+            "label": "New Season",
+            "price": {
+                "payback_points_quantity": null
+            },
+            "images": [
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                }
+            ],
+            "fitting": null,
+            "made_in": {
+                "origin": "Made in Italy",
+                "disclaimers": null
+            },
+            "quantity": 0,
+            "shipping": null,
+            "price_raw": 503,
+            "main_color": "Black",
+            "composition": {
+                "parts": [
+                    {
+                        "name": null,
+                        "materials": [
+                            {
+                                "name": "Brass",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            },
+                            {
+                                "name": "Calf Leather",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "disclaimers": null
+            },
+            "description": {
+                "full": {
+                    "text_content": null
+                },
+                "short": {
+                    "text_content": "Iconic Small buckle belt"
+                },
+                "highlight": {
+                    "rich_text_content": [
+                        {
+                            "name": null,
+                            "type": "richtext",
+                            "blocks": [
+                                {
+                                    "name": "list",
+                                    "type": "block",
+                                    "items": [
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "black",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "calf leather",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "brass",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "logo-buckle fastening",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "gold-tone hardware",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "adjustable fit",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        }
+                                    ],
+                                    "display_options": {}
+                                }
+                            ],
+                            "display_options": {}
+                        }
+                    ]
+                }
+            },
+            "measurements": null,
+            "brand_style_id": "CHC24AC066SFB",
+            "price_formatted": "£503",
+            "delivery_methods": [],
+            "internal_product_id": "24115326",
+            "variation_properties": [
+                {
+                    "order": 1,
+                    "values": [
+                        {
+                            "id": "17",
+                            "order": 1,
+                            "scale": {
+                                "id": "142"
+                            },
+                            "description": "XXXS"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "6e369865-88ea-48f3-b431-134579696911",
+            "care": null,
+            "label": "New Season",
+            "price": {
+                "payback_points_quantity": null
+            },
+            "images": [
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                }
+            ],
+            "fitting": null,
+            "made_in": {
+                "origin": "Made in Italy",
+                "disclaimers": null
+            },
+            "quantity": 1,
+            "shipping": {
+                "city": {
+                    "id": "135",
+                    "name": "Amsterdam"
+                },
+                "country": {
+                    "id": "144",
+                    "name": "Netherlands",
+                    "country_code": "nl"
+                },
+                "merchant": {
+                    "id": "16238",
+                    "name": "FARFETCH EUROPE TRADING B.V."
+                }
+            },
+            "price_raw": 503,
+            "main_color": "Black",
+            "composition": {
+                "parts": [
+                    {
+                        "name": null,
+                        "materials": [
+                            {
+                                "name": "Brass",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            },
+                            {
+                                "name": "Calf Leather",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "disclaimers": null
+            },
+            "description": {
+                "full": {
+                    "text_content": null
+                },
+                "short": {
+                    "text_content": "Iconic Small buckle belt"
+                },
+                "highlight": {
+                    "rich_text_content": [
+                        {
+                            "name": null,
+                            "type": "richtext",
+                            "blocks": [
+                                {
+                                    "name": "list",
+                                    "type": "block",
+                                    "items": [
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "black",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "calf leather",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "brass",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "logo-buckle fastening",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "gold-tone hardware",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "adjustable fit",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        }
+                                    ],
+                                    "display_options": {}
+                                }
+                            ],
+                            "display_options": {}
+                        }
+                    ]
+                }
+            },
+            "measurements": null,
+            "brand_style_id": "CHC24AC066SFB",
+            "price_formatted": "£503",
+            "delivery_methods": [],
+            "internal_product_id": "24115326",
+            "variation_properties": [
+                {
+                    "order": 1,
+                    "values": [
+                        {
+                            "id": "21",
+                            "order": 5,
+                            "scale": {
+                                "id": "142"
+                            },
+                            "description": "M"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "05cd38c6-0a5a-4e3f-8d66-98c6909a95f7",
+            "care": null,
+            "label": "New Season",
+            "price": {
+                "payback_points_quantity": null
+            },
+            "images": [
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                }
+            ],
+            "fitting": null,
+            "made_in": {
+                "origin": "Made in Italy",
+                "disclaimers": null
+            },
+            "quantity": 1,
+            "shipping": {
+                "city": {
+                    "id": "135",
+                    "name": "Amsterdam"
+                },
+                "country": {
+                    "id": "144",
+                    "name": "Netherlands",
+                    "country_code": "nl"
+                },
+                "merchant": {
+                    "id": "16238",
+                    "name": "FARFETCH EUROPE TRADING B.V."
+                }
+            },
+            "price_raw": 503,
+            "main_color": "Black",
+            "composition": {
+                "parts": [
+                    {
+                        "name": null,
+                        "materials": [
+                            {
+                                "name": "Brass",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            },
+                            {
+                                "name": "Calf Leather",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "disclaimers": null
+            },
+            "description": {
+                "full": {
+                    "text_content": null
+                },
+                "short": {
+                    "text_content": "Iconic Small buckle belt"
+                },
+                "highlight": {
+                    "rich_text_content": [
+                        {
+                            "name": null,
+                            "type": "richtext",
+                            "blocks": [
+                                {
+                                    "name": "list",
+                                    "type": "block",
+                                    "items": [
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "black",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "calf leather",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "brass",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "logo-buckle fastening",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "gold-tone hardware",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "adjustable fit",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        }
+                                    ],
+                                    "display_options": {}
+                                }
+                            ],
+                            "display_options": {}
+                        }
+                    ]
+                }
+            },
+            "measurements": null,
+            "brand_style_id": "CHC24AC066SFB",
+            "price_formatted": "£503",
+            "delivery_methods": [],
+            "internal_product_id": "24115326",
+            "variation_properties": [
+                {
+                    "order": 1,
+                    "values": [
+                        {
+                            "id": "22",
+                            "order": 6,
+                            "scale": {
+                                "id": "142"
+                            },
+                            "description": "L"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "8d9a836f-fdd2-4fdd-8b0f-85a885d1073a",
+            "care": null,
+            "label": "New Season",
+            "price": {
+                "payback_points_quantity": null
+            },
+            "images": [
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                }
+            ],
+            "fitting": null,
+            "made_in": {
+                "origin": "Made in Italy",
+                "disclaimers": null
+            },
+            "quantity": 0,
+            "shipping": null,
+            "price_raw": 503,
+            "main_color": "Black",
+            "composition": {
+                "parts": [
+                    {
+                        "name": null,
+                        "materials": [
+                            {
+                                "name": "Brass",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            },
+                            {
+                                "name": "Calf Leather",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "disclaimers": null
+            },
+            "description": {
+                "full": {
+                    "text_content": null
+                },
+                "short": {
+                    "text_content": "Iconic Small buckle belt"
+                },
+                "highlight": {
+                    "rich_text_content": [
+                        {
+                            "name": null,
+                            "type": "richtext",
+                            "blocks": [
+                                {
+                                    "name": "list",
+                                    "type": "block",
+                                    "items": [
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "black",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "calf leather",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "brass",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "logo-buckle fastening",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "gold-tone hardware",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "adjustable fit",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        }
+                                    ],
+                                    "display_options": {}
+                                }
+                            ],
+                            "display_options": {}
+                        }
+                    ]
+                }
+            },
+            "measurements": [
+                {
+                    "name": "TOTAL LENGTH",
+                    "type": "LENGTH",
+                    "metric": {
+                        "raw": 76,
+                        "formatted": "76 cm"
+                    },
+                    "imperial": {
+                        "raw": 29.92,
+                        "formatted": "29.92 in"
+                    }
+                },
+                {
+                    "name": "WIDTH",
+                    "type": "WEIGHT",
+                    "metric": {
+                        "raw": 1.8,
+                        "formatted": "1.8 cm"
+                    },
+                    "imperial": {
+                        "raw": 0.7,
+                        "formatted": "0.7 in"
+                    }
+                }
+            ],
+            "brand_style_id": "CHC24AC066SFB",
+            "price_formatted": "£503",
+            "delivery_methods": [],
+            "internal_product_id": "24115326",
+            "variation_properties": [
+                {
+                    "order": 1,
+                    "values": [
+                        {
+                            "id": "20",
+                            "order": 4,
+                            "scale": {
+                                "id": "142"
+                            },
+                            "description": "S"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "9c9bc348-87bb-41f6-8825-3160e31d016f",
+            "care": null,
+            "label": "New Season",
+            "price": {
+                "payback_points_quantity": null
+            },
+            "images": [
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                }
+            ],
+            "fitting": null,
+            "made_in": {
+                "origin": "Made in Italy",
+                "disclaimers": null
+            },
+            "quantity": 0,
+            "shipping": null,
+            "price_raw": 503,
+            "main_color": "Black",
+            "composition": {
+                "parts": [
+                    {
+                        "name": null,
+                        "materials": [
+                            {
+                                "name": "Brass",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            },
+                            {
+                                "name": "Calf Leather",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "disclaimers": null
+            },
+            "description": {
+                "full": {
+                    "text_content": null
+                },
+                "short": {
+                    "text_content": "Iconic Small buckle belt"
+                },
+                "highlight": {
+                    "rich_text_content": [
+                        {
+                            "name": null,
+                            "type": "richtext",
+                            "blocks": [
+                                {
+                                    "name": "list",
+                                    "type": "block",
+                                    "items": [
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "black",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "calf leather",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "brass",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "logo-buckle fastening",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "gold-tone hardware",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "adjustable fit",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        }
+                                    ],
+                                    "display_options": {}
+                                }
+                            ],
+                            "display_options": {}
+                        }
+                    ]
+                }
+            },
+            "measurements": null,
+            "brand_style_id": "CHC24AC066SFB",
+            "price_formatted": "£503",
+            "delivery_methods": [],
+            "internal_product_id": "24115326",
+            "variation_properties": [
+                {
+                    "order": 1,
+                    "values": [
+                        {
+                            "id": "23",
+                            "order": 7,
+                            "scale": {
+                                "id": "142"
+                            },
+                            "description": "XL"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "5212e33a-986b-490b-a4ea-244c0ddd125c",
+            "care": null,
+            "label": "New Season",
+            "price": {
+                "payback_points_quantity": null
+            },
+            "images": [
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                }
+            ],
+            "fitting": null,
+            "made_in": {
+                "origin": "Made in Italy",
+                "disclaimers": null
+            },
+            "quantity": 0,
+            "shipping": null,
+            "price_raw": 503,
+            "main_color": "Black",
+            "composition": {
+                "parts": [
+                    {
+                        "name": null,
+                        "materials": [
+                            {
+                                "name": "Brass",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            },
+                            {
+                                "name": "Calf Leather",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "disclaimers": null
+            },
+            "description": {
+                "full": {
+                    "text_content": null
+                },
+                "short": {
+                    "text_content": "Iconic Small buckle belt"
+                },
+                "highlight": {
+                    "rich_text_content": [
+                        {
+                            "name": null,
+                            "type": "richtext",
+                            "blocks": [
+                                {
+                                    "name": "list",
+                                    "type": "block",
+                                    "items": [
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "black",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "calf leather",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "brass",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "logo-buckle fastening",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "gold-tone hardware",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "adjustable fit",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        }
+                                    ],
+                                    "display_options": {}
+                                }
+                            ],
+                            "display_options": {}
+                        }
+                    ]
+                }
+            },
+            "measurements": null,
+            "brand_style_id": "CHC24AC066SFB",
+            "price_formatted": "£503",
+            "delivery_methods": [],
+            "internal_product_id": "24115326",
+            "variation_properties": [
+                {
+                    "order": 1,
+                    "values": [
+                        {
+                            "id": "24",
+                            "order": 8,
+                            "scale": {
+                                "id": "142"
+                            },
+                            "description": "XXL"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "6958ee82-e2ab-4efd-b0a6-d455fedee8a3",
+            "care": null,
+            "label": "New Season",
+            "price": {
+                "payback_points_quantity": null
+            },
+            "images": [
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                }
+            ],
+            "fitting": null,
+            "made_in": {
+                "origin": "Made in Italy",
+                "disclaimers": null
+            },
+            "quantity": 0,
+            "shipping": null,
+            "price_raw": 503,
+            "main_color": "Black",
+            "composition": {
+                "parts": [
+                    {
+                        "name": null,
+                        "materials": [
+                            {
+                                "name": "Brass",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            },
+                            {
+                                "name": "Calf Leather",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "disclaimers": null
+            },
+            "description": {
+                "full": {
+                    "text_content": null
+                },
+                "short": {
+                    "text_content": "Iconic Small buckle belt"
+                },
+                "highlight": {
+                    "rich_text_content": [
+                        {
+                            "name": null,
+                            "type": "richtext",
+                            "blocks": [
+                                {
+                                    "name": "list",
+                                    "type": "block",
+                                    "items": [
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "black",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "calf leather",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "brass",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "logo-buckle fastening",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "gold-tone hardware",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "adjustable fit",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        }
+                                    ],
+                                    "display_options": {}
+                                }
+                            ],
+                            "display_options": {}
+                        }
+                    ]
+                }
+            },
+            "measurements": null,
+            "brand_style_id": "CHC24AC066SFB",
+            "price_formatted": "£503",
+            "delivery_methods": [],
+            "internal_product_id": "24115326",
+            "variation_properties": [
+                {
+                    "order": 1,
+                    "values": [
+                        {
+                            "id": "26",
+                            "order": 10,
+                            "scale": {
+                                "id": "142"
+                            },
+                            "description": "4XL"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "da7a7c31-0f06-4e8f-87e8-dc2b0c2f1f30",
+            "care": null,
+            "label": "New Season",
+            "price": {
+                "payback_points_quantity": null
+            },
+            "images": [
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                }
+            ],
+            "fitting": null,
+            "made_in": {
+                "origin": "Made in Italy",
+                "disclaimers": null
+            },
+            "quantity": 0,
+            "shipping": null,
+            "price_raw": 503,
+            "main_color": "Black",
+            "composition": {
+                "parts": [
+                    {
+                        "name": null,
+                        "materials": [
+                            {
+                                "name": "Brass",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            },
+                            {
+                                "name": "Calf Leather",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "disclaimers": null
+            },
+            "description": {
+                "full": {
+                    "text_content": null
+                },
+                "short": {
+                    "text_content": "Iconic Small buckle belt"
+                },
+                "highlight": {
+                    "rich_text_content": [
+                        {
+                            "name": null,
+                            "type": "richtext",
+                            "blocks": [
+                                {
+                                    "name": "list",
+                                    "type": "block",
+                                    "items": [
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "black",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "calf leather",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "brass",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "logo-buckle fastening",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "gold-tone hardware",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "adjustable fit",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        }
+                                    ],
+                                    "display_options": {}
+                                }
+                            ],
+                            "display_options": {}
+                        }
+                    ]
+                }
+            },
+            "measurements": null,
+            "brand_style_id": "CHC24AC066SFB",
+            "price_formatted": "£503",
+            "delivery_methods": [],
+            "internal_product_id": "24115326",
+            "variation_properties": [
+                {
+                    "order": 1,
+                    "values": [
+                        {
+                            "id": "25",
+                            "order": 9,
+                            "scale": {
+                                "id": "142"
+                            },
+                            "description": "XXXL"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cc12000a-2fa6-4dcb-8324-f0e9c683e289",
+            "care": null,
+            "label": "New Season",
+            "price": {
+                "payback_points_quantity": null
+            },
+            "images": [
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                },
+                {
+                    "alt": "Chloé Iconic Small buckle belt",
+                    "url": "https://cdn-images.farfetch-contents.com/24/11/53/26/24115326_54191549_1000.jpg",
+                    "order": 1
+                }
+            ],
+            "fitting": null,
+            "made_in": {
+                "origin": "Made in Italy",
+                "disclaimers": null
+            },
+            "quantity": 0,
+            "shipping": null,
+            "price_raw": 503,
+            "main_color": "Black",
+            "composition": {
+                "parts": [
+                    {
+                        "name": null,
+                        "materials": [
+                            {
+                                "name": "Brass",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            },
+                            {
+                                "name": "Calf Leather",
+                                "percentage": {
+                                    "formatted": "100%"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "disclaimers": null
+            },
+            "description": {
+                "full": {
+                    "text_content": null
+                },
+                "short": {
+                    "text_content": "Iconic Small buckle belt"
+                },
+                "highlight": {
+                    "rich_text_content": [
+                        {
+                            "name": null,
+                            "type": "richtext",
+                            "blocks": [
+                                {
+                                    "name": "list",
+                                    "type": "block",
+                                    "items": [
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "black",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "calf leather",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "brass",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "logo-buckle fastening",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "gold-tone hardware",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        },
+                                        {
+                                            "name": null,
+                                            "type": "text",
+                                            "value": "adjustable fit",
+                                            "display_options": {
+                                                "display": "list-item"
+                                            }
+                                        }
+                                    ],
+                                    "display_options": {}
+                                }
+                            ],
+                            "display_options": {}
+                        }
+                    ]
+                }
+            },
+            "measurements": null,
+            "brand_style_id": "CHC24AC066SFB",
+            "price_formatted": "£503",
+            "delivery_methods": [],
+            "internal_product_id": "24115326",
+            "variation_properties": [
+                {
+                    "order": 1,
+                    "values": [
+                        {
+                            "id": "27",
+                            "order": 11,
+                            "scale": {
+                                "id": "142"
+                            },
+                            "description": "5XL"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "is_one_size": false
+}
+```
+</ResponseExample>

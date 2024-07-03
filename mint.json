@@ -164,6 +164,12 @@
       ]
     },
     {
+      "group": "Farfetch",
+      "pages": [
+        "v1/api-reference/farfetch/product"
+      ]
+    },
+    {
       "group": "Stadium Goods",
       "pages": [
         "v1/api-reference/stadiumgoods/product"
