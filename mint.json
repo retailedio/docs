@@ -164,6 +164,12 @@
       ]
     },
     {
+      "group": "Zara",
+      "pages": [
+        "v1/api-reference/zara/product"
+      ]
+    },
+    {
       "group": "Farfetch",
       "pages": [
         "v1/api-reference/farfetch/product"

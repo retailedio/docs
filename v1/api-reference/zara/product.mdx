@@ -1,0 +1,106 @@
+---
+title: "Zara Product"
+api: "GET https://app.retailed.io/api/v1/scraper/zara/product"
+description: "Get product information from Zara"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="389358438">
+    Product Id : `389358438` or Zara URL
+</ParamField>
+
+<ParamField query="country" type="string" optional={false} placeholder="FR">
+    Country code : `FR` or `US`
+</ParamField>
+
+### Response
+
+<ResponseField name="object" type="Product Object">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="id" type="string">
+            Product Id
+        </ResponseField>
+        <ResponseField name="name" type="string">
+            Product Name
+        </ResponseField>
+        <ResponseField name="brand" type="string">
+            Product Brand
+        </ResponseField>
+        <ResponseField name="variants" type="array">
+            Product Variants
+            <ResponseField type="Variant Object">
+                <Expandable title="properties">
+                    <ResponseField name="id" type="string">
+                        Variant Id
+                    </ResponseField>
+                    <ResponseField name="name" type="string">
+                        Variant Name
+                    </ResponseField>
+                    <ResponseField name="price" type="number">
+                        Variant Price
+                    </ResponseField>
+                </Expandable>
+            </ResponseField>
+        </ResponseField>
+        <ResponseField name="reference" type="string">
+            Product Reference
+        </ResponseField>
+        <ResponseField name="description" type="string">
+            Product Description
+        </ResponseField>
+        <ResponseField name="detailed_composition" type="Composition Object">
+            Detailed Composition
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<ResponseExample>
+```json Example Response
+{
+    "id": 366420418,
+    "name": "BOUCLES D'OREILLES À PLAQUES MULTIPLES",
+    "brand": "zara",
+    "variants": [
+        {
+            "id": "303",
+            "name": "Doré",
+            "price": 1795
+        }
+    ],
+    "reference": "04736217-I2024",
+    "description": "Boucles d'oreilles métalliques longues avec plaques de différentes tailles. Fermoir clou.",
+    "detailed_composition": {
+        "parts": [
+            {
+                "areas": [],
+                "components": [
+                    {
+                        "material": "fer",
+                        "percentage": "95%"
+                    },
+                    {
+                        "material": "laiton",
+                        "percentage": "3%"
+                    },
+                    {
+                        "material": "gris acier",
+                        "percentage": "2%"
+                    }
+                ],
+                "description": "EXTÉRIEUR",
+                "microcontents": [],
+                "reinforcements": []
+            }
+        ],
+        "exceptions": []
+    }
+}
+```
+</ResponseExample>
