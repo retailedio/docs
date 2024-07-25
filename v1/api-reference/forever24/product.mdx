@@ -1,0 +1,66 @@
+---
+title: "Forever24 Product"
+api: "GET https://app.retailed.io/api/v1/scraper/forever24/product"
+description: "Get product information from Forever24"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="https://www.forever21.com/us/2001287756.html">
+    Product URL 
+</ParamField>
+
+### Response
+
+<ResponseField name="object" type="Product Object">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="sku" type="string">
+            Product SKU
+        </ResponseField>
+        <ResponseField name="name" type="string">
+            Product Name
+        </ResponseField>
+        <ResponseField name="color" type="string">
+            Product Color
+        </ResponseField>
+        <ResponseField name="price" type="number">
+            Product Price
+        </ResponseField>
+        <ResponseField name="images" type="array">
+            Product Images
+        </ResponseField>
+        <ResponseField name="description" type="string">
+            Product Description
+        </ResponseField>
+        <ResponseField name="price_currency" type="string">
+            Product Price Currency
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<ResponseExample>
+```json Example Response
+{
+    "sku": "2001287756",
+    "name": "Denim Utility Cargo Joggers",
+    "color": "LIGHT DENIM",
+    "price": 38,
+    "images": [
+        "https://www.forever21.com/dw/image/v2/BFKH_PRD/on/demandware.static/-/Sites-f21-master-catalog/default/dw672d716b/1_front_750/01287756-01.jpg?sw=1000&sh=1500",
+        "https://www.forever21.com/dw/image/v2/BFKH_PRD/on/demandware.static/-/Sites-f21-master-catalog/default/dw40723e69/2_side_750/01287756-01.jpg?sw=1000&sh=1500",
+        "https://www.forever21.com/dw/image/v2/BFKH_PRD/on/demandware.static/-/Sites-f21-master-catalog/default/dw7903d5e9/3_back_750/01287756-01.jpg?sw=1000&sh=1500",
+        "https://www.forever21.com/dw/image/v2/BFKH_PRD/on/demandware.static/-/Sites-f21-master-catalog/default/dw4cab3a46/4_full_750/01287756-01.jpg?sw=1000&sh=1500",
+        "https://www.forever21.com/dw/image/v2/BFKH_PRD/on/demandware.static/-/Sites-f21-master-catalog/default/dwfa87662d/5_detail_750/01287756-01.jpg?sw=1000&sh=1500",
+        "https://www.forever21.com/dw/image/v2/BFKH_PRD/on/demandware.static/-/Sites-f21-master-catalog/default/dw458a9fc1/7_additional_750/01287756-01.jpg?sw=1000&sh=1500"
+    ],
+    "description": "Crafted from non-stretch denim, this pair of joggers features a high-rise waist, belt loops, zip fly and button-front closure, slanted front pockets, elasticized trim, leg utility carpenter strap, and leg and back patch pockets.",
+    "price_currency": "EUR"
+}
+```
+</ResponseExample>

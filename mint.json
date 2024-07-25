@@ -182,6 +182,12 @@
       ]
     },
     {
+      "group": "Forever24",
+      "pages": [
+        "v1/api-reference/forever24/product"
+      ]
+    },
+    {
       "group": "Farfetch",
       "pages": [
         "v1/api-reference/farfetch/product"
