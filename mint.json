@@ -176,6 +176,12 @@
       ]
     },
     {
+      "group": "Zalando",
+      "pages": [
+        "v1/api-reference/zalando/product"
+      ]
+    },
+    {
       "group": "Farfetch",
       "pages": [
         "v1/api-reference/farfetch/product"

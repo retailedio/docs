@@ -1,0 +1,86 @@
+---
+title: "Zalando Product"
+api: "GET https://app.retailed.io/api/v1/scraper/zalando/product"
+description: "Get product information from Zalando"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="https://www.zalando.fr/moschino-capospalla-lungo-blouson-bomber-fantasia-marrone-6mo22t02j-o11.html">
+    Product URL 
+</ParamField>
+
+### Response
+
+<ResponseField name="object" type="Product Object">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="sku" type="string">
+            Product SKU
+        </ResponseField>
+        <ResponseField name="name" type="string">
+            Product Name
+        </ResponseField>
+        <ResponseField name="brand" type="string">
+            Product Brand
+        </ResponseField>
+        <ResponseField name="color" type="string">
+            Product Color
+        </ResponseField>
+        <ResponseField name="images" type="array">
+            Product Images
+        </ResponseField>
+        <ResponseField name="variants" type="array">
+            Product Variants
+        </ResponseField>
+        <ResponseField name="description" type="string">
+            Product Description
+        </ResponseField>
+        <ResponseField name="manufacturer" type="string">
+            Product Manufacturer
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<ResponseExample>
+```json Example Response
+{
+    "sku": "6MO22T02J-O11",
+    "name": "CAPOSPALLA LUNGO - Blouson Bomber - fantasia marrone",
+    "brand": "MOSCHINO",
+    "color": "fantasia marrone/marron",
+    "images": [
+        "https://img01.ztat.net/article/spp-media-p1/e8f92021826f4259b567a3ac95d1ae7e/0420fa906f1f42a0bb58b2efd0eb48d1.jpg?imwidth=103",
+        "https://img01.ztat.net/article/spp-media-p1/2ede32d1afc94252bdfc43781ca4f621/bd83a85742a4452e8761781bcfe4fca5.jpg?imwidth=103",
+        "https://img01.ztat.net/article/spp-media-p1/0b6219e7377b439a87c3e8fffc292509/db6289c5036a425a865aa289c8eb6d2f.jpg?imwidth=103",
+        "https://img01.ztat.net/article/spp-media-p1/7bcfee6dd5284358bc036d9e68cbca31/3da96105c03d4467a8841252e8381fbe.jpg?imwidth=103",
+        "https://img01.ztat.net/article/spp-media-p1/6d4c0eb8b9e545919a94642bf1ccd8af/ad19f29bffc24f1984cf3fc40fc7289f.jpg?imwidth=103&filter=packshot",
+        "https://img01.ztat.net/article/spp-media-p1/d267c39f4128422a9e721a1fc160ae13/f0837c77b89740aba0de26c2609fefdc.jpg?imwidth=103"
+    ],
+    "variants": [
+        {
+            "sku": "6MO22T02J-O110050000",
+            "price": 1335,
+            "price_currency": "EUR"
+        },
+        {
+            "sku": "6MO22T02J-O110052000",
+            "price": 1335,
+            "price_currency": "EUR"
+        },
+        {
+            "sku": "6MO22T02J-O110054000",
+            "price": 1335,
+            "price_currency": "EUR"
+        }
+    ],
+    "description": " MOSCHINO CAPOSPALLA LUNGO - Blouson Bomber - fantasia marrone pour 1 335,00 € (2024-07-25) Livraison gratuite sur la plupart des commandes*",
+    "manufacturer": "MOSCHINO"
+}
+```
+</ResponseExample>
