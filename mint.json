@@ -170,6 +170,12 @@
       ]
     },
     {
+      "group": "Nike",
+      "pages": [
+        "v1/api-reference/nike/product"
+      ]
+    },
+    {
       "group": "Farfetch",
       "pages": [
         "v1/api-reference/farfetch/product"

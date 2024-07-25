@@ -1,0 +1,741 @@
+---
+title: "Nike Product"
+api: "GET https://app.retailed.io/api/v1/scraper/nike/product"
+description: "Get product information from Nike"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="https://www.nike.com/fr/t/chaussure-air-max-dn-electric-pour-JmsxTC/HM0811-900">
+    Product URL 
+</ParamField>
+
+### Response
+
+<ResponseField name="object" type="Product Object">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="id" type="string">
+            Product Id
+        </ResponseField>
+        <ResponseField name="badge" type="string">
+            Badge
+        </ResponseField>
+        <ResponseField name="sizes" type="array">
+            Sizes array with the gtins
+        </ResponseField>
+        <ResponseField name="brands" type="array">
+            Brands array
+        </ResponseField>
+        <ResponseField name="gender" type="integer">
+            Gender type
+        <ResponseField>
+        <ResponseField name="prices" type="object">
+            Prices object
+        </ResponseField>
+        <ResponseField name="pdp_url" type="object">
+            PDP URL object
+        </ResponseField>
+        <ResponseField name="more_info" type="array">
+            More info array
+        </ResponseField>
+        <ResponseField name="color_code" type="string">
+            Color code
+        </ResponseField>
+        <ResponseField name="sport_tags" type="array">
+            Sport tags array
+        </ResponseField>
+        <ResponseField name="style_code" type="string">
+            Style code
+        </ResponseField>
+        <ResponseField name="group_index" type="integer">
+            Group index
+        </ResponseField>
+        <ResponseField name="group_label" type="string">
+            Group label
+        </ResponseField>
+        <ResponseField name="style_color" type="string">
+            Style color
+        </ResponseField>
+        <ResponseField name="enhanced_pdp" type="array">
+            Enhanced PDP array
+        </ResponseField>
+        <ResponseField name="net_quantity" type="string">
+            Net quantity
+        </ResponseField>
+        <ResponseField name="product_info" type="object">
+            Product info object
+        </ReponseField>
+        <ResponseField name="product_type" type="string">
+            Product type
+        </ResponseField>
+        <ResponseField name="selected_sku" type="string">
+            Selected SKU
+        </ResponseField>
+        <ResponseField name="content_images" type="array">
+            Content images array
+        </ResponseField>
+        <ResponseField name="size_chart_url" type="string">
+            Size chart URL
+        </ResponseField>
+        <ResponseField name="status_modifier" type="string">
+            Status modifier
+        </ResponseField>
+        <ResponseField name="merch_product_id" type="string">
+            Merch product ID
+        </ResponseField>
+        <ResponseField name="availability_date" type="string">
+            Availability date
+        </ResponseField>
+        <ResponseField name="color_description" type="string">
+            Color description
+        </ResponseField>
+        <ResponseField name="global_product_id" type="string">
+            Global product ID
+        </ResponseField>
+        <ResponseField name="is_launch_product" type="boolean">
+            Is launch product
+        </ResponseField>
+        <ResponseField name="is_member_product" type="boolean">
+            Is member product
+        </ResponseField>
+        <ResponseField name="launch_attributes" type="string">
+            Launch attributes
+        </ResponseField>
+        <ResponseField name="size_select_error" type="boolean">
+            Size select error
+        </ResponseField>
+        <ResponseField name="is_promo_exclusion" type="boolean">
+            Is promo exclusion
+        </ResponseField>
+        <ResponseField name="featured_attributes" type="array">
+            Featured attributes array
+        </ResponseField>
+        <ResponseField name="is_reserved_for_you" type="boolean">
+            Is reserved for you
+        </ResponseField>
+        <ResponseField name="is_digital_gift_card" type="boolean">
+            Is digital gift card
+        </ResponseField>
+        <ResponseField name="is_restricted_access" type="boolean">
+            Is restricted access
+        </ResponseField>
+        <ResponseField name="consumer_release_type" type="string">
+            Consumer release type
+        </ResponseField>
+        <ResponseField name="is_physical_gift_card" type="boolean">
+            Is physical gift card	
+        <ResponseField>
+        <ResponseField name="localized_label_prefix" type="string">
+            Localized label prefix
+        </ResponseField>
+        <ResponseField name="show_availability_date" type="boolean">
+            Show availability date
+        </ResponseField>
+        <ResponseField name="customization_path_name" type="string">
+            Customization path name
+        </ResponseField>
+        <ResponseField name="is_skus_request_in_flight" type="boolean">
+            Is SKUs request in flight
+        </ResponseField>
+        <ResponseField name="manufacturing_countries_of_origin" type="array">
+            Manufacturing countries of origin array
+        </ResponseField>
+        <ResponseField name="sustainability_disclaimer_message" type="string">
+            Sustainability disclaimer message
+        </ResponseField>
+        <ResponseField name="gift_card_message_value_added_service_id" type="string">
+            Gift card message value added service ID
+        </ResponseField>
+        <ResponseField name="is_restricted_access" type="boolean">
+            Is restricted access
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<ResponseExample>
+```json Example Response
+{
+    "id": "1015607719",
+    "badge": "Matières durables",
+    "sizes": [
+        {
+            "gtins": [
+                {
+                    "gtin": "00197599682271"
+                }
+            ],
+            "label": "6",
+            "status": "ACTIVE",
+            "merch_sku_id": "4632ed24-d8de-5168-b782-e7161cf7242c",
+            "sort_sequence": 11,
+            "localized_label": "38.5",
+            "localized_label_prefix": "EU"
+        },
+        {
+            "gtins": [
+                {
+                    "gtin": "00197599682288"
+                }
+            ],
+            "label": "6.5",
+            "status": "ACTIVE",
+            "merch_sku_id": "ffe2929b-90e3-58e2-b4d0-54aded571f62",
+            "sort_sequence": 12,
+            "localized_label": "39",
+            "localized_label_prefix": "EU"
+        },
+        {
+            "gtins": [
+                {
+                    "gtin": "00197599682295"
+                }
+            ],
+            "label": "7",
+            "status": "ACTIVE",
+            "merch_sku_id": "b60a1776-92b1-53f2-9a03-dde6f4138a19",
+            "sort_sequence": 18,
+            "localized_label": "40",
+            "localized_label_prefix": "EU"
+        },
+        {
+            "gtins": [
+                {
+                    "gtin": "00197599682301"
+                }
+            ],
+            "label": "7.5",
+            "status": "ACTIVE",
+            "merch_sku_id": "6aea4e0d-9990-5431-8bfd-04ff878ca6af",
+            "sort_sequence": 26,
+            "localized_label": "40.5",
+            "localized_label_prefix": "EU"
+        },
+        {
+            "gtins": [
+                {
+                    "gtin": "00197599682226"
+                }
+            ],
+            "label": "8",
+            "status": "ACTIVE",
+            "merch_sku_id": "e3c4e68b-e5b2-523f-b6de-43d7ab959ae6",
+            "sort_sequence": 27,
+            "localized_label": "41",
+            "localized_label_prefix": "EU"
+        },
+        {
+            "gtins": [
+                {
+                    "gtin": "00197599682240"
+                }
+            ],
+            "label": "8.5",
+            "status": "ACTIVE",
+            "merch_sku_id": "08b4054f-6fcb-5053-ad13-9c881524bb7c",
+            "sort_sequence": 29,
+            "localized_label": "42",
+            "localized_label_prefix": "EU"
+        },
+        {
+            "gtins": [
+                {
+                    "gtin": "00197599682356"
+                }
+            ],
+            "label": "9",
+            "status": "ACTIVE",
+            "merch_sku_id": "38864127-ab36-5d03-bf62-bf76e8e8f3ff",
+            "sort_sequence": 30,
+            "localized_label": "42.5",
+            "localized_label_prefix": "EU"
+        },
+        {
+            "gtins": [
+                {
+                    "gtin": "00197599682264"
+                }
+            ],
+            "label": "9.5",
+            "status": "ACTIVE",
+            "merch_sku_id": "c21de7de-de21-598c-b054-aa0d86777ae6",
+            "sort_sequence": 31,
+            "localized_label": "43",
+            "localized_label_prefix": "EU"
+        },
+        {
+            "gtins": [
+                {
+                    "gtin": "00197599682257"
+                }
+            ],
+            "label": "10",
+            "status": "ACTIVE",
+            "merch_sku_id": "c93eb496-6885-5180-8c15-e3782e8499b3",
+            "sort_sequence": 32,
+            "localized_label": "44",
+            "localized_label_prefix": "EU"
+        },
+        {
+            "gtins": [
+                {
+                    "gtin": "00197599682387"
+                }
+            ],
+            "label": "10.5",
+            "status": "ACTIVE",
+            "merch_sku_id": "2308265c-d658-5a1d-854d-43ee89372791",
+            "sort_sequence": 33,
+            "localized_label": "44.5",
+            "localized_label_prefix": "EU"
+        },
+        {
+            "gtins": [
+                {
+                    "gtin": "00197599682363"
+                }
+            ],
+            "label": "11",
+            "status": "ACTIVE",
+            "merch_sku_id": "d0543ba8-3ada-580d-8be6-c934e2c23ef3",
+            "sort_sequence": 34,
+            "localized_label": "45",
+            "localized_label_prefix": "EU"
+        },
+        {
+            "gtins": [
+                {
+                    "gtin": "00197599682332"
+                }
+            ],
+            "label": "11.5",
+            "status": "ACTIVE",
+            "merch_sku_id": "6d6581ae-ed64-5282-86cb-61e3054bd749",
+            "sort_sequence": 36,
+            "localized_label": "45.5",
+            "localized_label_prefix": "EU"
+        },
+        {
+            "gtins": [
+                {
+                    "gtin": "00197599682233"
+                }
+            ],
+            "label": "12",
+            "status": "ACTIVE",
+            "merch_sku_id": "be0d4889-4eab-5e37-8822-6dfbd252e162",
+            "sort_sequence": 38,
+            "localized_label": "46",
+            "localized_label_prefix": "EU"
+        },
+        {
+            "gtins": [
+                {
+                    "gtin": "00197599682318"
+                }
+            ],
+            "label": "12.5",
+            "status": "ACTIVE",
+            "merch_sku_id": "d7492bd9-340c-596d-b50b-6e2351381176",
+            "sort_sequence": 39,
+            "localized_label": "47",
+            "localized_label_prefix": "EU"
+        },
+        {
+            "gtins": [
+                {
+                    "gtin": "00197599682370"
+                }
+            ],
+            "label": "13",
+            "status": "ACTIVE",
+            "merch_sku_id": "fbd6ae52-fb67-5a2d-9873-99073a4d8d1b",
+            "sort_sequence": 41,
+            "localized_label": "47.5",
+            "localized_label_prefix": "EU"
+        },
+        {
+            "gtins": [
+                {
+                    "gtin": "00197599682349"
+                }
+            ],
+            "label": "14",
+            "status": "ACTIVE",
+            "merch_sku_id": "b6203a74-dc0f-5f21-bf60-232680c33adc",
+            "sort_sequence": 43,
+            "localized_label": "48.5",
+            "localized_label_prefix": "EU"
+        },
+        {
+            "gtins": [
+                {
+                    "gtin": "00197599682325"
+                }
+            ],
+            "label": "15",
+            "status": "ACTIVE",
+            "merch_sku_id": "c5281509-b8f5-5dbe-9812-fe7c39819c83",
+            "sort_sequence": 45,
+            "localized_label": "49.5",
+            "localized_label_prefix": "EU"
+        }
+    ],
+    "brands": [
+        "Nike",
+        "Nike Sportswear"
+    ],
+    "gender": 1,
+    "prices": {
+        "currency": "EUR",
+        "current_price": 189.99,
+        "initial_price": 189.99,
+        "employee_price": 189.99,
+        "discount_percentage": 0,
+        "employee_discount_percentage": 0
+    },
+    "pdp_url": {
+        "url": "https://www.nike.com/fr/t/chaussure-air-max-dn-electric-pour-JmsxTC/HM0811-900",
+        "canonical_url": "https://www.nike.com/fr/t/chaussure-air-max-dn-electric-pour-JmsxTC"
+    },
+    "more_info": [],
+    "color_code": "900",
+    "sport_tags": [
+        "Lifestyle"
+    ],
+    "style_code": "HM0811",
+    "group_index": 0,
+    "group_label": null,
+    "style_color": "HM0811-900",
+    "enhanced_pdp": [],
+    "net_quantity": null,
+    "product_info": {
+        "url": "https://www.nike.com/fr/t/chaussure-air-max-dn-electric-pour-JmsxTC/HM0811-900",
+        "badge": "Matières durables",
+        "title": "Nike Air Max Dn Premium Electric",
+        "origins": [
+            {
+                "body": [
+                    "La technologie Air révolutionnaire a été intégrée aux chaussures Nike en 1978. En 1987, la Air Max 1 affichait pour la première fois la technologie Air visible au talon. Désormais, en plus de ressentir l'amorti Air, tout le monde pouvait également le voir en action. Depuis, les chaussures Air Max nouvelle génération connaissent un succès constant auprès des athlètes et des fans qui les collectionnent, grâce à leurs associations de couleurs saisissantes et à leur amorti léger et fiable."
+                ],
+                "header": "Les origines de la Air Max"
+            }
+        ],
+        "subtitle": "Chaussure pour homme",
+        "full_title": "Chaussure Nike Air Max Dn Premium Electric pour homme",
+        "canonical_url": "https://www.nike.com/fr/t/chaussure-air-max-dn-electric-pour-JmsxTC",
+        "product_details": [
+            {
+                "body": [
+                    "Détails mats",
+                    "Semelle intermédiaire en mousse",
+                    "Semelle extérieure en caoutchouc",
+                    "Couleur affichée : Multicolore/Multicolore",
+                    "Article : HM0811-900"
+                ],
+                "header": "Détails du produit"
+            }
+        ],
+        "enhanced_benefits": [
+            {
+                "body": [
+                    "Notre unité Dynamic Air se compose de quatre cylindres. L'unité au talon assure une pression bien ferme, et celle au milieu du pied est très souple. Le niveau d'air varie à l'intérieur de chaque cylindre, pour une transition en douceur à chaque pas."
+                ],
+                "header": "Sensations Maxxed Out"
+            },
+            {
+                "body": [
+                    "L'empeigne en mesh à plusieurs couches est légère et respirante, avec un imprimé en relief pour un look texturé. De la mousse confortable entoure le système d'amorti, pour une sensation de souplesse et de maintien unique."
+                ],
+                "header": "Confort Maxxed Out"
+            },
+            {
+                "body": [
+                    "Incroyablement confortable du talon à la pointe, la Air Max Dn booste tous tes mouvements avec son rebond exceptionnel. Parce que oui, aller à un concert, c'est aussi du sport."
+                ],
+                "header": "Énergie Maxxed Out"
+            }
+        ],
+        "more_descriptions": [],
+        "size_fit_sections": [],
+        "product_description": "Découvre la technologie Air nouvelle génération. La Air Max Dn intègre l’unité Dynamic Air (composée de quatre cylindres) qui te propulse à chaque pas, pour une sensation de fluidité incroyable. Résultat ? Un look futuriste hyper confortable, à porter de jour comme de nuit. Et des sensations irréelles.",
+        "features_and_benefits": [],
+        "sustainability_message": [
+            {
+                "body": "<ul>\n  <li>Ce produit a été conçu de manière écoresponsable en utilisant des matières recyclées issues de matériaux de consommation ou de déchets industriels recyclés. Ce qui nous permet d'avancer le plus dans notre démarche pour atteindre le zéro déchet et une empreinte carbone nulle, c'est le choix des matières. En effet, ces dernières représentent plus de 70 % de l'empreinte carbone d'un produit. La réutilisation de plastiques, de fibres et de tissus existants nous permet de réduire considérablement nos émissions. Notre objectif est d'utiliser autant de matières recyclées que possible, sans faire de compromis sur la performance, la durabilité et le style.</li>\n</ul>",
+                "json_body": {
+                    "type": "doc",
+                    "content": [
+                        {
+                            "type": "bullet_list",
+                            "content": [
+                                {
+                                    "type": "list_item",
+                                    "content": [
+                                        {
+                                            "text": "Ce produit a été conçu de manière écoresponsable en utilisant des matières recyclées issues de matériaux de consommation ou de déchets industriels recyclés. Ce qui nous permet d'avancer le plus dans notre démarche pour atteindre le zéro déchet et une empreinte carbone nulle, c'est le choix des matières. En effet, ces dernières représentent plus de 70 % de l'empreinte carbone d'un produit. La réutilisation de plastiques, de fibres et de tissus existants nous permet de réduire considérablement nos émissions. Notre objectif est d'utiliser autant de matières recyclées que possible, sans faire de compromis sur la performance, la durabilité et le style.",
+                                            "type": "text"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "body": "<ul>\n  <li>Apprenez-en plus sur <a href=\"https://www.nike.com/sustainability\" target=\"_blank\" title=\"https://www.nike.com/sustainability\"><u>Move to Zero</u></a>, notre démarche pour atteindre le zéro déchet et une empreinte carbone nulle. Nous réinventons notamment nos produits selon une approche durable pour protéger le<strong> </strong>futur<strong> </strong>de la planète sur laquelle nous vivons et faisons du sport.</li>\n</ul>",
+                "json_body": {
+                    "type": "doc",
+                    "content": [
+                        {
+                            "type": "bullet_list",
+                            "content": [
+                                {
+                                    "type": "list_item",
+                                    "content": [
+                                        {
+                                            "text": "Apprenez-en plus sur ",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "text": "Move to Zero",
+                                            "type": "text",
+                                            "marks": [
+                                                {
+                                                    "type": "link",
+                                                    "attrs": {
+                                                        "href": "https://www.nike.com/sustainability",
+                                                        "title": "https://www.nike.com/sustainability",
+                                                        "target": "_blank"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "underline"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "text": ", notre démarche pour atteindre le zéro déchet et une empreinte carbone nulle. Nous réinventons notamment nos produits selon une approche durable pour protéger le",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "text": " ",
+                                            "type": "text",
+                                            "marks": [
+                                                {
+                                                    "type": "strong"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "text": "futur",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "text": " ",
+                                            "type": "text",
+                                            "marks": [
+                                                {
+                                                    "type": "strong"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "text": "de la planète sur laquelle nous vivons et faisons du sport.",
+                                            "type": "text"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "product_type": "FOOTWEAR",
+    "selected_sku": null,
+    "content_images": [
+        {
+            "card_type": "image",
+            "properties": {
+                "alt_text": "Chaussure Nike Air Max Dn Premium Electric pour homme",
+                "portrait": {
+                    "id": "211f7e29-d8ff-405b-b655-0c847998c943",
+                    "url": "https://static.nike.com/a/images/t_default/211f7e29-d8ff-405b-b655-0c847998c943/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 0.8
+                },
+                "squarish": {
+                    "id": "416fc7f2-500e-474c-83d2-fa691976b32c",
+                    "url": "https://static.nike.com/a/images/t_default/416fc7f2-500e-474c-83d2-fa691976b32c/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 1
+                }
+            }
+        },
+        {
+            "card_type": "image",
+            "properties": {
+                "alt_text": "Chaussure Nike Air Max Dn Premium Electric pour homme",
+                "portrait": {
+                    "id": "5f04bd96-fc4d-45d8-8121-6d513c7a0d9c",
+                    "url": "https://static.nike.com/a/images/t_default/5f04bd96-fc4d-45d8-8121-6d513c7a0d9c/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 0.8
+                },
+                "squarish": {
+                    "id": "bf6dcf4d-8306-4a51-abf6-2ffc4649ae6a",
+                    "url": "https://static.nike.com/a/images/t_default/bf6dcf4d-8306-4a51-abf6-2ffc4649ae6a/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 1
+                }
+            }
+        },
+        {
+            "card_type": "image",
+            "properties": {
+                "alt_text": "Chaussure Nike Air Max Dn Premium Electric pour homme",
+                "portrait": {
+                    "id": "aca890ac-6c2b-4516-bcff-f14a9d74641a",
+                    "url": "https://static.nike.com/a/images/t_default/aca890ac-6c2b-4516-bcff-f14a9d74641a/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 0.8
+                },
+                "squarish": {
+                    "id": "c83aea7b-26c1-4aba-b5fc-ae25c43a1545",
+                    "url": "https://static.nike.com/a/images/t_default/c83aea7b-26c1-4aba-b5fc-ae25c43a1545/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 1
+                }
+            }
+        },
+        {
+            "card_type": "image",
+            "properties": {
+                "alt_text": "Chaussure Nike Air Max Dn Premium Electric pour homme",
+                "portrait": {
+                    "id": "12ca6974-3471-4980-82d6-5811d70decf8",
+                    "url": "https://static.nike.com/a/images/t_default/12ca6974-3471-4980-82d6-5811d70decf8/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 0.8
+                },
+                "squarish": {
+                    "id": "ae7a5913-6590-47b2-b399-931d5a8913ac",
+                    "url": "https://static.nike.com/a/images/t_default/ae7a5913-6590-47b2-b399-931d5a8913ac/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 1
+                }
+            }
+        },
+        {
+            "card_type": "image",
+            "properties": {
+                "alt_text": "Chaussure Nike Air Max Dn Premium Electric pour homme",
+                "portrait": {
+                    "id": "92541b52-ab9e-4002-ba02-9da9e46c263e",
+                    "url": "https://static.nike.com/a/images/t_default/92541b52-ab9e-4002-ba02-9da9e46c263e/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 0.8
+                },
+                "squarish": {
+                    "id": "889fa6ca-f2ff-4321-8159-0123ed5e2e08",
+                    "url": "https://static.nike.com/a/images/t_default/889fa6ca-f2ff-4321-8159-0123ed5e2e08/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 1
+                }
+            }
+        },
+        {
+            "card_type": "image",
+            "properties": {
+                "alt_text": "Chaussure Nike Air Max Dn Premium Electric pour homme",
+                "portrait": {
+                    "id": "0f7d8491-4484-4d90-8159-086b272dbff6",
+                    "url": "https://static.nike.com/a/images/t_default/0f7d8491-4484-4d90-8159-086b272dbff6/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 0.8
+                },
+                "squarish": {
+                    "id": "91cb06f5-329b-46d0-9a6f-230fb96cf504",
+                    "url": "https://static.nike.com/a/images/t_default/91cb06f5-329b-46d0-9a6f-230fb96cf504/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 1
+                }
+            }
+        },
+        {
+            "card_type": "image",
+            "properties": {
+                "alt_text": "Chaussure Nike Air Max Dn Premium Electric pour homme",
+                "portrait": {
+                    "id": "3dd3234b-f7d7-4ebe-9f98-07875d41eab0",
+                    "url": "https://static.nike.com/a/images/t_default/3dd3234b-f7d7-4ebe-9f98-07875d41eab0/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 0.8
+                },
+                "squarish": {
+                    "id": "ae8624cb-eea8-4be6-930a-14ef97b033bf",
+                    "url": "https://static.nike.com/a/images/t_default/ae8624cb-eea8-4be6-930a-14ef97b033bf/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 1
+                }
+            }
+        },
+        {
+            "card_type": "image",
+            "properties": {
+                "alt_text": "Chaussure Nike Air Max Dn Premium Electric pour homme",
+                "portrait": {
+                    "id": "fcac12be-cf51-4fe6-bbdf-19df1f43095b",
+                    "url": "https://static.nike.com/a/images/t_default/fcac12be-cf51-4fe6-bbdf-19df1f43095b/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 0.8
+                },
+                "squarish": {
+                    "id": "03e63da1-3bb3-4275-bba7-a99341848f4d",
+                    "url": "https://static.nike.com/a/images/t_default/03e63da1-3bb3-4275-bba7-a99341848f4d/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 1
+                }
+            }
+        },
+        {
+            "card_type": "image",
+            "properties": {
+                "alt_text": "Chaussure Nike Air Max Dn Premium Electric pour homme",
+                "portrait": {
+                    "id": "e5195784-04a7-4aab-a706-4f747506b138",
+                    "url": "https://static.nike.com/a/images/t_default/e5195784-04a7-4aab-a706-4f747506b138/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 0.8
+                },
+                "squarish": {
+                    "id": "e8fda0dc-8bc4-4ec5-adc0-b5a150934e5c",
+                    "url": "https://static.nike.com/a/images/t_default/e8fda0dc-8bc4-4ec5-adc0-b5a150934e5c/AIR+MAX+DN+SE+PRM.png",
+                    "aspect_ratio": 1
+                }
+            }
+        }
+    ],
+    "size_chart_url": "https://www.nike.com/fr/size-fit/chaussures-pour-homme",
+    "status_modifier": "BUYABLE_BUY",
+    "merch_product_id": "5d8af55c-6663-5a1e-8260-95b697b51492",
+    "availability_date": "2024-07-24T07:00:00.000Z",
+    "color_description": "Multicolore/Multicolore",
+    "global_product_id": "6690af18-91ae-4ce8-a94e-c6628958f2f7",
+    "is_launch_product": false,
+    "is_member_product": false,
+    "launch_attributes": null,
+    "size_select_error": false,
+    "is_promo_exclusion": true,
+    "featured_attributes": [
+        "SUSTAINABLE_MATERIALS",
+        "PROMOS_EXCLUDED",
+        "SHOW_PDP_PROMO_EXCLUSION_MESSAGE",
+        "JUST_IN"
+    ],
+    "is_reserved_for_you": false,
+    "is_digital_gift_card": false,
+    "is_restricted_access": false,
+    "consumer_release_type": "RELEASE",
+    "is_physical_gift_card": false,
+    "localized_label_prefix": null,
+    "show_availability_date": false,
+    "customization_path_name": null,
+    "is_skus_request_in_flight": false,
+    "manufacturing_countries_of_origin": [],
+    "sustainability_disclaimer_message": "<p>Ce produit est fabriqué avec au moins 20 % de son poids en matières recyclées</p>",
+    "gift_card_message_value_added_service_id": null
+}
+```
+</ResponseExample>
