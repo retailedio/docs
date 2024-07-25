@@ -1,0 +1,175 @@
+---
+title: "Dior Product"
+api: "GET https://app.retailed.io/api/v1/scraper/dior/product"
+description: "Get product information from Dior"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    Parameter defines the Retailed private key to use.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="https://www.dior.com/fr_fr/fashion/products/M0505OIHM_M911-sac-lady-dior-mini-satin-brode-de-perles-a-motif-cannage-noir">
+    Product URL 
+</ParamField>
+
+### Response
+
+<ResponseField name="object" type="Product Object">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="sku" type="string">
+            Product SKU
+        </ResponseField>
+        <ResponseField name="code" type="string">
+            Product Code
+        </ResponseField>
+        <ResponseField name="look" type="string">
+            Product Look
+        </ResponseField>
+        <ResponseField name="tags" type="list">
+            Product Tags
+        </ResponseField>
+        <ResponseField name="image" type="object">
+            Product Image
+        </ResponseField>
+        <ResponseField name="title" type="string">
+            Product Title
+        </ResponseField>
+        <ResponseField name="video" type="string">
+            Product Video
+        </ResponseField>
+        <ResponseField name="images" type="array">
+            Product Images
+        </ResponseField>
+        <ResponseField name="status" type="string">
+            Product Status
+        </ResponseField>
+        <ResponseField name="has_vto" type="boolean">
+            Product Has VTO
+        </ResponseField>
+        <ResponseField name="services" type="object">
+            Product Services
+        </ResponseField>
+        <ResponseField name="subtitle" type="string">
+            Product Subtitle
+        </ResponseField>
+        <ResponseField name="variants" type="array">
+            Product Variants
+        </ResponseField>
+        <ResponseField name="pre_sales" type="string">
+            Product Pre Sales
+        </ResponseField>
+        <ResponseField name="tags_keys" type="list">
+            Product Tags Keys
+        </ResponseField>
+        <ResponseField name="free_block" type="string">
+            Product Free Block
+        </ResponseField>
+        <ResponseField name="backend_sku" type="string">
+            Product Backend SKU
+        </ResponseField>
+        <ResponseField name="category_id" type="string">
+            Product Category ID
+        </ResponseField>
+        <ResponseField name="description" type="string">
+            Product Description
+        </ResponseField>
+        <ResponseField name="inspiration" type="string">
+            Product Inspiration
+        </ResponseField>
+        <ResponseField name="size_and_fit" type="string">
+            Product Size and Fit
+        </ResponseField>
+        <ResponseField name="sub_universe" type="string">
+            Product Sub Universe
+        </ResponseField>
+        <ResponseField name="customization" type="string">
+            Product Customization
+        </ResponseField>
+        <ResponseField name="has_size_guide" type="boolean">
+            Product Has Size Guide
+        </ResponseField>
+        <ResponseField name="characteristics" type="list">
+            Product Characteristics
+        </ResponseField>
+        <ResponseField name="personalization" type="string">
+            Product Personalization
+        </ResponseField>
+        <ResponseField name="size_declinations" type="string">
+            Product Size Declinations
+        </ResponseField>
+        <ResponseField name="external_variations" type="string">
+            Product External Variations
+        </ResponseField>
+        <ResponseField name="has_multiple_prices" type="boolean">
+            Product Has Multiple Prices
+        </ResponseField>
+        <ResponseField name="preorder_shipping_date" type="string">
+            Product Preorder Shipping Date
+        </ResponseField>
+        <ResponseField name="size_declination_label" type="string">
+            Product Size Declination Label
+        </ResponseField>
+        <ResponseField name="personalization_sections" type="string">
+            Product Personalization Sections
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<ResponseExample>
+```json Example Response
+{
+    "sku": "M0505OIHM_M911_TU",
+    "code": "M0505OIHM_M911",
+    "look": null,
+    "tags": null,
+    "image": {
+        "alt": "Sac Lady Dior Mini Vue de face",
+        "uri": "https://assets.christiandior.com/is/image/diorprod/M0505OIHMM911_E01?$default_GHC$&crop=476,632,967,1171",
+        "width": 460,
+        "height": 497,
+        "view_code": "E01"
+    },
+    "title": "Sac Lady Dior Mini",
+    "video": null,
+    "images": [],
+    "status": "OUTOFSTOCK",
+    "has_vto": false,
+    "services": {
+        "retouch": false
+    },
+    "subtitle": "Satin brodé de perles à motif Cannage noir",
+    "variants": [],
+    "pre_sales": null,
+    "tags_keys": [
+        "New"
+    ],
+    "free_block": null,
+    "backend_sku": "M0505OIHMM911",
+    "category_id": "diorcom_femme_sacs_sacsamain_ladydior",
+    "description": "Le sac Lady Dior incarne parfaitement la vision d'élégance et de beauté de la maison Dior. Raffinée et féminine, cette création est intemporelle. Ce modèle d'exception est confectionné en satin noir brodé de perles ton sur ton dessinant le motif Cannage. Les charms D.I.O.R. en métal doré pâle rehaussent et illuminent sa silhouette. Doté d'une bandoulière chaîne amovible, ce sac Lady Dior Mini pourra être porté à la main ou crossbody et sera le compagnon de soirée idéal.",
+    "inspiration": null,
+    "size_and_fit": "Dimensions : 17 x 15 x 7 cm (Longueur x Hauteur x Largeur)\r\nLa taille convient parfaitement à un téléphone, un porte-cartes et un rouge à lèvres\r\nLongueur de la chaîne : 120 cm\r\nLongueur de la chaîne portée : 59 cm",
+    "sub_universe": "femme",
+    "customization": null,
+    "has_size_guide": false,
+    "characteristics": [
+        "Chaîne détachable",
+        "Poche intérieure zippée",
+        "Ce sac peut être mixé avec les bandoulières brodées de la Maison",
+        "Sac de protection inclus",
+        "Fabriqué en Italie"
+    ],
+    "personalization": null,
+    "size_declinations": null,
+    "external_variations": null,
+    "has_multiple_prices": false,
+    "preorder_shipping_date": null,
+    "size_declination_label": "MINI",
+    "personalization_sections": null
+}
+```
+</ResponseExample>

@@ -188,6 +188,12 @@
       ]
     },
     {
+      "group": "Dior",
+      "pages": [
+        "v1/api-reference/dior/product"
+      ]
+    },
+    {
       "group": "Farfetch",
       "pages": [
         "v1/api-reference/farfetch/product"
