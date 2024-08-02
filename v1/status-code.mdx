@@ -4,10 +4,12 @@ description: "The following list of HTTP codes are returned by Retailed."
 ---
 
 | Status Code | Is Billed? | Explanation                        | Resolution                                                                                                                |
-| ----------- | ---------- | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------|
-| 200         | Yes        | Successful API Call                | No action required.                                                                                                       |
-| 400         | No         | Incorrect or Incomplete Request    | Verify your parameters and their types. Check the detailed error message in the response body for more information.       |
-| 403         | No         | Forbidden                          | Verify your permissions. Contact us.                                                                                      |
-| 404         | Yes        | URL Not Found                      | No data was returned.                                                                                                      |
-| 429         | No         | API Rate Limit Exceeded            | Consider upgrading your current plan or get in touch with our sales team.                                                 |
-| 500         | No         | Unexpected Error                   | Retry the action and check the detailed error message in the response body for more insights.                             |
+| ----------- | ---------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| 200         | Yes        | **Successful API Call**            | No action required.                                                                                                       |
+| 400         | No         | **Bad Request / Inactive API Key / Expired API Key** | Verify your parameters and their types. Ensure your API key is active and not expired. Check the detailed error message in the response body for more information. |
+| 401         | No         | **Unauthorized / Invalid API Key** | Check your API key and ensure it is valid.                                                                                |
+| 402         | No         | **Payment Required / You Have Open Invoices**           | Settle any outstanding invoices to continue using the API.                                                                |
+| 403         | No         | **Forbidden / Account Deactivated** | Verify your permissions. Contact us if you believe this is a mistake.                                                     |
+| 404         | Yes*       | **Not Found / URL Not Found**      | Ensure the endpoint URL is correct. This is billed except for specific endpoints listed below.                            |
+| 429         | No         | **Rate Limit Exceeded**            | Consider upgrading your current plan or get in touch with our sales team.                                                 |
+| 500         | No         | **Unexpected Error**               | Retry the action and check the detailed error message in the response body for more insights.                             |
