@@ -170,6 +170,12 @@
       ]
     },
     {
+      "group": "Macys",
+      "pages": [
+        "v1/api-reference/macys/product"
+      ]
+    },
+    {
       "group": "Nike",
       "pages": [
         "v1/api-reference/nike/product"
