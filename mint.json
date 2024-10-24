@@ -30,7 +30,7 @@
     }
   ],
   "topbarCtaButton": {
-    "name": "Login to Retailed Pro",
+    "name": "Login to Retailed API",
     "url": "https://app.retailed.io"
   },
   "tabs": [
@@ -40,7 +40,7 @@
       "version": "v1"
     },
     {
-      "name": "API Reference",
+      "name": "Scraper API",
       "url": "v1/api-reference",
       "version": "v1"
     }
