@@ -72,7 +72,6 @@
         "v1/authentication",
         "v1/status-code",
         "v1/pricing",
-        "v1/monitoring-tests",
         "v1/faq"
       ]
     },
