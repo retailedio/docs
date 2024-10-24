@@ -134,11 +134,7 @@
       "pages": [
         "v1/api-reference/stockx/search",
         "v1/api-reference/stockx/product",
-        "v1/api-reference/stockx/product_360",
-        "v1/api-reference/stockx/product_activity",
-        "v1/api-reference/stockx/product_graph",
-        "v1/api-reference/stockx/product_history",
-        "v1/api-reference/stockx/trends"
+        "v1/api-reference/stockx/product_360"
       ]
     },
     {
