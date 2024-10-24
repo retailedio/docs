@@ -29,19 +29,19 @@
     "name": "Login to Retailed Pro",
     "url": "https://app.retailed.io"
   },
-  "anchors": [
+  "tabs": [
     {
       "name": "Datasources",
-      "icon": "database",
       "url": "v1/datasources",
       "version": "v1"
     },
     {
       "name": "API Reference",
-      "icon": "rectangle-terminal",
       "url": "v1/api-reference",
       "version": "v1"
-    },
+    }
+  ],
+  "anchors": [
     {
       "name": "Community",
       "icon": "discord",
