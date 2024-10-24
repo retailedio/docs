@@ -91,31 +91,6 @@
       ]
     },
     {
-      "group": "Sneakers (Deprecated)",
-      "pages": [
-        "v1/datasources/brands",
-        "v1/datasources/platforms",
-        "v1/datasources/sneakers/search",
-        "v1/datasources/sneakers/releases",
-        {
-          "group": "Product",
-          "pages": [
-            "v1/datasources/sneakers/product",
-            "v1/datasources/sneakers/360",
-            "v1/datasources/sneakers/variants"
-          ]
-        },
-        {
-          "group": "Prices",
-          "pages": [
-            "v1/datasources/sneakers/prices",
-            "v1/datasources/sneakers/stats",
-            "v1/datasources/sneakers/latest"
-          ]
-        }
-      ]
-    },
-    {
       "group": "Shopify",
       "pages": [
         "v1/datasources/shopify/products"
