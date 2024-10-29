@@ -107,7 +107,8 @@
       "pages": [
         "v1/api-reference/stockx/search",
         "v1/api-reference/stockx/product",
-        "v1/api-reference/stockx/product_360"
+        "v1/api-reference/stockx/product_360",
+        "v1/api-reference/stockx/trends"
       ]
     },
     {
