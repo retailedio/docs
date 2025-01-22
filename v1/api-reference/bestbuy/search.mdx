@@ -1,0 +1,306 @@
+---
+title: "Bestbuy Search"
+api: "GET https://app.retailed.io/api/v1/bestbuy/search"
+description: "Search for products on Bestbuy"
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    This parameter specifies the private key you'll need for Retailed access.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" required={true} placeholder="macbook">
+    Search query
+</ParamField>
+
+<ParamField query="page" type="number" required={false} placeholder="1">
+    Page number
+</ParamField>
+
+<ParamField query="sort" type="string" required={false} placeholder="best_selling">
+    Sort by `best_discount` or `best_selling`
+</ParamField>
+
+### Response
+
+<ResponseField name="search" type="Search Object">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="id" type="string">
+            The sku of the product
+        </ResponseField>
+        <ResponseField name="url" type="string">
+            The url of the product
+        </ResponseField>
+        <ResponseField name="name" type="string">
+            The name of the product
+        </ResponseField>
+        <ResponseField name="save" type="string">
+            The save of the product
+        </ResponseField>
+        <ResponseField name="image" type="string">
+            The image of the product
+        </ResponseField>
+        <ResponseField name="model" type="string">
+            The model of the product
+        </ResponseField>
+        <ResponseField name="price" type="number">
+            The price of the product
+        </ResponseField>
+        <ResponseField name="rating" type="number">
+            The rating of the product
+        </ResponseField>
+        <ResponseField name="is_sold_out" type="boolean">
+            If the product is sold out
+        </ResponseField>
+        <ResponseField name="rating_count" type="number">
+            The rating count of the product
+        </ResponseField>
+        <ResponseField name="original_price" type="number">
+            The original price of the product
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<ResponseExample>
+```json Example Response
+[
+    {
+        "sku": "6602767",
+        "url": "https://www.bestbuy.com/site/apple-macbook-air-13-inch-apple-m3-chip-built-for-apple-intelligence-16gb-memory-256gb-ssd-midnight/6602767.p?skuId=6602767",
+        "name": "Apple - MacBook Air 13-inch Apple M3 chip Built for Apple Intelligence - 16GB Memory - 256GB SSD - Midnight",
+        "save": "18.20%",
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6b46488d-0489-4822-896b-6bc2fbe0a970.jpg;maxHeight=121;maxWidth=300;format=webp",
+        "model": "MC8K4LL/A",
+        "price": 899,
+        "rating": 4.8,
+        "is_sold_out": false,
+        "rating_count": 639,
+        "original_price": 1099
+    },
+    {
+        "sku": "6602741",
+        "url": "https://www.bestbuy.com/site/apple-macbook-pro-14-inch-apple-m4-chip-built-for-apple-intelligence-16gb-memory-512gb-ssd-space-black/6602741.p?skuId=6602741",
+        "name": "Apple - MacBook Pro 14-inch Apple M4 chip Built for Apple Intelligence - 16GB Memory - 512GB SSD - Space Black",
+        "save": null,
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/843476e7-9f63-4a98-b9bb-add6f2ee1667.jpg;maxHeight=122;maxWidth=300;format=webp",
+        "model": "MW2U3LL/A",
+        "price": 1599,
+        "rating": 4.9,
+        "is_sold_out": false,
+        "rating_count": 318,
+        "original_price": null
+    },
+    {
+        "sku": "6602776",
+        "url": "https://www.bestbuy.com/site/apple-macbook-air-15-inch-apple-m3-chip-built-for-apple-intelligence-16gb-memory-256gb-ssd-midnight/6602776.p?skuId=6602776",
+        "name": "Apple - MacBook Air 15-inch Apple M3 chip Built for Apple Intelligence - 16GB Memory - 256GB SSD - Midnight",
+        "save": "15.40%",
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/76ff6ed4-f8dd-44f7-85d6-d08075fe68b2.jpg;maxHeight=122;maxWidth=300;format=webp",
+        "model": "MC9G4LL/A",
+        "price": 1099,
+        "rating": 4.9,
+        "is_sold_out": false,
+        "rating_count": 193,
+        "original_price": 1299
+    },
+    {
+        "sku": "6602748",
+        "url": "https://www.bestbuy.com/site/apple-macbook-pro-14-inch-apple-m4-pro-chip-built-for-apple-intelligence-24gb-memory-512gb-ssd-space-black/6602748.p?skuId=6602748",
+        "name": "Apple - MacBook Pro 14-inch Apple M4 Pro chip Built for Apple Intelligence - 24GB Memory - 512GB SSD - Space Black",
+        "save": "10.01%",
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/8659517d-00e9-47d7-b6ab-5179838201f2.jpg;maxHeight=122;maxWidth=300;format=webp",
+        "model": "MX2H3LL/A",
+        "price": 1799,
+        "rating": 4.9,
+        "is_sold_out": false,
+        "rating_count": 200,
+        "original_price": 1999
+    },
+    {
+        "sku": "6602762",
+        "url": "https://www.bestbuy.com/site/apple-macbook-air-13-inch-apple-m2-chip-built-for-apple-intelligence-16gb-memory-256gb-ssd-starlight/6602762.p?skuId=6602762",
+        "name": "Apple - MacBook Air 13-inch Apple M2 chip Built for Apple Intelligence - 16GB Memory - 256GB SSD - Starlight",
+        "save": null,
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/87f372ea-8651-465b-bf81-fe3e6d8f5ea2.jpg;maxHeight=121;maxWidth=300;format=webp",
+        "model": "MC7W4LL/A",
+        "price": 999,
+        "rating": 4.9,
+        "is_sold_out": false,
+        "rating_count": 611,
+        "original_price": null
+    },
+    {
+        "sku": "6565857",
+        "url": "https://www.bestbuy.com/site/apple-macbook-air-15-inch-laptop-m3-chip-built-for-apple-intelligence-16gb-memory-512gb-ssd-midnight/6565857.p?skuId=6565857",
+        "name": "Apple - MacBook Air 15-inch Laptop - M3 chip Built for Apple Intelligence - 16GB Memory - 512GB SSD - Midnight",
+        "save": "13.34%",
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6565/6565857_sd.jpg;maxHeight=121;maxWidth=300;format=webp",
+        "model": "MXD43LL/A",
+        "price": 1299,
+        "rating": 4.9,
+        "is_sold_out": false,
+        "rating_count": 596,
+        "original_price": 1499
+    },
+    {
+        "sku": "6602755",
+        "url": "https://www.bestbuy.com/site/apple-macbook-pro-16-inch-apple-m4-pro-chip-built-for-apple-intelligence-24gb-memory-512gb-ssd-space-black/6602755.p?skuId=6602755",
+        "name": "Apple - MacBook Pro 16-inch Apple M4 Pro chip Built for Apple Intelligence - 24GB Memory - 512GB SSD - Space Black",
+        "save": "10.00%",
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/c79f9163-6c3e-4947-9ad9-63164bb9cfaa.jpg;maxHeight=122;maxWidth=300;format=webp",
+        "model": "MX2X3LL/A",
+        "price": 2249,
+        "rating": 4.8,
+        "is_sold_out": false,
+        "rating_count": 108,
+        "original_price": 2499
+    },
+    {
+        "sku": "6602742",
+        "url": "https://www.bestbuy.com/site/apple-macbook-pro-14-inch-apple-m4-chip-built-for-apple-intelligence-16gb-memory-1tb-ssd-space-black/6602742.p?skuId=6602742",
+        "name": "Apple - MacBook Pro 14-inch Apple M4 chip Built for Apple Intelligence - 16GB Memory - 1TB SSD - Space Black",
+        "save": null,
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/843476e7-9f63-4a98-b9bb-add6f2ee1667.jpg;maxHeight=122;maxWidth=300;format=webp",
+        "model": "MW2V3LL/A",
+        "price": 1799,
+        "rating": 4.9,
+        "is_sold_out": false,
+        "rating_count": 56,
+        "original_price": null
+    },
+    {
+        "sku": "6565841",
+        "url": "https://www.bestbuy.com/site/apple-macbook-air-13-inch-laptop-m3-chip-built-for-apple-intelligence-16gb-memory-512gb-ssd-starlight/6565841.p?skuId=6565841",
+        "name": "Apple - MacBook Air 13-inch Laptop - M3 chip Built for Apple Intelligence - 16GB Memory - 512GB SSD - Starlight",
+        "save": "15.40%",
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6565/6565841_sd.jpg;maxHeight=121;maxWidth=300;format=webp",
+        "model": "MXCU3LL/A",
+        "price": 1099,
+        "rating": 4.9,
+        "is_sold_out": false,
+        "rating_count": 917,
+        "original_price": 1299
+    },
+    {
+        "sku": "6602739",
+        "url": "https://www.bestbuy.com/site/apple-macbook-pro-14-inch-apple-m4-chip-built-for-apple-intelligence-24gb-memory-1tb-ssd-space-black/6602739.p?skuId=6602739",
+        "name": "Apple - MacBook Pro 14-inch Apple M4 chip Built for Apple Intelligence - 24GB Memory - 1TB SSD - Space Black",
+        "save": null,
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/843476e7-9f63-4a98-b9bb-add6f2ee1667.jpg;maxHeight=122;maxWidth=300;format=webp",
+        "model": "MCX04LL/A",
+        "price": 1999,
+        "rating": 4.9,
+        "is_sold_out": false,
+        "rating_count": 52,
+        "original_price": null
+    },
+    {
+        "sku": "6602749",
+        "url": "https://www.bestbuy.com/site/apple-macbook-pro-14-inch-apple-m4-pro-chip-built-for-apple-intelligence-24gb-memory-1tb-ssd-space-black/6602749.p?skuId=6602749",
+        "name": "Apple - MacBook Pro 14-inch Apple M4 Pro chip Built for Apple Intelligence - 24GB Memory - 1TB SSD - Space Black",
+        "save": null,
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/8659517d-00e9-47d7-b6ab-5179838201f2.jpg;maxHeight=122;maxWidth=300;format=webp",
+        "model": "MX2J3LL/A",
+        "price": 2399,
+        "rating": 4.9,
+        "is_sold_out": false,
+        "rating_count": 140,
+        "original_price": null
+    },
+    {
+        "sku": "6602756",
+        "url": "https://www.bestbuy.com/site/apple-macbook-pro-16-inch-apple-m4-pro-chip-built-for-apple-intelligence-48gb-memory-512gb-ssd-space-black/6602756.p?skuId=6602756",
+        "name": "Apple - MacBook Pro 16-inch Apple M4 Pro chip Built for Apple Intelligence - 48GB Memory - 512GB SSD - Space Black",
+        "save": null,
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/c79f9163-6c3e-4947-9ad9-63164bb9cfaa.jpg;maxHeight=122;maxWidth=300;format=webp",
+        "model": "MX2Y3LL/A",
+        "price": 2899,
+        "rating": 4.7,
+        "is_sold_out": false,
+        "rating_count": 46,
+        "original_price": null
+    },
+    {
+        "sku": "6602772",
+        "url": "https://www.bestbuy.com/site/apple-macbook-air-13-inch-apple-m3-chip-built-for-apple-intelligence-24gb-memory-512gb-ssd-midnight/6602772.p?skuId=6602772",
+        "name": "Apple - MacBook Air 13-inch Apple M3 chip Built for Apple Intelligence - 24GB Memory - 512GB SSD - Midnight",
+        "save": "13.34%",
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6b46488d-0489-4822-896b-6bc2fbe0a970.jpg;maxHeight=121;maxWidth=300;format=webp",
+        "model": "MC8Q4LL/A",
+        "price": 1299,
+        "rating": 5,
+        "is_sold_out": false,
+        "rating_count": 55,
+        "original_price": 1499
+    },
+    {
+        "sku": "6602758",
+        "url": "https://www.bestbuy.com/site/apple-macbook-pro-16-inch-apple-m4-max-chip-built-for-apple-intelligence-48gb-memory-1tb-ssd-space-black/6602758.p?skuId=6602758",
+        "name": "Apple - MacBook Pro 16-inch Apple M4 Max chip Built for Apple Intelligence - 48GB Memory - 1TB SSD - Space Black",
+        "save": null,
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/c79f9163-6c3e-4947-9ad9-63164bb9cfaa.jpg;maxHeight=122;maxWidth=300;format=webp",
+        "model": "MX313LL/A",
+        "price": 3999,
+        "rating": 5,
+        "is_sold_out": false,
+        "rating_count": 38,
+        "original_price": null
+    },
+    {
+        "sku": "6565897",
+        "url": "https://www.bestbuy.com/site/apple-macbook-pro-14-inch-laptop-m3-chip-built-for-apple-intelligence-16gb-memory-1tb-ssd-space-gray/6565897.p?skuId=6565897",
+        "name": "Apple - MacBook Pro 14-inch Laptop M3 chip Built for Apple Intelligence - 16GB Memory - 1TB SSD - Space Gray",
+        "save": "11.77%",
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6565/6565897_sd.jpg;maxHeight=121;maxWidth=300;format=webp",
+        "model": "MXE03LL/A",
+        "price": 1499,
+        "rating": 4.9,
+        "is_sold_out": false,
+        "rating_count": 233,
+        "original_price": 1699
+    },
+    {
+        "sku": "6602781",
+        "url": "https://www.bestbuy.com/site/apple-macbook-air-15-inch-apple-m3-chip-built-for-apple-intelligence-24gb-memory-512gb-ssd-midnight/6602781.p?skuId=6602781",
+        "name": "Apple - MacBook Air 15-inch Apple M3 chip Built for Apple Intelligence - 24GB Memory - 512GB SSD - Midnight",
+        "save": "11.77%",
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/76ff6ed4-f8dd-44f7-85d6-d08075fe68b2.jpg;maxHeight=122;maxWidth=300;format=webp",
+        "model": "MC9L4LL/A",
+        "price": 1499,
+        "rating": 4.9,
+        "is_sold_out": false,
+        "rating_count": 44,
+        "original_price": 1699
+    },
+    {
+        "sku": "6602757",
+        "url": "https://www.bestbuy.com/site/apple-macbook-pro-16-inch-apple-m4-max-chip-built-for-apple-intelligence-36gb-memory-1tb-ssd-space-black/6602757.p?skuId=6602757",
+        "name": "Apple - MacBook Pro 16-inch Apple M4 Max chip Built for Apple Intelligence - 36GB Memory - 1TB SSD - Space Black",
+        "save": null,
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/c79f9163-6c3e-4947-9ad9-63164bb9cfaa.jpg;maxHeight=122;maxWidth=300;format=webp",
+        "model": "MX303LL/A",
+        "price": 3499,
+        "rating": 4.9,
+        "is_sold_out": false,
+        "rating_count": 42,
+        "original_price": null
+    },
+    {
+        "sku": "6509650",
+        "url": "https://www.bestbuy.com/site/apple-macbook-air-13-6-laptop-m2-chip-built-for-apple-intelligence-8gb-memory-256gb-ssd-midnight/6509650.p?skuId=6509650",
+        "name": "Apple - MacBook Air 13.6\" Laptop - M2 chip Built for Apple Intelligence - 8GB Memory - 256GB SSD - Midnight",
+        "save": null,
+        "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6509/6509650_sd.jpg;maxHeight=121;maxWidth=300;format=webp",
+        "model": "MLY33LL/A",
+        "price": 899,
+        "rating": 4.9,
+        "is_sold_out": false,
+        "rating_count": 12316,
+        "original_price": null
+    }
+]
+```
+</ResponseExample>

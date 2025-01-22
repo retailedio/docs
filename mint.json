@@ -103,6 +103,13 @@
       ]
     },
     {
+      "group": "Bestbuy",
+      "pages": [
+        "v1/api-reference/bestbuy/search",
+        "v1/api-reference/bestbuy/product"
+      ]
+    },
+    {
       "group": "StockX",
       "pages": [
         "v1/api-reference/stockx/search",
