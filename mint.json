@@ -110,64 +110,10 @@
       ]
     },
     {
-      "group": "StockX",
-      "pages": [
-        "v1/api-reference/stockx/search",
-        "v1/api-reference/stockx/product",
-        "v1/api-reference/stockx/product_360",
-        "v1/api-reference/stockx/trends"
-      ]
-    },
-    {
-      "group": "Goat",
-      "pages": [
-        "v1/api-reference/goat/search",
-        "v1/api-reference/goat/product",
-        "v1/api-reference/goat/prices",
-        "v1/api-reference/goat/trends"
-      ]
-    },
-    {
       "group": "Chrono24",
       "pages": [
           "v1/api-reference/chrono24/search",
           "v1/api-reference/chrono24/product"
-      ]
-    },
-    {
-      "group": "Uniqlo",
-      "pages": [
-        "v1/api-reference/uniqlo/product"
-      ]
-    },
-    {
-      "group": "Zara",
-      "pages": [
-        "v1/api-reference/zara/product"
-      ]
-    },
-    {
-      "group": "Macys",
-      "pages": [
-        "v1/api-reference/macys/product"
-      ]
-    },
-    {
-      "group": "Nike",
-      "pages": [
-        "v1/api-reference/nike/product"
-      ]
-    },
-    {
-      "group": "Zalando",
-      "pages": [
-        "v1/api-reference/zalando/product"
-      ]
-    },
-    {
-      "group": "Forever21",
-      "pages": [
-        "v1/api-reference/forever21/product"
       ]
     },
     {
@@ -183,9 +129,63 @@
       ]
     },
     {
+      "group": "Forever21",
+      "pages": [
+        "v1/api-reference/forever21/product"
+      ]
+    },
+    {
+      "group": "Goat",
+      "pages": [
+        "v1/api-reference/goat/search",
+        "v1/api-reference/goat/product",
+        "v1/api-reference/goat/prices",
+        "v1/api-reference/goat/trends"
+      ]
+    },
+    {
+      "group": "Macys",
+      "pages": [
+        "v1/api-reference/macys/product"
+      ]
+    },
+    {
+      "group": "Nike",
+      "pages": [
+        "v1/api-reference/nike/product"
+      ]
+    },
+    {
       "group": "Stadium Goods",
       "pages": [
         "v1/api-reference/stadiumgoods/product"
+      ]
+    },
+    {
+      "group": "StockX",
+      "pages": [
+        "v1/api-reference/stockx/search",
+        "v1/api-reference/stockx/product",
+        "v1/api-reference/stockx/product_360",
+        "v1/api-reference/stockx/trends"
+      ]
+    },
+    {
+      "group": "Uniqlo",
+      "pages": [
+        "v1/api-reference/uniqlo/product"
+      ]
+    },
+    {
+      "group": "Zalando",
+      "pages": [
+        "v1/api-reference/zalando/product"
+      ]
+    },
+    {
+      "group": "Zara",
+      "pages": [
+        "v1/api-reference/zara/product"
       ]
     }
   ],
