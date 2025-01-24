@@ -16,6 +16,25 @@ description: "Get Bestbuy product"
     Bestbuy product like `https://www.bestbuy.com/site/macbook-air-13-6-laptop-apple-m2-chip-8gb-memory-256gb-ssd-midnight/6509650.p`
 </ParamField>
 
+### Response
+
+<ResponseField name="product" type="Product Object">
+    <Expandable title="properties" defaultOpen={true}>
+        <ResponseField name="pricing" type="object">
+            The pricing of the product
+        </ResponseField>
+        <ResponseField name="reviews" type="object">
+            The reviews of the product
+        </ResponseField>
+        <ResponseField name="categories" type="object">
+            The categories of the product
+        </ResponseField>
+        <ResponseField name="specifications" type="object">
+            The specifications of the product
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
 <ResponseExample>
 ```json Example Response
 {
@@ -204,7 +223,7 @@ description: "Get Bestbuy product"
             ],
             "price_event_type": "regular",
             "preferred_badging": "PriceMatchGuarantee",
-            "current_as_of_date": "2025-01-23T11:16:23 GMT",
+            "current_as_of_date": "2025-01-24T09:43:02 GMT",
             "show_total_savings": false,
             "total_gift_savings": 0,
             "total_savings_percent": 0,
@@ -347,42 +366,42 @@ description: "Get Bestbuy product"
         "page": 1,
         "sort": "BEST_REVIEW",
         "stats": {
-            "total_review_count": 618,
+            "total_review_count": 620,
             "rating_distribution": [
                 {
                     "count": 4,
                     "value": 1,
-                    "actual_percent": 0.6472491909385113,
+                    "actual_percent": 0.6451612903225806,
                     "rounded_percent": 1
                 },
                 {
                     "count": 1,
                     "value": 2,
-                    "actual_percent": 0.16181229773462782,
+                    "actual_percent": 0.16129032258064516,
                     "rounded_percent": 0
                 },
                 {
                     "count": 6,
                     "value": 3,
-                    "actual_percent": 0.970873786407767,
+                    "actual_percent": 0.967741935483871,
                     "rounded_percent": 1
                 },
                 {
                     "count": 41,
                     "value": 4,
-                    "actual_percent": 6.634304207119741,
+                    "actual_percent": 6.612903225806452,
                     "rounded_percent": 7
                 },
                 {
-                    "count": 566,
+                    "count": 568,
                     "value": 5,
-                    "actual_percent": 91.58576051779936,
+                    "actual_percent": 91.61290322580645,
                     "rounded_percent": 91
                 }
             ],
             "recommended_percent": 99,
             "average_overall_rating": 4.9,
-            "verified_purchase_count": 605
+            "verified_purchase_count": 607
         },
         "device": {
             "is_large": true,
@@ -925,7 +944,7 @@ description: "Get Bestbuy product"
                             "icon_path": "/ugc-raas/ugc-common-assets/badge-my-bestbuy-core.svg",
                             "icon_text": "",
                             "badge_code": "rewardZoneNumberV3",
-                            "badge_name": "My Best Buy\\u00ae Member",
+                            "badge_name":"My Best Buy\® Member",
                             "badge_type": "Custom",
                             "image_u_r_l": "https://bestbuy.ugc.bazaarvoice.com/static/3545w/badgeRewardZoneStd.gif",
                             "badge_description": "My Best Buy members receive promotional considerations or entries into drawings for writing reviews."
@@ -1000,7 +1019,7 @@ description: "Get Bestbuy product"
                             "icon_path": "/ugc-raas/ugc-common-assets/badge-my-bestbuy-core.svg",
                             "icon_text": "",
                             "badge_code": "rewardZoneNumberV3",
-                            "badge_name": "My Best Buy\\u00ae Member",
+                            "badge_name":"My Best Buy\® Member",
                             "badge_type": "Custom",
                             "image_u_r_l": "https://bestbuy.ugc.bazaarvoice.com/static/3545w/badgeRewardZoneStd.gif",
                             "badge_description": "My Best Buy members receive promotional considerations or entries into drawings for writing reviews."
@@ -1067,7 +1086,7 @@ description: "Get Bestbuy product"
                             "icon_path": "/ugc-raas/ugc-common-assets/badge-my-bestbuy-core.svg",
                             "icon_text": "",
                             "badge_code": "rewardZoneNumberV3",
-                            "badge_name": "My Best Buy\\u00ae Member",
+                            "badge_name":"My Best Buy\® Member",
                             "badge_type": "Custom",
                             "image_u_r_l": "https://bestbuy.ugc.bazaarvoice.com/static/3545w/badgeRewardZoneStd.gif",
                             "badge_description": "My Best Buy members receive promotional considerations or entries into drawings for writing reviews."
@@ -1113,14 +1132,14 @@ description: "Get Bestbuy product"
                 }
             ],
             "page_size": 3,
-            "total_pages": 206,
+            "total_pages": 207,
             "current_page": 1,
-            "total_results": 618
+            "total_results": 620
         },
         "variant": "A",
         "page_size": 3,
         "campaign_id": "PDP",
-        "instance_id": "user-generated-content-ratings-and-reviews-10729912",
+        "instance_id": "user-generated-content-ratings-and-reviews-46203495",
         "search_text": "",
         "default_sort": "BEST_REVIEW",
         "device_class": "l",
@@ -1316,20 +1335,20 @@ description: "Get Bestbuy product"
         "fix_margin_for_accordion": true,
         "aggregate_secondary_ratings": [
             {
-                "avg": 4.892857142857143,
-                "count": 560,
+                "avg": 4.89126559714795,
+                "count": 561,
                 "attribute": "BatteryLife",
                 "attribute_label": "Battery Life"
             },
             {
-                "avg": 4.877005347593583,
-                "count": 561,
+                "avg": 4.877224199288256,
+                "count": 562,
                 "attribute": "Speed",
                 "attribute_label": "Speed"
             },
             {
-                "avg": 4.903743315508021,
-                "count": 561,
+                "avg": 4.903914590747331,
+                "count": 562,
                 "attribute": "Display",
                 "attribute_label": "Display"
             }
@@ -1348,67 +1367,67 @@ description: "Get Bestbuy product"
             "display_name": "Key Specs",
             "specifications": [
                 {
-                    "id": "2ZynVHVDSn",
+                    "id": "A7cFcIzDh6",
                     "value": "13 inches",
                     "definition": "Size of the screen, measured diagonally from corner to corner.",
                     "display_name": "Screen Size"
                 },
                 {
-                    "id": "hU9a9E1ELX",
+                    "id": "sTdjjZEHbL",
                     "value": "2560 x 1664",
                     "definition": "Screens come in a range of resolutions (measured in pixels, horizontal x vertical). The higher the resolution, the greater the picture quality.",
                     "display_name": "Screen Resolution"
                 },
                 {
-                    "id": "hHiiAFkCqa",
+                    "id": "yHzVuJP3hO",
                     "value": "false",
                     "definition": "Touch-screen devices make navigating more intuitive. Using a touch-screen display, you can do things such as tap to select, hold and drag to move items, swipe to scroll, and pinch to zoom.",
                     "display_name": "Touch Screen"
                 },
                 {
-                    "id": "JIFMJkZY9E",
+                    "id": "TN3isMgNrP",
                     "value": "Apple M2",
                     "definition": "Your computer's processor is like its brain. Working in combination with system memory, the power of the processor determines the complexity of software you can run, how many programs you can have open at the same time, and how fast those programs will run. Most computers feature an Intel or AMD processor.",
                     "display_name": "Processor Model"
                 },
                 {
-                    "id": "xTrgMtkr0R",
+                    "id": "YnNGbkws5R",
                     "value": "SSD",
                     "definition": null,
                     "display_name": "Storage Type"
                 },
                 {
-                    "id": "NObPvMECjb",
+                    "id": "9aohWA4NKL",
                     "value": "256 gigabytes",
                     "definition": null,
                     "display_name": "Total Storage Capacity"
                 },
                 {
-                    "id": "go4jmsHBWj",
+                    "id": "oPJLGCNLdO",
                     "value": "16 gigabytes",
                     "definition": "Random-access memory (RAM) is a computing device's short-term data storage, which allows active information to be accessed quickly. The size and type of RAM determines how efficiently the device can handle large amounts of information at one time. For example, gaming or video editing requires more RAM for optimal performance.",
                     "display_name": "System Memory (RAM)"
                 },
                 {
-                    "id": "dGewwaq97S",
+                    "id": "jFSSb1OsDH",
                     "value": "Apple M2 8-core",
                     "definition": "Often referred to as a \"graphics processing unit\" (GPU), this device is responsible for displaying image content and decoding/encoding video content in programs and games.",
                     "display_name": "Graphics"
                 },
                 {
-                    "id": "0H9gg4BYj8",
+                    "id": "wY5GAWbLc9",
                     "value": "2 x Thunderbolt",
                     "definition": "The number and type of connectors used to connect to an external display.",
                     "display_name": "Display Connector(s)"
                 },
                 {
-                    "id": "RSPUBUe1ik",
+                    "id": "7W0rZJNIfu",
                     "value": "Lithium-ion",
                     "definition": null,
                     "display_name": "Battery Type"
                 },
                 {
-                    "id": "wfx9qm7jsq",
+                    "id": "zyS2Pv8uEv",
                     "value": "true",
                     "definition": "Integrated lights allow for visibility of the keys in low-light conditions.",
                     "display_name": "Backlit Keyboard"
@@ -1419,37 +1438,37 @@ description: "Get Bestbuy product"
             "display_name": "General",
             "specifications": [
                 {
-                    "id": "3z84D2Tb04",
+                    "id": "spf5nZduTn",
                     "value": "MacBook Air 13-inch Apple M2 chip Built for Apple Intelligence - 16GB Memory - 256GB SSD",
                     "definition": null,
                     "display_name": "Product Name"
                 },
                 {
-                    "id": "PU748xtF7a",
+                    "id": "sVmR6dEgcu",
                     "value": "Apple",
                     "definition": null,
                     "display_name": "Brand"
                 },
                 {
-                    "id": "JJHuCF4wXw",
+                    "id": "re1H6cizND",
                     "value": "MC7X4LL/A",
                     "definition": null,
                     "display_name": "Model Number"
                 },
                 {
-                    "id": "nmpB3yKTxO",
+                    "id": "ZY8JNvK0vG",
                     "value": "2022",
                     "definition": null,
                     "display_name": "Year of Release"
                 },
                 {
-                    "id": "vU6WQ15KUV",
+                    "id": "L4owEFpTgs",
                     "value": "Midnight",
                     "definition": null,
                     "display_name": "Color"
                 },
                 {
-                    "id": "Kv6KGEyzqt",
+                    "id": "D2ZAyAxZz2",
                     "value": "Blue",
                     "definition": null,
                     "display_name": "Color Category"
@@ -1460,25 +1479,25 @@ description: "Get Bestbuy product"
             "display_name": "Display",
             "specifications": [
                 {
-                    "id": "k292VNfMh5",
+                    "id": "gzSu63pZd3",
                     "value": "LED",
                     "definition": null,
                     "display_name": "Display Type"
                 },
                 {
-                    "id": "SKMVSCIU83",
+                    "id": "Fi8ojVmItY",
                     "value": "13 inches",
                     "definition": "Size of the screen, measured diagonally from corner to corner.",
                     "display_name": "Screen Size"
                 },
                 {
-                    "id": "djLmkfE4Ml",
+                    "id": "WZDE0jh8YZ",
                     "value": "2560 x 1664",
                     "definition": "Screens come in a range of resolutions (measured in pixels, horizontal x vertical). The higher the resolution, the greater the picture quality.",
                     "display_name": "Screen Resolution"
                 },
                 {
-                    "id": "NHvzohAWBC",
+                    "id": "lnxv0jQoGQ",
                     "value": "false",
                     "definition": "Touch-screen devices make navigating more intuitive. Using a touch-screen display, you can do things such as tap to select, hold and drag to move items, swipe to scroll, and pinch to zoom.",
                     "display_name": "Touch Screen"
@@ -1489,25 +1508,25 @@ description: "Get Bestbuy product"
             "display_name": "Processor",
             "specifications": [
                 {
-                    "id": "5efpMtI3fM",
+                    "id": "T7xAwyXNDJ",
                     "value": "Apple",
                     "definition": null,
                     "display_name": "Processor Brand"
                 },
                 {
-                    "id": "EbMkIJJKtF",
+                    "id": "HdSBUlx7c1",
                     "value": "Apple M2",
                     "definition": "Your computer's processor is like its brain. Working in combination with system memory, the power of the processor determines the complexity of software you can run, how many programs you can have open at the same time, and how fast those programs will run. Most computers feature an Intel or AMD processor.",
                     "display_name": "Processor Model"
                 },
                 {
-                    "id": "9EHZ9eqogX",
+                    "id": "Ox0ugnx3Po",
                     "value": "Apple M2",
                     "definition": null,
                     "display_name": "Processor Model Number"
                 },
                 {
-                    "id": "0ckA12kM0m",
+                    "id": "QeXLmfFV38",
                     "value": "8-core",
                     "definition": "A core, or \"brain\" of a CPU, allows it to receive and execute instructions. Each core can work independently or together to perform parallel operations.",
                     "display_name": "Number of CPU Cores"
@@ -1518,19 +1537,19 @@ description: "Get Bestbuy product"
             "display_name": "Storage",
             "specifications": [
                 {
-                    "id": "HBWxMOf5cZ",
+                    "id": "OlxlfZwYBp",
                     "value": "SSD",
                     "definition": null,
                     "display_name": "Storage Type"
                 },
                 {
-                    "id": "aqshQO8nDy",
+                    "id": "vCuv51z8RS",
                     "value": "256 gigabytes",
                     "definition": null,
                     "display_name": "Total Storage Capacity"
                 },
                 {
-                    "id": "FUPR2tMy5O",
+                    "id": "bKZ1kFAQmL",
                     "value": "256 gigabytes",
                     "definition": "The amount of data that can be stored on the device's solid state drive (SSD). SSD is a flash-based storage with faster speeds than a hard disk drive (HDD).",
                     "display_name": "Solid State Drive Capacity"
@@ -1541,13 +1560,13 @@ description: "Get Bestbuy product"
             "display_name": "Memory",
             "specifications": [
                 {
-                    "id": "1wWMKheLM5",
+                    "id": "Q6wOfEk4dF",
                     "value": "16 gigabytes",
                     "definition": "Random-access memory (RAM) is a computing device's short-term data storage, which allows active information to be accessed quickly. The size and type of RAM determines how efficiently the device can handle large amounts of information at one time. For example, gaming or video editing requires more RAM for optimal performance.",
                     "display_name": "System Memory (RAM)"
                 },
                 {
-                    "id": "HNpyELLmqt",
+                    "id": "hvwb56yriz",
                     "value": "Not provided",
                     "definition": "Each type of RAM delivers a different level of speed, bandwidth, energy efficiency and performance.",
                     "display_name": "Type of Memory (RAM)"
@@ -1558,19 +1577,19 @@ description: "Get Bestbuy product"
             "display_name": "Graphics",
             "specifications": [
                 {
-                    "id": "lPdrfdJ8ON",
+                    "id": "PfhGfNZ6xT",
                     "value": "Integrated",
                     "definition": "Dedicated graphics uses a separate graphics card for processing video images. Because it does not use memory from the system's RAM, there is no extra burden on the CPU and graphics are processed more efficiently. Integrated graphics shares system RAM to process video images.",
                     "display_name": "Graphics Type"
                 },
                 {
-                    "id": "v3xFPx8nDo",
+                    "id": "Pr9UEPahhI",
                     "value": "Apple",
                     "definition": null,
                     "display_name": "GPU Brand"
                 },
                 {
-                    "id": "xlyrsGdnMA",
+                    "id": "9tnEb4kxvP",
                     "value": "Apple M2 8-core",
                     "definition": "Often referred to as a \"graphics processing unit\" (GPU), this device is responsible for displaying image content and decoding/encoding video content in programs and games.",
                     "display_name": "Graphics"
@@ -1581,7 +1600,7 @@ description: "Get Bestbuy product"
             "display_name": "Compatibility",
             "specifications": [
                 {
-                    "id": "h38pMpZNyf",
+                    "id": "od6MSlFqjN",
                     "value": "macOS Sequoia 15.1",
                     "definition": "The operating system manages all software and hardware, including files, memory and connected devices. Most importantly, it lets you interact with your device and your programs in a visual way; otherwise, you'd be typing computer code to get anything done.",
                     "display_name": "Operating System"
@@ -1592,31 +1611,31 @@ description: "Get Bestbuy product"
             "display_name": "Connectivity",
             "specifications": [
                 {
-                    "id": "fZsccbNUJK",
+                    "id": "4QN4BJdn1Z",
                     "value": "2 x Thunderbolt",
                     "definition": "The number and type of connectors used to connect to an external display.",
                     "display_name": "Display Connector(s)"
                 },
                 {
-                    "id": "fjfnDc5QFQ",
+                    "id": "PqyYV0Yms3",
                     "value": "2",
                     "definition": null,
                     "display_name": "Number of Thunderbolt Ports (Total)"
                 },
                 {
-                    "id": "Ixc9N6FGpp",
+                    "id": "wPdE8u2hsE",
                     "value": "2 x USB-C 4",
                     "definition": "The number and type of USB ports the product has.",
                     "display_name": "USB Ports"
                 },
                 {
-                    "id": "C73XVUhhVU",
+                    "id": "pE87Dy6ooe",
                     "value": "2",
                     "definition": null,
                     "display_name": "Number of USB Ports (Total)"
                 },
                 {
-                    "id": "TpRs56yBL4",
+                    "id": "6w29N8kwKa",
                     "value": "Bluetooth, Wi-Fi",
                     "definition": "The manner in which a device sends data to another device over a short distance without the use of wires or cables.",
                     "display_name": "Wireless Connectivity"
@@ -1627,13 +1646,13 @@ description: "Get Bestbuy product"
             "display_name": "Power",
             "specifications": [
                 {
-                    "id": "XtmoySN6fV",
+                    "id": "YcpmUqa4AG",
                     "value": "4-cell",
                     "definition": null,
                     "display_name": "Battery Cells"
                 },
                 {
-                    "id": "ErYKszIHFL",
+                    "id": "aBd65BJLoT",
                     "value": "Lithium-ion",
                     "definition": null,
                     "display_name": "Battery Type"
@@ -1644,7 +1663,7 @@ description: "Get Bestbuy product"
             "display_name": "Camera",
             "specifications": [
                 {
-                    "id": "DkYLKjtAzm",
+                    "id": "Le7XEbYtJs",
                     "value": "true",
                     "definition": null,
                     "display_name": "Front-Facing Camera"
@@ -1655,7 +1674,7 @@ description: "Get Bestbuy product"
             "display_name": "Features",
             "specifications": [
                 {
-                    "id": "Or9tgfsKmu",
+                    "id": "XbXWGBsJPG",
                     "value": "true",
                     "definition": "Integrated lights allow for visibility of the keys in low-light conditions.",
                     "display_name": "Backlit Keyboard"
@@ -1666,25 +1685,25 @@ description: "Get Bestbuy product"
             "display_name": "Dimensions",
             "specifications": [
                 {
-                    "id": "Ortamptt5V",
+                    "id": "7cQK5HttO4",
                     "value": "0.44 inches",
                     "definition": "The out of box height of the item. Height is measured as the vertical distance from the bottom of the item to the top as it would be primarily used or placed.",
                     "display_name": "Product Height"
                 },
                 {
-                    "id": "atiwDtaD7u",
+                    "id": "6GUg2HiSvi",
                     "value": "11.97 inches",
                     "definition": "The out of box width of the item. Width is measured as the horizontal distance from one side of the item to the other as it would be primarily used or placed.",
                     "display_name": "Product Width"
                 },
                 {
-                    "id": "YxWljRTVQ4",
+                    "id": "Ntj2PQDGSe",
                     "value": "8.46 inches",
                     "definition": "The out of box depth of the item. Depth is measured as the distance from the front of the item to the back as it would be primarily used or placed.",
                     "display_name": "Product Depth"
                 },
                 {
-                    "id": "hKbTgJH9Fi",
+                    "id": "AtHTSRNzTq",
                     "value": "2.73 pounds",
                     "definition": "The out of box weight of the item.",
                     "display_name": "Product Weight"
@@ -1695,19 +1714,19 @@ description: "Get Bestbuy product"
             "display_name": "Certifications & Listings",
             "specifications": [
                 {
-                    "id": "lYZGLTk4rd",
+                    "id": "zIGhCNPgDz",
                     "value": "true",
                     "definition": "Devices carrying the ENERGY STAR service mark, such as computer products and peripherals, kitchen appliances, and other products, generally use 20% to 30% less energy than required by federal standards.",
                     "display_name": "ENERGY STAR Certified"
                 },
                 {
-                    "id": "Tu8B4PA3Ug",
+                    "id": "gIrTTXEXCR",
                     "value": "true",
                     "definition": "The Electronic Product Environmental Assessment Tool (EPEAT) was designed to provide an environmental assessment tool for purchasers. In order to qualify for EPEAT, a product must meet all 23 required criteria.",
                     "display_name": "EPEAT Qualified"
                 },
                 {
-                    "id": "mk8mDSS5Dv",
+                    "id": "O225ZsZBhB",
                     "value": "Gold",
                     "definition": "The Electronic Product Environmental Assessment Tool (EPEAT) was designed to provide an environmental assessment tool for purchasers. In order to qualify for EPEAT, a product must meet all 23 required criteria. Products are rated Bronze, Silver or Gold based on how many of 28 optional criteria they meet (below 50%, 50%, 75%).",
                     "display_name": "EPEAT Level"
@@ -1718,13 +1737,13 @@ description: "Get Bestbuy product"
             "display_name": "Warranty",
             "specifications": [
                 {
-                    "id": "Pud5kDGrOC",
+                    "id": "x3MrPUk6vs",
                     "value": "Apple One (1) Year Limited Warranty",
                     "definition": null,
                     "display_name": "Manufacturer's Warranty - Parts"
                 },
                 {
-                    "id": "DIMmfkqieq",
+                    "id": "7ylWJqv7MJ",
                     "value": "Apple One (1) Year Limited Warranty",
                     "definition": null,
                     "display_name": "Manufacturer's Warranty - Labor"
@@ -1735,7 +1754,7 @@ description: "Get Bestbuy product"
             "display_name": "Other",
             "specifications": [
                 {
-                    "id": "x49jnZkldT",
+                    "id": "ScZE1UQO7Q",
                     "value": "195949900372",
                     "definition": null,
                     "display_name": "UPC"
@@ -1747,7 +1766,7 @@ description: "Get Bestbuy product"
         "is_bot": false,
         "sku_id": "6602763",
         "context": "ECOSYSTEM",
-        "instance_id": "shop-specifications-11412368",
+        "instance_id": "shop-specifications-20277637",
         "is_all_specs": true,
         "disable_icons": false,
         "is_small_view": false,
