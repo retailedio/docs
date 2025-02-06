@@ -20,74 +20,167 @@ description: "Get product information from Chrono24"
 
 <ResponseField name="object" type="Product Object">
     <Expandable title="properties" defaultOpen={true}>
-        <ResponseField name="id" type="string">
-            Chrono24 product id
-        </ResponseField>
         <ResponseField name="sku" type="string">
-            Product SKU
+            Product reference number
         </ResponseField>
         <ResponseField name="name" type="string">
             Product name
         </ResponseField>
-        <ResponseField name="slug" type="string">
-            Product slug
-        </ResponseField>
         <ResponseField name="brand" type="string">
             Product brand
         </ResponseField>
-        <ResponseField name="model" type="string">
-            Product model
-        </ResponseField>
-        <ResponseField name="price" type="string">
-            Product price
-        </ResponseField>
-        <ResponseField name="gender" type="string">
-            Product gender
+        <ResponseField name="price" type="object">
+            <Expandable title="properties">
+                <ResponseField name="amount" type="number">
+                    Price amount
+                </ResponseField>
+                <ResponseField name="currency" type="string">
+                    Price currency
+                </ResponseField>
+                <ResponseField name="negotiable" type="boolean">
+                    Indicates if price is negotiable
+                </ResponseField>
+            </Expandable>
         </ResponseField>
         <ResponseField name="images" type="array">
-            Product images
+            List of product image URLs
         </ResponseField>
-        <ResponseField name="location" type="string">
-            Product location
+        <ResponseField name="seller" type="object">
+            <Expandable title="properties">
+                <ResponseField name="name" type="string">
+                    Seller name
+                </ResponseField>
+                <ResponseField name="badges" type="array">
+                    <Expandable title="properties">
+                        <ResponseField name="type" type="string">
+                            Badge type
+                        </ResponseField>
+                        <ResponseField name="level" type="string">
+                            Badge level
+                        </ResponseField>
+                        <ResponseField name="description" type="string">
+                            Badge description
+                        </ResponseField>
+                    </Expandable>
+                </ResponseField>
+                <ResponseField name="rating" type="number">
+                    Seller rating
+                </ResponseField>
+                <ResponseField name="country" type="string">
+                    Seller country
+                </ResponseField>
+                <ResponseField name="shipping" type="object">
+                    <Expandable title="properties">
+                        <ResponseField name="availability" type="string">
+                            Stock availability status
+                        </ResponseField>
+                        <ResponseField name="delivery_time" type="string">
+                            Expected delivery timeframe
+                        </ResponseField>
+                        <ResponseField name="delivery_details" type="string">
+                            Detailed shipping information
+                        </ResponseField>
+                    </Expandable>
+                </ResponseField>
+                <ResponseField name="verified" type="boolean">
+                    Seller verification status
+                </ResponseField>
+                <ResponseField name="reviews_count" type="string">
+                    Number of seller reviews
+                </ResponseField>
+            </Expandable>
         </ResponseField>
-        <ResponseField name="movement" type="string">
-            Product movement
+        <ResponseField name="shipping" type="object">
+            <Expandable title="properties">
+                <ResponseField name="location" type="string">
+                    Shipping origin location
+                </ResponseField>
+                <ResponseField name="delivery_time" type="string">
+                    Expected delivery timeframe
+                </ResponseField>
+            </Expandable>
         </ResponseField>
-        <ResponseField name="condition" type="string">
-            Product condition
+        <ResponseField name="description" type="string">
+            Product description
         </ResponseField>
-        <ResponseField name="decription" type="string">
-            Product decription
-        </ResponseField>
-        <ResponseField name="breadcrumbs" type="array">
-            Product breadcrumbs
-        </ResponseField>
-        <ResponseField name="availability" type="string">
-            Product availability
-        </ResponseField>
-        <ResponseField name="listing_code" type="string">
-            Product listing code
-        </ResponseField>
-        <ResponseField name="case_material" type="string">
-            Product case material
-        </ResponseField>
-        <ResponseField name="price_currency" type="string">
-            Product price currency
-        </ResponseField>
-        <ResponseField name="price_formated" type="number">
-            Product price formated
-        </ResponseField>
-        <ResponseField name="bracelet_material" type="string">
-            Product bracelet material
-        </ResponseField>
-        <ResponseField name="price_valid_until" type="string">
-            Product price valid until
-        </ResponseField>
-        <ResponseField name="scope_of_delivery" type="string">
-            Product scope of delivery
-        </ResponseField>
-        <ResponseField name="year_of_production" type="string">
-            Product year of production
+        <ResponseField name="specifications" type="object">
+            <Expandable title="properties">
+                <ResponseField name="dial" type="string">
+                    Watch dial color/type
+                </ResponseField>
+                <ResponseField name="clasp" type="string">
+                    Clasp type
+                </ResponseField>
+                <ResponseField name="crystal" type="string">
+                    Crystal type
+                </ResponseField>
+                <ResponseField name="movement" type="string">
+                    Movement type
+                </ResponseField>
+                <ResponseField name="condition" type="string">
+                    Product condition
+                </ResponseField>
+                <ResponseField name="case_diameter" type="string">
+                    Case diameter
+                </ResponseField>
+                <ResponseField name="case_material" type="string">
+                    Case material
+                </ResponseField>
+                <ResponseField name="bezel_material" type="string">
+                    Bezel material
+                </ResponseField>
+                <ResponseField name="bracelet_material" type="string">
+                    Bracelet material
+                </ResponseField>
+                <ResponseField name="year_of_production" type="string">
+                    Production year
+                </ResponseField>
+                <ResponseField name="slug" type="string">
+                    Product slug
+                </ResponseField>
+                <ResponseField name="gender" type="string">
+                    Product gender
+                </ResponseField>
+                <ResponseField name="location" type="string">
+                    Product location
+                </ResponseField>
+                <ResponseField name="decription" type="string">
+                    Product decription
+                </ResponseField>
+                <ResponseField name="breadcrumbs" type="array">
+                    Product breadcrumbs
+                </ResponseField>
+                <ResponseField name="availability" type="string">
+                    Product availability
+                </ResponseField>
+                <ResponseField name="listing_code" type="string">
+                    Product listing code
+                </ResponseField>
+                <ResponseField name="dial_numerals" type="string">
+                    Watch dial numerals
+                </ResponseField>
+                <ResponseField name="bracelet_color" type="string">
+                    Bracelet color
+                </ResponseField>
+                <ResponseField name="clasp_material" type="string">
+                    Clasp material
+                </ResponseField>
+                <ResponseField name="caliber_movement" type="string">
+                    Caliber movement
+                </ResponseField>
+                <ResponseField name="reference_number" type="string">
+                    Product reference number
+                </ResponseField>
+                <ResponseField name="scope_of_delivery" type="string">
+                    Product scope of delivery
+                </ResponseField>
+                <ResponseField name="price_valid_until" type="string">
+                    Product price valid until
+                </ResponseField>
+                <ResponseField name="price_formated" type="number">
+                    Product price formated
+                </ResponseField>
+            </Expandable>
         </ResponseField>
     </Expandable>
 </ResponseField>
@@ -95,42 +188,88 @@ description: "Get product information from Chrono24"
 <ResponseExample>
 ```json Example Response
 {
-    "id": "16516741",
     "sku": "126610LN",
-    "name": "Rolex Submariner Date 41mm 126610LN Unworn 2022",
-    "slug": "rolex-submariner-date-41mm-126610ln-unworn-2022--id16516741.htm",
+    "name": "Rolex Submariner Date Ceramic 41mm 126610LN Unworn 2023",
     "brand": "Rolex",
-    "model": "Submariner Date",
-    "price": "$16,614 [Negotiable]",
-    "gender": "Men's watch/Unisex",
+    "price": {
+        "amount": 16410,
+        "currency": "USD",
+        "negotiable": true
+    },
     "images": [
-        "https://cdn2.chrono24.com/images/uhren/16516640-wuzf1q8zn9o64ozyf2e1bw8d-ExtraLarge.jpg",
-        "https://cdn2.chrono24.com/images/uhren/16516640-eusat2gcdgwsmyvnt17skdx5-ExtraLarge.jpg",
-        "https://cdn2.chrono24.com/images/uhren/16516640-t0umtrzp0400qyoj70arj5iw-ExtraLarge.jpg",
-        "https://cdn2.chrono24.com/images/uhren/16516640-5j5ifnc4naxgsili9yl39wpu-ExtraLarge.jpg",
-        "https://cdn2.chrono24.com/images/uhren/16516640-cu5ejjuyr4hdr0zbgmg7nkv1-ExtraLarge.jpg",
-        "https://cdn2.chrono24.com/images/uhren/16516640-5q2itr8w5yx3oq81bl4ji4mg-ExtraLarge.jpg",
-        "https://cdn2.chrono24.com/images/uhren/16516640-xcc23127eeq697qi4ui4c0td-ExtraLarge.jpg",
-        "https://cdn2.chrono24.com/images/uhren/16516741-s1fz2um1kqv2h0ggcfnzu43x-ExtraLarge.jpg"
+        "https://img.chrono24.com/images/uhren/16516640-wuzf1q8zn9o64ozyf2e1bw8d-ExtraLarge.jpg",
+        "https://img.chrono24.com/images/uhren/16516640-eusat2gcdgwsmyvnt17skdx5-ExtraLarge.jpg",
+        "https://img.chrono24.com/images/uhren/16516640-t0umtrzp0400qyoj70arj5iw-ExtraLarge.jpg",
+        "https://img.chrono24.com/images/uhren/16516640-5j5ifnc4naxgsili9yl39wpu-ExtraLarge.jpg",
+        "https://img.chrono24.com/images/uhren/16516640-cu5ejjuyr4hdr0zbgmg7nkv1-ExtraLarge.jpg",
+        "https://img.chrono24.com/images/uhren/16516640-5q2itr8w5yx3oq81bl4ji4mg-ExtraLarge.jpg",
+        "https://img.chrono24.com/images/uhren/16516640-xcc23127eeq697qi4ui4c0td-ExtraLarge.jpg",
+        "https://img.chrono24.com/images/uhren/16516741-s1fz2um1kqv2h0ggcfnzu43x-ExtraLarge.jpg"
     ],
-    "location": "United States of America, New York, New York",
-    "movement": "Automatic",
-    "condition": "Unworn(Mint condition, without signs of wear)",
-    "decription": "Reference number 126610LN Steel Automatic Year 2022 Watch with original box Watch with original papers 41mm",
-    "breadcrumbs": [
-        "Rolex watches",
-        "Submariner Date watches",
-        "Rolex 126610LN"
-    ],
-    "availability": "Item is in stock",
-    "listing_code": "9U0ED0",
-    "case_material": "Steel",
-    "price_currency": "USD",
-    "price_formated": 16614,
-    "bracelet_material": "Steel",
-    "price_valid_until": "2023-12-31",
-    "scope_of_delivery": "Original box, original papers",
-    "year_of_production": "2022"
+    "seller": {
+        "name": "Watch Limit",
+        "badges": [
+            {
+                "type": "trusted-seller",
+                "level": null,
+                "description": "Trusted SellerThis badge is only awarded to dealers who meet all the legal requirements and our own strict internal criteria."
+            },
+            {
+                "type": "watch-check",
+                "level": "Level3",
+                "description": "PunctualityThe seller ships 96% of their items on time or earlier."
+            },
+            {
+                "type": "response",
+                "level": "Level3",
+                "description": "Response TimeThe seller generally replies within 1 hour."
+            },
+            {
+                "type": "growth",
+                "level": "Level3",
+                "description": "SalesThe seller has sold 144 items in the last 90 days."
+            }
+        ],
+        "rating": 5,
+        "country": "US",
+        "shipping": {
+            "availability": "Item is in stock",
+            "delivery_time": "Anticipated delivery: 2/10 - 2/24",
+            "delivery_details": "The item is in stockand ready to ship within1 - 3 days. Expect to receive the item2 - 12 daysafter that."
+        },
+        "verified": false,
+        "reviews_count": "1835"
+    },
+    "shipping": {
+        "location": "United States of America",
+        "delivery_time": "Anticipated delivery: 2/10 - 2/24"
+    },
+    "description": "Reference number 126610LN Steel Automatic Year 2023 Watch with original box and original papers Watch with original box Watch with original papers 41mm",
+    "specifications": {
+        "dial": "Black",
+        "brand": "Rolex",
+        "clasp": "Fold clasp",
+        "model": "Submariner Date",
+        "price": "$16,410 [Negotiable]",
+        "gender": "Men's watch/Unisex",
+        "crystal": "Sapphire crystal",
+        "location": "United States of America, New York, New York",
+        "movement": "Automatic",
+        "condition": "Like new & unwornThe item shows no signs of wear such as scratches or dents, and it has not been worn. The item has not been polished.",
+        "availability": "Item is in stock",
+        "listing_code": "9U0ED0",
+        "case_diameter": "41 mmTry it on",
+        "case_material": "Steel",
+        "dial_numerals": "No numerals",
+        "bezel_material": "Ceramic",
+        "bracelet_color": "Steel",
+        "clasp_material": "Steel",
+        "caliber_movement": "3235",
+        "reference_number": "126610LN(Submariner Ceramic Bezel Dark)",
+        "bracelet_material": "Steel",
+        "scope_of_delivery": "Original box, original papers",
+        "year_of_production": "2023"
+    }
 }
 ```
 </ResponseExample>
