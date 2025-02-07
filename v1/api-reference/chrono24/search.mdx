@@ -13,15 +13,15 @@ description: "Search Chrono24 for products"
 ### Parameters
 
 <ParamField query="currency" type="string" optional={true}>
-    Currency code (e.g., "EUR", "USD")
+    Currency code (e.g., `EUR`, `USD`)
 </ParamField>
 
 <ParamField query="language" type="string" optional={true}>
-    Language code (e.g., "en_US", "de_DE")
+    Language code (e.g., `en_US`, `de_DE`)
 </ParamField>
 
 <ParamField query="domain" type="string" optional={true}>
-    Domain code (e.g., "com", "fr")
+    Domain code (e.g., `com`, `fr`)
 </ParamField>
 
 <ParamField query="manufacturer" type="list" optional={true}>
@@ -156,8 +156,12 @@ description: "Search Chrono24 for products"
     Manufacturing years
 </ParamField>
 
-<ParamField query="price" type="list" optional={true}>
-    Price ranges
+<ParamField query="price_from" type="number" optional={true}>
+    Minimum price
+</ParamField>
+
+<ParamField query="price_to" type="number" optional={true}>
+    Maximum price
 </ParamField>
 
 <ParamField query="specials" type="list" optional={true}>
