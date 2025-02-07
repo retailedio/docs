@@ -227,6 +227,22 @@ description: "Search Chrono24 for products"
                 </ResponseField>
             </Expandable>
         </ResponseField>
+        <ResponseField name="pagination" type="object">
+            <Expandable title="properties" defaultOpen={true}>
+                <ResponseField name="current" type="number">
+                    Current page number
+                </ResponseField>
+                <ResponseField name="next" type="number">
+                    Next page number
+                </ResponseField>
+                <ResponseField name="other_pages" type="array">
+                    List of other available page numbers
+                </ResponseField>
+                <ResponseField name="has_next_page" type="boolean">
+                    Indicates if there is a next page
+                </ResponseField>
+            </Expandable>
+        </ResponseField>
     </Expandable>
 </ResponseField>
 
