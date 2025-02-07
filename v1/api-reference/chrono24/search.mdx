@@ -179,6 +179,16 @@ description: "Search Chrono24 for products"
         <ResponseField name="url" type="string">
             Search URL on Chrono24
         </ResponseField>
+        <ResponseField name="stats" type="object">
+            <Expandable title="properties" defaultOpen={true}>
+                <ResponseField name="price_stats" type="object">
+                    Price statistics
+                </ResponseField>
+                <ResponseField name="total_results" type="number">
+                    Total number of results
+                </ResponseField>
+            </Expandable>
+        </ResponseField>
         <ResponseField name="results" type="array">
             <Expandable title="items" defaultOpen={true}>
                 <ResponseField name="id" type="string">
@@ -223,219 +233,244 @@ description: "Search Chrono24 for products"
 <ResponseExample>
 ```json Example Response
 {
-    "url": "https://www.chrono24.com/search/index.htm?currencyId=EUR&dosearch=true&maxAgeInDays=0&pageSize=60&redirectToSearchIndex=true&resultview=block&sortorder=0&stockInfo=InStock&SETLANG=en_US&SETCURR=EUR&goal_change_domain=1&manufacturerIds=221&yearRange=2020",
+    "url": "https://www.chrono24.com/search/index.htm?currencyId=EUR&dosearch=true&maxAgeInDays=0&pageSize=60&redirectToSearchIndex=true&resultview=block&sortorder=0&stockInfo=InStock&SETLANG=en_US&SETCURR=EUR&goal_change_domain=1&priceFrom=1000&priceTo=5000&manufacturerIds=221",
+    "stats": {
+        "price_stats": {
+            "lowest_price": 1979,
+            "median_price": 3900,
+            "average_price": 3791,
+            "highest_price": 4947
+        },
+        "total_results": 61
+    },
     "results": [
         {
-            "id": "32169027",
-            "url": "/rolex/rolex-datejust-36mm-fluted-bezel-stainless-steel-purple-diamond-roman-vi-and-ix-dial-jubilee--id32169027.htm",
-            "badge": "Promoted",
+            "id": "38204895",
+            "url": "https://www.chrono24.com/rolex/oyster-date--id38204895.htm",
+            "badge": null,
             "price": {
-                "amount": 16.948,
+                "amount": 2968,
+                "currency": "€"
+            },
+            "title": "Rolex Oysterdate Precision",
+            "images": [
+                "https://img.chrono24.com/images/uhren/wtnlq2llfzk4-qxddxlobxp4l1n5wktw2yaep-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/ke356z31f4ac-fv6gk5e04pb7cfivrht8ekhx-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/n3jnxtbjmdge-cszbhabriyz5kuvd6mexhbr7-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/trxkrddson53-c2u6e0vbsvnmbsuzvfrmfmdu-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/7gsqva7cxfvx-8s55comnowf8umdt9qv44yfk-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/qlb7hy59g88x-iihocxl8pvmvidvy406b4640-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/s049w6wbir5s-60n11lod1mtf56tx4ne38o33-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/trmtq2vkv9eb-abiphnfqon1w544e224tfth2-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/whqz7bezr9ya-l8mosb93z100bat48jzitid0-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/71ehzdukwpds-5v4emjf3ssjokih4blwfc227-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/sm4vbmbyp6s9-tp46z8wtkhqfduoz9ghxxr6y-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/20g1dq84iny7-pvujrgh5j9nila4e3j47jn1d-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/dikrva3887w9-mjrqwke54j181kkicxls33ns-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "+ €176 for shipping",
+            "subtitle": "Rolex Oysterdate Precision"
+        },
+        {
+            "id": "38332229",
+            "url": "https://www.chrono24.com/rolex/rolex-air-king-5500-34mm-good-condition-stahl-steel-diam1550--id38332229.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 3199,
+                "currency": "€"
+            },
+            "title": "Rolex Air King",
+            "images": [
+                "https://img.chrono24.com/images/uhren/38332229-3ca10atb4ncu6e8k4epm4gvf-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38332229-0t7u3emh41pgvx8rbfuiv373-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38332229-a29t0h5x2rbz2m8zhtppkht9-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38332229-rc7usaf1hbjc0188zxon7j8t-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38332229-ls37bllri18jkuq013wr4ptv-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38332229-9ykjkkwu9x34hnixmlsy7f32-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38332229-hlhuntmr23gcxd5ai3gdhr3u-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38332229-yy9n26e53qz4t82sljf72pbr-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38332229-wb6ij4rbj06j81kighlelqps-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38332229-ljb6pnro4qrkzlecq4nl8v53-Square_SIZE_.jpg"
+            ],
+            "location": "IT",
+            "shipping": "+ €132 for shipping",
+            "subtitle": "Rolex Air King"
+        },
+        {
+            "id": "36379999",
+            "url": "https://www.chrono24.com/rolex/rolex-air-king--id36379999.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 4779,
+                "currency": "€"
+            },
+            "title": "Rolex Air King",
+            "images": [
+                "https://img.chrono24.com/images/uhren/36379999-mxinxopzukawe5asy5lzg5nl-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36379999-ln0e1b70m2afdmm04yz28ylh-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36379999-c3jp18ga4a30qdy1sf3ar3c9-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36379999-kfzx3kwo945jmygfscx0smlm-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36379999-vkba06sa6ahv913f6jcap5ur-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36379999-c8nae5osurhkqdmbcsw4bxpd-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36379999-5vwklcifpg0owihutp752tit-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36379999-xow2vwkivuv3mn3lnr1vdz9j-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36379999-x4inotrkb3azwchs73h8ex0x-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "+ €177 for shipping",
+            "subtitle": "Rolex Air King"
+        },
+        {
+            "id": "36334770",
+            "url": "https://www.chrono24.com/rolex/rolex-15200-oyster-perpetual-date-1990--id36334770.htm",
+            "badge": null,
+            "price": {
+                "amount": 4630,
+                "currency": "€"
+            },
+            "title": "Rolex Oyster Perpetual Date",
+            "images": [
+                "https://img.chrono24.com/images/uhren/36334770-hjs5xn0qn6q8bxn66fybwumr-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36334770-dxcy2pg7cva5r24o4nnoxc92-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36334770-au37m5pgsa8z5dvyadqi0co8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36334770-trrkaco4ayyx30vq1rrggcgg-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36334770-vriyhw6szu4b5r937ogtwfvj-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36334770-gzbggvotaoyfyvfygx2c2ti8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36334770-qnseqouissg41v5mdw9k37kx-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36334770-z20ux5uz4ivf2ggf2hufqxsl-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36334770-57wdzfyx6o4m4q24egjcmidv-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36334770-xacieifat7ovrxmoon2mb5mf-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36334770-81t9hnx2uus8ubfpr1zs4u5p-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36334770-k2h9mkkdvtr84pq46yvcu0j0-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36334770-bahd7c4kt1hhcy50s9lmikwu-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36334770-daf4whozgody3hpn7snx3cu7-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36334770-xgy3sy9fmmag73u1mmeumjkh-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36334770-rsxw1xs7419xuvrqqzam4gln-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "+ €296 for shipping",
+            "subtitle": "Rolex Oyster Perpetual Date"
+        },
+        {
+            "id": "37851788",
+            "url": "https://www.chrono24.com/rolex/rolex-datejust-36-black-dial-lume-hands--id37851788.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 4650,
                 "currency": "€"
             },
             "title": "Rolex Datejust 36",
             "images": [
-                "https://img.chrono24.com/images/uhren/32169027-0akbk61wl9ulxxcw21u1fb22-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32169027-vpq4mx0ntx3tsep5qbd28pa9-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32169027-s9b42z61bca84p7a9moxlhpj-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32169027-e6g09ijgcvp5gvby49vil7ag-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32169027-vd61irb89duuse1o4u57a817-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32169027-y6us7qt4z680oiqm4429o3ja-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32169027-wkwi8rziel7vr2q3zorxcb7a-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32169027-q12jjavshmq820estppj4tud-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32169027-bml0ffn5llzxcy0yib2y5ny2-Square_SIZE_.jpg"
+                "https://img.chrono24.com/images/uhren/37851788-t9ygd24de0sbo64anuqhzbx8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37851788-8s12egcmpsophn871yfpo5s9-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37851788-79p6kx2s4p9yg52g5mh0q8rn-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37851788-1jenwhpe8erj6pihy4m2f525-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37851788-j8jevew17tqnhemy35ojh0e3-Square_SIZE_.jpg"
             ],
-            "location": "US",
-            "shipping": "Free shipping",
+            "location": "PL",
+            "shipping": "+ €85 for shipping",
             "subtitle": "Rolex Datejust 36"
         },
         {
-            "id": "34244352",
-            "url": "/rolex/rolex-datejust-31-new-2024-rhodium-roman-pave-6-dial-two-tone-rose-gold-fluted-bezel-jubilee--id34244352.htm",
+            "id": "36495392",
+            "url": "https://www.chrono24.com/rolex/rolex-lady-datejust--id36495392.htm",
             "badge": "Promoted",
             "price": {
-                "amount": 20.177,
+                "amount": 3556,
                 "currency": "€"
             },
-            "title": "Rolex Datejust 31",
+            "title": "Rolex Oyster Perpetual Lady Date",
             "images": [
-                "https://img.chrono24.com/images/uhren/34244352-4hzcmcn40t6ygtsjiqxkm7vv-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/34244352-sqcvqo840lbrurqws5t93m13-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/34244352-5ug7t9g0dyypm1flp2ldz816-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/34244352-kqlf5a6ng7notd954gr8xa59-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/34244352-ldhzn743wevog0tz18llzef6-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/34244352-lwqbhgjjwix1h4ct95u9mvew-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/34244352-5fq96iv4nsrtuyqs6ye25b5e-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/34244352-uqb667wnl0i5z49w2mxxg184-Square_SIZE_.jpg"
+                "https://img.chrono24.com/images/uhren/36495392-6lcmaxinzv1p61ziv8c2uprg-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36495392-qpkdu9hl00a289i0hrrke1wc-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36495392-zuyw6oy842xuf1pfl0c2qoas-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36495392-y4juxk14wldnzfqw3k17mmj7-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36495392-zls8s58b1nmusbctp9om6r2f-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36495392-2kegjf0lcbf1y2fr6ykwmek4-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36495392-3wtkx6bmkgzptc55y90s1ful-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36495392-j4ey2lipotnn1up1o14elp9c-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36495392-cpz7u5t8ikmj3twdx6hvvqpf-Square_SIZE_.jpg"
             ],
             "location": "US",
-            "shipping": "+ €290 for shipping",
-            "subtitle": "Rolex Datejust 31"
+            "shipping": "+ €594 for shipping",
+            "subtitle": "Rolex Oyster Perpetual Lady Date"
         },
         {
-            "id": "32048918",
-            "url": "/rolex/rolex-datejust-31-blue-roman-dial-unworn--id32048918.htm",
-            "badge": "Promoted",
+            "id": "38438797",
+            "url": "https://www.chrono24.com/rolex/rolex-lady-datejust--id38438797.htm",
+            "badge": "Popular",
             "price": {
-                "amount": 13.41,
+                "amount": 3884,
                 "currency": "€"
             },
-            "title": "Rolex Datejust 31",
+            "title": "Rolex Lady-Datejust",
             "images": [
-                "https://img.chrono24.com/images/uhren/32048918-9d8019bshjrc16h21l81l6co-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32048918-l18rfk2j6gwam182wcsf33q7-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32048918-ahkcjq0lnhfx1okbas3sozsv-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32048918-0gh02g2hlojlbo1kehz9ga2z-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32048918-vcba69ejh3auvzodzdnc32tn-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32048918-2aewi1cgxkhxz6n0vjh65o8m-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32048918-q10r24b4nri3dqru9tc14yji-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32048918-ihjgvz6n46idpvssuhh1ykee-Square_SIZE_.jpg"
+                "https://img.chrono24.com/images/uhren/38438797-dacy4qq6pw56bsdow5yjhxeb-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38438797-xxjryso5wuqk3jxjbu7o7ue1-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38438797-ftuo3imtu6wmj8leo48iykbb-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38438797-xva46ax6b4guhlftjrxwi6gs-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38438797-yqc0rjfrqz702lzfb2m8tkj3-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "+ €197 for shipping",
+            "subtitle": "Rolex Lady-Datejust"
+        },
+        {
+            "id": "37752531",
+            "url": "https://www.chrono24.com/rolex/rolex-lady-datejust-26mm-gold--steel-champagne-dial-top-condition--id37752531.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 3650,
+                "currency": "€"
+            },
+            "title": "Rolex Lady-Datejust",
+            "images": [
+                "https://img.chrono24.com/images/uhren/37752531-w8v2fdw559ko543ujcp3rs6h-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37752531-evd28a6i4opcr0eq371bilmt-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37752531-e351k2fnmd7gtyxr9yztj256-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37752531-lsszxchq1hpazw0i30hlb55l-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37752531-vujvzuwpjzrxmpinnklcgb5j-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37752531-ylxnhyd8o8iq8ijqzu7nslwt-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37752531-hizjjlzgnb9vjfwcd8fcspiz-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37752531-admwbdsq7fkkmpexkaaxz3pp-Square_SIZE_.jpg"
+            ],
+            "location": "GR",
+            "shipping": "+ €90 for shipping",
+            "subtitle": "Rolex Lady-Datejust"
+        },
+        {
+            "id": "38492429",
+            "url": "https://www.chrono24.com/rolex/rolex-ladies-datejust-6916-pink-mop-diamond-dial-ss-oyster-with-papers-26mm--id38492429.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 4333,
+                "currency": "€"
+            },
+            "title": "Rolex Lady-Datejust",
+            "images": [
+                "https://img.chrono24.com/images/uhren/38492429-occz0ijj60dg3zq6ee8rwms9-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38492429-zqq5a1c4oj90ut7c0vakode6-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38492429-ppjy53cli1a9f4w6pf04f21z-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38492429-f0d6mpa6g2twifykasvusjk4-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38492429-giqr8uu0e68tmr474qyy9dpn-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38492429-sk0rlp3m3b91sz1jmtwpgpg0-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38492429-po36o05b45ew94gdd2hqcjqo-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38492429-eqc14fdu8sww00tqzkhw9pjx-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38492429-ibqsw5ob945c597c2yisbck0-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38492429-0dez7ytveahiozb2ppvh7cso-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38492429-c204wdquclabmsgqe435m83y-Square_SIZE_.jpg"
             ],
             "location": "US",
             "shipping": "+ €177 for shipping",
-            "subtitle": "Rolex Datejust 31"
-        },
-        {
-            "id": "38461190",
-            "url": "/rolex/2004-fresh-service-box-no-date-two-line-14060m-submariner--id38461190.htm",
-            "badge": "Popular",
-            "price": {
-                "amount": 9.2,
-                "currency": "€"
-            },
-            "title": "Rolex Submariner (No Date)",
-            "images": [
-                "https://img.chrono24.com/images/uhren/gyuv29e06l3h-ba2gwlj72svm7ewvz7nazpuh-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/jzomc80rwepi-ek0bdhvxiqqs2g1jqks61ama-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/gxomuddboew3-eplvh8dhj1pscjrlq98omv9e-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/f41bxftcdzko-sjvxbm99h7u9itkch3hqr0qh-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/yufofvrkusao-0v5e9dlj7zymq3ci946iufha-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/n41g2ntstc69-hrlr77k7kd9xjzlxb1fhnc1i-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/vuknsvfxwf0e-gwhjg3b54lu7bef88q5peee3-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/9pu9sc7pte3d-bxiuyoxypl4ch1bvedw5nrpy-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/a98d6qzqsy4j-l5f6yvvq4415liixayeaih64-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/sb3mtibzq12w-kqut5xupu2lumfowk1buecxs-Square_SIZE_.jpg"
-            ],
-            "location": "US",
-            "shipping": "+ €592 for shipping",
-            "subtitle": "Rolex Submariner (No Date)"
-        },
-        {
-            "id": "37571134",
-            "url": "/rolex/submariner-date-16610-40mm-2024-rolex-service-card--service-box--id37571134.htm",
-            "badge": null,
-            "price": {
-                "amount": 10.554,
-                "currency": "€"
-            },
-            "title": "Rolex Submariner Date",
-            "images": [
-                "https://img.chrono24.com/images/uhren/3h63plwzgn6c-v8kbtgz7rh0y1og49dvq0cku-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/yf63fb4r6iw1-97v7xs1nkog08rwd6bd1ns0b-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/lnfqissni06h-n01gy1bo39oxb5sbrypeuty1-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/h1qy942ni44w-oeo7bde1s4v5lkhr35xx2oky-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/yxwl2p9pol3i-9gg3e0q87e4dvmxdda3su0zv-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/4fm4jw9ey9za-ls1wrh67s9puv6yxpsy43ugh-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/6t9f5hyubsa1-1lrrwq26bvq9hn54gtzgdhkh-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/br02dkqe1nbt-heytxaw23cap66a528aah3qq-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/np3ao4k09twj-bdv2bwp6nmhu4qs3sv2czn64-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/hp5q9fpmplpa-jfrmcvfiggn63g28psu3lp8e-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/8vjwm6kdk8rs-e6ljso25d0qk6r0volfidy1a-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/4pz6uqjwa7ej-juyj3riehse3h9er70raoozg-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/5irbfv6vdn14-rc9z9r18fb5tyrknfdmqpbs0-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/7hjz4tifyyi0-pijtkux0vssosf34tjvjlhrd-Square_SIZE_.jpg"
-            ],
-            "location": "US",
-            "shipping": "+ €224 for shipping",
-            "subtitle": "Rolex Submariner Date"
-        },
-        {
-            "id": "37841560",
-            "url": "/rolex/rolex-gmt-master-ii-40-black-dial-green-hand-ceramic-bezel-steel-watch-116710ln--id37841560.htm",
-            "badge": "Promoted",
-            "price": {
-                "amount": 13.149,
-                "currency": "€"
-            },
-            "title": "Rolex GMT-Master II",
-            "images": [
-                "https://img.chrono24.com/images/uhren/37841560-g62dpavvkol3q74bxtnrvph3-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37841560-o229kce7sxzavn3pc7c99a9l-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37841560-jqoonkopsz3qdf986nszjb51-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37841560-9d1vgwzi4h84vcal8eeg69pu-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37841560-wudidtjuw1qnc0e8qpfjdiot-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37841560-ir3e9hwclxiofcnaboxij43w-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37841560-retcdh06v5sd1zej9w7usp7s-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37841560-yrzb9k4s0j2fs9g6z4bnq4sr-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37841560-26sah5s63pfiaxo6oy82inmf-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37841560-vwruxq09wjzz4k4qy4se3elm-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37841560-jl90jgvqwdsuunodynhho59f-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37841560-fs8te3b7qdpckmdk2y9o652s-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37841560-y36yfk9vyqdp9ybo1iilidmr-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37841560-1vbf4s3e66bnc1frtq0gj26v-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37841560-caws2lsute797o6tj4gxk6mw-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37841560-hoe1f0dnwpv56l9kfyombg8f-Square_SIZE_.jpg"
-            ],
-            "location": "US",
-            "shipping": "+ €128 for shipping",
-            "subtitle": "Rolex GMT-Master II"
-        },
-        {
-            "id": "38396890",
-            "url": "/rolex/gmt-master-ii-root-beer-rose-gold-black--id38396890.htm",
-            "badge": "Popular",
-            "price": {
-                "amount": 21.905,
-                "currency": "€"
-            },
-            "title": "Rolex GMT-Master II",
-            "images": [
-                "https://img.chrono24.com/images/uhren/dd7xxkvbtzfl-c1jk8mlb5nccp2v20jn3fpec-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/nkkvqqdnnulc-d8y09u555q71y8wxjn1u9i13-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/y8j3ai2343xh-78ye4q8rfhyzgc8pqk2wvfk3-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/uvtcq8k6og9r-i4to22uwenhghbh4vyyqg5ud-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/xx7qf7mmuimk-arbct2dpik29mmeque11lrmy-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/aeryz8qqhncg-6335ucnlafmxbffnptpg16p7-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/lkko0p22xvt3-3ampzl0yaxlx7gmrdz5gef7j-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/czq7m95tigl1-k9j3ts7chub1xgc3hphh1ywt-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/r58l1vo6stdt-qduqfr89r7tu9uvpi9igqq8q-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/ei48uosd3qw8-b24gcvu4036vzfki6w6pcchb-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/hekklacffnoz-ebxcuycvh7tsns91w5fn4jnn-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/dl5l64ygslu2-g47t9daqyyhjdk0vvm0mh3o5-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/3xk9n9znynf1-xrkpqumcdkk8vufewmaqchyr-Square_SIZE_.jpg"
-            ],
-            "location": "US",
-            "shipping": "+ €117 for shipping",
-            "subtitle": "Rolex GMT-Master II"
-        },
-        {
-            "id": "38253151",
-            "url": "/rolex/datejust-41-gruen-fullset-ref126334--id38253151.htm",
-            "badge": "Popular",
-            "price": {
-                "amount": 12.999,
-                "currency": "€"
-            },
-            "title": "Rolex Datejust 41",
-            "images": [
-                "https://img.chrono24.com/images/uhren/0eslriverq5c-heucwoc8i1ir4mrwm9fugzz6-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/i65ghicffrm9-11ncaevvwgia6dhrdaruq6ag-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/l31pho3enoi4-sx7ifrt1fwczs0f08bbglxeq-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/dpjerqo7qg7h-v55t0u0km72kwz6mtiix1yt7-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/m8nmc863dzkd-xjmntk5z4ra00atjau52mg86-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/n82wiwy7xtsj-2kcjw5o5ghq9n9afqombt6nn-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/3njcjqomgv8u-bsgkc7v6lpxs6l5ksh749yt2-Square_SIZE_.jpg"
-            ],
-            "location": "DE",
-            "shipping": "+ €150 for shipping",
-            "subtitle": "Rolex Datejust 41"
+            "subtitle": "Rolex Lady-Datejust"
         },
         {
             "id": "37892664",
-            "url": "/rolex/rolex-oyster-date-precision-champagne-dial--id37892664.htm",
-            "badge": null,
+            "url": "https://www.chrono24.com/rolex/rolex-oyster-date-precision-champagne-dial--id37892664.htm",
+            "badge": "Popular",
             "price": {
-                "amount": 3.2,
+                "amount": 3200,
                 "currency": "€"
             },
             "title": "Rolex Oysterdate Precision",
@@ -456,209 +491,1293 @@ description: "Search Chrono24 for products"
             "subtitle": "Rolex Oysterdate Precision"
         },
         {
-            "id": "32448218",
-            "url": "/rolex/2022-oyster-perpetual-41mm-blue-124300--id32448218.htm",
-            "badge": "Popular",
-            "price": {
-                "amount": 10.923,
-                "currency": "€"
-            },
-            "title": "Rolex Oyster Perpetual 41",
-            "images": [
-                "https://img.chrono24.com/images/uhren/32448218-xcrztqvlz2vsvq7l0jq7bo7b-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32448218-mbcaiwg4ffjgyvd8txvri672-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32448218-8vsbty6ukwsp3v7wkyoegifi-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32448218-sougll0bur891qt3lu9th4hs-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32448218-wn6pqphe80e3y5z2byk88oez-Square_SIZE_.jpg"
-            ],
-            "location": "US",
-            "shipping": "+ €237 for shipping",
-            "subtitle": "Rolex Oyster Perpetual 41"
-        },
-        {
-            "id": "38394210",
-            "url": "/rolex/rolex-116520-cosmograph-daytona-with-white-dial--id38394210.htm",
+            "id": "38063583",
+            "url": "https://www.chrono24.com/rolex/rolex-oyster-perpetual-lady-date-18k-white-gold-stainless-steel-26mm--id38063583.htm",
             "badge": null,
             "price": {
-                "amount": 23.241,
+                "amount": 2244,
                 "currency": "€"
             },
-            "title": "Rolex Daytona",
+            "title": "Rolex Oyster Perpetual Lady Date",
             "images": [
-                "https://img.chrono24.com/images/uhren/38394210-zs1ybluabhjutu4gj5hbzsfb-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/38394210-p5zycz4ny47mzgjl4irltaga-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/38394210-y0la8u47jkrtpb32ehwrwmmu-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/38394210-93203v9vo8o87c6i06lu3yeu-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/38394210-l007zow8njk2cgy7dm8cgxti-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/38394210-dwn60ildmhib096co3gwwcq5-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/38394210-6uacd2sskkbay7mc6gqhak3a-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/38394210-yqkjseigbihfwr11rr0fvbsw-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/38394210-4ml536nq3ijm1ybl0rzp4xa8-Square_SIZE_.jpg"
+                "https://img.chrono24.com/images/uhren/38063583-9mtvhqikwjvihio30vsi23iz-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38063583-cfuq8gaadilbt35alw34h2vw-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38063583-nhzsz35cqhg1kd086bwz90sw-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38063583-qp1s5oniejekb72i881wjdjz-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38063583-nhf5wli7z318dezbbbc7ra2n-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38063583-7kn8isxunt7vuzlufclhw8wy-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38063583-ef79jbeeb7sf594gshrrflbg-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38063583-v1bjkjoqyxe9sa7q72a6ow9g-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38063583-njls4ajxdb5b735yxcwqpfo2-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38063583-rl26ub5xx81znt0u1jk1a9t1-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38063583-th1br1arj8l015mktz37wqd8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38063583-mzhcw2z0l6lf6oc6wmfkn8rg-Square_SIZE_.jpg"
             ],
             "location": "US",
             "shipping": "+ €117 for shipping",
-            "subtitle": "Rolex Daytona"
+            "subtitle": "Rolex Oyster Perpetual Lady Date"
         },
         {
-            "id": "32156582",
-            "url": "/rolex/rolex-rolex-278274-datejust-pink-diamond--dial-jubilee-bracelet-31mm--id32156582.htm",
+            "id": "37944731",
+            "url": "https://www.chrono24.com/rolex/oyster-date--id37944731.htm",
             "badge": "Promoted",
             "price": {
-                "amount": 18.996,
+                "amount": 3166,
                 "currency": "€"
             },
-            "title": "Rolex Datejust 31",
+            "title": "Rolex Oysterdate Precision",
             "images": [
-                "https://img.chrono24.com/images/uhren/32156582-01g72bzvpkxxcz4u1b8y6hee-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32156582-5kskcwvmeq71ckrbn2509g0n-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/32156582-628f974q5xi7n6ck9n3swjry-Square_SIZE_.jpg"
+                "https://img.chrono24.com/images/uhren/37944731-jzfwu48tu1wr7n4sd9euk558-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37944731-ftr75wzj5q02tsm37dpyi124-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37944731-0axbetef5ddsc566huhh463q-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37944731-ifio4dn6yv370txmn4wo2nwk-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37944731-tojdj0t72543naibzyf85s7n-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37944731-2v53xxconcagse38ny8prodo-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37944731-dwbc98789ssr5flxyfnqs5ov-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37944731-qrfpmue2027ej3v0uqy5p89a-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37944731-7045fzm41t8u3foomywyykms-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37944731-3nid9l3lwqy9rtce3lmsa13x-Square_SIZE_.jpg"
             ],
             "location": "US",
-            "shipping": "+ €237 for shipping",
-            "subtitle": "Rolex Datejust 31"
+            "shipping": "Excl. shipping",
+            "subtitle": "Rolex Oysterdate Precision"
         },
         {
-            "id": "38475405",
-            "url": "/rolex/in-stock-2024-datejust-41-blue-index-dial-126300-jubilee-bracelet--id38475405.htm",
+            "id": "37497688",
+            "url": "https://www.chrono24.com/rolex/rolex-cellini--id37497688.htm",
             "badge": "Popular",
             "price": {
-                "amount": 13.41,
+                "amount": 3500,
                 "currency": "€"
             },
-            "title": "Rolex Datejust 41",
+            "title": "Rolex Cellini",
             "images": [
-                "https://img.chrono24.com/images/uhren/8pgk92c3wizw-tpz6tremfy4fwam2zqeupev6-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/i3ruw6uzr17j-p7ru2oddv88m3y4pxi4hb1br-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/n19ett1z88l4-ukspkeon02j9hrsx051xxau0-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/n3z52k9gmb60-3c15ud2q3nz5uuutauq5pfjw-Square_SIZE_.jpg"
+                "https://img.chrono24.com/images/uhren/37497688-xx0r19mhntmjs1u44g6ym83x-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37497688-9q7r362acsi2qpow0eaqpcd1-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37497688-i5hmcysqkcgvnktkmd6b1x3s-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37497688-s2bufczf8px8t9iiwk315khf-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37497688-fvur3r84phfnj8ys3n2imruh-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37497688-tyaz6pwn76mj3qs7aeayvndd-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37497688-9m5a235elujitvh4ok64lvjk-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37497688-nz9eeq3fblrjt56ka567ybsz-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37497688-fff5dhk6lhk4zehdli2k3pvc-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37497688-dbmiufdr67qgt9x1q75dohl1-Square_SIZE_.jpg"
             ],
-            "location": "US",
-            "shipping": "+ €207 for shipping",
-            "subtitle": "Rolex Datejust 41"
+            "location": "IT",
+            "shipping": "+ €69 for shipping",
+            "subtitle": "Rolex Cellini"
         },
         {
-            "id": "38457276",
-            "url": "/rolex/2022-mint-rolex-sprite-jubilee-bracelet-green-black-bezel-gmt-master-ii--id38457276.htm",
-            "badge": "Popular",
-            "price": {
-                "amount": 18.995,
-                "currency": "€"
-            },
-            "title": "Rolex GMT-Master II",
-            "images": [
-                "https://img.chrono24.com/images/uhren/egxawrsp8yup-kljd80rar1sdivdn6295hs77-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/f5cgb9rd45l9-4h3afvo02pxkcb7hxt7c6m1f-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/1r1iokn9mmdl-4aqfxvaitum0y62r1y3vo0vb-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/tdim6g1lkqr7-b5rlw4eaxqmi4ce97u2zer96-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/7djumwg10838-w6amv3w6thsnj2gfosjmm3cn-Square_SIZE_.jpg"
-            ],
-            "location": "US",
-            "shipping": "+ €592 for shipping",
-            "subtitle": "Rolex GMT-Master II"
-        },
-        {
-            "id": "38372587",
-            "url": "/rolex/rolex-datejust-41--id38372587.htm",
+            "id": "36869444",
+            "url": "https://www.chrono24.com/rolex/rolex-air-king--id36869444.htm",
             "badge": null,
             "price": {
-                "amount": 16.028,
-                "currency": "€"
-            },
-            "title": "Rolex Datejust 41",
-            "images": [
-                "https://img.chrono24.com/images/uhren/38372587-ac5gha016bga0xso9vi6h33k-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/38372587-ef6sdedjsqln0lj8m118cb4i-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/38372587-j4j2t7qa6afidww04u6ym6pt-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/38372587-stj99bc3a8fxrvp59rg32q4t-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/38372587-t0v3yl6o7r29g50428183ud8-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/38372587-4aq3xu3wbxjoqe7lw7pvjeho-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/38372587-0oxvkmlpoqzrsbcldvkrpeo0-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/38372587-2g4yc9t9cdsivg2wocu0nol4-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/38372587-r3sad0bnmp41hg6wam578h6c-Square_SIZE_.jpg"
-            ],
-            "location": "US",
-            "shipping": "Free shipping",
-            "subtitle": "Rolex Datejust 41"
-        },
-        {
-            "id": "37265460",
-            "url": "/rolex/air-king--id37265460.htm",
-            "badge": "Popular",
-            "price": {
-                "amount": 5.105,
+                "amount": 3532,
                 "currency": "€"
             },
             "title": "Rolex Air King",
             "images": [
-                "https://img.chrono24.com/images/uhren/37265460-4et3d6vo5o1tnlbf6eiz9gww-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37265460-y08y11yvnwai3ysyh0rn6dgk-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37265460-s1asvcacz0t76xiegqwnq335-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37265460-h736s6ec9kzhkwyqvxw4lw8z-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37265460-8dzw2gpp0lzy5tr778chiwok-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37265460-9m9yssyzu99y6xcy38ozf840-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/37265460-hlknt0bfqg3914ke2u9i4mv1-Square_SIZE_.jpg"
-            ],
-            "location": "US",
-            "shipping": "+ €356 for shipping",
-            "subtitle": "Rolex Air King"
-        },
-        {
-            "id": "38396456",
-            "url": "/rolex/gmt-master-ii-batman--id38396456.htm",
-            "badge": "Popular",
-            "price": {
-                "amount": 17.215,
-                "currency": "€"
-            },
-            "title": "Rolex GMT-Master II",
-            "images": [
-                "https://img.chrono24.com/images/uhren/4zlswdu12s7r-8d0a0znj71s5ys8hc9aynz71-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/vct6vj9gpv8m-6pnm2pabdp6p8ato3fmu2k26-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/4q4deih3wvp9-f5d3fdksmsvl066jyemukngz-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/pvx4gy7chwko-mb9n6e9xpo26rmjz4h21pzfc-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/g7ym2aczrw0q-5m8lciewb5bo61pc8szps2bh-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/ng1jvvb2ey39-c22yy45e0bdvttjx7l0f1pty-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/cosksd4uf720-u4zrl41zpipvzu1e80ogacoy-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/kp4mo1as3hx9-405tvlnypzvip9mcdyozj2j9-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/4yi3binhsxuw-4sd1hmcvzolydimajl76yxmo-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/ytwwb53ykr7q-zsmdgnmiktt4rym1a503o3zi-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/0gh4xuu1zv33-98k2830hyt4frnzhj5j2jo05-Square_SIZE_.jpg"
+                "https://img.chrono24.com/images/uhren/36869444-xoa0jt99qplkso8h5wpoj1je-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36869444-fnkkdkgeae06rldz16h6uloz-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36869444-jzxve9t827xyyw8copebml54-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36869444-70vyd1p9101g4rqdiahnw8zv-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36869444-61kgk5tpu10oessczk0ifzbk-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36869444-vxcbkiwktigiq9jet734a8kp-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36869444-3fpciiofio08227flddnq2ul-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36869444-v3vnf8sgwv4vhzxyo0s8pwud-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36869444-nwrqzetss3jdrezgjsoaikg3-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36869444-wxsu77a836h5e821tf5hn7gr-Square_SIZE_.jpg"
             ],
             "location": "US",
             "shipping": "+ €117 for shipping",
-            "subtitle": "Rolex GMT-Master II"
+            "subtitle": "Rolex Air King"
         },
         {
-            "id": "29957925",
-            "url": "/rolex/rolex-oyster-perpetual-new-2024-december-126000-candy-pink-steel--id29957925.htm",
-            "badge": "Promoted",
+            "id": "37356502",
+            "url": "https://www.chrono24.com/rolex/datejust-ladies-69173-champagne-dial-18k-yellow-gold-stainless-steel--id37356502.htm",
+            "badge": null,
             "price": {
-                "amount": 14.01,
+                "amount": 4506,
                 "currency": "€"
             },
-            "title": "Rolex Oyster Perpetual 36",
+            "title": "Rolex Lady-Datejust",
             "images": [
-                "https://img.chrono24.com/images/uhren/29957925-iznm2wwdtp8n0z3nel95kkg4-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/29957925-fpjt5wvgvo31c3gotj0v5i1j-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/29957925-es4xwygm5g6gkzlmgad7j7t6-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/29957925-s7qjmrk4kvygqch2ifi8dr7f-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/29957925-1k65loms4k8dddc6rckuyyqo-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/29957925-oyp7fnvbrdtbqcei2vfitkvc-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/29957925-956smqvra6kt4tj2lsgw6rlk-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/29957925-sfmc2u9wstcretrcmx59jgo2-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/29957925-4lmht3lwariu3tcdlsyt8zai-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/29957925-j9ddm4my3cfblpmhwnworvk5-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/29957925-ezah00zusau4ykmanq9cdbci-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/29957925-33pydda9w1v5u1sj3erpon1r-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/29957925-zkvnlve3seent88sqp5rhqo9-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/29957925-mz03r633vebuvfn0i8hhcolb-Square_SIZE_.jpg",
-                "https://img.chrono24.com/images/uhren/29957925-1fc9n6022pu3h87552lnl572-Square_SIZE_.jpg"
+                "https://img.chrono24.com/images/uhren/37356502-ztio3jfwh7xu5m0hr24v55we-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37356502-qa3spn6dfhk7dfhhyr7vfm7i-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37356502-tfw7jq56xefolgydnjxhk8ow-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37356502-t940w9ppgpdu10za4tmr07ut-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37356502-n371o8ur58zr2gp7z3d664c4-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37356502-2xeusjo0kjwbizi4xgkolhzs-Square_SIZE_.jpg"
             ],
             "location": "US",
-            "shipping": "+ €296 for shipping",
-            "subtitle": "Rolex Oyster Perpetual 36"
+            "shipping": "+ €117 for shipping",
+            "subtitle": "Rolex Lady-Datejust"
         },
-    ]
+        {
+            "id": "37199855",
+            "url": "https://www.chrono24.com/rolex/date-14k-yellow-goldsteel-white-dial-ladies-26mm-vintage-watch-6917--id37199855.htm",
+            "badge": null,
+            "price": {
+                "amount": 4096,
+                "currency": "€"
+            },
+            "title": "Rolex Oyster Perpetual Lady Date",
+            "images": [
+                "https://img.chrono24.com/images/uhren/37199855-l3z9femjmni2fjwgm17kthtf-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37199855-2u5frmcoxscpeml26rhx1aq2-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37199855-z7yhxbmtsg7m27gf10hh93cn-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37199855-unw38ttua3n1u1u6yok0h99j-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37199855-l5l0v4akor27x653uocod27q-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37199855-2g8hedvx5wum124ypn33xt5n-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37199855-wsbiztevf37oxm38q9ff565z-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37199855-4uxwgacknrjd76iyfp32s3he-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37199855-cal7g9e1tbd7clrhhuhj5s9p-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37199855-g7ypohfr5ujdyb1um679y228-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37199855-ojhyuqiuges3ebttbk2ne8ue-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37199855-b04s36yd01p1z01xgrvfucht-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "+ €237 for shipping",
+            "subtitle": "Rolex Oyster Perpetual Lady Date"
+        },
+        {
+            "id": "36663202",
+            "url": "https://www.chrono24.com/rolex/rolex-datejust-36-16030-service-1024--id36663202.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 4499,
+                "currency": "€"
+            },
+            "title": "Rolex Datejust 36",
+            "images": [
+                "https://img.chrono24.com/images/uhren/36663202-2016cl1jr8mllw9ny957391g-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36663202-8gbjh5tp8qu97yaghutge0xo-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36663202-furo6k8erxn3f6qgzff81sgm-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36663202-4hzvldq5oh46llnzoq7trrhu-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36663202-qo1r0pxulaijr4hktwi00i8l-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36663202-kph0hyyv2yxd1jnaqkvy7tr1-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36663202-5hqewogdc6rpgcv63d2wgbrx-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36663202-9p9rtv33qggesbslr8v2l14w-Square_SIZE_.jpg"
+            ],
+            "location": "DE",
+            "shipping": "+ €99 for shipping",
+            "subtitle": "Rolex Datejust 36"
+        },
+        {
+            "id": "31810796",
+            "url": "https://www.chrono24.com/rolex/rolex-air-king-salmon-dial-engine-turned-bezel-mint--id31810796.htm",
+            "badge": "Promoted",
+            "price": {
+                "amount": 4607,
+                "currency": "€"
+            },
+            "title": "Rolex Air King",
+            "images": [
+                "https://img.chrono24.com/images/uhren/31810796-alzjapc1zjbi06ftnxizea5d-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/31810796-gt3u2lq8us76iadx9ucnkzkl-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/31810796-jc9nryxvh7wh4vg1ab59r0f6-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/31810796-a8jfezl6i8hcbay8tiu31fyf-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/31810796-oaqxkfo5vpmqvph8ejtvqbk7-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/31810796-6uqyttnh8d1w1v5r2zomwiug-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/31810796-oz7yeuz07y6j3cmq94s9cl3o-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "+ €177 for shipping",
+            "subtitle": "Rolex Air King"
+        },
+        {
+            "id": "38251790",
+            "url": "https://www.chrono24.com/rolex/lady-datejust-two-tone--id38251790.htm",
+            "badge": null,
+            "price": {
+                "amount": 3450,
+                "currency": "€"
+            },
+            "title": "Rolex Lady-Datejust",
+            "images": [
+                "https://img.chrono24.com/images/uhren/727udl7e8ub7-8oxgm1fk4sjv6mriuc4evjlx-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/3v0e8iphj95m-ufo6ylc9r96whrp0p116fgj7-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/6c46vrxhb6kw-wjbxune7qzriurv3533mozy1-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/qf5ajrlq1b97-akhfzms6b2hosc7pe2vywxeg-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/2gzj9yn8b3zt-vtnbqb8jlwjsorxgqucbyttp-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/z3pxol08wpiy-2n8pnj4kwxtcqvk5sxpxmlr7-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/ttcdu5nhn0ri-emvzysrjksxzavw05enk5ag1-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/4z2m6gbe66cy-sdkxrn8p4ecvghgnq2148sf8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/a0gin2hsdiog-6siwrqe1q77wpg724gbydr1i-Square_SIZE_.jpg"
+            ],
+            "location": "GR",
+            "shipping": "+ €49 for shipping",
+            "subtitle": "Rolex Lady-Datejust"
+        },
+        {
+            "id": "36670156",
+            "url": "https://www.chrono24.com/rolex/rolex-1978-date-1500-silver-stick-ss-oyster-no-papers-34mm--id36670156.htm",
+            "badge": null,
+            "price": {
+                "amount": 4096,
+                "currency": "€"
+            },
+            "title": "Rolex Oyster Perpetual Date",
+            "images": [
+                "https://img.chrono24.com/images/uhren/36670156-31666xj2evo86ttr4sb5k8wd-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36670156-dlg8jph8p4ocgejlh2t61nz8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36670156-3ki2jxpfvfjjguhlo3qosda9-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36670156-6sqpf1oilyc9kyjzasiesq8b-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36670156-15xduaj5fubzulu72ngdacqt-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36670156-oq1922643i31lg4o9gecpevx-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36670156-4j1fc4csr5xa8p0rr2fz7qom-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36670156-o84tism7di5bi6pnldr4apac-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36670156-2k8fky9gpk6byynpsrhh4z6q-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36670156-q3pq8z57g48mwvxstn51izb7-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36670156-l0heto0yoso8nu3fnwwyt30g-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "+ €177 for shipping",
+            "subtitle": "Rolex Oyster Perpetual Date"
+        },
+        {
+            "id": "37845807",
+            "url": "https://www.chrono24.com/rolex/rolex-oysterdate-precision-reference-6694-vintage-1960s-manual-wind-silver-dial-34mm-case--id37845807.htm",
+            "badge": null,
+            "price": {
+                "amount": 3323,
+                "currency": "€"
+            },
+            "title": "Rolex Oysterdate Precision",
+            "images": [
+                "https://img.chrono24.com/images/uhren/37845807-zlv5kdq0dd9p5s4cwq0yx3uo-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37845807-2a15zycrgguwbxjmb92t835j-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37845807-ekd1w61ao762utpkz7nf5w9p-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37845807-ynx1f3n5aywt9kuks430evyw-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37845807-ownh5rgxngx666kn6p2fuoia-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "+ €117 for shipping",
+            "subtitle": "Rolex Oysterdate Precision"
+        },
+        {
+            "id": "37723321",
+            "url": "https://www.chrono24.com/rolex/rolex-lady-datejust-6916-lady-two-tone-18k-gold-automatic-26mm--id37723321.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 3194,
+                "currency": "€"
+            },
+            "title": "Rolex Lady-Datejust",
+            "images": [
+                "https://img.chrono24.com/images/uhren/37723321-6bdxl8lze2uisn95mklu200v-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37723321-x0khduw4xhzvll8t2kj25eyg-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37723321-cnbz8cmrzqher9utgkhszfn4-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37723321-49blew8hhnhjo6irp1sbdn1a-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37723321-k30xh233opqpp0vr2xgy00uc-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37723321-j786690p75baa6h16eic8bgq-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37723321-1kluqsg876uvgpr61jywy4la-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37723321-47vmr5hm3zt1x5c6cf79gz61-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37723321-kt2h9xgx6u7axf75skc7yqdn-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37723321-dumbeqemdlyz5cn5yzx9xizl-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37723321-imrua76fuekbimmz4y7bzr0g-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37723321-kgjd9iki1exs0pvby08583z4-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "+ €117 for shipping",
+            "subtitle": "Rolex Lady-Datejust"
+        },
+        {
+            "id": "38376129",
+            "url": "https://www.chrono24.com/rolex/oyster-date-precision-stainless-steel--id38376129.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 2600,
+                "currency": "€"
+            },
+            "title": "Rolex Oysterdate Precision",
+            "images": [
+                "https://img.chrono24.com/images/uhren/8pfyw65le7sw-zo48r4dngqvmi3j029ha4zrh-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/dsy8q9gx3c09-m2yfpzjcfta09l77hsulhg7e-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/wbaecisp33fc-2tchdc1jv4m7q28szpdqyzey-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/bymiqgyh9blx-4n8edik1ezym2et2p6vinmm8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/rbx3ewkdkh69-vgfjqcs95sgb52un4udjyqpz-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/nfu8c530574c-9ik2gehc2m3ajdy7z44a0gir-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/b2mqdtxun7a2-glyrw6zrscaphlfa2d6vt4po-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/0vejciqeuzpd-0dmx9m3z1k0b8ubb01dhhu7o-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/o9zp35ur8wsq-wb0536jl0uaex916vo4wg05k-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/wgkpihxr7j2d-7gv7162jbft5uzc0gaqw2q1f-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/71tsxsfebxzb-wrmbl6x5sr8x4ltojdlc2bix-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/7vfvp9ns5rbu-whvh7kevvjwb4wcpf395hq8h-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/3c4wg45dsnxl-q0zfev6b2fl4tbnr70mkzudr-Square_SIZE_.jpg"
+            ],
+            "location": "ES",
+            "shipping": "+ €80 for shipping",
+            "subtitle": "Rolex Oysterdate Precision"
+        },
+        {
+            "id": "36956009",
+            "url": "https://www.chrono24.com/rolex/oyster-precision--id36956009.htm",
+            "badge": "Promoted",
+            "price": {
+                "amount": 1979,
+                "currency": "€"
+            },
+            "title": "Rolex Oysterdate Precision",
+            "images": [
+                "https://img.chrono24.com/images/uhren/36956009-jfju8jke9d00w6pcon531p55-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/d7p6hcl8twpr-kjiexq8np16rezspsseu42j3-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36956009-iwbne76pszo2151yyl4qq1po-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/v9b2sgv60hxx-p7llx0x448psa95pru987ec7-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/rv47ztqgppn0-22j7q25cd7hx9mh9dt6f8yg3-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/0npbcddt866k-gxt4eevdbtbnbl60qs1ge8vw-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/ix5u8uouh65y-f63tjl5k0ngkx2jfkefbh8od-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/nwz7y0iuzaxd-r8gfjpf5e9bkt7mdstg0j16a-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/me7ntavxo940-u0p9wm4mtx7za7icalu45nfa-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/thon1n0uwahu-ets4n9gz0d6s3mse9hpn2gga-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/5gl7v1hsjybe-tie1ytnywxtenqyif8ope6u4-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/0rsoz76qevmy-5q7za8f2dtj6mjc55hkfrvtp-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "Excl. shipping",
+            "subtitle": "Rolex Oysterdate Precision"
+        },
+        {
+            "id": "37766124",
+            "url": "https://www.chrono24.com/rolex/rolex-datejust-36-menta-dial--original-dial--id37766124.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 4700,
+                "currency": "€"
+            },
+            "title": "Rolex Datejust 36",
+            "images": [
+                "https://img.chrono24.com/images/uhren/37766124-0vemcdbgl4bmkpfasf3czwfl-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37766124-8jrp7f0fxgjc0ubxto56xvvq-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37766124-6tt01b58xj2awjhqregfdsg1-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37766124-m5td74s48hliz1fb47a307s8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37766124-8c2jqknj0ai46xin3x94lu1j-Square_SIZE_.jpg"
+            ],
+            "location": "IT",
+            "shipping": "+ €100 for shipping",
+            "subtitle": "Rolex Datejust 36"
+        },
+        {
+            "id": "38370764",
+            "url": "https://www.chrono24.com/rolex/rolex-datejust-36--id38370764.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 4900,
+                "currency": "€"
+            },
+            "title": "Rolex Datejust 36",
+            "images": [
+                "https://img.chrono24.com/images/uhren/38370764-gagpjbhxlvv2rrkfpc9xadqj-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38370764-djav0xo87l3d0rqf15yc0uqu-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38370764-sv7uhcfm6m0yakaxq0xytpfq-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38370764-pnla2nm7mw7whi6ownmb1kc1-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38370764-kzgx7cdflv2by7ipk3c7t32v-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38370764-8cihws5kh6bljsxtj0rlganh-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38370764-c0jl1pyigpd9ji7d7cgo6lal-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38370764-d27otfekb0efrhyi91bhe98u-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38370764-00qpgu2qam3wog61mqr1tusq-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38370764-eu2tysts12rhk1c8t99wvjh8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38370764-08hrf9s3i5t1h4c8lrknju6l-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38370764-f0f5ap7htairxbsc4s8t5p23-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38370764-gu1p7n0c3a5p0by7tyi9z3gb-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38370764-dxuh4vf2433o7uxx3n7ui069-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38370764-0z5cvf13gzmy1g0pyasqwo2r-Square_SIZE_.jpg"
+            ],
+            "location": "DE",
+            "shipping": "+ €49 for shipping",
+            "subtitle": "Rolex Datejust 36"
+        },
+        {
+            "id": "36923413",
+            "url": "https://www.chrono24.com/rolex/rolex-air-king--id36923413.htm",
+            "badge": null,
+            "price": {
+                "amount": 4624,
+                "currency": "€"
+            },
+            "title": "Rolex Air King",
+            "images": [
+                "https://img.chrono24.com/images/uhren/36923413-epuskhk99e2sqnvdzughcdj2-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36923413-sbliej5l9k3uq9mx493dwuqi-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36923413-vtwedsi4rew7xaud9nnf6ai5-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36923413-sfz1y43gx580eh7q6bccklui-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36923413-hx7ihpfldpubc4062j3n9yl1-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36923413-399od9gngqzsrtqer334u3xf-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "+ €117 for shipping",
+            "subtitle": "Rolex Air King"
+        },
+        {
+            "id": "34840258",
+            "url": "https://www.chrono24.com/rolex/rolex-datejust-1601-36mm-blu-dial-very-good-condition-stahl-steel--diam1384--id34840258.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 4199,
+                "currency": "€"
+            },
+            "title": "Rolex Datejust 36",
+            "images": [
+                "https://img.chrono24.com/images/uhren/34840258-hfhh90evepde8ghkatmsg1ym-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/34840258-0vjvdd90b46jke3kb0e9bo3u-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/34840258-wdbwu45fqxtp779bse1elmij-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/34840258-gw6nc6wf08snnzjfhuix55gz-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/34840258-eue8paz3v6pd5bmdogmjgygt-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/34840258-flm8c5id851tjrukyrq4f4o7-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/34840258-dgjawxi86cpjn2a80j2oggz8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/34840258-bpmxwvurp8ull6fadv3jrxm0-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/34840258-fbh9hciaee9enxioqovyxg5n-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/34840258-106jeoga50d9rkdhl025z4qg-Square_SIZE_.jpg"
+            ],
+            "location": "IT",
+            "shipping": "+ €132 for shipping",
+            "subtitle": "Rolex Datejust 36"
+        },
+        {
+            "id": "38542223",
+            "url": "https://www.chrono24.com/rolex/lady-datejust--id38542223.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 4800,
+                "currency": "€"
+            },
+            "title": "Rolex Lady-Datejust",
+            "images": [
+                "https://img.chrono24.com/images/uhren/b658fex6b87p-r28hdf06dv6j3alkvegwv2lu-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/7boakr1guku5-jac9ruzwt2mu9rqipw46651g-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/4xz7bbxiif68-7qbmwhfax24zclvmlslcd38j-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/olfe9h7pq2t9-mzxtbkrl181iavhhqbh5px5k-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/cpfdsts5le5p-jlxrpmnn9cgay0ynudo8rpdy-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/gk41f99bb473-x6h2u6eogdds7a4hjmrh1gd2-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/k7mw7ieqpvpe-272lxc3l8jewh3v7l9q9o7ap-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/dts9ohwxpllh-tyhe4c2r2hk3a96xhzt8hgfb-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/r7zj7jy3tkou-lwek86q1to2whsiokjoyzevj-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/2j2mfba2vu0y-x3k1tdyn4o5ma9hnr0inpzaj-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/zt4367vtuidi-ztgaib0jphtpcx6wpqy7i0bs-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/r6tzudw990a9-jw95lvs8ok9t9w1d59ujvoj6-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/lc5vt39492wi-tzls5gw04rdbjrqv6x7crund-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/uwkj9x82n7bu-t6hqv20a0y5u8b9rff9vjr4g-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/8qnjkewiodt2-kiwui1xqxx1zdclg921yw6sr-Square_SIZE_.jpg"
+            ],
+            "location": "FR",
+            "shipping": "+ €99 for shipping",
+            "subtitle": "Rolex Lady-Datejust"
+        },
+        {
+            "id": "35174567",
+            "url": "https://www.chrono24.com/rolex/rolex-lady-date-26mm-silver-index-dial-smooth-bezel-jubilee-band-watch-with-rolex-box--id35174567.htm",
+            "badge": "Promoted",
+            "price": {
+                "amount": 4333,
+                "currency": "€"
+            },
+            "title": "Rolex Oyster Perpetual Lady Date",
+            "images": [
+                "https://img.chrono24.com/images/uhren/35174567-5h1uy55jksygrh2nwoe5cvjf-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35174567-853mo95eyoyofv2npgukhbox-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35174567-ias7qkqzkctk9p66vkri6do8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35174567-30y44rxu8kexny920lny9hde-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35174567-fr1gue8pkhp6o63pm8qceiy2-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35174567-zr8ow4ehtqt3vlzs5idi46jg-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35174567-r72da1qsatdw7801cemmthvf-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35174567-8n3b8iw5kj5fifw79ajhluqi-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35174567-u99rl7ddeks21hy7mu93cnyg-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35174567-7bfqgdvksfsstjviylyyftji-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35174567-5fzam3id8z9v4lr4ercumrf5-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "+ €237 for shipping",
+            "subtitle": "Rolex Oyster Perpetual Lady Date"
+        },
+        {
+            "id": null,
+            "url": null,
+            "badge": null,
+            "price": {
+                "amount": null,
+                "currency": null
+            },
+            "title": null,
+            "images": [],
+            "location": null,
+            "shipping": null,
+            "subtitle": null
+        },
+        {
+            "id": "38169592",
+            "url": "https://www.chrono24.com/rolex/rolex-lady-datejust-26mm---argentee-dial---ref-6916--id38169592.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 2500,
+                "currency": "€"
+            },
+            "title": "Rolex Oyster Perpetual Lady Date",
+            "images": [
+                "https://img.chrono24.com/images/uhren/38169592-29eeepuedyk5ekdx6l7nr9ok-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38169592-pnsj24d1b0wgva2wusmnvsi3-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38169592-fxrzho3svhl4dysa7mry3g5g-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38169592-e34xeb3qg938i3lgsyjucfnq-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38169592-sr94upl08pve2pwzwf5jgwdq-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38169592-ix4g9tj72yms561kkcw12hxa-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38169592-tx5t9fbf2w3z5kaiy3zjlxml-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38169592-64247v5y1n0gvpr4sgpye2kf-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38169592-04ts1wtwktcyo9k1jxcur753-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38169592-kv91dupxg8qv58lgoocdja7b-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38169592-pjdzd580d0hm16rj1wr4u2tk-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38169592-2uu7evhjs2svlyfiju8tepay-Square_SIZE_.jpg"
+            ],
+            "location": "IT",
+            "shipping": "+ €150 for shipping",
+            "subtitle": "Rolex Oyster Perpetual Lady Date"
+        },
+        {
+            "id": "35646398",
+            "url": "https://www.chrono24.com/rolex/rolex-oyster-perpetual-date--id35646398.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 4000,
+                "currency": "€"
+            },
+            "title": "Rolex Oyster Perpetual Date",
+            "images": [
+                "https://img.chrono24.com/images/uhren/35646398-gl6hc4n4fqm26t0f639hyc1z-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35646398-nujd68wo4c9fkowa170gahtc-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35646398-4hc5uv8z2495put6un87tize-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35646398-vl7vwlay70mtstfpcononxv7-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35646398-9ovay67jgjhzekv8q7i18um1-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35646398-xkw04m8vjpxj99rvgwjb3vb6-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35646398-giolzqixc56jxuqzcznqashf-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35646398-113ibasb4w1sezy0g88tkuus-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35646398-g9alxe1wgj5r671421e30txj-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35646398-08i6h4tejf3i8qq6en3jmnma-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35646398-6a7dk6xdal3cwl5qd21br4bk-Square_SIZE_.jpg"
+            ],
+            "location": "ES",
+            "shipping": "+ €130 for shipping",
+            "subtitle": "Rolex Oyster Perpetual Date"
+        },
+        {
+            "id": "37325933",
+            "url": "https://www.chrono24.com/rolex/rolex-oyster-perpetual-date-two-tone-18k-gold-1505-automatic-34mm--id37325933.htm",
+            "badge": null,
+            "price": {
+                "amount": 4500,
+                "currency": "€"
+            },
+            "title": "Rolex Oyster Perpetual Date",
+            "images": [
+                "https://img.chrono24.com/images/uhren/37325933-wxbzxshceqw1a4832kqkdo53-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37325933-46zpixri0yvpcnqk2llpntw5-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37325933-l6qnx9fwjlufuf00tz8tn2it-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37325933-94hd6bvqocyxa4tarwa97v45-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37325933-f8ul9n307o9f8a4udht7wp01-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37325933-6hf9wutypqz8prnudil1x9ul-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37325933-hsp97254yubn3or3n6ifdwal-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37325933-w8fpdi3pwcifmjr06aqhage2-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37325933-lwnmzyvf8xe60yvzjjt09ka5-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37325933-aa59lfrt4mtt2zr7wa1f65p4-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37325933-1hwbxiayvkt817nybtfqldbc-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37325933-ksydcb1qtp9e6ofw0p2twhzn-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "+ €117 for shipping",
+            "subtitle": "Rolex Oyster Perpetual Date"
+        },
+        {
+            "id": "35039453",
+            "url": "https://www.chrono24.com/rolex/yacht-master--id35039453.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 4364,
+                "currency": "€"
+            },
+            "title": "Rolex Yacht-Master",
+            "images": [
+                "https://img.chrono24.com/images/uhren/35039453-qtre370a2gel8y610cbxh2hs-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35039453-8bsqjieohz1lcnxtc09vi5a3-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35039453-tc5e0mwxb3yttlfeh8v5zsn6-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35039453-r7o7ma9bx01k6px61l9dwpkw-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35039453-tplk7mlhinevqx6dgz131ccq-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35039453-edcc9j0k4pmz3zl7c0w8qhwi-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35039453-hoes298pm1pukzyfvxc7mqvp-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35039453-w3ig2xy7etgshg2xgzx6e1b4-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35039453-qx7hm255cp18u0npnfmpyoi8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35039453-wjns9s6xphjx1u67che22fly-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35039453-jj6g130n4zzoq77ydlfn2s26-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35039453-yv79akaf8mcipj9rk60jhplk-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35039453-3mbhvkytkl4r3hy87wqrelkc-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35039453-2szix7q9776sn7h0u9eifdyw-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35039453-0rd0aheyrtss2vax2typuj9a-Square_SIZE_.jpg"
+            ],
+            "location": "ES",
+            "shipping": "+ €50 for shipping",
+            "subtitle": "Rolex Yacht-Master"
+        },
+        {
+            "id": "37459207",
+            "url": "https://www.chrono24.com/rolex/rolex-oyster-date--id37459207.htm",
+            "badge": null,
+            "price": {
+                "amount": 3490,
+                "currency": "€"
+            },
+            "title": "Rolex Oysterdate Precision",
+            "images": [
+                "https://img.chrono24.com/images/uhren/37459207-u240cotzdouf1i8ii7m4zm8o-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37459207-630upvqzwmnr6ofa4yapj1un-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37459207-0qff82fcuceg4vrv17pydn8i-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37459207-hy2pocpel7onkp160sg3p2l8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37459207-djrzsvifc4ciuqayeehbp88g-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37459207-o6k264ocs9dg3zpfctwop0nv-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37459207-6o9320931pzbinyotu6e5zi7-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37459207-gqbvvd9x0pgq5ecck7tzoykz-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37459207-2kwh7hmvq90ood6g0sr1b2ed-Square_SIZE_.jpg"
+            ],
+            "location": "FR",
+            "shipping": "Free shipping",
+            "subtitle": "Rolex Oysterdate Precision"
+        },
+        {
+            "id": "37443914",
+            "url": "https://www.chrono24.com/rolex/oyster-perpetual-lady-date--id37443914.htm",
+            "badge": "Promoted",
+            "price": {
+                "amount": 4947,
+                "currency": "€"
+            },
+            "title": "Rolex Oyster Perpetual Lady Date",
+            "images": [
+                "https://img.chrono24.com/images/uhren/37443914-m0xqehprvu2emwhm2hlj87jj-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37443914-bn99yvn0h3iwwg4olf42ffkb-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37443914-7flgossznwy6m63hn7rzf24e-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37443914-uczwjzot3o1e92acl06wvtkk-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37443914-veedobq095jb8o2q0u9nnuzl-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37443914-nhnopmr3w7s4tirek6z2ld9v-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37443914-0uze4sfrwrn7kytwxjeczgdu-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "Excl. shipping",
+            "subtitle": "Rolex Oyster Perpetual Lady Date"
+        },
+        {
+            "id": "38502818",
+            "url": "https://www.chrono24.com/rolex/rolex-datejust-36-ref-1601-silver-dial-ca-1970-leather-strap--id38502818.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 3500,
+                "currency": "€"
+            },
+            "title": "Rolex Datejust 36",
+            "images": [
+                "https://img.chrono24.com/images/uhren/38502818-e4s5a77mclv2fpi1uhptoyf7-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38502818-phzaa1fgcyttjf6il3vsvl9y-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38502818-chi4ksrk8431eck9ofwcmf49-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38502818-1oziksucsqxbe6w540xkgpub-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38502818-z0i8m7eczy2kmbaz871vjkna-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38502818-9uyoho0m56ckb3915424zhoo-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38502818-rnl9euon0qaewssdtzjvhzwx-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38502818-ymdlcsxgids9yw2g6nwf6rwt-Square_SIZE_.jpg"
+            ],
+            "location": "DE",
+            "shipping": "+ €119 for shipping",
+            "subtitle": "Rolex Datejust 36"
+        },
+        {
+            "id": "38418393",
+            "url": "https://www.chrono24.com/rolex/pocket-watch-cellini-tasca-pocket-watch--id38418393.htm",
+            "badge": null,
+            "price": {
+                "amount": 3850,
+                "currency": "€"
+            },
+            "title": "Rolex Cellini",
+            "images": [
+                "https://img.chrono24.com/images/uhren/38418393-2qixlslenl8883m3af6fnr43-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38418393-pzlzdbbj4w5cgssnpc5m18d6-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38418393-xbok6imebw1jt8eo6w3x8iki-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38418393-puz4rgfqgd368iecvaql9uqk-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38418393-tri426k0aso4me6ev751ksct-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38418393-dlpub3b1jcrgncmg78ssesx9-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38418393-6huz21s3r4xyxuogccg8b2rw-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38418393-ekhxybvcvmphoyqq2edze7p5-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38418393-t93obncgfy52olb5hikdlh8o-Square_SIZE_.jpg"
+            ],
+            "location": "IT",
+            "shipping": "+ €40 for shipping",
+            "subtitle": "Rolex Cellini"
+        },
+        {
+            "id": "38543490",
+            "url": "https://www.chrono24.com/rolex/rolex-oyster-perpetual-date-ottime-condizioni--id38543490.htm",
+            "badge": null,
+            "price": {
+                "amount": 4049,
+                "currency": "€"
+            },
+            "title": "Rolex Oyster Perpetual Date",
+            "images": [
+                "https://img.chrono24.com/images/uhren/38543490-gnx34f91huevj5og79teuxbt-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38543490-85xto3llsnm3a0i5rg1uzqya-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38543490-qgh4ixer51k5f3qjm4jalsaz-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38543490-mjg6iebxai2v7bc9cedu2iib-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38543490-htstnyiri2k9ka45ew8xfwzw-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38543490-awkqhbtefy279o3vr5g4bpl2-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38543490-i17zt239w5uelrc2qxs9akya-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38543490-p01cdq1m17tguw0ietwfa6td-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38543490-gk7uphc09qck84khmwuxrqm3-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38543490-1k1qnvin0grua42owf9cbhk8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38543490-7eal5mxxog2vx5guz7lyb6le-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38543490-532dp7ph6cq3kqynedl8t28k-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38543490-pw1c1znl4cay4mhy9iscv2ve-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38543490-8bmr7i3vh4pj8vb80cmqgk9x-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38543490-l1fgg27r8ggut3fkqqpb4jl8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38543490-f4p7ha4axmg0bviiqg5hh79b-Square_SIZE_.jpg"
+            ],
+            "location": "IT",
+            "shipping": "+ €59 for shipping",
+            "subtitle": "Rolex Oyster Perpetual Date"
+        },
+        {
+            "id": "38506097",
+            "url": "https://www.chrono24.com/rolex/rolex-cellini-ref4105-18k-gold--id38506097.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 4390,
+                "currency": "€"
+            },
+            "title": "Rolex Cellini",
+            "images": [
+                "https://img.chrono24.com/images/uhren/38506097-xjb33mo23ign0z5s0zfgqlmc-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38506097-arh53e75xiifj03zbi0e9y5y-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38506097-rj6737q6ym63wsgub8u8h40q-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38506097-k6gh1l1r8efu7gd5xqlcd73c-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38506097-fghm829lc9o7q6z3ks4ankiv-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38506097-gwa73kc21m0ibbkkoem3w0ti-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38506097-gdthcx7rlrq1h6svh0vp5u29-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38506097-5ltnvzpyfg140tkh91x88arz-Square_SIZE_.jpg"
+            ],
+            "location": "DE",
+            "shipping": "+ €120 for shipping",
+            "subtitle": "Rolex Cellini"
+        },
+        {
+            "id": "35867112",
+            "url": "https://www.chrono24.com/rolex/rolex-lady-datejust--id35867112.htm",
+            "badge": null,
+            "price": {
+                "amount": 2700,
+                "currency": "€"
+            },
+            "title": "Rolex Lady-Datejust",
+            "images": [
+                "https://img.chrono24.com/images/uhren/35867112-ziuv4i442hsbv7jomhtoj6sr-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35867112-fc7utm4dw8394ahczuwu64h8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35867112-vme2580zcftfekfml5io2us9-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35867112-x41qby0rmkd94cfmvcwue6zr-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35867112-pxcscfr0ik9xsyxz0ov4e0e0-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35867112-8a80yrsvs5xja52zgl05lrn2-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35867112-54fny158lwmrhed5bnmh2ftu-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35867112-m1r8dpsdhjge1bqu8nt2g6tu-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35867112-uat0epjovvqhe7vfbh8htg44-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35867112-kb6jrsxfr7zo3ussgmthfbb1-Square_SIZE_.jpg"
+            ],
+            "location": "DE",
+            "shipping": "+ €99 for shipping",
+            "subtitle": "Rolex Lady-Datejust"
+        },
+        {
+            "id": "35062823",
+            "url": "https://www.chrono24.com/rolex/rolex-lady-date-26mm-silver-index-dial-white-gold-fluted-bezel-jubilee-band-watch-with-rolex-box--id35062823.htm",
+            "badge": "Promoted",
+            "price": {
+                "amount": 4452,
+                "currency": "€"
+            },
+            "title": "Rolex Oyster Perpetual Lady Date",
+            "images": [
+                "https://img.chrono24.com/images/uhren/35062823-6i8zimp4fq0ek6ov0rcsxjdy-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35062823-dtln5gtamag56asohtontigs-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35062823-gghr0c5z9ahrgael5jx3w7gt-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35062823-r0gwmhvn9xfl0uikklz1638u-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35062823-5dda2ayebn9wggpc96j8q21w-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35062823-9c39wh7zwa0oy7olcsxx0w7k-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35062823-c65rq4fc1xfoktzpwuco3wrd-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35062823-4ufl7wx67wluyhbgdxig1r39-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35062823-je3zvbwbh2rl3gpmgu377jwt-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "+ €237 for shipping",
+            "subtitle": "Rolex Oyster Perpetual Lady Date"
+        },
+        {
+            "id": "38436623",
+            "url": "https://www.chrono24.com/rolex/datejust-oysterquartz-blue-dial--id38436623.htm",
+            "badge": null,
+            "price": {
+                "amount": 3900,
+                "currency": "€"
+            },
+            "title": "Rolex Datejust Oysterquartz",
+            "images": [
+                "https://img.chrono24.com/images/uhren/6tw7r8cim593-nuuw89dkje27c72nc2piznok-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/0fof6cmz8h3c-mtumwx2nnfycdmueqa4f8row-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/frdixb9fei53-iieasw1n5v0jwyrk4uaglcdz-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/6qcu91gr3xsm-qtnzqs3t99x8e0bwcqea6xhz-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/5ytnav8hgfiw-2p18dnew46gfvy9kht0mndb9-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/bu3lmzlhp7kf-pjzway657i5g8if524z5daei-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/hk61fwpyga8j-3ybem729sd4axo6g6807sjfd-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/04qqob3q703y-5xp9ky93u21smir3ed2ragf2-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/7nzox730ng3k-jsbl2y3qtwx70grcvxua4ke3-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/9psjamjmfq1z-ta9pkpziwxcdd3yfurdcqdw4-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/5eqrwbhefua7-1xvjap5bwpugosu2r9vd1p4e-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/udmxumii6rkf-dtlsi9cbrqthh8xzcqjusd71-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/b4v56qq4dsew-ech57vgx9h1b3zbb3dtrc9wn-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/kp71kah8h8as-l1ffegpj525k981pzk2i4z5x-Square_SIZE_.jpg"
+            ],
+            "location": "ES",
+            "shipping": "+ €69 for shipping",
+            "subtitle": "Rolex Datejust Oysterquartz"
+        },
+        {
+            "id": "37430052",
+            "url": "https://www.chrono24.com/rolex/rolex-air-king---reference-5500-de-1979---garantie-12-mois--id37430052.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 3990,
+                "currency": "€"
+            },
+            "title": "Rolex Air King",
+            "images": [
+                "https://img.chrono24.com/images/uhren/37430052-ribg1rxds2q6hnf5b3e7qksd-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37430052-ja6y8duia4673fxkobw6c9ca-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37430052-nuhfzv2sqwlf8ctoxcgtrp99-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37430052-e7fpl5xaf4y9apgwwo4p4udj-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37430052-co7vnryldb19id7r8oe7hhjv-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37430052-9q3xlivw2qy5zm50hbvv1l3c-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37430052-jap3q3s9wervmplo9nx8dkuv-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37430052-crro9pkrvqwyxu4f5pfnpewt-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37430052-gh16qip1e0pgpzg92mwafaa2-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37430052-4roko39ywzhx90az09xxp775-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37430052-9u9b2gwwqtly3qsysudqa6zt-Square_SIZE_.jpg"
+            ],
+            "location": "FR",
+            "shipping": "Free shipping",
+            "subtitle": "Rolex Air King"
+        },
+        {
+            "id": "35978010",
+            "url": "https://www.chrono24.com/rolex/rolex-lady-datejust--id35978010.htm",
+            "badge": null,
+            "price": {
+                "amount": 3700,
+                "currency": "€"
+            },
+            "title": "Rolex Lady-Datejust",
+            "images": [
+                "https://img.chrono24.com/images/uhren/35978010-4m9je6r7jtmln1tq55q0nbby-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35978010-t05wekwaa5z333om6afm8tsg-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35978010-4bblnwv4f93jt9g6k1x9zqtd-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35978010-tmdzuljcuub62lk2vmluwv3j-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35978010-e0i07d5won9ek2ain8flqzel-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/35978010-nxoqd23uaptaov76nqwle666-Square_SIZE_.jpg"
+            ],
+            "location": "ES",
+            "shipping": "+ €130 for shipping",
+            "subtitle": "Rolex Lady-Datejust"
+        },
+        {
+            "id": "37725041",
+            "url": "https://www.chrono24.com/rolex/oyster-perpetual-34--id37725041.htm",
+            "badge": null,
+            "price": {
+                "amount": 2450,
+                "currency": "€"
+            },
+            "title": "Rolex Oyster Perpetual 34",
+            "images": [
+                "https://img.chrono24.com/images/uhren/j1krcn2oagv4-on2pcvaxp172meohkqb8zad6-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/nx6ko0542xys-g38v3g976zpdw38tr8eqhgnb-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/dk8hae5wk78a-mnu1vehj19esi0cvexv5d2wz-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/rxovjydi56c3-5ithgrbagivsy032t0f5mmql-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/sxshyzxoi2zj-ivzr0tl2g7xu6ie4vm5t29mw-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/dqxgl34kacxh-3mzj801oabzvf2ftol7r5cv1-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/3vni38y6p1oq-q9y76o0k0mddtb9setpwbvvp-Square_SIZE_.jpg"
+            ],
+            "location": "DE",
+            "shipping": "+ €99 for shipping",
+            "subtitle": "Rolex Oyster Perpetual 34"
+        },
+        {
+            "id": "38270362",
+            "url": "https://www.chrono24.com/rolex/rolex-datejust-31--id38270362.htm",
+            "badge": null,
+            "price": {
+                "amount": 4500,
+                "currency": "€"
+            },
+            "title": "Rolex Datejust 31",
+            "images": [
+                "https://img.chrono24.com/images/uhren/38270362-o06kfkh466ccvah9gzg38w2v-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38270362-en217h2mri7fhgqbzzm98kdy-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38270362-mahzhyh7fkzrlxxnslguxg1w-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38270362-h3v0lia5duf72vhon0f6rdwm-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38270362-4bn2sxm79mqdwzdz9zk3mfxv-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38270362-mexp18br7xwxj3ayat7xoi8b-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38270362-c2qnbvl4ukl4twl2yc1afvb0-Square_SIZE_.jpg"
+            ],
+            "location": "DE",
+            "shipping": "+ €90 for shipping",
+            "subtitle": "Rolex Datejust 31"
+        },
+        {
+            "id": "37981345",
+            "url": "https://www.chrono24.com/rolex/oyster-perpetual-26--id37981345.htm",
+            "badge": "Promoted",
+            "price": {
+                "amount": 3709,
+                "currency": "€"
+            },
+            "title": "Rolex Oyster Perpetual 26",
+            "images": [
+                "https://img.chrono24.com/images/uhren/37981345-xqi3jerao0fl236phije0q6o-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37981345-vf2vgqjzm074ctxp5gc1nmkd-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37981345-6n79bb60ita8bqpmde825iaf-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37981345-zis4gqfgc9lnnhu5i6z0m8xc-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37981345-p4t5aa0rqjvrqjayshwg077r-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37981345-imwntes3gbxi5rpjaw75w9bs-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "Excl. shipping",
+            "subtitle": "Rolex Oyster Perpetual 26"
+        },
+        {
+            "id": "36559747",
+            "url": "https://www.chrono24.com/rolex/oyster-perpetual-air-king-precision-34-mm-steel-faded-watch-5500-circa-1974--id36559747.htm",
+            "badge": null,
+            "price": {
+                "amount": 3437,
+                "currency": "€"
+            },
+            "title": "Rolex Air King",
+            "images": [
+                "https://img.chrono24.com/images/uhren/36559747-z8c5qlrudksu5ocnhpg2mfwh-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36559747-wx4lk6psdzc92e04gcjv33wx-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36559747-gdz3dnxxcr3qgvgedimkmupr-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36559747-oxo11r4itpbmty0dknbeh3pc-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36559747-xvjutge3nfacpnipcymzzhkm-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36559747-rcpf4lihskluu409zdsoaaw0-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36559747-f8yu0yr3tm90886l4pnl6fun-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36559747-m15gp41ysybow8kbrrxv3uhl-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36559747-g0b9m5hq60ebk7y8fpmqte1e-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36559747-xkstnc4pcebp79dbnc2jejz4-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36559747-xc2vrhsqy70zp51zvfcw81td-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/36559747-u7ef1gaet37u6r990uanq3ip-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "+ €118 for shipping",
+            "subtitle": "Rolex Air King"
+        },
+        {
+            "id": "38000132",
+            "url": "https://www.chrono24.com/rolex/rolex-cellini--id38000132.htm",
+            "badge": null,
+            "price": {
+                "amount": 2250,
+                "currency": "€"
+            },
+            "title": "Rolex Cellini",
+            "images": [
+                "https://img.chrono24.com/images/uhren/38000132-rg3c4hg9svw3uzscuerimxkg-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38000132-mku7krfd23l8dxujj3ohgya3-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38000132-h1lufghcrn0qouc9oua6wmgp-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38000132-hs1fmv1qkieghuzo8lwj5pp6-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38000132-cbtmgqr4i5kkngmbol1her6n-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38000132-q84qsrx875a1dvc4kvwav5h1-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38000132-ty7rxdk3c6n2oj9wafyfwkxy-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38000132-mic1lu2enetg13uh1t4ndjam-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38000132-elwsfu13u9cb34ib952tsftu-Square_SIZE_.jpg"
+            ],
+            "location": "IT",
+            "shipping": "+ €150 for shipping",
+            "subtitle": "Rolex Cellini"
+        },
+        {
+            "id": "38488566",
+            "url": "https://www.chrono24.com/rolex/rolex-lady-datejust-26mm-ref-69173--id38488566.htm",
+            "badge": null,
+            "price": {
+                "amount": 3999,
+                "currency": "€"
+            },
+            "title": "Rolex Lady-Datejust",
+            "images": [
+                "https://img.chrono24.com/images/uhren/38488566-1aa5yj117iyeldujxs92y4u6-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38488566-96lip0igopiirgzamibyh5q8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38488566-osl0gyeu79hknuq5dr2m5u7b-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38488566-wp3qfi6e042qn6qi05sog2hw-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38488566-k3hq34fspo6l9kqb8eiausgn-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/38488566-4wltn5ub1p3ar6uegw6azkrs-Square_SIZE_.jpg"
+            ],
+            "location": "DE",
+            "shipping": "+ €120 for shipping",
+            "subtitle": "Rolex Lady-Datejust"
+        },
+        {
+            "id": "38569007",
+            "url": "https://www.chrono24.com/rolex/datejust-36--id38569007.htm",
+            "badge": null,
+            "price": {
+                "amount": 4300,
+                "currency": "€"
+            },
+            "title": "Rolex Datejust 36",
+            "images": [
+                "https://img.chrono24.com/images/uhren/gwr62drkvari-tyz0n6evbpz5ebi04inwgrww-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/to2l0xr7tzsj-3shg5w68tkiiwxw48sldyxcw-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/3plp2x05iuzv-gpzjjh6hk15me368gjzq8lq4-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/a9th1segahna-h2tjnl6023g90t9q1rwtr5sl-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/z1gmpz06bb9g-0t1oruynh7d15h4qrm6xcf6t-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/uwgi16wapn0f-m4o85geww5h9dyb0cpmuayri-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/6s6m7a0240y8-ni18xdnugj3krgy9hv6rgwq6-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/baxlbxzbxb3i-ncpfi3piznauvxq6kv1w9zvh-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/gidnfiu1ixbb-bt2o0u5q4g2jhzzegvp1jq11-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/lf8zoyaqm767-69z9tzh32mb6q6axkjtf7pag-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/l2w03d8alwrh-1org3orz8lu2m7rysyt0zhal-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/ouhfnmfzxmp3-32odiw5gbt6ukuawvjy47imy-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/ibzey3mkic8d-lbggxkre2qb4et9r7za5ckax-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/rk8i8mxtyths-csry4txzklpgvu8t79r635bn-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/v2erxx1ykuoa-qm1ppzre1owma82102jywq1n-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/uvjpmqe1rt81-zglxytt54388pb2o4kt4jjk1-Square_SIZE_.jpg"
+            ],
+            "location": "ES",
+            "shipping": "+ €100 for shipping",
+            "subtitle": "Rolex Datejust 36"
+        },
+        {
+            "id": "37240932",
+            "url": "https://www.chrono24.com/rolex/oyster-date-black-dial--id37240932.htm",
+            "badge": null,
+            "price": {
+                "amount": 2790,
+                "currency": "€"
+            },
+            "title": "Rolex Oysterdate Precision",
+            "images": [
+                "https://img.chrono24.com/images/uhren/37240932-f043obsfn85n6zlvaq6hv9yg-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37240932-s6dbmrfgsavd3ir3uycvdfml-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37240932-lx3cfgdd7uttptb4fz0vyoga-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37240932-r2ogej92ph8p0erkryeou85i-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37240932-ii6zuy6tib570l94zf7vk03j-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37240932-rk9j83fhxf12fkorzr4emnc0-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37240932-kapz5imuvdvyzdovk0bti61l-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37240932-z2zs1gmvkr94u2l04bj9aqet-Square_SIZE_.jpg"
+            ],
+            "location": "IT",
+            "shipping": "+ €100 for shipping",
+            "subtitle": "Rolex Oysterdate Precision"
+        },
+        {
+            "id": "32765500",
+            "url": "https://www.chrono24.com/rolex/air-king--id32765500.htm",
+            "badge": "Promoted",
+            "price": {
+                "amount": 3958,
+                "currency": "€"
+            },
+            "title": "Rolex Air King",
+            "images": [
+                "https://img.chrono24.com/images/uhren/32765500-g8tputkawvhbmgl9tyqjk2nc-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/32765500-f7znfss9d3zb8oghm6xybbo8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/32765500-qrbo2immsq9b5mpk9oqhvnqm-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/32765500-oil3b5zpy2nglotphz3mcq4m-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "Excl. shipping",
+            "subtitle": "Rolex Air King"
+        },
+        {
+            "id": "37426002",
+            "url": "https://www.chrono24.com/rolex/rolex-reference-15200-de-1999---garantie-12-mois--id37426002.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 4780,
+                "currency": "€"
+            },
+            "title": "Rolex Oyster Perpetual Date",
+            "images": [
+                "https://img.chrono24.com/images/uhren/37426002-vml7tzfuq8ruohr8mlirq7nr-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37426002-1mej96h1hr3s857wug9u5t55-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37426002-4tvz1z978nqttfrt3dol77wg-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37426002-apwi6xsvpecyrs5kdef45693-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37426002-yane3giat6ua6s8pplvi719v-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37426002-l2p7up0998wokeh1rct21j7v-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37426002-7rk0cp14jsb470blugqpl04m-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37426002-cc68ucotoweqf1mf3lvkiz8m-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37426002-99px3l05h5rgwx0ypbjbwkfx-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37426002-ju6z72fw46ogr7dh4ow4jv0n-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37426002-csw083edk7uponrkraw09h45-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37426002-l4iszopszzgsh9f21qt6avg8-Square_SIZE_.jpg"
+            ],
+            "location": "FR",
+            "shipping": "Free shipping",
+            "subtitle": "Rolex Oyster Perpetual Date"
+        },
+        {
+            "id": "37814919",
+            "url": "https://www.chrono24.com/rolex/rolex-lady-datejust--id37814919.htm",
+            "badge": null,
+            "price": {
+                "amount": 3900,
+                "currency": "€"
+            },
+            "title": "Rolex Lady-Datejust",
+            "images": [
+                "https://img.chrono24.com/images/uhren/37814919-1vpork5sppq8f2ss43m0ualz-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37814919-fj9wvnpnumrfei3o75hpg836-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37814919-bfu12bnyq73n3p8xcvz5zaqs-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37814919-etw8qjpi6vqvysd7bl01q3et-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37814919-yotmxepgkbkjyyxeixs0mxvg-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37814919-fnfd5s86bwigakqvoh9smmp0-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37814919-vgi6v2o9ucfi8wukcgn8mla8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37814919-pwxrerm6ial28w434lhn0mx6-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37814919-qt5yl0q3ct04ntdj2sqtxe86-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37814919-vhb8iu0mzcvta8wf1kvd21ec-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37814919-otwppagtt8r8r6hwonrnmmmo-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37814919-zze5s1b68q61t98n9lsjbte2-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37814919-9qgxxmqi4x2uqtyk35cf7qq1-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37814919-ezlogzb3kqw8qondmpy442qn-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37814919-n4nzj26v55wdektjt9wfs4ud-Square_SIZE_.jpg"
+            ],
+            "location": "DE",
+            "shipping": "+ €49 for shipping",
+            "subtitle": "Rolex Lady-Datejust"
+        },
+        {
+            "id": "37722729",
+            "url": "https://www.chrono24.com/rolex/rolex-cellini-lady-18k-yellow-gold-manual-winding-26mm--id37722729.htm",
+            "badge": null,
+            "price": {
+                "amount": 2956,
+                "currency": "€"
+            },
+            "title": "Rolex Cellini",
+            "images": [
+                "https://img.chrono24.com/images/uhren/37722729-kjqjxhf7o3w2j1ovt7d3bzw5-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37722729-jeytajf4pyvr51nm3nzx452w-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37722729-vbqdj3na0c3kibzznffrp8qb-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37722729-cpzbmuannt344qnkkmr91hsi-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37722729-jg6pkzadh8yon2xzum6hdfxv-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37722729-uzl938haux2gahavi74ztg68-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37722729-didboaib59vlprowzq0tr4ho-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37722729-n5ljmp61dplmphytpyvxq2o9-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37722729-1yotcjfc1hl1niyk0uykp9x2-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37722729-hot8bj90gmqkbmkaq4k4o3v8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37722729-renhw1dqq2cnafnz3ky9xwaq-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37722729-mhumnoi47hcbtc7sttx19koq-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37722729-qibk2s6ztmnutcp0ko1gpaiu-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "+ €117 for shipping",
+            "subtitle": "Rolex Cellini"
+        },
+        {
+            "id": "37447805",
+            "url": "https://www.chrono24.com/rolex/oyster-perpetual-date--id37447805.htm",
+            "badge": null,
+            "price": {
+                "amount": 2900,
+                "currency": "€"
+            },
+            "title": "Rolex Oyster Perpetual Date",
+            "images": [
+                "https://img.chrono24.com/images/uhren/tba4qi42d108-9t2e9pzgxmwxfixyeeufnrow-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/r6n5ihp7pus2-bcn1zuf8ndbyc5wj5a0kkd4w-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/r0730i65rh5u-ons7dec8tppwgenbwqg550il-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/f2bs311g6mc3-aqbet8wigtoqzyoe2endhja7-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/ixp2rktxx8is-di197sr5k5maopm2alc7ofwz-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/8rjp8z004r9w-zhhe6737dkcszmi4diucuo7v-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/n1j89ww29b38-kjhwiz2ajs922glfs4ur2whc-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/7aw1sy6248t6-8723vux512bc5c381vms8b15-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/v6sx52eaqeq9-xasgupd6mj12wddme2sl2my2-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/vwp0nsbegtbk-k015ng5f4rvfz3e9o34ol7x8-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/i90egt6x9cs0-jyt8zk83kq6c8calncft8mfo-Square_SIZE_.jpg"
+            ],
+            "location": "DE",
+            "shipping": "+ €100 for shipping",
+            "subtitle": "Rolex Oyster Perpetual Date"
+        },
+        {
+            "id": "37836938",
+            "url": "https://www.chrono24.com/rolex/datejust-36--id37836938.htm",
+            "badge": "Popular",
+            "price": {
+                "amount": 4550,
+                "currency": "€"
+            },
+            "title": "Rolex Datejust 36",
+            "images": [
+                "https://img.chrono24.com/images/uhren/elv9e3lxgas8-rf8aalvswajfqio5plx633uh-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/t7y1zzpo63vb-rrn1cs2ee8y8z7intzzvvgu5-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/z1kbc4j5ch8a-o8nveiwucrauwpuxcun9cyel-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/r9nx5d6p1zl1-mf7de3xnb7ukq8plwoah2kx2-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/tyfh56ag1dce-ojgtelmfuo43v8pjhat109g4-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/806o5tdgcsbj-jy29647zkm3ireupq27t4x5k-Square_SIZE_.jpg"
+            ],
+            "location": "IT",
+            "shipping": "+ €100 for shipping",
+            "subtitle": "Rolex Datejust 36"
+        },
+        {
+            "id": "37163573",
+            "url": "https://www.chrono24.com/rolex/oyster-perpetual-date--id37163573.htm",
+            "badge": "Promoted",
+            "price": {
+                "amount": 3462,
+                "currency": "€"
+            },
+            "title": "Rolex",
+            "images": [
+                "https://img.chrono24.com/images/uhren/37163573-5hhtcd0xkn5ia08f8eayzb6l-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-r7voi31ca6pdv95kznduw7zu-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-knjatahfrr9k6pmab1x84o40-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-grv0a7qlog5wfnumih9idtja-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-lsys7a2vezauins7xatxij72-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-v2w2q3kuonalzymdspbka56p-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-fz2g6gver3f0kwu8hnyjt73w-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-js8m77898x3kfsbjy3xay8kg-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-kb5asy4ol5ny7k0d4apihtrn-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-hvcvh3iv8ckjyckcxyv5wlhg-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-i0mpnxbbfh91qo9fw410cv6z-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-ebplwgjva20a8ogf8i7bh3xv-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-7jhvwgcizaf1gwufwz2roroh-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-haewnznc5k8avjy87aw48x6h-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-ph5lrswlirweniz6a8s3pofh-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-y0ec318rqwa57061d2pqhhnd-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-58mdqyg5k0pwgf7fh7py3p00-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-oe13eyvxlixu43s249r8nwgr-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-s0i2c4run25448hgvjdnrm9r-Square_SIZE_.jpg",
+                "https://img.chrono24.com/images/uhren/37163573-ozrnrf6ownvnj8cxnin26txa-Square_SIZE_.jpg"
+            ],
+            "location": "US",
+            "shipping": "Excl. shipping",
+            "subtitle": "Rolex"
+        }
+    ],
+    "pagination": {
+        "next": 2,
+        "current": 1,
+        "other_pages": [
+            2,
+            3,
+            4,
+            5,
+            25,
+            50,
+            75,
+            83
+        ],
+        "has_next_page": true
+    }
 }
 ```
 </ResponseExample>
