@@ -12,6 +12,14 @@ description: "Search Chrono24 for products"
 
 ### Parameters
 
+<ParamField query="currency" type="string" optional={true}>
+    Currency code (e.g., "EUR", "USD")
+</ParamField>
+
+<ParamField query="language" type="string" optional={true}>
+    Language code (e.g., "en_US", "de_DE")
+</ParamField>
+
 <ParamField query="manufacturer" type="list" optional={true}>
     List of watch manufacturers (e.g., ["Rolex", "Omega"])
 </ParamField>
