@@ -24,6 +24,27 @@ description: "Search Chrono24 for products"
     Domain code (e.g., `com`, `fr`). Default is `com`.
 </ParamField>
 
+### Pagination & Sorting
+
+<ParamField query="page_size" type="number" optional={true}>
+    Number of results per page. Allowed values: `30`, `60`, `120`. Default is `60`.
+</ParamField>
+
+<ParamField query="sort_by" type="string" optional={true}>
+    Sort order for results. Allowed values:
+    - `relevance` (default) - Sort by relevance
+    - `price_asc` - Sort by price ascending
+    - `price_desc` - Sort by price descending
+    - `age_desc` - Sort by newest first
+    - `age_asc` - Sort by oldest first
+</ParamField>
+
+<ParamField query="max_age_in_days" type="number" optional={true}>
+    Maximum age of listings in days. Default is `0` (no limit).
+</ParamField>
+
+### Search Filters
+
 <ParamField query="manufacturer" type="list" optional={true}>
     List of watch manufacturers (e.g., `Rolex`, `Omega`)
 </ParamField>
