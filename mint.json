@@ -21,10 +21,6 @@
   },
   "topbarLinks": [
     {
-      "name": "Solutions Pricing",
-      "url": "https://www.retailed.io/solutions/pricing"
-    },
-    {
       "name": "Datasources Pricing",
       "url": "https://www.retailed.io/datasources/pricing"
     }
