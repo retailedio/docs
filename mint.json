@@ -43,6 +43,11 @@
       "name": "Scraper API",
       "url": "v1/api-reference",
       "version": "v1"
+    },
+    {
+      "name": "Finder",
+      "url": "v1/finder",
+      "version": "v1"
     }
   ],
   "anchors": [
@@ -74,6 +79,12 @@
       "group": "Account",
       "pages": [
         "v1/usage"
+      ]
+    },
+    {
+      "group": "Finder",
+      "pages": [
+        "v1/api-reference/finder/chrono24-search"
       ]
     },
     {

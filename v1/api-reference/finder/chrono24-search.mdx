@@ -1,0 +1,265 @@
+---
+title: "Chrono24 Finder Search"
+api: "GET https://piloterr.com/api/v2/finder/chrono24-search"
+description: "Search Chrono24."
+---
+
+This endpoint is used to search attributes for Chrono24.
+
+#### Search Query
+
+<ParamField body="query" type="string" required={true}>
+  This parameter filters attributes based on a search string. The search is non-case-sensitive and returns all attributes whose names contain the specified string.
+</ParamField>
+
+### Response
+
+<ResponseField name="data" type="array">
+    <Expandable title="Filter Object" defaultOpen={true}>
+        <ResponseField name="id" type="string">
+            The unique identifier of the filter group (e.g., "dialColor", "dialNumbers")
+        </ResponseField>
+        <ResponseField name="input_type" type="string">
+            The type of input for the filter (e.g., "Checkbox", "IllustrationCheckbox")
+        </ResponseField>
+        <ResponseField name="label" type="string">
+            The display label for the filter group
+        </ResponseField>
+        <ResponseField name="searchable" type="boolean">
+            Whether the filter group is searchable
+        </ResponseField>
+        <ResponseField name="values" type="array">
+            <Expandable title="Filter Value" defaultOpen={true}>
+                <ResponseField name="label" type="string">
+                    The display label for the filter value
+                </ResponseField>
+                <ResponseField name="[filter_id]" type="string">
+                    The value corresponding to the filter. The property name matches the filter's id
+                    (e.g., dial_color: "702", dial_numbers: "801", other_attributes: "1201")
+                </ResponseField>
+            </Expandable>
+        </ResponseField>
+        <ResponseField name="filterGroupId" type="string">
+            The group identifier for the filter (may match id)
+        </ResponseField>
+        <ResponseField name="inputType" type="string">
+            Alternative property for input type (may match input_type)
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<ResponseExample>
+```json Example Response 
+[
+    {
+        "id": "dialColor",
+        "input_type": "Checkbox",
+        "label": "Dial color",
+        "searchable": false,
+        "values": [
+            {
+                "label": "Black",
+                "dial_color": "702"
+            },
+            {
+                "label": "Blue",
+                "dial_color": "710"
+            },
+            {
+                "label": "Bordeaux",
+                "dial_color": "711"
+            },
+            {
+                "label": "Bronze",
+                "dial_color": "712"
+            },
+            {
+                "label": "Brown",
+                "dial_color": "723"
+            },
+            {
+                "label": "Champagne",
+                "dial_color": "709"
+            },
+            {
+                "label": "Gold",
+                "dial_color": "714"
+            },
+            {
+                "label": "Gold (solid)",
+                "dial_color": "705"
+            },
+            {
+                "label": "Green",
+                "dial_color": "716"
+            },
+            {
+                "label": "Grey",
+                "dial_color": "715"
+            },
+            {
+                "label": "Meteorite",
+                "dial_color": "725"
+            },
+            {
+                "label": "Mother of pearl",
+                "dial_color": "707"
+            },
+            {
+                "label": "Orange",
+                "dial_color": "719"
+            },
+            {
+                "label": "Pink",
+                "dial_color": "722"
+            },
+            {
+                "label": "Purple",
+                "dial_color": "721"
+            },
+            {
+                "label": "Red",
+                "dial_color": "720"
+            },
+            {
+                "label": "Silver",
+                "dial_color": "708"
+            },
+            {
+                "label": "Silver (solid)",
+                "dial_color": "706"
+            },
+            {
+                "label": "Skeletonized",
+                "dial_color": "726"
+            },
+            {
+                "label": "Skeletonized",
+                "dial_color": "704"
+            },
+            {
+                "label": "Turquoise",
+                "dial_color": "724"
+            },
+            {
+                "label": "White",
+                "dial_color": "701"
+            },
+            {
+                "label": "Yellow",
+                "dial_color": "713"
+            },
+            {
+                "label": "No details",
+                "dial_color": "0"
+            }
+        ]
+    },
+    {
+        "id": "dial_color",
+        "label": "Dial color",
+        "searchable": false,
+        "values": [
+            {
+                "label": "Black",
+                "dial_color": "702"
+            },
+            {
+                "label": "Blue",
+                "dial_color": "710"
+            },
+            {
+                "label": "Bordeaux",
+                "dial_color": "711"
+            },
+            {
+                "label": "Bronze",
+                "dial_color": "712"
+            },
+            {
+                "label": "Brown",
+                "dial_color": "723"
+            },
+            {
+                "label": "Champagne",
+                "dial_color": "709"
+            },
+            {
+                "label": "Gold",
+                "dial_color": "714"
+            },
+            {
+                "label": "Gold (solid)",
+                "dial_color": "705"
+            },
+            {
+                "label": "Green",
+                "dial_color": "716"
+            },
+            {
+                "label": "Grey",
+                "dial_color": "715"
+            },
+            {
+                "label": "Meteorite",
+                "dial_color": "725"
+            },
+            {
+                "label": "Mother of pearl",
+                "dial_color": "707"
+            },
+            {
+                "label": "Orange",
+                "dial_color": "719"
+            },
+            {
+                "label": "Pink",
+                "dial_color": "722"
+            },
+            {
+                "label": "Purple",
+                "dial_color": "721"
+            },
+            {
+                "label": "Red",
+                "dial_color": "720"
+            },
+            {
+                "label": "Silver",
+                "dial_color": "708"
+            },
+            {
+                "label": "Silver (solid)",
+                "dial_color": "706"
+            },
+            {
+                "label": "Skeletonized",
+                "dial_color": "726"
+            },
+            {
+                "label": "Skeletonized",
+                "dial_color": "704"
+            },
+            {
+                "label": "Turquoise",
+                "dial_color": "724"
+            },
+            {
+                "label": "White",
+                "dial_color": "701"
+            },
+            {
+                "label": "Yellow",
+                "dial_color": "713"
+            },
+            {
+                "label": "No details",
+                "dial_color": "0"
+            }
+        ],
+        "filterGroupId": "dialColor",
+        "inputType": "Checkbox"
+    }
+]
+```
+</ResponseExample>
