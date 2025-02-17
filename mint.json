@@ -42,7 +42,7 @@
     },
     {
       "name": "Finder",
-      "url": "v1/finder",
+      "url": "v1/api-reference/finder",
       "version": "v1"
     }
   ],
