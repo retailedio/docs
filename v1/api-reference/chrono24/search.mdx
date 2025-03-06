@@ -43,6 +43,10 @@ description: "Search Chrono24 for products"
     Maximum age of listings in days. Default is `0` (no limit).
 </ParamField>
 
+<ParamField body="page" type="number" optional={true}>
+  The page number for paginated results. Defaults to 1 if not specified.
+</ParamField>
+
 ### Search Filters
 
 <ParamField query="manufacturer" type="list" optional={true}>
