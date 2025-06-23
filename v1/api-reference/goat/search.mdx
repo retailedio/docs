@@ -23,9 +23,6 @@ description: "Search Goat for products"
         <ResponseField name="id" type="string">
             Product ID
         </ResponseField>
-        <ResponseField name="sku" type="string">
-            Product SKU
-        </ResponseField>
         <ResponseField name="url" type="string">
             Product URL
         </ResponseField>
@@ -41,9 +38,6 @@ description: "Search Goat for products"
         <ResponseField name="category" type="string">
             Product Category
         </ResponseField>
-        <ResponseField name="colorway" type="string">
-            Product Colorway
-        </ResponseField>
     </Expandable>
 </ResponseField>
 
@@ -51,14 +45,204 @@ description: "Search Goat for products"
 ```json Example Response
 [
     {
-        "id": "910973",
-        "sku": "DN3673 303",
-        "url": "https://www.goat.com/en-us/sneakers/dunk-low-sb-td-st-patrick-s-day-dn3673-303",
-        "name": "Dunk Low SB TD 'St. Patrick’s Day'",
-        "slug": "dunk-low-sb-td-st-patrick-s-day-dn3673-303",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/073/839/527/original/910973_00.png.png",
-        "category": "sneakers",
-        "colorway": "green"
+        "id": "1295",
+        "url": "https://www.goat.com/en-us/shoes/new-balance-men-crt300ag-crt300ag",
+        "name": "300",
+        "slug": "new-balance-men-crt300ag-crt300ag",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/000/018/647/original/NBCRT300AG.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "772893",
+        "url": "https://www.goat.com/en-us/shoes/3038-slide-black-m3038",
+        "name": "3038 Slide 'Black'",
+        "slug": "3038-slide-black-m3038",
+        "image": "",
+        "category": "shoes"
+    },
+    {
+        "id": "52416",
+        "url": "https://www.goat.com/en-us/shoes/lunarfly-306-644395-600",
+        "name": "Lunarfly 306",
+        "slug": "lunarfly-306-644395-600",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/000/512/650/original/644395_600.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "284088",
+        "url": "https://www.goat.com/en-us/shoes/lunarfly-306-644395-700",
+        "name": "Lunarfly 306",
+        "slug": "lunarfly-306-644395-700",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/008/545/530/original/644395_700.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "912762",
+        "url": "https://www.goat.com/en-us/shoes/373-burgundy-ml373cd2",
+        "name": "373 'Burgundy'",
+        "slug": "373-burgundy-ml373cd2",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/069/204/449/original/ML373CD2.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "1412360",
+        "url": "https://www.goat.com/en-us/shoes/303-boards-x-jeremy-fish-x-numeric-480-silly-pink-bunnies-nm480fxt",
+        "name": "303 Boards x Jeremy Fish x Numeric 480 'Silly Pink Bunnies'",
+        "slug": "303-boards-x-jeremy-fish-x-numeric-480-silly-pink-bunnies-nm480fxt",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/100/774/855/original/1412360_00.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "417792",
+        "url": "https://www.goat.com/en-us/shoes/300-wool-crt300ec",
+        "name": "300 'Wool'",
+        "slug": "300-wool-crt300ec",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/013/612/308/original/CRT300EC.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "4949",
+        "url": "https://www.goat.com/en-us/shoes/puma-faas-300-185094-14",
+        "name": "Faas 300",
+        "slug": "puma-faas-300-185094-14",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/000/014/053/original/PU185094-14.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "4953",
+        "url": "https://www.goat.com/en-us/shoes/puma-faas-300-185094-11",
+        "name": "Faas 300",
+        "slug": "puma-faas-300-185094-11",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/000/014/050/original/PU185094-11.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "501756",
+        "url": "https://www.goat.com/en-us/shoes/300-blue-crt300dyd",
+        "name": "300 'Blue'",
+        "slug": "300-blue-crt300dyd",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/019/786/683/original/CRT300DYD.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "921732",
+        "url": "https://www.goat.com/en-us/shoes/373-red-ml373cp2",
+        "name": "373 'Red'",
+        "slug": "373-red-ml373cp2",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/070/056/909/original/ML373CP2.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "1018683",
+        "url": "https://www.goat.com/en-us/shoes/373-olive-ml373olv",
+        "name": "373 'Olive'",
+        "slug": "373-olive-ml373olv",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/076/580/091/original/ML373OLV.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "957447",
+        "url": "https://www.goat.com/en-us/shoes/373-navy-ml373en2",
+        "name": "373 'Navy'",
+        "slug": "373-navy-ml373en2",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/073/485/115/original/ML373EN2.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "501732",
+        "url": "https://www.goat.com/en-us/shoes/300-grey-crt300sud",
+        "name": "300 'Grey'",
+        "slug": "300-grey-crt300sud",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/019/786/685/original/CRT300SUD.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "4952",
+        "url": "https://www.goat.com/en-us/shoes/puma-faas-300-185094-10",
+        "name": "Faas 300",
+        "slug": "puma-faas-300-185094-10",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/000/014/049/original/PU185094-10.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "4948",
+        "url": "https://www.goat.com/en-us/shoes/puma-faas-300-185094-12",
+        "name": "Faas 300",
+        "slug": "puma-faas-300-185094-12",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/000/014/051/original/PU185094-12.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "496460",
+        "url": "https://www.goat.com/en-us/shoes/300-black-crt300hod",
+        "name": "300 'Black'",
+        "slug": "300-black-crt300hod",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/018/946/970/original/CRT300HOD.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "501782",
+        "url": "https://www.goat.com/en-us/shoes/300-grey-crt300rtd",
+        "name": "300 'Grey'",
+        "slug": "300-grey-crt300rtd",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/019/786/684/original/CRT300RTD.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "4954",
+        "url": "https://www.goat.com/en-us/shoes/puma-faas-300-185094-13",
+        "name": "Faas 300",
+        "slug": "puma-faas-300-185094-13",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/000/014/052/original/PU185094-13.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "640095",
+        "url": "https://www.goat.com/en-us/shoes/373-black-ml373db2",
+        "name": "373 'Black'",
+        "slug": "373-black-ml373db2",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/037/295/647/original/ML373DB2.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "496484",
+        "url": "https://www.goat.com/en-us/shoes/373-ivory-ml373nbcd",
+        "name": "373 'Ivory'",
+        "slug": "373-ivory-ml373nbcd",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/018/947/074/original/ML373NBCD.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "439273",
+        "url": "https://www.goat.com/en-us/shoes/300-beige-crt300wrd",
+        "name": "300 'Beige'",
+        "slug": "300-beige-crt300wrd",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/014/214/456/original/CRT300WRD.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "467250",
+        "url": "https://www.goat.com/en-us/shoes/300-grey-crt300ped",
+        "name": "300 'Grey'",
+        "slug": "300-grey-crt300ped",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/015/545/412/original/CRT300PED.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "1218796",
+        "url": "https://www.goat.com/en-us/shoes/gel-kayano-30-30th-anniversary-1011b764-100",
+        "name": "Gel Kayano 30 '30th Anniversary'",
+        "slug": "gel-kayano-30-30th-anniversary-1011b764-100",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/096/513/959/original/1218796_00.png.png",
+        "category": "shoes"
+    },
+    {
+        "id": "284601",
+        "url": "https://www.goat.com/en-us/shoes/300-suede-crt300ff",
+        "name": "300 Suede",
+        "slug": "300-suede-crt300ff",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/008/564/774/original/CRT300FF.png.png",
+        "category": "shoes"
     }
 ]
 ```
