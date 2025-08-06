@@ -16,43 +16,10 @@ description: "Get product information from Goat"
     Goat Product URL or slug: `https://www.goat.com/en-us/sneakers/marvel-x-air-jordan-1-retro-high-og-spider-man-across-the-spider-verse-dv1748-601` or `marvel-x-air-jordan-1-retro-high-og-spider-man-across-the-spider-verse-dv1748-601`.
 </ParamField>
 
-### Response
-
-<ResponseField name="object" type="Product Object">
-    <Expandable title="properties" defaultOpen={true}>
-        <ResponseField name="id" type="string">
-            Product ID
-        </ResponseField>
-        <ResponseField name="fit" type="string">
-            Product fit
-        </ResponseField>
-        <ResponseField name="sku" type="string">
-            Product SKU
-        </ResponseField>
-        <ResponseField name="name" type="string">
-            Product name
-        </ResponseField>
-        <ResponseField name="slug" type="string">
-            Product slug
-        </ResponseField>
-        <ResponseField name="color" type="string">
-            Product color
-        </ResponseField>
-        <ResponseField name="story" type="string">
-            Product story
-        </ResponseField>
-        <ResponseField name="gender" type="array">
-            Product gender
-        </ResponseField>
-        There are more properties, please check the example response.
-    </Expandable>
-</ResponseField>
-
 <ResponseExample>
 ```json Example Response
 {
     "id": 1103114,
-    "fit": null,
     "sku": "DV1748 601",
     "name": "Marvel x Air Jordan 1 Retro High OG 'Next Chapter'",
     "slug": "marvel-x-air-jordan-1-retro-high-og-spider-man-across-the-spider-verse-dv1748-601",
@@ -61,7 +28,7 @@ description: "Get product information from Goat"
     "gender": [
         "men"
     ],
-    "season": null,
+    "season": " 2023",
     "status": "active",
     "details": "University Red/Black/White",
     "midsole": "Air",
@@ -70,12 +37,16 @@ description: "Get product information from Goat"
     ],
     "designer": "Peter Moore",
     "nickname": "Next Chapter",
-    "sizeType": "numeric_sizes",
-    "sizeUnit": "us",
-    "brandName": "Air Jordan",
-    "isOwnable": true,
-    "sizeBrand": "air_jordan",
-    "sizeRange": [
+    "user_own": false,
+    "size_type": "numeric_sizes",
+    "size_unit": "us",
+    "user_want": false,
+    "age_groups": [],
+    "brand_name": "Air Jordan",
+    "is_ownable": true,
+    "silhouette": "Air Jordan 1",
+    "size_brand": "air_jordan",
+    "size_range": [
         3.5,
         4,
         4.5,
@@ -98,19 +69,33 @@ description: "Get product information from Goat"
         13,
         14,
         15,
-        16
+        16,
+        17
     ],
-    "storyHtml": "<p>The Marvel x Air Jordan 1 Retro High OG ‘Next Chapter&#39; delivers a collaborative colorway tied to the animated film &#39;Spider-Man: Across the Spider-Verse.’ A play on the original ‘Chicago’ colorway, this reimagined take on the sneaker icon features a white leather upper with black patent leather on the collar and Swoosh. Scarlet overlays are composed of a patchwork mix of different textures and prints — a pieced-together design that nods to the multidimensional Spiderman universe. A retro Wings logo is stamped on the lateral collar flap, while a woven Nike tag decorates the nylon tongue. The high-top rides on a rubber cupsole that pairs aged sidewalls with a crimson semi-translucent rubber outsole.</p>\n",
-    "forAuction": false,
-    "isWantable": true,
-    "pictureUrl": "https://image.goat.com/1000/attachments/product_template_pictures/images/085/116/986/original/1103114_00.png.png",
-    "silhouette": "Air Jordan 1",
-    "composition": null,
-    "isOfferable": true,
-    "modelSizing": null,
-    "productType": "sneakers",
-    "releaseDate": "2023-05-20T23:59:59.999Z",
-    "robotAssets": [
+    "story_html": "<p>The Marvel x Air Jordan 1 Retro High OG ‘Next Chapter&#39; delivers a collaborative colorway tied to the animated film &#39;Spider-Man: Across the Spider-Verse.’ A play on the original ‘Chicago’ colorway, this reimagined take on the sneaker icon features a white leather upper with black patent leather on the collar and Swoosh. Scarlet overlays are composed of a patchwork mix of different textures and prints — a pieced-together design that nods to the multidimensional Spiderman universe. A retro Wings logo is stamped on the lateral collar flap, while a woven Nike tag decorates the nylon tongue. The high-top rides on a rubber cupsole that pairs aged sidewalls with a crimson semi-translucent rubber outsole.</p>\n",
+    "featured_in": [
+        {
+            "name": "Nike Air Max 95 'Blue Spark'",
+            "slug": "pdp-custom-links/release-links/hype-releases/sneakers/air-max-95-og-blue-spark-im7410-100",
+            "clickthrough_destination": "sneakers/air-max-95-og-blue-spark-im7410-100"
+        },
+        {
+            "name": "Jordan 4 'Denim Worn Blue'",
+            "slug": "pdp-custom-links/release-links/hype-releases/sneakers/wmns-air-jordan-4-retro-tex-worn-blue-denim-ib6716-100",
+            "clickthrough_destination": "sneakers/wmns-air-jordan-4-retro-tex-worn-blue-denim-ib6716-100"
+        },
+        {
+            "name": "Jordan 11 'Grand Finale' release date",
+            "slug": "pdp-custom-links/release-links/hype-releases/editorial/wmns-air-jordan-11-retro-sail-ar0715-110-release-guide",
+            "clickthrough_destination": "editorial/wmns-air-jordan-11-retro-sail-ar0715-110-release-guide"
+        }
+    ],
+    "is_wantable": true,
+    "picture_url": "https://image.goat.com/1000/attachments/product_template_pictures/images/085/116/986/original/1103114_00.png.png",
+    "is_offerable": true,
+    "product_type": "sneakers",
+    "release_date": "2023-05-20T23:59:59.999Z",
+    "robot_assets": [
         {
             "url": "https://cms-cdn.goat.com/8a5ce175c13c-e5a9-ee11-e048-1606b881.png"
         },
@@ -118,7 +103,7 @@ description: "Get product information from Goat"
             "url": "https://cms-cdn.goat.com/4007a6888cdc-4a0a-ee11-e048-0421b881.png"
         }
     ],
-    "sizeOptions": [
+    "size_options": [
         {
             "value": 3.5,
             "presentation": "3.5"
@@ -210,137 +195,143 @@ description: "Get product information from Goat"
         {
             "value": 16,
             "presentation": "16"
+        },
+        {
+            "value": 17,
+            "presentation": "17"
         }
     ],
-    "specialType": "standard",
-    "internalShot": "taken",
-    "isResellable": true,
-    "sellingCount": 0,
-    "singleGender": "men",
-    "upperMaterial": "Leather",
-    "directShipping": false,
-    "gridPictureUrl": "https://image.goat.com/375/attachments/product_template_pictures/images/085/116/986/original/1103114_00.png.png",
-    "mainPictureUrl": "https://image.goat.com/750/attachments/product_template_pictures/images/085/116/986/original/1103114_00.png.png",
-    "isRaffleProduct": false,
-    "micropostsCount": 0,
-    "productCategory": "shoes",
-    "productTaxonomy": [],
-    "releaseDateName": null,
-    "careInstructions": null,
-    "isFashionProduct": false,
-    "lowestPriceCents": 0,
-    "usedForSaleCount": 0,
-    "applePayOnlyPromo": false,
-    "availableSizesNew": [],
-    "maximumOfferCents": 200000,
-    "minimumOfferCents": 2500,
-    "availableSizesUsed": [],
-    "gridGlowPictureUrl": "https://image.goat.com/glow-4-5-25/375/attachments/product_template_pictures/images/085/116/986/original/1103114_00.png.png",
-    "mainGlowPictureUrl": "https://image.goat.com/glow-4-5-25/750/attachments/product_template_pictures/images/085/116/986/original/1103114_00.png.png",
-    "availableSizesNewV2": [],
-    "newLowestPriceCents": 0,
-    "renderImagesInOrder": false,
-    "usedLowestPriceCents": 0,
-    "withDefectForSaleCount": 0,
-    "isAvailabilityRestricted": false,
-    "specialDisplayPriceCents": 20000,
-    "availableSizesNewWithDefects": [],
-    "productTemplateExternalPictures": [
+    "special_type": "standard",
+    "internal_shot": "taken",
+    "is_resellable": true,
+    "selling_count": 0,
+    "single_gender": "men",
+    "upper_material": "Leather",
+    "direct_shipping": false,
+    "taxonomy_level1": "Footwear",
+    "taxonomy_level2": "Sneakers",
+    "grid_picture_url": "https://image.goat.com/375/attachments/product_template_pictures/images/085/116/986/original/1103114_00.png.png",
+    "main_picture_url": "https://image.goat.com/750/attachments/product_template_pictures/images/085/116/986/original/1103114_00.png.png",
+    "microposts_count": 0,
+    "product_category": "shoes",
+    "product_taxonomy": [],
+    "is_raffle_product": false,
+    "release_date_name": null,
+    "is_fashion_product": false,
+    "lowest_price_cents": 0,
+    "available_sizes_new": [],
+    "is_alias_resellable": false,
+    "maximum_offer_cents": 200000,
+    "minimum_offer_cents": 2500,
+    "used_for_sale_count": 0,
+    "apple_pay_only_promo": false,
+    "available_sizes_used": [],
+    "grid_glow_picture_url": "https://image.goat.com/glow-4-5-25/375/attachments/product_template_pictures/images/085/116/986/original/1103114_00.png.png",
+    "main_glow_picture_url": "https://image.goat.com/glow-4-5-25/750/attachments/product_template_pictures/images/085/116/986/original/1103114_00.png.png",
+    "available_sizes_new_v2": [],
+    "new_lowest_price_cents": 0,
+    "render_images_in_order": false,
+    "used_lowest_price_cents": 0,
+    "is_availability_restricted": false,
+    "with_defect_for_sale_count": 0,
+    "special_display_price_cents": 20000,
+    "available_sizes_new_with_defects": [],
+    "product_template_external_pictures": [
         {
             "order": 1,
             "aspect": 1.5,
-            "sourceUrl": "https://www.goat.com",
-            "dominantColor": "#000000",
-            "attributionUrl": "GOAT",
-            "gridPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/990/grid/1103114_01.jpg.jpeg?1676916035",
-            "mainPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/990/medium/1103114_01.jpg.jpeg?1676916035"
+            "source_url": "https://www.goat.com",
+            "dominant_color": "#000000",
+            "attribution_url": "GOAT",
+            "grid_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/990/grid/1103114_01.jpg.jpeg",
+            "main_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/990/medium/1103114_01.jpg.jpeg"
         },
         {
             "order": 2,
             "aspect": 1.5,
-            "sourceUrl": "https://www.goat.com",
-            "dominantColor": "#000000",
-            "attributionUrl": "GOAT",
-            "gridPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/991/grid/1103114_02.jpg.jpeg?1676916035",
-            "mainPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/991/medium/1103114_02.jpg.jpeg?1676916035"
+            "source_url": "https://www.goat.com",
+            "dominant_color": "#000000",
+            "attribution_url": "GOAT",
+            "grid_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/991/grid/1103114_02.jpg.jpeg",
+            "main_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/991/medium/1103114_02.jpg.jpeg"
         },
         {
             "order": 3,
             "aspect": 1.5,
-            "sourceUrl": "https://www.goat.com",
-            "dominantColor": "#000000",
-            "attributionUrl": "GOAT",
-            "gridPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/988/grid/1103114_03.jpg.jpeg?1676916035",
-            "mainPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/988/medium/1103114_03.jpg.jpeg?1676916035"
+            "source_url": "https://www.goat.com",
+            "dominant_color": "#000000",
+            "attribution_url": "GOAT",
+            "grid_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/988/grid/1103114_03.jpg.jpeg",
+            "main_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/988/medium/1103114_03.jpg.jpeg"
         },
         {
             "order": 4,
             "aspect": 1.5,
-            "sourceUrl": "https://www.goat.com",
-            "dominantColor": "#000000",
-            "attributionUrl": "GOAT",
-            "gridPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/989/grid/1103114_04.jpg.jpeg?1676916035",
-            "mainPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/989/medium/1103114_04.jpg.jpeg?1676916035"
+            "source_url": "https://www.goat.com",
+            "dominant_color": "#000000",
+            "attribution_url": "GOAT",
+            "grid_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/989/grid/1103114_04.jpg.jpeg",
+            "main_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/989/medium/1103114_04.jpg.jpeg"
         },
         {
             "order": 5,
             "aspect": 1.5,
-            "sourceUrl": "https://www.goat.com",
-            "dominantColor": "#000000",
-            "attributionUrl": "GOAT",
-            "gridPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/992/grid/1103114_05.jpg.jpeg?1676916035",
-            "mainPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/992/medium/1103114_05.jpg.jpeg?1676916035"
+            "source_url": "https://www.goat.com",
+            "dominant_color": "#000000",
+            "attribution_url": "GOAT",
+            "grid_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/992/grid/1103114_05.jpg.jpeg",
+            "main_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/992/medium/1103114_05.jpg.jpeg"
         },
         {
             "order": 6,
             "aspect": 1.5,
-            "sourceUrl": "https://www.goat.com",
-            "dominantColor": "#000000",
-            "attributionUrl": "GOAT",
-            "gridPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/985/grid/1103114_06.jpg.jpeg?1676916033",
-            "mainPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/985/medium/1103114_06.jpg.jpeg?1676916033"
+            "source_url": "https://www.goat.com",
+            "dominant_color": "#000000",
+            "attribution_url": "GOAT",
+            "grid_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/985/grid/1103114_06.jpg.jpeg",
+            "main_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/985/medium/1103114_06.jpg.jpeg"
         },
         {
             "order": 7,
             "aspect": 1.5,
-            "sourceUrl": "https://www.goat.com",
-            "dominantColor": "#000000",
-            "attributionUrl": "GOAT",
-            "gridPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/984/grid/1103114_07.jpg.jpeg?1676916033",
-            "mainPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/984/medium/1103114_07.jpg.jpeg?1676916033"
+            "source_url": "https://www.goat.com",
+            "dominant_color": "#000000",
+            "attribution_url": "GOAT",
+            "grid_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/984/grid/1103114_07.jpg.jpeg",
+            "main_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/984/medium/1103114_07.jpg.jpeg"
         },
         {
             "order": 8,
             "aspect": 1.5,
-            "sourceUrl": "https://www.goat.com",
-            "dominantColor": "#000000",
-            "attributionUrl": "GOAT",
-            "gridPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/982/grid/1103114_08.jpg.jpeg?1676916033",
-            "mainPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/982/medium/1103114_08.jpg.jpeg?1676916033"
+            "source_url": "https://www.goat.com",
+            "dominant_color": "#000000",
+            "attribution_url": "GOAT",
+            "grid_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/982/grid/1103114_08.jpg.jpeg",
+            "main_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/982/medium/1103114_08.jpg.jpeg"
         },
         {
             "order": 11,
             "aspect": 1.5,
-            "sourceUrl": "https://www.goat.com",
-            "dominantColor": "#000000",
-            "attributionUrl": "GOAT",
-            "gridPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/978/grid/1103114_11.jpg.jpeg?1676916032",
-            "mainPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/978/medium/1103114_11.jpg.jpeg?1676916032"
+            "source_url": "https://www.goat.com",
+            "dominant_color": "#000000",
+            "attribution_url": "GOAT",
+            "grid_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/978/grid/1103114_11.jpg.jpeg",
+            "main_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/978/medium/1103114_11.jpg.jpeg"
         },
         {
             "order": 12,
             "aspect": 1.5,
-            "sourceUrl": "https://www.goat.com",
-            "dominantColor": "#000000",
-            "attributionUrl": "GOAT",
-            "gridPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/976/grid/1103114_12.jpg.jpeg?1676916032",
-            "mainPictureUrl": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/976/medium/1103114_12.jpg.jpeg?1676916032"
+            "source_url": "https://www.goat.com",
+            "dominant_color": "#000000",
+            "attribution_url": "GOAT",
+            "grid_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/976/grid/1103114_12.jpg.jpeg",
+            "main_picture_url": "https://image.goat.com/attachments/product_template_additional_pictures/images/085/116/976/medium/1103114_12.jpg.jpeg"
         }
     ],
-    "localizedSpecialDisplayPriceCents": {
+    "localized_special_display_price_cents": {
         "amount": 20000,
         "currency": "USD",
-        "amountUsdCents": 20000
+        "amount_usd_cents": 20000
     }
 }
 ```
