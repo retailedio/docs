@@ -49,135 +49,137 @@ description: "Search Chrono24 for products"
 
 ### Search Filters
 
-<ParamField query="manufacturer" type="list" optional={true}>
-    List of watch manufacturers (e.g., `Rolex`, `Omega`)
+> **Note:** To use multiple filters, separate values with commas (e.g., `Rolex,Omega` for manufacturers).
+
+<ParamField query="manufacturer" type="string" optional={true}>
+    List of watch manufacturers (e.g., `Rolex`, `Omega` or `Rolex,Omega`)
 </ParamField>
 
-<ParamField query="model" type="list" optional={true}>
+<ParamField query="model" type="string" optional={true}>
     List of watch models (e.g., `Submariner`, `Daytona`)
 </ParamField>
 
-<ParamField query="reference_number" type="list" optional={true}>
+<ParamField query="reference_number" type="string" optional={true}>
     List of reference numbers
 </ParamField>
 
-<ParamField query="case_material" type="list" optional={true}>
+<ParamField query="case_material" type="string" optional={true}>
     Case materials (e.g., `Steel`, `Gold`)
 </ParamField>
 
-<ParamField query="case_diameter" type="list" optional={true}>
+<ParamField query="case_diameter" type="string" optional={true}>
     Case diameters
 </ParamField>
 
-<ParamField query="thickness" type="list" optional={true}>
+<ParamField query="thickness" type="string" optional={true}>
     Case thicknesses
 </ParamField>
 
-<ParamField query="lug_width" type="list" optional={true}>
+<ParamField query="lug_width" type="string" optional={true}>
     Lug widths
 </ParamField>
 
-<ParamField query="dial_color" type="list" optional={true}>
+<ParamField query="dial_color" type="string" optional={true}>
     Dial colors
 </ParamField>
 
-<ParamField query="dial_numbers" type="list" optional={true}>
+<ParamField query="dial_numbers" type="string" optional={true}>
     Dial number types
 </ParamField>
 
-<ParamField query="glass" type="list" optional={true}>
+<ParamField query="glass" type="string" optional={true}>
     Glass types
 </ParamField>
 
-<ParamField query="bracelet_material" type="list" optional={true}>
+<ParamField query="bracelet_material" type="string" optional={true}>
     Bracelet materials
 </ParamField>
 
-<ParamField query="bracelet_color" type="list" optional={true}>
+<ParamField query="bracelet_color" type="string" optional={true}>
     Bracelet colors
 </ParamField>
 
-<ParamField query="clasp" type="list" optional={true}>
+<ParamField query="clasp" type="string" optional={true}>
     Clasp types
 </ParamField>
 
-<ParamField query="clasp_material" type="list" optional={true}>
+<ParamField query="clasp_material" type="string" optional={true}>
     Clasp materials
 </ParamField>
 
-<ParamField query="movement_type" type="list" optional={true}>
+<ParamField query="movement_type" type="string" optional={true}>
     Movement types
 </ParamField>
 
-<ParamField query="waterproof" type="list" optional={true}>
+<ParamField query="waterproof" type="string" optional={true}>
     Water resistance levels
 </ParamField>
 
-<ParamField query="bezel_material" type="list" optional={true}>
+<ParamField query="bezel_material" type="string" optional={true}>
     Bezel materials
 </ParamField>
 
-<ParamField query="functions" type="list" optional={true}>
+<ParamField query="functions" type="string" optional={true}>
     Watch functions
 </ParamField>
 
-<ParamField query="watch_category" type="list" optional={true}>
+<ParamField query="watch_category" type="string" optional={true}>
     Watch categories
 </ParamField>
 
-<ParamField query="watch_type" type="list" optional={true}>
+<ParamField query="watch_type" type="string" optional={true}>
     Watch types
 </ParamField>
 
-<ParamField query="gender" type="list" optional={true}>
+<ParamField query="gender" type="string" optional={true}>
     Gender categories
 </ParamField>
 
-<ParamField query="styles" type="list" optional={true}>
+<ParamField query="styles" type="string" optional={true}>
     Watch styles
 </ParamField>
 
-<ParamField query="condition" type="list" optional={true}>
+<ParamField query="condition" type="string" optional={true}>
     Watch conditions
 </ParamField>
 
-<ParamField query="used_or_new" type="list" optional={true}>
+<ParamField query="used_or_new" type="string" optional={true}>
     New or used status
 </ParamField>
 
-<ParamField query="common_certified" type="list" optional={true}>
+<ParamField query="common_certified" type="string" optional={true}>
     Certification status
 </ParamField>
 
-<ParamField query="seller_type" type="list" optional={true}>
+<ParamField query="seller_type" type="string" optional={true}>
     Seller types
 </ParamField>
 
-<ParamField query="merchant_id" type="list" optional={true}>
+<ParamField query="merchant_id" type="string" optional={true}>
     Merchant IDs
 </ParamField>
 
-<ParamField query="dealer_performance_attributes" type="list" optional={true}>
+<ParamField query="dealer_performance_attributes" type="string" optional={true}>
     Dealer performance attributes
 </ParamField>
 
-<ParamField query="country" type="list" optional={true}>
-    Country locations
+<ParamField query="country" type="string" optional={true}>
+    Country locations like (e.g., `FR`, `US`)
 </ParamField>
 
-<ParamField query="listing_type" type="list" optional={true}>
+<ParamField query="listing_type" type="string" optional={true}>
     Listing types
 </ParamField>
 
-<ParamField query="checkout_available" type="list" optional={true}>
+<ParamField query="checkout_available" type="string" optional={true}>
     Checkout availability
 </ParamField>
 
-<ParamField query="stock_info" type="list" optional={true}>
+<ParamField query="stock_info" type="string" optional={true}>
     Stock information
 </ParamField>
 
-<ParamField query="year" type="list" optional={true}>
+<ParamField query="year" type="string" optional={true}>
     Manufacturing years
 </ParamField>
 
@@ -189,11 +191,11 @@ description: "Search Chrono24 for products"
     Maximum price
 </ParamField>
 
-<ParamField query="specials" type="list" optional={true}>
+<ParamField query="specials" type="string" optional={true}>
     Special offers
 </ParamField>
 
-<ParamField query="other_attributes" type="list" optional={true}>
+<ParamField query="other_attributes" type="string" optional={true}>
     Other watch attributes
 </ParamField>
 
@@ -238,7 +240,7 @@ description: "Search Chrono24 for products"
                 <ResponseField name="title" type="string">
                     Product title
                 </ResponseField>
-                <ResponseField name="images" type="list">
+                <ResponseField name="images" type="string">
                     Array of product image URLs
                 </ResponseField>
                 <ResponseField name="location" type="string">
