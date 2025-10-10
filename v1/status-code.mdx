@@ -7,8 +7,8 @@ icon: "code"
 | Status Code | Is Billed? | Explanation                        | Resolution                                                                                                                |
 | ----------- | ---------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | 200         | Yes        | **Successful API Call**            | No action required.                                                                                                       |
-| 400         | No         | **Bad Request / Inactive API Key / Expired API Key** | Verify your parameters and their types. Ensure your API key is active and not expired. Check the detailed error message in the response body for more information. |
-| 401         | No         | **Unauthorized / Invalid API Key** | Check your API key and ensure it is valid.                                                                                |
+| 400         | No         | **Bad Request / Inactive API Key** | Verify your parameters and their types. Ensure your API key is active and not expired. Check the detailed error message in the response body for more information. |
+| 401         | No         | **Expired API Key**                | Expired API key. Please update your API key or generate a new one.                                                                              |
 | 402         | No         | **Payment Required / You Have Open Invoices**           | Settle any outstanding invoices to continue using the API.                                                                |
 | 403         | No         | **Forbidden / Account Deactivated** | Verify your permissions. Contact us if you believe this is a mistake.                                                     |
 | 404         | Yes*       | **Not Found / URL Not Found**      | Ensure the endpoint URL is correct. This is billed except for specific endpoints listed below.                            |
