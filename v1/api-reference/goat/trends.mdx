@@ -28,8 +28,8 @@ description: "Get the latest trends from Goat"
         <ResponseField name="id" type="string">
             Goat product id
         </ResponseField>
-        <ResponseField name="sku" type="string">
-            Goat product sku
+        <ResponseField name="url" type="string">
+            Goat product url
         </ResponseField>
         <ResponseField name="name" type="string">
             Goat product name
@@ -37,14 +37,29 @@ description: "Get the latest trends from Goat"
         <ResponseField name="slug" type="string">
             Goat product slug
         </ResponseField>
+        <ResponseField name="brand" type="string">
+            Goat product brand
+        </ResponseField>
         <ResponseField name="image" type="string">
             Goat product image
         </ResponseField>
         <ResponseField name="category" type="string">
             Goat product category
         </ResponseField>
+        <ResponseField name="in_stock" type="boolean">
+            Goat product stock status
+        </ResponseField>
+        <ResponseField name="silhouette" type="string">
+            Goat product silhouette
+        </ResponseField>
         <ResponseField name="release_date" type="string">
             Goat product release date
+        </ResponseField>
+        <ResponseField name="lowest_price_cents" type="integer">
+            Goat product lowest price in cents
+        </ResponseField>
+        <ResponseField name="retail_price_cents" type="integer">
+            Goat product retail price in cents
         </ResponseField>
     </Expandable>
 </ResponseField>
@@ -53,220 +68,340 @@ description: "Get the latest trends from Goat"
 ```json Example Response
 [
     {
-        "id": "1305543",
-        "sku": "CZ0790-003",
-        "name": "Air Jordan 1 Retro Low OG 'Shadow' 2024",
-        "slug": "air-jordan-1-retro-low-og-shadow-2024-cz0790-003",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/099/944/944/original/1305543_00.png.png",
+        "id": "1709894",
+        "url": "https://www.goat.com/en-us/sneakers/air-jordan-4-retro-rare-air-tour-yellow-io2463-102",
+        "name": "Air Jordan 4 Retro 'Rare Air - Tour Yellow'",
+        "slug": "air-jordan-4-retro-rare-air-tour-yellow-io2463-102",
+        "brand": "Air Jordan",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/114/011/783/original/IO2463_20102.png.png",
         "category": "shoes",
-        "release_date": "2024-05-11"
+        "in_stock": false,
+        "silhouette": "Air Jordan 4",
+        "release_date": "2026-09-05",
+        "lowest_price_cents": null,
+        "retail_price_cents": 22000
     },
     {
-        "id": "1367520",
-        "sku": "FZ8117-101",
-        "name": "Jordan Jumpman Jack TR 'University Red'",
-        "slug": "travis-scott-x-jordan-jumpman-jack-tr-university-red-fz8117-101",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/100/305/988/original/1367520_00.png.png",
+        "id": "1708808",
+        "url": "https://www.goat.com/en-us/sneakers/air-jordan-9-retro-og-space-jam-2026-hv4794-106",
+        "name": "Air Jordan 9 Retro OG 'Space Jam' 2026",
+        "slug": "air-jordan-9-retro-og-space-jam-2026-hv4794-106",
+        "brand": "Air Jordan",
+        "image": null,
         "category": "shoes",
-        "release_date": "2024-05-10"
+        "in_stock": false,
+        "silhouette": "Air Jordan 9",
+        "release_date": "2026-08-08",
+        "lowest_price_cents": null,
+        "retail_price_cents": 21500
     },
     {
-        "id": "1253639",
-        "sku": "FV5029-141",
-        "name": "Air Jordan 4 Retro 'Military Blue' 2024",
-        "slug": "air-jordan-4-retro-military-blue-2024-fv5029-141",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/099/440/967/original/1253639_00.png.png",
+        "id": "1708924",
+        "url": "https://www.goat.com/en-us/sneakers/nigel-sylvester-x-air-jordan-4-retro-og-sail-iq8055-100",
+        "name": "Nigel Sylvester x Air Jordan 4 Retro OG 'Sail'",
+        "slug": "nigel-sylvester-x-air-jordan-4-retro-og-sail-iq8055-100",
+        "brand": "Air Jordan",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/113/951/196/original/IQ8055_20100.png.png",
         "category": "shoes",
-        "release_date": "2024-05-04"
+        "in_stock": false,
+        "silhouette": "Air Jordan 4",
+        "release_date": "2026-06-10",
+        "lowest_price_cents": null,
+        "retail_price_cents": 22500
     },
     {
-        "id": "1252833",
-        "sku": "FZ8117-100",
-        "name": "Jordan Jumpman Jack TR 'Sail'",
-        "slug": "travis-scott-x-jordan-cut-the-check-tr-sail-fz8117-100",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/098/212/826/original/1252833_00.png.png",
+        "id": "1713131",
+        "url": "https://www.goat.com/en-us/sneakers/adidas-adistar-control-5-coca-cola-red-kh6895",
+        "name": "adidas Adistar Control 5 'Coca-Cola Red'",
+        "slug": "adidas-adistar-control-5-coca-cola-red-kh6895",
+        "brand": "adidas",
+        "image": null,
         "category": "shoes",
-        "release_date": "2024-04-30"
+        "in_stock": false,
+        "silhouette": "Adistar Control 5",
+        "release_date": "2026-06-06",
+        "lowest_price_cents": null,
+        "retail_price_cents": 14000
     },
     {
-        "id": "1261772",
-        "sku": "FV6325-100",
-        "name": "Kobe 8 Protro 'Mambacita'",
-        "slug": "kobe-8-protro-white-metallic-gold-fv6325-100",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/100/305/003/original/1261772_00.png.png",
+        "id": "1713148",
+        "url": "https://www.goat.com/en-us/sneakers/adidas-superstar-coca-cola-white-cream-kh6892",
+        "name": "adidas Superstar 'Coca-Cola White Cream'",
+        "slug": "adidas-superstar-coca-cola-white-cream-kh6892",
+        "brand": "adidas",
+        "image": null,
         "category": "shoes",
-        "release_date": "2024-05-01"
+        "in_stock": false,
+        "silhouette": "Superstar",
+        "release_date": "2026-06-06",
+        "lowest_price_cents": null,
+        "retail_price_cents": 13000
     },
     {
-        "id": "1253680",
-        "sku": "FZ1347-100",
-        "name": "Cortez Premium QS 'Forrest Gump' 2024",
-        "slug": "cortez-premium-qs-forrest-gump-2024-fz1347-100",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/100/378/721/original/1253680_00.png.png",
+        "id": "1713153",
+        "url": "https://www.goat.com/en-us/sneakers/adidas-samba-coca-cola-red-kh6893",
+        "name": "adidas Samba 'Coca-Cola Red'",
+        "slug": "adidas-samba-coca-cola-red-kh6893",
+        "brand": "adidas",
+        "image": null,
         "category": "shoes",
-        "release_date": "2024-05-08"
+        "in_stock": false,
+        "silhouette": "Samba",
+        "release_date": "2026-06-06",
+        "lowest_price_cents": null,
+        "retail_price_cents": 13000
     },
     {
-        "id": "642645",
-        "sku": "DD1390-100",
-        "name": "Dunk Low Premium 'Medium Curry'",
-        "slug": "dunk-low-premium-medium-curry-dd1390-100",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/100/297/351/original/642645_00.png.png",
+        "id": "1713135",
+        "url": "https://www.goat.com/en-us/sneakers/adidas-f50-sala-coca-cola-grey-red-kh6906",
+        "name": "adidas F50 Sala 'Coca-Cola Grey Red'",
+        "slug": "adidas-f50-sala-coca-cola-grey-red-kh6906",
+        "brand": "adidas",
+        "image": null,
         "category": "shoes",
-        "release_date": "2021-03-29"
+        "in_stock": false,
+        "silhouette": "F50",
+        "release_date": "2026-06-06",
+        "lowest_price_cents": null,
+        "retail_price_cents": 14000
     },
     {
-        "id": "1293113",
-        "sku": "FQ6965-600",
-        "name": "Dunk Low CO.JP 'Ultraman' 2024",
-        "slug": "dunk-low-co-jp-ultraman-2024-fq6965-600",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/099/560/931/original/1293113_00.png.png",
+        "id": "1713151",
+        "url": "https://www.goat.com/en-us/sneakers/adidas-superstar-coca-cola-black-kh6891",
+        "name": "adidas Superstar 'Coca-Cola Black'",
+        "slug": "adidas-superstar-coca-cola-black-kh6891",
+        "brand": "adidas",
+        "image": null,
         "category": "shoes",
-        "release_date": "2024-05-03"
+        "in_stock": false,
+        "silhouette": "Superstar",
+        "release_date": "2026-06-06",
+        "lowest_price_cents": null,
+        "retail_price_cents": 12000
     },
     {
-        "id": "1355744",
-        "sku": "FJ9821-001",
-        "name": "Bode x Astro Grabber SP 'Black Coconut Milk'",
-        "slug": "bode-x-astro-grabber-sp-black-coconut-milk-fj9821-001",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/100/317/054/original/1355744_00.png.png",
+        "id": "1713136",
+        "url": "https://www.goat.com/en-us/sneakers/adidas-samba-coca-cola-diet-coke-kh6880",
+        "name": "adidas Samba 'Coca-Cola Diet Coke'",
+        "slug": "adidas-samba-coca-cola-diet-coke-kh6880",
+        "brand": "adidas",
+        "image": null,
         "category": "shoes",
-        "release_date": "2024-04-18"
+        "in_stock": false,
+        "silhouette": "Samba",
+        "release_date": "2026-06-06",
+        "lowest_price_cents": null,
+        "retail_price_cents": 11000
     },
     {
-        "id": "1398917",
-        "sku": "FQ6892-100",
-        "name": "Bode x Astro Grabber SP 'Natural Black'",
-        "slug": "bode-x-astro-grabber-sp-natural-black-fq6892-100",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/099/945/754/original/1398917_00.png.png",
+        "id": "1712557",
+        "url": "https://www.goat.com/en-us/sneakers/nike-kd-19-bright-ceramic-ih1117-800",
+        "name": "Nike KD 19 'Bright Ceramic'",
+        "slug": "nike-kd-19-bright-ceramic-ih1117-800",
+        "brand": "Nike",
+        "image": null,
         "category": "shoes",
-        "release_date": "2024-04-18"
+        "in_stock": false,
+        "silhouette": "KD 19",
+        "release_date": "2026-05-29",
+        "lowest_price_cents": null,
+        "retail_price_cents": 15500
     },
     {
-        "id": "1260898",
-        "sku": "CK9246-121",
-        "name": "Wmns Air Jordan 3 Retro 'Georgia Peach'",
-        "slug": "wmns-air-jordan-3-retro-cosmic-clay-ck9246-121",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/099/803/774/original/1260898_00.png.png",
+        "id": "1716943",
+        "url": "https://www.goat.com/en-us/sneakers/nike-air-foamposite-pro-gym-red-2026-hf0794-600",
+        "name": "Nike Air Foamposite Pro 'Gym Red' 2026",
+        "slug": "nike-air-foamposite-pro-gym-red-2026-hf0794-600",
+        "brand": "Nike",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/114/460/731/original/HF0794_20600.png.png",
         "category": "shoes",
-        "release_date": "2024-04-23"
+        "in_stock": false,
+        "silhouette": "Pro",
+        "release_date": "2026-05-29",
+        "lowest_price_cents": null,
+        "retail_price_cents": 24000
     },
     {
-        "id": "1260916",
-        "sku": "DZ5485-160",
-        "name": "Air Jordan 1 Retro High OG 'Artisanal Red'",
-        "slug": "air-jordan-1-retro-high-og-white-team-red-dz5485-160",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/099/506/896/original/1260916_00.png.png",
+        "id": "1723310",
+        "url": "https://www.goat.com/en-us/sneakers/air-jordan-12-bloodline-ct8013-001",
+        "name": "Air Jordan 12 'Bloodline'",
+        "slug": "air-jordan-12-bloodline-ct8013-001",
+        "brand": "Air Jordan",
+        "image": null,
         "category": "shoes",
-        "release_date": "2024-04-27"
+        "in_stock": false,
+        "silhouette": "Air Jordan 12",
+        "release_date": "2026-05-23",
+        "lowest_price_cents": null,
+        "retail_price_cents": 20500
     },
     {
-        "id": "1348162",
-        "sku": "FZ3129-200",
-        "name": "Dunk Low SB 'Big Money Savings'",
-        "slug": "dunk-low-sb-big-money-fz3129-200",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/099/561/205/original/1348162_00.png.png",
+        "id": "1713163",
+        "url": "https://www.goat.com/en-us/sneakers/adidas-harden-vol-10-hi-res-yellow-jr1602",
+        "name": "adidas Harden Vol. 10 'Hi-Res Yellow'",
+        "slug": "adidas-harden-vol-10-hi-res-yellow-jr1602",
+        "brand": "adidas",
+        "image": null,
         "category": "shoes",
-        "release_date": "2024-04-17"
+        "in_stock": false,
+        "silhouette": "Harden Vol. 10",
+        "release_date": "2026-05-16",
+        "lowest_price_cents": null,
+        "retail_price_cents": 16000
     },
     {
-        "id": "1408908",
-        "sku": "DA1469-200-24",
-        "name": "Dunk Low SP Retro 'Veneer' 2024",
-        "slug": "dunk-low-sp-retro-veneer-2024-da1469-200-24",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/100/105/067/original/1408908_00.png.png",
+        "id": "1723308",
+        "url": "https://www.goat.com/en-us/sneakers/wmns-air-jordan-11-low-mother-s-day-ah7860-102",
+        "name": "Wmns Air Jordan 11 Low 'Mother's Day'",
+        "slug": "wmns-air-jordan-11-low-mother-s-day-ah7860-102",
+        "brand": "Air Jordan",
+        "image": null,
         "category": "shoes",
-        "release_date": "2024-04-25"
+        "in_stock": false,
+        "silhouette": "Air Jordan 11",
+        "release_date": "2026-05-02",
+        "lowest_price_cents": null,
+        "retail_price_cents": 19500
     },
     {
-        "id": "1338387",
-        "sku": "M1000SL",
-        "name": "1000 'Silver Metallic'",
-        "slug": "1000-silver-metallic-m1000sl",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/099/612/083/original/1338387_00.png.png",
+        "id": "1710344",
+        "url": "https://www.goat.com/en-us/sneakers/nike-air-zoom-huarache-2k4-white-varsity-red-iv3782-100",
+        "name": "Nike Air Zoom Huarache 2K4 'White Varsity Red'",
+        "slug": "nike-air-zoom-huarache-2k4-white-varsity-red-iv3782-100",
+        "brand": "Nike",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/114/034/554/original/IV3782_20100.png.png",
         "category": "shoes",
-        "release_date": "2024-04-24"
+        "in_stock": false,
+        "silhouette": "Huarache 2K4",
+        "release_date": "2026-05-01",
+        "lowest_price_cents": null,
+        "retail_price_cents": 19000
     },
     {
-        "id": "1250282",
-        "sku": "FQ3545-400",
-        "name": "Zoom Kobe 4 Protro 'Philly' 2024",
-        "slug": "zoom-kobe-4-protro-philly-2024-fq3545-400",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/099/381/315/original/1250282_00.png.png",
+        "id": "1723307",
+        "url": "https://www.goat.com/en-us/sneakers/wmns-air-jordan-3-orange-citrus-ck9246-101",
+        "name": "Wmns Air Jordan 3 'Orange Citrus'",
+        "slug": "wmns-air-jordan-3-orange-citrus-ck9246-101",
+        "brand": "Air Jordan",
+        "image": null,
         "category": "shoes",
-        "release_date": "2024-04-13"
+        "in_stock": false,
+        "silhouette": "Air Jordan 3",
+        "release_date": "2026-04-25",
+        "lowest_price_cents": null,
+        "retail_price_cents": 20500
     },
     {
-        "id": "1293117",
-        "sku": "FQ3548-001",
-        "name": "Kobe 8 Protro 'Venice Beach' 2024",
-        "slug": "kobe-8-protro-venice-beach-2024-fq3549-007",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/099/381/148/original/1293117_00.png.png",
+        "id": "1711729",
+        "url": "https://www.goat.com/en-us/sneakers/jurassic-park-x-nike-ja-3-metallic-silver-iu7240-002",
+        "name": "Jurassic Park x Nike Ja 3 'Metallic Silver'",
+        "slug": "jurassic-park-x-nike-ja-3-metallic-silver-iu7240-002",
+        "brand": "Nike",
+        "image": null,
         "category": "shoes",
-        "release_date": "2024-04-13"
+        "in_stock": false,
+        "silhouette": "Ja 3",
+        "release_date": "2026-04-21",
+        "lowest_price_cents": null,
+        "retail_price_cents": 14500
     },
     {
-        "id": "1256151",
-        "sku": "FQ3546-001",
-        "name": "Zoom Kobe 6 Protro 'Italian Camo' 2024",
-        "slug": "zoom-kobe-6-protro-italian-camo-fq3546-001",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/099/440/960/original/1256151_00.png.png",
+        "id": "1712558",
+        "url": "https://www.goat.com/en-us/sneakers/adidas-harden-vol-10-lucid-aquamarine-jq9422",
+        "name": "adidas Harden Vol. 10 'Lucid Aquamarine'",
+        "slug": "adidas-harden-vol-10-lucid-aquamarine-jq9422",
+        "brand": "adidas",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/114/156/757/original/JQ9422.png.png",
         "category": "shoes",
-        "release_date": "2024-04-13"
+        "in_stock": false,
+        "silhouette": "Harden Vol. 10",
+        "release_date": "2026-04-16",
+        "lowest_price_cents": null,
+        "retail_price_cents": 16000
     },
     {
-        "id": "1253703",
-        "sku": "DZ5485-130",
-        "name": "Air Jordan 1 Retro High OG 'Green Glow'",
-        "slug": "air-jordan-1-retro-high-og-green-glow-dz5485-130",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/098/949/375/original/1253703_00.png.png",
+        "id": "1714351",
+        "url": "https://www.goat.com/en-us/sneakers/saucony-shadow-5000-beige-blue-s71015-3",
+        "name": "Saucony Shadow 5000 'Beige Blue'",
+        "slug": "saucony-shadow-5000-beige-blue-s71015-3",
+        "brand": "Saucony",
+        "image": null,
         "category": "shoes",
-        "release_date": "2024-04-20"
+        "in_stock": false,
+        "silhouette": "Shadow 5000",
+        "release_date": "2026-04-15",
+        "lowest_price_cents": null,
+        "retail_price_cents": 13500
     },
     {
-        "id": "1364668",
-        "sku": "FZ4831-400",
-        "name": "Air Max 1 '86 OG 'Big Bubble - Jackie Robinson'",
-        "slug": "air-max-1-86-og-jackie-robinson-fz4831-400",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/099/861/521/original/1364668_00.png.png",
+        "id": "1714353",
+        "url": "https://www.goat.com/en-us/sneakers/saucony-progrid-triumph-4-blue-beige-s71015-2",
+        "name": "Saucony Progrid Triumph 4 'Blue Beige'",
+        "slug": "saucony-progrid-triumph-4-blue-beige-s71015-2",
+        "brand": "Saucony",
+        "image": null,
         "category": "shoes",
-        "release_date": "2024-04-15"
+        "in_stock": false,
+        "silhouette": "ProGrid Triumph 4",
+        "release_date": "2026-04-15",
+        "lowest_price_cents": null,
+        "retail_price_cents": 16500
     },
     {
-        "id": "1392795",
-        "sku": "HF6236-002",
-        "name": "Book 1 Premium 'Hike'",
-        "slug": "book-1-hike-hf6236-002",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/099/871/805/original/1392795_00.png.png",
+        "id": "1714349",
+        "url": "https://www.goat.com/en-us/sneakers/saucony-progrid-omni-9-beige-blue-s71015-1",
+        "name": "Saucony Progrid Omni 9 'Beige Blue'",
+        "slug": "saucony-progrid-omni-9-beige-blue-s71015-1",
+        "brand": "Saucony",
+        "image": null,
         "category": "shoes",
-        "release_date": "2024-04-20"
+        "in_stock": false,
+        "silhouette": "ProGrid Omni 9",
+        "release_date": "2026-04-15",
+        "lowest_price_cents": null,
+        "retail_price_cents": 17500
     },
     {
-        "id": "1259185",
-        "sku": "FN7405-100",
-        "name": "Air Jordan 5 Retro SE 'Sail'",
-        "slug": "air-jordan-5-retro-se-sail-fn7405-100",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/099/611/662/original/1259185_00.png.png",
+        "id": "1621594",
+        "url": "https://www.goat.com/en-us/sneakers/ae-2-black-lime-burst-jr1572",
+        "name": "adidas AE 2 'Black Lime Burst'",
+        "slug": "ae-2-black-lime-burst-jr1572",
+        "brand": "adidas",
+        "image": null,
         "category": "shoes",
-        "release_date": "2024-04-13"
+        "in_stock": true,
+        "silhouette": "AE 2",
+        "release_date": "2026-04-12",
+        "lowest_price_cents": 16200,
+        "retail_price_cents": 13000
     },
     {
-        "id": "1402472",
-        "sku": "M1000JF1",
-        "name": "Joe Freshgoods x 1000 'When Things Were Pure Pack - Black Ice'",
-        "slug": "joe-freshgoods-x-1000-black-ice-m1000jf1",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/099/529/982/original/M1000JF1.png.png",
+        "id": "1723319",
+        "url": "https://www.goat.com/en-us/sneakers/air-jordan-1-high-og-flight-club-ii9811-001",
+        "name": "Air Jordan 1 High OG 'Flight Club'",
+        "slug": "air-jordan-1-high-og-flight-club-ii9811-001",
+        "brand": "Air Jordan",
+        "image": "https://image.goat.com/attachments/product_template_pictures/images/114/768/378/original/II9811_20001.png.png",
         "category": "shoes",
-        "release_date": "2024-04-08"
+        "in_stock": true,
+        "silhouette": "Air Jordan 1",
+        "release_date": "2026-04-11",
+        "lowest_price_cents": 42300,
+        "retail_price_cents": 18500
     },
     {
-        "id": "1402471",
-        "sku": "M1000JG1",
-        "name": "Joe Freshgoods x 1000 'When Things Were Pure Pack - Pink Mink'",
-        "slug": "joe-freshgoods-x-1000-pink-mink-m1000jg1",
-        "image": "https://image.goat.com/750/attachments/product_template_pictures/images/099/529/983/original/M1000JG1.png.png",
+        "id": "1711771",
+        "url": "https://www.goat.com/en-us/sneakers/jurassic-park-x-nike-ja-3-ps-anthracite-crimson-iv2628-001",
+        "name": "Jurassic Park x Nike Ja 3 PS 'Anthracite Crimson'",
+        "slug": "jurassic-park-x-nike-ja-3-ps-anthracite-crimson-iv2628-001",
+        "brand": "Nike",
+        "image": null,
         "category": "shoes",
-        "release_date": "2024-04-08"
+        "in_stock": false,
+        "silhouette": "Ja 3",
+        "release_date": "2026-04-10",
+        "lowest_price_cents": null,
+        "retail_price_cents": 9700
     }
 ]
 ```
