@@ -33,7 +33,7 @@ export RETAILED_TOKEN="<TOKEN>"
 This step eliminates the need to copy and paste the token each time it's in use. You are now ready to make a call to the Retailed Usage service. Use the following command to proceed:
 
 ```bash
-curl -H "x-api-key: $RETAILED_TOKEN" https://app.retailed.io/api/usage | jq .
+curl -H "x-api-key: $RETAILED_TOKEN" https://app.retailed.io/api/v1/usage | jq .
 ```
 
 The response should look like this:
