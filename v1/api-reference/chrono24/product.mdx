@@ -16,6 +16,10 @@ description: "Get product information from Chrono24"
     Chrono24 Product URL
 </ParamField>
 
+<ParamField query="shipping_country" type="string" optional={true} placeholder="US">
+    Buyer shipping country as an ISO 3166-1 alpha-2 code (e.g., `US`, `FR`, `GB`). Chrono24 includes the import VAT of this country in the listing price, so the same listing can show different prices depending on the buyer's country (e.g., a US seller's `$45,000` listing shows as `$54,000` for a buyer in France, which includes 20% French VAT). Pass `US` to get the price shown to US buyers. If omitted, the country is inferred from the request's IP and the price may vary between calls. The country used is returned in `price.shipping_country`.
+</ParamField>
+
 ### Response
 
 <ResponseField name="object" type="Product Object">
@@ -39,6 +43,9 @@ description: "Get product information from Chrono24"
                 </ResponseField>
                 <ResponseField name="negotiable" type="boolean">
                     Indicates if price is negotiable
+                </ResponseField>
+                <ResponseField name="shipping_country" type="string">
+                    Shipping country used by Chrono24 to compute the price (VAT included), or `null` when it was inferred from the request's IP
                 </ResponseField>
             </Expandable>
         </ResponseField>
@@ -194,7 +201,8 @@ description: "Get product information from Chrono24"
     "price": {
         "amount": 16410,
         "currency": "USD",
-        "negotiable": true
+        "negotiable": true,
+        "shipping_country": "US"
     },
     "images": [
         "https://img.chrono24.com/images/uhren/16516640-wuzf1q8zn9o64ozyf2e1bw8d-ExtraLarge.jpg",

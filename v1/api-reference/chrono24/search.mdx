@@ -24,6 +24,10 @@ description: "Search Chrono24 for products"
     Domain code (e.g., `com`, `fr`). Default is `com`.
 </ParamField>
 
+<ParamField query="shipping_country" type="string" optional={true}>
+    Buyer shipping country as an ISO 3166-1 alpha-2 code (e.g., `US`, `FR`, `GB`). Chrono24 includes the import VAT of this country in listing prices, so the same listing can show different prices depending on the buyer's country (e.g., a US seller's `$45,000` listing shows as `$54,000` for a buyer in France, which includes 20% French VAT). Pass `US` to get the price shown to US buyers. If omitted, the country is inferred from the request's IP and prices may vary between calls.
+</ParamField>
+
 ### Pagination & Sorting
 
 <ParamField query="page_size" type="number" optional={true}>
@@ -60,7 +64,7 @@ description: "Search Chrono24 for products"
 </ParamField>
 
 <ParamField query="reference_number" type="string" optional={true}>
-    List of reference numbers
+    Watch reference numbers (e.g., `126300` or `126300,126334`). Can be combined with `manufacturer`, e.g., `manufacturer=Rolex&reference_number=126300`. When several references are given, each one is searched separately and the results are merged (OR). Each result then has a `reference_number` field, and the response has `urls` and `per_reference`.
 </ParamField>
 
 <ParamField query="case_material" type="string" optional={true}>
@@ -164,7 +168,7 @@ description: "Search Chrono24 for products"
 </ParamField>
 
 <ParamField query="country" type="string" optional={true}>
-    Country locations like (e.g., `FR`, `US`)
+    Seller locations (e.g., `FR`, `US`). This filters listings by the seller's country; to choose which country's VAT is included in prices, use `shipping_country`.
 </ParamField>
 
 <ParamField query="listing_type" type="string" optional={true}>
@@ -204,7 +208,13 @@ description: "Search Chrono24 for products"
 <ResponseField name="object" type="Search Object">
     <Expandable title="properties" defaultOpen={true}>
         <ResponseField name="url" type="string">
-            Search URL on Chrono24
+            Search URL on Chrono24 (the first one when several `reference_number` values are given)
+        </ResponseField>
+        <ResponseField name="urls" type="array">
+            Only when several `reference_number` values are given: the Chrono24 search URL of each reference
+        </ResponseField>
+        <ResponseField name="per_reference" type="object">
+            Only when several `reference_number` values are given: for each reference, its `url`, `total_results` and `pagination`
         </ResponseField>
         <ResponseField name="stats" type="object">
             <Expandable title="properties" defaultOpen={true}>
@@ -251,6 +261,9 @@ description: "Search Chrono24 for products"
                 </ResponseField>
                 <ResponseField name="subtitle" type="string">
                     Product subtitle
+                </ResponseField>
+                <ResponseField name="reference_number" type="string">
+                    Only when several `reference_number` values are given: the reference that matched this result
                 </ResponseField>
             </Expandable>
         </ResponseField>
