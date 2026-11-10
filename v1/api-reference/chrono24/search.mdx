@@ -25,7 +25,7 @@ description: "Search Chrono24 for products"
 </ParamField>
 
 <ParamField query="shipping_country" type="string" optional={true}>
-    Buyer shipping country as an ISO 3166-1 alpha-2 code (e.g., `US`, `FR`, `GB`). Chrono24 includes the import VAT of this country in listing prices, so the same listing can show different prices depending on the buyer's country (e.g., a US seller's `$45,000` listing shows as `$54,000` for a buyer in France, which includes 20% French VAT). Pass `US` to get the price shown to US buyers. If omitted, the country is inferred from the request's IP and prices may vary between calls.
+    Buyer shipping country as an ISO 3166-1 alpha-2 code (e.g., `US`, `FR`, `GB`). Chrono24 includes the import VAT of this country in listing prices, so the same listing can show different prices depending on the buyer's country (e.g., a US seller's `$45,000` listing shows as `$54,000` for a buyer in France, which includes 20% French VAT). Default is `US` (price shown to US buyers).
 </ParamField>
 
 ### Pagination & Sorting
